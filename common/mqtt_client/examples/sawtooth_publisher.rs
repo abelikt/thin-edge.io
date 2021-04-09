@@ -79,6 +79,8 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if template == "flux" {
         tokio::spawn(publish_topic(mqtt, c8y_msg, wait, height, iterations));
+    } else if template == "stairs" {
+        tokio::spawn(publish_stairs(mqtt, c8y_msg, wait, height, iterations));
     } else if template == "sawmill" {
         tokio::spawn(publish_multi_topic(mqtt, c8y_msg, wait, height, iterations));
     } else {
@@ -123,6 +125,40 @@ async fn publish_topic(
     for iteration in 0..iterations {
         for value in 0..height {
             let payload = format!("{{ {}: {} }}", "\"Flux [F]\"", value);
+            debug!("{} ", value);
+            debug!("{}", payload);
+
+            mqtt.publish(Message::new(&c8y_msg, payload)).await?;
+            Delay::new(Duration::from_millis(u64::try_from(wait).unwrap())).await;
+            std::io::stdout().flush().expect("Flush failed");
+        }
+        println!("Iteraton: {}", iteration);
+    }
+    println!();
+
+    mqtt.disconnect().await?;
+    Ok(())
+}
+
+async fn publish_stairs(
+    mqtt: Client,
+    c8y_msg: Topic,
+    wait: i32,
+    height: i32,
+    iterations: i32,
+) -> Result<(), mqtt_client::Error> {
+    info!("Publishing a staircase");
+    println!();
+    let mut step: i32;
+    for iteration in 0..iterations {
+        for value in 0..height {
+            if value % 2 == 0 {
+                step = value;
+            } else {
+                step = value - 1;
+            }
+
+            let payload = format!("{{ {}: {} }}", "\"Steps [S]\"", step);
             debug!("{} ", value);
             debug!("{}", payload);
 
