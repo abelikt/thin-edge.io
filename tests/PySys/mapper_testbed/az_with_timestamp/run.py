@@ -17,6 +17,7 @@ Then we stop the tedge-mapper-az systemctl service
 
 """
 
+
 class TedgeMapperAzBed(BaseTest):
     def setup(self):
         self.tedge = "/usr/bin/tedge"
@@ -55,8 +56,7 @@ class TedgeMapperAzBed(BaseTest):
 
         pub = self.startProcess(
             command=self.sudo,
-            arguments=[self.tedge, "mqtt", "pub",
-                       self.topic , self.message],
+            arguments=[self.tedge, "mqtt", "pub", self.topic, self.message],
             stdouterr="tedge_temp",
         )
 
@@ -69,21 +69,25 @@ class TedgeMapperAzBed(BaseTest):
         )
 
     def validate(self):
-        f = open(self.output + '/tedge_sub.out', 'r')
+        f = open(self.output + "/tedge_sub.out", "r")
         self.thin_edge_json = json.load(f)
 
     def assert_json(self, key, value):
-        self.assertThat('actual == expected', actual = self.thin_edge_json[key], expected = value)
+        self.assertThat(
+            "actual == expected", actual=self.thin_edge_json[key], expected=value
+        )
+
 
 class TedgeMapperAzWithTimestamp(TedgeMapperAzBed):
-
     def setup(self):
         super().setup()
         self.topic = "tedge/measurements"
-        self.message = '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+        self.message = (
+            '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+        )
 
     def validate(self):
         super().validate()
 
-        self.assert_json( 'temperature' , 12)
-        self.assert_json( 'time' , '2021-06-15T17:01:15.806181503+02:00')
+        self.assert_json("temperature", 12)
+        self.assert_json("time", "2021-06-15T17:01:15.806181503+02:00")
