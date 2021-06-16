@@ -16,12 +16,15 @@ Then we validate the JSON message in the output of tedge sub
 Then we stop the tedge-mapper-az systemctl service
 
 """
-
+# TODO : publish and subscribe with mosquitto clients ?
+# TODO Make more generic c8y, az, collectd
+# TODO Subscribe with mosquitto client with timeout -> avoid kill
 
 class TedgeMapperAzBed(BaseTest):
     def setup(self):
         self.tedge = "/usr/bin/tedge"
         self.sudo = "/usr/bin/sudo"
+        self.topic = "tedge/measurements"
 
         mapper = self.startProcess(
             command=self.sudo,
@@ -81,7 +84,6 @@ class TedgeMapperAzBed(BaseTest):
 class TedgeMapperAzWithTimestamp(TedgeMapperAzBed):
     def setup(self):
         super().setup()
-        self.topic = "tedge/measurements"
         self.message = (
             '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
         )
