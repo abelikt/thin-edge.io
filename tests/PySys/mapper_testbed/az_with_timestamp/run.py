@@ -17,7 +17,7 @@ Then we stop the tedge-mapper-az systemctl service
 
 """
 
-class TedgeMapperAzWithTimestamp(BaseTest):
+class TedgeMapperAzBed(BaseTest):
     def setup(self):
         self.tedge = "/usr/bin/tedge"
         self.sudo = "/usr/bin/sudo"
@@ -30,7 +30,16 @@ class TedgeMapperAzWithTimestamp(BaseTest):
 
         self.addCleanupFunction(self.mapper_cleanup)
 
+    def mapper_cleanup(self):
+        self.log.info("mapper_cleanup")
+        mapper = self.startProcess(
+            command=self.sudo,
+            arguments=["systemctl", "stop", "tedge-mapper-az"],
+            stdouterr="tedge_mapper_az",
+        )
+
     def execute(self):
+
         sub = self.startProcess(
             command=self.sudo,
             arguments=[self.tedge, "mqtt", "sub", "--no-topic", "az/messages/events/"],
@@ -47,7 +56,7 @@ class TedgeMapperAzWithTimestamp(BaseTest):
         pub = self.startProcess(
             command=self.sudo,
             arguments=[self.tedge, "mqtt", "pub",
-                       "tedge/measurements", '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'],
+                       self.topic , self.message],
             stdouterr="tedge_temp",
         )
 
@@ -61,15 +70,20 @@ class TedgeMapperAzWithTimestamp(BaseTest):
 
     def validate(self):
         f = open(self.output + '/tedge_sub.out', 'r')
-        thin_edge_json = json.load(f)
+        self.thin_edge_json = json.load(f)
 
-        self.assertThat('actual == expected', actual = thin_edge_json['temperature'], expected = 12)
-        self.assertThat('actual == expected', actual = thin_edge_json['time'], expected = '2021-06-15T17:01:15.806181503+02:00')
+class TedgeMapperAzWithTimestamp(TedgeMapperAzBed):
 
-    def mapper_cleanup(self):
-        self.log.info("mapper_cleanup")
-        mapper = self.startProcess(
-            command=self.sudo,
-            arguments=["systemctl", "stop", "tedge-mapper-az"],
-            stdouterr="tedge_mapper_az",
-        )
+    def setup(self):
+        super().setup()
+        self.topic = "tedge/measurements"
+        self.message = '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+
+
+
+    def validate(self):
+        super().validate()
+
+        self.assertThat('actual == expected', actual = self.thin_edge_json['temperature'], expected = 12)
+        self.assertThat('actual == expected', actual = self.thin_edge_json['time'], expected = '2021-06-15T17:01:15.806181503+02:00')
+
