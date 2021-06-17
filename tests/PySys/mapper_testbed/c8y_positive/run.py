@@ -37,6 +37,13 @@ class TedgeMapperC8yBed(BaseTest):
             background=True,
         )
 
+        sub_errror = self.startProcess(
+            command=self.sudo,
+            arguments=[self.tedge, "mqtt", "sub", "--no-topic", "tedge/errors"],
+            stdouterr="tedge_sub_error",
+            background=True,
+        )
+
         # Wait for a small amount of time to give tedge sub time
         # to initialize. This is a heuristic measure.
         # Without an additional wait we observe failures in 1% of the test
@@ -66,6 +73,17 @@ class TedgeMapperC8yBed(BaseTest):
         self.c8y_json = json.loads(data)
         self.log.info(self.c8y_json)
 
+        f = open(self.output + '/tedge_sub_error.out', 'r')
+        data=f.read()
+        self.log.info(data)
+        if data:
+            self.errors = json.loads(data)
+            self.log.info(self.errors)
+        else:
+            self.errors = None
+            self.log.info("No errors")
+
+
     def mapper_cleanup(self):
         self.log.info("mapper_cleanup")
         mapper = self.startProcess(
@@ -84,6 +102,11 @@ class TedgeMapperC8yBed(BaseTest):
             "actual == expected", actual=key, expected=value
         )
 
+    def assert_no_error(self):
+        self.assertThat(
+            "actual == expected", actual=self.errors, expected=None
+        )
+
 class TedgeMapperC8y(TedgeMapperC8yBed):
 
     def setup(self):
@@ -100,4 +123,6 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
         self.assert_json_key( 'type', 'ThinEdgeMeasurement')
         self.assert_json(self.c8y_json['temperature']['temperature']['value'], 12)
         self.assert_json_key( 'time', '2021-06-15T17:01:15.806181503+02:00')
+        self.assert_no_error()
+
 
