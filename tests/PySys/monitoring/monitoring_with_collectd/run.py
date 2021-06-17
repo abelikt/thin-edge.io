@@ -82,6 +82,7 @@ class MonitoringWithCollectd(BaseTest):
         f = open(self.output + '/tedge_sub.out', 'r')
         lines = f.readlines()
         for line in lines:
+            self.log.info(line)
             self.js_msg = json.loads(line)
             if not self.validate_cpu():
                 reason = "cpu stat validation failed in message: " + str(line)
