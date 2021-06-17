@@ -17,6 +17,12 @@ Then we stop the tedge-mapper-c8y systemctl service
 
 """
 
+# TODO : publish and subscribe with mosquitto clients ?
+# TODO Make more generic c8y, az, collectd
+# TODO Subscribe with mosquitto client with timeout -> avoid kill
+# TODO How to wait for collectd ?
+# TODO How to specify unprecise e.g. with ANY
+
 
 class TedgeMapperC8yBed(BaseTest):
     def setup(self):
