@@ -43,6 +43,7 @@ tedgeschema = {
                     "properties": {
                         "type": {"value": "The type", "type": "integer"},
                     },
+                    "required": ["value"],
                 },
             },
             "required": ["temperature"],
@@ -177,8 +178,11 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
             '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
         )
 
-        self.expect = {'type': 'ThinEdgeMeasurement', 'temperature': {'temperature': {'value': 12}}, 'time': '2021-06-15T17:01:15.806181503+02:00'}
-
+        self.expect = {
+            "type": "ThinEdgeMeasurement",
+            "temperature": {"temperature": {"value": 12}},
+            "time": "2021-06-15T17:01:15.806181503+02:00",
+        }
 
     def validate(self):
 
