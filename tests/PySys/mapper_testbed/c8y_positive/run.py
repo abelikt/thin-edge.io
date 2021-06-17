@@ -17,8 +17,7 @@ Then we stop the tedge-mapper-c8y systemctl service
 
 """
 
-
-class TedgeMapperC8y(BaseTest):
+class TedgeMapperC8yBed(BaseTest):
     def setup(self):
         self.tedge = "/usr/bin/tedge"
         self.sudo = "/usr/bin/sudo"
@@ -30,7 +29,6 @@ class TedgeMapperC8y(BaseTest):
         )
 
         self.addCleanupFunction(self.mapper_cleanup)
-
     def execute(self):
         sub = self.startProcess(
             command=self.sudo,
@@ -48,7 +46,7 @@ class TedgeMapperC8y(BaseTest):
         pub = self.startProcess(
             command=self.sudo,
             arguments=[self.tedge, "mqtt", "pub",
-                       "tedge/measurements", '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'],
+                       "tedge/measurements", self.message],
             stdouterr="tedge_temp",
         )
 
@@ -60,13 +58,13 @@ class TedgeMapperC8y(BaseTest):
             stdouterr="kill_out",
         )
 
+
     def validate(self):
         f = open(self.output + '/tedge_sub.out', 'r')
-        c8y_json = json.load(f)
-
-        self.assertThat('actual == expected', actual = c8y_json['type'], expected = 'ThinEdgeMeasurement')
-        self.assertThat('actual == expected', actual = c8y_json['temperature']['temperature']['value'], expected = 12)
-        self.assertThat('actual == expected', actual = c8y_json['time'], expected = '2021-06-15T17:01:15.806181503+02:00')
+        data=f.read()
+        self.log.info(data)
+        self.c8y_json = json.loads(data)
+        self.log.info(self.c8y_json)
 
     def mapper_cleanup(self):
         self.log.info("mapper_cleanup")
@@ -75,3 +73,26 @@ class TedgeMapperC8y(BaseTest):
             arguments=["systemctl", "stop", "tedge-mapper-c8y"],
             stdouterr="tedge_mapper_c8y",
         )
+
+    def assert_json(self, key, value):
+        self.assertThat(
+            "actual == expected", actual=self.c8y_json[key], expected=value
+        )
+
+class TedgeMapperC8y(TedgeMapperC8yBed):
+
+    def setup(self):
+        super().setup()
+        self.message = '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+
+
+
+
+    def validate(self):
+
+        super().validate()
+
+        self.assert_json( 'type', 'ThinEdgeMeasurement')
+        #self.assert_json( 'temperature']['temperature']['value'], 12)
+        self.assert_json( 'time', '2021-06-15T17:01:15.806181503+02:00')
+
