@@ -2,6 +2,7 @@ from pysys.basetest import BaseTest
 
 import time
 import json
+import jsonschema
 
 """
 Validate a tedge-mapper-c8y message that is published
@@ -22,6 +23,34 @@ Then we stop the tedge-mapper-c8y systemctl service
 # TODO Subscribe with mosquitto client with timeout -> avoid kill
 # TODO How to wait for collectd ?
 # TODO How to specify unprecise e.g. with ANY
+
+# Handcrafted schema just for this test case:
+tedgeschema = {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "ThinEdgeMeasurement",
+    "description": "A thin edge measurement",
+    "type": "object",
+    "properties": {
+        "type": {"description": "The type", "type": "string"},
+        "temperature": {
+            "description": "The temperature",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "temperature": "The type",
+                    "type": "object",
+                    "properties": {
+                        "type": {"value": "The type", "type": "integer"},
+                    },
+                },
+            },
+            "required": ["temperature"],
+        },
+        "time": {"description": "The time", "type": "string"},
+    },
+    "required": ["type", "temperature", "time"],
+}
 
 
 class TedgeMapperC8yBed(BaseTest):
@@ -162,6 +191,8 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
         self.assert_json(self.c8y_json["temperature"]["temperature"]["value"], 12)
         self.assert_json_key("time", "2021-06-15T17:01:15.806181503+02:00")
         self.assert_no_error()
+
+        jsonschema.validate(instance=self.c8y_json, schema=tedgeschema)
 
         # also possible
         assert self.c8y_json == self.expect
