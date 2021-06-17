@@ -22,13 +22,43 @@ class TedgeMapperC8yBed(BaseTest):
         self.tedge = "/usr/bin/tedge"
         self.sudo = "/usr/bin/sudo"
 
+        self.tedge = "/usr/bin/tedge"
+        self.tedge_mapper_c8y = "tedge-mapper-c8y"
+        self.tedge_mapper_az = "tedge-mapper-az"
+        self.sudo = "/usr/bin/sudo"
+        self.systemctl = "/usr/bin/systemctl"
+
+        # Check if tedge-mapper is in disabled state
+        serv_mapper = self.startProcess(
+            command=self.systemctl,
+            arguments=["status", "collectd-mapper"],
+            stdouterr="serv_mapper1",
+            expectedExitStatus="==3", # 3: disabled
+        )
+
+        serv_mapper = self.startProcess(
+            command=self.systemctl,
+            arguments=["status", self.tedge_mapper_c8y],
+            stdouterr="serv_mapper1",
+            expectedExitStatus="==3", # 3: disabled
+        )
+
+        serv_mapper = self.startProcess(
+            command=self.systemctl,
+            arguments=["status", self.tedge_mapper_az],
+            stdouterr="serv_mapper1",
+            expectedExitStatus="==3", # 3: disabled
+        )
+
         mapper = self.startProcess(
             command=self.sudo,
             arguments=["systemctl", "start", "tedge-mapper-c8y"],
             stdouterr="tedge_mapper_c8y",
         )
 
+
         self.addCleanupFunction(self.mapper_cleanup)
+
     def execute(self):
         sub = self.startProcess(
             command=self.sudo,
