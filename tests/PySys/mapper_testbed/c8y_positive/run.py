@@ -142,6 +142,9 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
             '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
         )
 
+        self.expect = {'type': 'ThinEdgeMeasurement', 'temperature': {'temperature': {'value': 12}}, 'time': '2021-06-15T17:01:15.806181503+02:00'}
+
+
     def validate(self):
 
         super().validate()
@@ -153,3 +156,6 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
         self.assert_json(self.c8y_json["temperature"]["temperature"]["value"], 12)
         self.assert_json_key("time", "2021-06-15T17:01:15.806181503+02:00")
         self.assert_no_error()
+
+        # also possible
+        assert self.c8y_json == self.expect
