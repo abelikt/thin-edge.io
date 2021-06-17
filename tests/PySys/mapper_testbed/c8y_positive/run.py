@@ -17,6 +17,7 @@ Then we stop the tedge-mapper-c8y systemctl service
 
 """
 
+
 class TedgeMapperC8yBed(BaseTest):
     def setup(self):
         self.tedge = "/usr/bin/tedge"
@@ -33,21 +34,21 @@ class TedgeMapperC8yBed(BaseTest):
             command=self.systemctl,
             arguments=["status", "collectd-mapper"],
             stdouterr="serv_mapper1",
-            expectedExitStatus="==3", # 3: disabled
+            expectedExitStatus="==3",  # 3: disabled
         )
 
         serv_mapper = self.startProcess(
             command=self.systemctl,
             arguments=["status", self.tedge_mapper_c8y],
             stdouterr="serv_mapper1",
-            expectedExitStatus="==3", # 3: disabled
+            expectedExitStatus="==3",  # 3: disabled
         )
 
         serv_mapper = self.startProcess(
             command=self.systemctl,
             arguments=["status", self.tedge_mapper_az],
             stdouterr="serv_mapper1",
-            expectedExitStatus="==3", # 3: disabled
+            expectedExitStatus="==3",  # 3: disabled
         )
 
         mapper = self.startProcess(
@@ -56,13 +57,18 @@ class TedgeMapperC8yBed(BaseTest):
             stdouterr="tedge_mapper_c8y",
         )
 
-
         self.addCleanupFunction(self.mapper_cleanup)
 
     def execute(self):
         sub = self.startProcess(
             command=self.sudo,
-            arguments=[self.tedge, "mqtt", "sub", "--no-topic", "c8y/measurement/measurements/create"],
+            arguments=[
+                self.tedge,
+                "mqtt",
+                "sub",
+                "--no-topic",
+                "c8y/measurement/measurements/create",
+            ],
             stdouterr="tedge_sub",
             background=True,
         )
@@ -82,8 +88,7 @@ class TedgeMapperC8yBed(BaseTest):
 
         pub = self.startProcess(
             command=self.sudo,
-            arguments=[self.tedge, "mqtt", "pub",
-                       "tedge/measurements", self.message],
+            arguments=[self.tedge, "mqtt", "pub", "tedge/measurements", self.message],
             stdouterr="tedge_temp",
         )
 
@@ -95,16 +100,15 @@ class TedgeMapperC8yBed(BaseTest):
             stdouterr="kill_out",
         )
 
-
     def validate(self):
-        f = open(self.output + '/tedge_sub.out', 'r')
-        data=f.read()
+        f = open(self.output + "/tedge_sub.out", "r")
+        data = f.read()
         self.log.info(data)
         self.c8y_json = json.loads(data)
         self.log.info(self.c8y_json)
 
-        f = open(self.output + '/tedge_sub_error.out', 'r')
-        data=f.read()
+        f = open(self.output + "/tedge_sub_error.out", "r")
+        data = f.read()
         self.log.info(data)
         if data:
             self.errors = json.loads(data)
@@ -112,7 +116,6 @@ class TedgeMapperC8yBed(BaseTest):
         else:
             self.errors = None
             self.log.info("No errors")
-
 
     def mapper_cleanup(self):
         self.log.info("mapper_cleanup")
@@ -123,25 +126,21 @@ class TedgeMapperC8yBed(BaseTest):
         )
 
     def assert_json_key(self, key, value):
-        self.assertThat(
-            "actual == expected", actual=self.c8y_json[key], expected=value
-        )
+        self.assertThat("actual == expected", actual=self.c8y_json[key], expected=value)
 
     def assert_json(self, key, value):
-        self.assertThat(
-            "actual == expected", actual=key, expected=value
-        )
+        self.assertThat("actual == expected", actual=key, expected=value)
 
     def assert_no_error(self):
-        self.assertThat(
-            "actual == expected", actual=self.errors, expected=None
-        )
+        self.assertThat("actual == expected", actual=self.errors, expected=None)
+
 
 class TedgeMapperC8y(TedgeMapperC8yBed):
-
     def setup(self):
         super().setup()
-        self.message = '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+        self.message = (
+            '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
+        )
 
     def validate(self):
 
@@ -150,9 +149,7 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
         # Will expect:
         # {'type': 'ThinEdgeMeasurement', 'temperature': {'temperature': {'value': 12}}, 'time': '2021-06-15T17:01:15.806181503+02:00'}
 
-        self.assert_json_key( 'type', 'ThinEdgeMeasurement')
-        self.assert_json(self.c8y_json['temperature']['temperature']['value'], 12)
-        self.assert_json_key( 'time', '2021-06-15T17:01:15.806181503+02:00')
+        self.assert_json_key("type", "ThinEdgeMeasurement")
+        self.assert_json(self.c8y_json["temperature"]["temperature"]["value"], 12)
+        self.assert_json_key("time", "2021-06-15T17:01:15.806181503+02:00")
         self.assert_no_error()
-
-
