@@ -74,9 +74,14 @@ class TedgeMapperC8yBed(BaseTest):
             stdouterr="tedge_mapper_c8y",
         )
 
-    def assert_json(self, key, value):
+    def assert_json_key(self, key, value):
         self.assertThat(
             "actual == expected", actual=self.c8y_json[key], expected=value
+        )
+
+    def assert_json(self, key, value):
+        self.assertThat(
+            "actual == expected", actual=key, expected=value
         )
 
 class TedgeMapperC8y(TedgeMapperC8yBed):
@@ -85,14 +90,14 @@ class TedgeMapperC8y(TedgeMapperC8yBed):
         super().setup()
         self.message = '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
 
-
-
-
     def validate(self):
 
         super().validate()
 
-        self.assert_json( 'type', 'ThinEdgeMeasurement')
-        #self.assert_json( 'temperature']['temperature']['value'], 12)
-        self.assert_json( 'time', '2021-06-15T17:01:15.806181503+02:00')
+        # Will expect:
+        # {'type': 'ThinEdgeMeasurement', 'temperature': {'temperature': {'value': 12}}, 'time': '2021-06-15T17:01:15.806181503+02:00'}
+
+        self.assert_json_key( 'type', 'ThinEdgeMeasurement')
+        self.assert_json(self.c8y_json['temperature']['temperature']['value'], 12)
+        self.assert_json_key( 'time', '2021-06-15T17:01:15.806181503+02:00')
 
