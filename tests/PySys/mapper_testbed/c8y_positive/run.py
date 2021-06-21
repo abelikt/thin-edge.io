@@ -8,9 +8,7 @@ from mapper_testbed_c8y import MapperTestbedC8y
 
 
 """
-Validate a tedge-mapper-c8y message that is published
-on c8y/measurement/measurements/create
-
+Send a single message to the tedge mapper and validate the response.
 """
 
 class TedgeMapperC8y(MapperTestbedC8y):
