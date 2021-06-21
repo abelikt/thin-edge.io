@@ -160,3 +160,7 @@ class MapperTestbedC8y(BaseTest):
 
     def assert_no_error(self):
         self.assertThat("actual == expected", actual=self.errors, expected=None)
+
+    def validate_json(self):
+        jsonschema.validate(instance=self.c8y_json, schema=self.tedgeschema)
+
