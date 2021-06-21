@@ -1,5 +1,5 @@
-
 import sys
+
 sys.path.append("mapper_testbed")
 
 from pysys.basetest import BaseTest
@@ -10,6 +10,7 @@ from mapper_testbed_c8y import MapperTestbedC8y
 """
 Send a single message to the tedge mapper and validate the response.
 """
+
 
 class TedgeMapperC8y(MapperTestbedC8y):
     def setup(self):

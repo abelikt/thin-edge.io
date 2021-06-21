@@ -1,4 +1,3 @@
-
 import json
 import sys
 import time
@@ -187,4 +186,3 @@ class MapperTestbedC8y(BaseTest):
     def validate_json(self):
         """Validate received message against the json schema"""
         jsonschema.validate(instance=self.c8y_json, schema=self.tedgeschema)
-
