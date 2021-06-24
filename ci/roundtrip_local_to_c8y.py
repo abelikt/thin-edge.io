@@ -23,7 +23,7 @@ from typing import Tuple
 import requests
 
 # Warning: the list begins with the earliest one
-PAGE_SIZE = "500"
+PAGE_SIZE = "1010"
 
 # sudo is currently needed to avoid "User's Home Directory not found."
 CMD_PUBLISH_REST = "sudo tedge mqtt pub c8y/s/us 211,%i"
