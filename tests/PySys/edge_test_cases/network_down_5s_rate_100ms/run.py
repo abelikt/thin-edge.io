@@ -29,10 +29,14 @@ class Edge_test_network_down(Environment_Edge_Test_c8y):
         time.sleep(5)
 
         chaos = True
+
+        #interface = "enp0s31f6"
+        interface = "eth0"
+
         if chaos:
             connect = self.startProcess(
                 command=self.sudo,
-                arguments=["ip", "link", "set", "enp0s31f6", "down"],
+                arguments=["ip", "link", "set", interface, "down"],
                 stdouterr="ip_down",
             )
 
@@ -40,7 +44,7 @@ class Edge_test_network_down(Environment_Edge_Test_c8y):
 
             connect = self.startProcess(
                 command=self.sudo,
-                arguments=["ip", "link", "set", "enp0s31f6", "up"],
+                arguments=["ip", "link", "set", inteface, "up"],
                 stdouterr="ip_up",
             )
 
