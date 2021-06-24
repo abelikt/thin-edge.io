@@ -13,18 +13,18 @@ import time
 class Environment_Edge_Test_c8y(EnvironmentC8y):
     def setup(self):
         super().setup()
-        self.log.debug("C8y Roundtrip Setup")
-        self.addCleanupFunction(self.myenvroundtripcleanup)
+        self.log.debug("C8y Environment_Edge_Test_c8y Setup")
+        self.addCleanupFunction(self.myenvedgecleanup)
 
     def execute(self):
         super().execute()
-        self.log.debug("C8y Roundtrip Execute")
+        self.log.debug("C8y Environment_Edge_Test_c8y Execute")
 
         self.script = self.project.tebasedir + "ci/roundtrip_local_to_c8y.py"
         self.cmd = os.path.expanduser(self.script)
 
         # bad hack to wait until the receive window is empty again
-        time.sleep(int(self.timeslot))
+        # time.sleep(int(self.timeslot))
 
         sub = self.startPython(
             arguments=[
@@ -49,16 +49,17 @@ class Environment_Edge_Test_c8y(EnvironmentC8y):
                 self.samples,
             ],
             stdouterr="stdout",
+            background=True,
         )
 
     def validate(self):
         super().validate()
-        self.log.debug("C8y Roundtrip Validate")
+        self.log.debug("C8y Environment_Edge_Test_c8y Validate")
         self.assertGrep("stdout.out", expr="Data verification PASSED", contains=True)
         self.assertGrep(
             "stdout.out", expr="Timestamp verification PASSED", contains=True
         )
 
-    def myenvroundtripcleanup(self):
+    def myenvedgecleanup(self):
         self.log.debug("C8y Roundtrip MyCleanup")
 
