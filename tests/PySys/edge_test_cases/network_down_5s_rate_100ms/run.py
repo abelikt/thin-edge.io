@@ -15,6 +15,12 @@ Then we validate all the data that we have published
 
 This test needs mosquitto configured to use the ethernet interface
 with bridge_bind_address
+
+bridge_bind_address 192.168.53.133
+-> Additional line in bridge_config.rs:
+
+        writeln!(writer, "bridge_bind_address 192.168.53.133")?;
+
 """
 
 
@@ -34,8 +40,8 @@ class Edge_test_network_down(Environment_Edge_Test_c8y):
 
         chaos = True
 
-        #interface = "enp0s31f6" # Michaels laptop
-        interface = "eth0" # Rpi
+        interface = "enp0s31f6" # Michaels laptop
+        #interface = "eth0" # Rpi
 
         if chaos:
             connect = self.startProcess(
