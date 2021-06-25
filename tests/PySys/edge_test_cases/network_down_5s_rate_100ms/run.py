@@ -21,6 +21,9 @@ bridge_bind_address 192.168.53.133
 
         writeln!(writer, "bridge_bind_address 192.168.53.133")?;
 
+This does not really seem to work right
+
+-> you need to switch of WiFi for this test as well and work locally from the device
 """
 
 
