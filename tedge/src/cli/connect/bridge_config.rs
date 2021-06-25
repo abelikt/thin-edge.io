@@ -56,6 +56,9 @@ impl BridgeConfig {
             self.bridge_attempt_unsubscribe
         )?;
 
+        //Make the bridge configuration use only the eth interface
+        //writeln!(writer, "bridge_bind_address 192.168.53.133")?;
+
         writeln!(writer, "\n### Topics",)?;
         for topic in &self.topics {
             writeln!(writer, "topic {}", topic)?;
