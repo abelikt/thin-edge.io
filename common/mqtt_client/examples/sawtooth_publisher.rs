@@ -230,7 +230,7 @@ async fn listen_c8y_error(mut messages: Box<dyn MqttMessageStream>) {
     let mut count: u32 = 0;
     while let Some(message) = messages.next().await {
         error!("C8Y error: {:?}", message.payload_str());
-        if count >= 3 {
+        if count >= 100 {
             panic!("Panic!");
         }
         count += 1;
@@ -241,7 +241,7 @@ async fn listen_error(mut errors: Box<dyn MqttErrorStream>) {
     let mut count: u32 = 0;
     while let Some(error) = errors.next().await {
         error!("System error: {}", error);
-        if count >= 3 {
+        if count >= 100 {
             panic!("Panic!");
         }
         count += 1;
