@@ -5,12 +5,13 @@ sys.path.append("environments")
 from environment_edge_test_c8y import Environment_Edge_Test_c8y
 
 """
-Roundtrip test C8y 400 samples 20ms delay
+Edge test case / deterministic internal chaos
 
 Given a configured system with configured certificate
-When we derive from EnvironmentC8y
-When we run the smoketest for JSON publishing with defaults a size of 400, 20ms delay
-Then we validate the data from C8y
+When we connect to c8y and publish values
+when we wait for 5s
+When we disable the network interface for 5 seconds
+Then we validate all the data that we have published
 """
 
 
@@ -30,16 +31,12 @@ class Edge_test_network_down(Environment_Edge_Test_c8y):
 
         chaos = True
 
-        #interface = "enp0s31f6"
-        interface = "eth0"
-
         if chaos:
             tedge_mapper1 = self.startProcess(
                 command=self.sudo,
                 arguments=["systemctl", "stop", "tedge-mapper-c8y"],
-                stdouterr="tedge_mapper_sttop",
+                stdouterr="tedge_mapper_stop",
             )
-
 
             time.sleep(5)
 
