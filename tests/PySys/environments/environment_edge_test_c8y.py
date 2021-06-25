@@ -29,6 +29,7 @@ class Environment_Edge_Test_c8y(EnvironmentC8y):
         sub = self.startPython(
             arguments=[
                 self.cmd,
+                "-v",
                 "-m",
                 self.style,
                 "-pub",
