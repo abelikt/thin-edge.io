@@ -17,9 +17,9 @@ Then we validate the data from C8y
 class Edge_test_network_down(Environment_Edge_Test_c8y):
     def setup(self):
         super().setup()
-        self.samples = "1000"
-        self.delay = "20"
-        self.timeslot = "30"
+        self.samples = "300"
+        self.delay = "100"
+        self.timeslot = "35"
         self.style = "JSON"
 
     def execute(self):
@@ -40,11 +40,11 @@ class Edge_test_network_down(Environment_Edge_Test_c8y):
                 stdouterr="ip_down",
             )
 
-            time.sleep(1)
+            time.sleep(5)
 
             connect = self.startProcess(
                 command=self.sudo,
-                arguments=["ip", "link", "set", inteface, "up"],
+                arguments=["ip", "link", "set", interface, "up"],
                 stdouterr="ip_up",
             )
 
