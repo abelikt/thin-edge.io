@@ -79,8 +79,8 @@ pub async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     if template == "flux" {
         tokio::spawn(publish_topic(mqtt, c8y_msg, wait, height, iterations));
-    } else if template == "stairs" {
-        tokio::spawn(publish_stairs(mqtt, c8y_msg, wait, height, iterations));
+   // } else if template == "stairs" {
+   //     tokio::spawn(publish_stairs(mqtt, c8y_msg, wait, height, iterations));
     } else if template == "sawmill" {
         tokio::spawn(publish_multi_topic(mqtt, c8y_msg, wait, height, iterations));
     } else {
@@ -139,7 +139,7 @@ async fn publish_topic(
     mqtt.disconnect().await?;
     Ok(())
 }
-
+/*
 async fn publish_stairs(
     mqtt: Client,
     c8y_msg: Topic,
@@ -173,7 +173,7 @@ async fn publish_stairs(
     mqtt.disconnect().await?;
     Ok(())
 }
-
+*/
 async fn publish_multi_topic(
     mqtt: Client,
     c8y_msg: Topic,
