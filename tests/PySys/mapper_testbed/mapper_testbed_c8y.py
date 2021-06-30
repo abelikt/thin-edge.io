@@ -3,6 +3,8 @@ import sys
 import time
 import jsonschema
 from pysys.basetest import BaseTest
+from pysys.constants import FAILED
+
 
 """
 Testbed for tedge mappers.
@@ -147,7 +149,11 @@ class MapperTestbedC8y(BaseTest):
         with open(self.output + "/tedge_sub.out", "r") as outfile:
             data = outfile.read()
             self.log.info(data)
-            self.c8y_json = json.loads(data)
+            try:
+                self.c8y_json = json.loads(data)
+            except json.JSONDecodeError:
+                self.c8y_json = None
+                self.addOutcome(FAILED)
             self.log.info(self.c8y_json)
 
         # open the error topic and read data into variable errors
@@ -155,7 +161,11 @@ class MapperTestbedC8y(BaseTest):
             data = outfile.read()
             self.log.info(data)
             if data:
-                self.errors = json.loads(data)
+                try:
+                    self.errors = json.loads(data)
+                except json.JSONDecodeError:
+                    self.errors = None
+                    self.addOutcome(FAILED)
                 self.log.info(self.errors)
             else:
                 self.errors = None
