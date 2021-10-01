@@ -33,9 +33,14 @@ Copy the dummy plugin to this path:
 
     /etc/tedge/sm-plugins/fruits
 
+    sudo cp target/debug/tedge_dummy_plugin     /etc/tedge/sm-plugins/fruits
+
+
 Copy file list-valid.0 to the following place:
 
     /tmp/.tedge_dummy_plugin/list-valid.0
+
+    cp tests/PySys/software-management-end-to-end/dummy-plugin-configuration/list-valid.0     /tmp/.tedge_dummy_plugin/list-valid.0
 
 Manual invocation e.g.:
 
