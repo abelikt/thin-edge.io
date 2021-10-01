@@ -104,6 +104,8 @@ class SoftwareManagement(EnvironmentC8y):
             "banana": "5494888",
             "cherry": "5495382",
             "watermelon": "5494510",
+            # docker
+            "alpine":"7991792"
         }
 
         if self.project.c8yswrepo:
