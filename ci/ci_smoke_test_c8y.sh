@@ -97,6 +97,8 @@ else
     echo "Your device: HIDDEN"
 fi
 
+# wait until C8y processes the certificate
+sleep 5
 
 echo "Connect again"
 sudo tedge connect c8y
