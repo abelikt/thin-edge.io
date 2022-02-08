@@ -1,0 +1,103 @@
+2022-02-04 17:39:36,147 INFO  ==============================================================
+2022-02-04 17:39:36,148 INFO  Id:    tedge_mapper_az_negative
+2022-02-04 17:39:36,149 INFO  Dir:   tedge_mapper_az/
+2022-02-04 17:39:36,149 INFO  Title: Validate the Azure Mapper that publishes an error message on tedge/errors when it receives an invalid JSON message on tedge/measurements
+2022-02-04 17:39:36,150 DEBUG Execution order hint: 0.0
+2022-02-04 17:39:36,150 INFO  ==============================================================
+2022-02-04 17:39:36,155 DEBUG Process parameters for sudo<tedge_mapper_az>
+  command line : /usr/bin/sudo systemctl start tedge-mapper-az
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-az
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_mapper_az.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_mapper_az.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 17:39:36,162 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 32180)
+2022-02-04 17:39:36,466 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-02-04 17:39:36,467 DEBUG --- test execute
+2022-02-04 17:39:36,468 DEBUG Process parameters for sudo<tedge_sub>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic tedge/errors
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : tedge/errors
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 17:39:36,474 INFO  Started sudo<tedge_sub> with process id 32188
+2022-02-04 17:39:36,578 DEBUG Process parameters for sudo<tedge_temp>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : tedge/measurements
+    arg #5     : {
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 17:39:36,584 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 32189)
+2022-02-04 17:39:36,838 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-02-04 17:39:36,840 DEBUG Process parameters for sudo<kill_out>
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 17:39:36,845 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 32194)
+2022-02-04 17:39:37,100 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-04 17:39:37,101 DEBUG --- test validate
+2022-02-04 17:39:37,101 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_sub.out
+2022-02-04 17:39:37,104 DEBUG Grep on input file tedge_sub.out successfully matched expression "Invalid JSON" with line: 'Invalid JSON: EOF while parsing an object at line 1 column 1: `{`\n'
+2022-02-04 17:39:37,104 INFO  Grep on input file tedge_sub.out ... passed
+2022-02-04 17:39:37,106 DEBUG --- test cleanup
+2022-02-04 17:39:37,106 INFO  
+2022-02-04 17:39:37,107 INFO  cleanup:
+2022-02-04 17:39:37,107 DEBUG Running registered cleanup function: <bound method TedgeMapperAzError.mapper_cleanup of <TedgeMapperAzError object at 0x752c1b90>>
+2022-02-04 17:39:37,108 INFO  mapper_cleanup
+2022-02-04 17:39:37,109 DEBUG Process parameters for sudo<tedge_mapper_az>
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-az
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-az
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_mapper_az.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_negative/Output/linux/tedge_mapper_az.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 17:39:37,115 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 32196)
+2022-02-04 17:39:37,419 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-02-04 17:39:37,420 DEBUG ProcessUser cleanup function done.
+2022-02-04 17:39:37,422 INFO  
+2022-02-04 17:39:37,423 INFO  Test duration: 1.28 secs
+2022-02-04 17:39:37,424 INFO  Test final outcome:  PASSED
+2022-02-04 17:39:37,424 INFO  

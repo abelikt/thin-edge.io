@@ -1,0 +1,47 @@
+2022-02-07 14:18:03,609 INFO  ==============================================================
+2022-02-07 14:18:03,610 INFO  Id:    apt_list_format
+2022-02-07 14:18:03,611 INFO  Dir:   plugin_apt/
+2022-02-07 14:18:03,611 INFO  Title: Validate apt plugin list output format
+2022-02-07 14:18:03,612 DEBUG Execution order hint: 0.0
+2022-02-07 14:18:03,612 INFO  ==============================================================
+2022-02-07 14:18:03,615 DEBUG --- test execute
+2022-02-07 14:18:03,617 DEBUG Process parameters for apt_plugin
+  command line : /etc/tedge/sm-plugins/apt list
+    arg #1     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux/apt_plugin.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux/apt_plugin.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:03,622 DEBUG Waiting up to 600 secs for process apt_plugin (pid 18201)
+2022-02-07 14:18:04,981 INFO  Executed apt_plugin, exit status 0
+2022-02-07 14:18:04,982 DEBUG Process parameters for dpkg-query<dpkg_query>
+  command line : /usr/bin/dpkg-query '--showformat=${Package}\t${Version}\n' --show dash
+    arg #1     : --showformat=${Package}\t${Version}\n
+    arg #2     : --show
+    arg #3     : dash
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux/dpkg_query.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux/dpkg_query.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:04,987 DEBUG Waiting up to 600 secs for process dpkg-query<dpkg_query> (pid 18206)
+2022-02-07 14:18:05,240 INFO  Executed dpkg-query<dpkg_query>, exit status 0
+2022-02-07 14:18:05,241 DEBUG --- test validate
+2022-02-07 14:18:05,243 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_list_format/Output/linux/apt_plugin.out
+2022-02-07 14:18:05,249 DEBUG Grep on input file apt_plugin.out successfully matched expression 'dash\t0.5.10.2-5' with line: 'dash\t0.5.10.2-5\n'
+2022-02-07 14:18:05,250 INFO  Grep on input file apt_plugin.out ... passed
+2022-02-07 14:18:05,253 DEBUG --- test cleanup
+2022-02-07 14:18:05,254 DEBUG ProcessUser cleanup function done.
+2022-02-07 14:18:05,256 INFO  
+2022-02-07 14:18:05,257 INFO  Test duration: 1.65 secs
+2022-02-07 14:18:05,257 INFO  Test final outcome:  PASSED
+2022-02-07 14:18:05,258 INFO  

@@ -1,0 +1,87 @@
+2022-02-07 14:00:30,387 INFO  ==============================================================
+2022-02-07 14:00:30,387 INFO  Id:    local_mqtt_pub_sub_with_sudo
+2022-02-07 14:00:30,388 INFO  Dir:   local_mqtt/
+2022-02-07 14:00:30,389 INFO  Title: Validate local publishing and subscribing
+2022-02-07 14:00:30,389 DEBUG Execution order hint: 0.0
+2022-02-07 14:00:30,390 INFO  ==============================================================
+2022-02-07 14:00:30,393 DEBUG --- test execute
+2022-02-07 14:00:30,395 DEBUG Process parameters for sudo<tedge_sub>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub atopic
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : atopic
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:00:30,399 INFO  Started sudo<tedge_sub> with process id 9354
+2022-02-07 14:00:30,502 DEBUG Process parameters for sudo<tedge_pub2>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub atopic amessage
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : atopic
+    arg #5     : amessage
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_pub2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_pub2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:00:30,507 DEBUG Waiting up to 600 secs for process sudo<tedge_pub2> (pid 9355)
+2022-02-07 14:00:30,811 INFO  Executed sudo<tedge_pub2>, exit status 0
+2022-02-07 14:00:30,813 DEBUG Process parameters for sudo<tedge_pub3>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub atopic 'the message'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : atopic
+    arg #5     : the message
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_pub3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_pub3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:00:30,819 DEBUG Waiting up to 600 secs for process sudo<tedge_pub3> (pid 9360)
+2022-02-07 14:00:31,124 INFO  Executed sudo<tedge_pub3>, exit status 0
+2022-02-07 14:00:32,127 DEBUG Process parameters for sudo<kill_out>
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:00:32,134 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 9363)
+2022-02-07 14:00:32,490 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-07 14:00:32,491 DEBUG --- test validate
+2022-02-07 14:00:32,491 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_sub.out
+2022-02-07 14:00:32,495 DEBUG Grep on input file tedge_sub.out successfully matched expression "amessage" with line: '[atopic] amessage\n'
+2022-02-07 14:00:32,496 INFO  Grep on input file tedge_sub.out ... passed
+2022-02-07 14:00:32,497 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_with_sudo/Output/linux/tedge_sub.out
+2022-02-07 14:00:32,499 DEBUG Grep on input file tedge_sub.out successfully matched expression "the message" with line: '[atopic] the message\n'
+2022-02-07 14:00:32,500 INFO  Grep on input file tedge_sub.out ... passed
+2022-02-07 14:00:32,505 DEBUG --- test cleanup
+2022-02-07 14:00:32,506 DEBUG ProcessUser cleanup function done.
+2022-02-07 14:00:32,508 INFO  
+2022-02-07 14:00:32,508 INFO  Test duration: 2.12 secs
+2022-02-07 14:00:32,509 INFO  Test final outcome:  PASSED
+2022-02-07 14:00:32,510 INFO  

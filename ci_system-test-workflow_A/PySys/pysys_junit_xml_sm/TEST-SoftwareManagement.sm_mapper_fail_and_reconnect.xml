@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite failures="1" name="SoftwareManagement.sm_mapper_fail_and_reconnect" skipped="0" tests="1" time="95.93" timestamp="2022-02-07T14:51:41">
+	<testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
+		<failure message="FAILED: Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; (+1 other failures)" type="FAILED"/>
+		<system-out>14:50:05 INFO  ==============================================================
+14:50:05 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
+14:50:05 INFO  Dir:   software_management_end_to_end/
+14:50:05 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
+14:50:05 DEBUG Execution order hint: 0.0
+14:50:05 INFO  ==============================================================
+14:50:05 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+14:50:05 INFO  Delaying execution by 8 seconds
+14:50:13 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 4290)
+14:50:25 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
+14:50:25 DEBUG Process parameters for sudo&lt;install&gt;
+  command line : /usr/bin/sudo /usr/bin/apt-get install rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : install
+    arg #3     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:25 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 4439)
+14:50:48 INFO  Executed sudo&lt;install&gt;, exit status 0, duration 23 secs
+14:50:48 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/us
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : c8y/s/us
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:48 INFO  Started sudo&lt;tedge_sub&gt; with process id 4594
+14:50:48 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/ds 528,tedge,rolldice,,,delete
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : c8y/s/ds
+    arg #5     : 528,tedge,rolldice,,,delete
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:48 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 4595)
+14:50:48 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
+14:50:48 DEBUG --- test execute
+14:50:50 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
+  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-mapper-sm-c8y.service
+    arg #1     : /usr/bin/systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-sm-c8y.service
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:50 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 4620)
+14:50:52 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
+14:50:52 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
+  command line : /usr/bin/mosquitto_sub -v -t tedge/commands/res/software/update
+    arg #1     : -v
+    arg #2     : -t
+    arg #3     : tedge/commands/res/software/update
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:50:52 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 4622
+14:51:07 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
+  command line : /usr/bin/sudo /usr/bin/systemctl restart tedge-mapper-sm-c8y.service
+    arg #1     : /usr/bin/systemctl
+    arg #2     : restart
+    arg #3     : tedge-mapper-sm-c8y.service
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:51:07 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 4626)
+14:51:07 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
+14:51:37 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge mosquitto_sub
+    arg #1     : killall
+    arg #2     : tedge
+    arg #3     : mosquitto_sub
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:51:37 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 4637)
+14:51:37 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+14:51:37 DEBUG --- test validate
+14:51:37 INFO  Validate
+14:51:37 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
+14:51:37 WARN  Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; ... failed [run.py:97]
+14:51:37 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
+14:51:37 WARN  Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot; ... failed [run.py:98]
+14:51:37 DEBUG --- test cleanup
+14:51:37 INFO  
+14:51:37 INFO  cleanup:
+14:51:37 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x75cb2150&gt;&gt;
+14:51:37 INFO  Stop sm-mapper and agent
+14:51:38 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+14:51:38 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 4642)
+14:51:41 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+14:51:41 DEBUG ProcessUser cleanup function done.
+14:51:41 INFO  
+14:51:41 INFO  Test duration: 95.93 secs
+14:51:41 INFO  Test final outcome:  FAILED
+14:51:41 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; (+1 other failures)
+14:51:41 INFO  
+</system-out>
+	</testcase>
+</testsuite>

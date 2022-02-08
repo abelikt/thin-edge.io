@@ -1,0 +1,64 @@
+2022-02-04 16:30:00,027 INFO  ==============================================================
+2022-02-04 16:30:00,028 INFO  Id:    local_mqtt_pub_fail_qos0
+2022-02-04 16:30:00,029 INFO  Dir:   local_mqtt/
+2022-02-04 16:30:00,029 INFO  Title: Check error code when mosquitto is not running with QoS set to 0
+2022-02-04 16:30:00,030 DEBUG Execution order hint: 0.0
+2022-02-04 16:30:00,030 INFO  ==============================================================
+2022-02-04 16:30:00,035 DEBUG Process parameters for sudo<stop>
+  command line : /usr/bin/sudo /usr/bin/systemctl stop mosquitto
+    arg #1     : /usr/bin/systemctl
+    arg #2     : stop
+    arg #3     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 16:30:00,039 DEBUG Waiting up to 600 secs for process sudo<stop> (pid 26472)
+2022-02-04 16:30:00,444 INFO  Executed sudo<stop>, exit status 0
+2022-02-04 16:30:00,444 DEBUG --- test execute
+2022-02-04 16:30:00,446 DEBUG Process parameters for tedge_pub_fail
+  command line : /usr/bin/tedge mqtt pub --qos 0 atopic amessage
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : --qos
+    arg #4     : 0
+    arg #5     : atopic
+    arg #6     : amessage
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/tedge_pub_fail.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/tedge_pub_fail.err
+  environment  : HOME=/home/pi
+2022-02-04 16:30:00,450 DEBUG Waiting up to 600 secs for process tedge_pub_fail (pid 26477)
+2022-02-04 16:30:00,704 INFO  Executed tedge_pub_fail, exit status 1
+2022-02-04 16:30:00,705 INFO  Assert that (value==1) with value=1 ... passed
+2022-02-04 16:30:00,706 DEBUG --- test validate
+2022-02-04 16:30:00,710 DEBUG --- test cleanup
+2022-02-04 16:30:00,711 INFO  
+2022-02-04 16:30:00,711 INFO  cleanup:
+2022-02-04 16:30:00,712 DEBUG Running registered cleanup function: <bound method PySysTest.mycleanup of <PySysTest object at 0x760516b0>>
+2022-02-04 16:30:00,713 DEBUG Process parameters for sudo<start>
+  command line : /usr/bin/sudo /usr/bin/systemctl start mosquitto
+    arg #1     : /usr/bin/systemctl
+    arg #2     : start
+    arg #3     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/start.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_fail_qos0/Output/linux/start.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-04 16:30:00,717 DEBUG Waiting up to 600 secs for process sudo<start> (pid 26479)
+2022-02-04 16:30:01,072 INFO  Executed sudo<start>, exit status 0
+2022-02-04 16:30:01,073 DEBUG ProcessUser cleanup function done.
+2022-02-04 16:30:01,075 INFO  
+2022-02-04 16:30:01,075 INFO  Test duration: 1.05 secs
+2022-02-04 16:30:01,076 INFO  Test final outcome:  PASSED
+2022-02-04 16:30:01,077 INFO  

@@ -1,0 +1,122 @@
+2022-02-07 14:18:00,144 INFO  ==============================================================
+2022-02-07 14:18:00,145 INFO  Id:    tedge_mapper_c8y_packet_threshold_size
+2022-02-07 14:18:00,146 INFO  Dir:   tedge_mapper_c8y/
+2022-02-07 14:18:00,147 INFO  Title: Validate the Cumulocity Mapper accepted threshold packet size when it receives a message on tedge/measurements
+2022-02-07 14:18:00,147 DEBUG Execution order hint: 0.0
+2022-02-07 14:18:00,148 INFO  ==============================================================
+2022-02-07 14:18:00,152 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+  command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:00,158 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 22001)
+2022-02-07 14:18:00,515 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-02-07 14:18:00,516 DEBUG --- test execute
+2022-02-07 14:18:00,517 DEBUG Process parameters for sudo<tedge_sub>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic tedge/errors
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : tedge/errors
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:00,524 INFO  Started sudo<tedge_sub> with process id 22009
+2022-02-07 14:18:00,628 DEBUG Process parameters for sudo<tedge_msg>
+  command line : /usr/bin/sudo dd if=/dev/zero of=/tmp/big_message.txt bs=10 count=1 seek=2048
+    arg #1     : dd
+    arg #2     : if=/dev/zero
+    arg #3     : of=/tmp/big_message.txt
+    arg #4     : bs=10
+    arg #5     : count=1
+    arg #6     : seek=2048
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_msg.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_msg.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:00,634 DEBUG Waiting up to 600 secs for process sudo<tedge_msg> (pid 22011)
+2022-02-07 14:18:00,939 INFO  Executed sudo<tedge_msg>, exit status 0
+2022-02-07 14:18:00,941 DEBUG Process parameters for sudo<tedge_pub>
+  command line : /usr/bin/sudo /usr/bin/mosquitto_pub -t tedge/measurements -f /tmp/big_message.txt
+    arg #1     : /usr/bin/mosquitto_pub
+    arg #2     : -t
+    arg #3     : tedge/measurements
+    arg #4     : -f
+    arg #5     : /tmp/big_message.txt
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_pub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:00,949 DEBUG Waiting up to 600 secs for process sudo<tedge_pub> (pid 22015)
+2022-02-07 14:18:01,254 INFO  Executed sudo<tedge_pub>, exit status 0
+2022-02-07 14:18:01,255 DEBUG Process parameters for sudo<kill_out>
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:01,261 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 22017)
+2022-02-07 14:18:01,566 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-07 14:18:01,567 DEBUG --- test validate
+2022-02-07 14:18:01,568 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_sub.out
+2022-02-07 14:18:01,575 DEBUG Grep on input file tedge_sub.out successfully matched expression "The input size 20489 is too big. The threshold is 16384." with line: 'The input size 20489 is too big. The threshold is 16384.\n'
+2022-02-07 14:18:01,576 INFO  Grep on input file tedge_sub.out ... passed
+2022-02-07 14:18:01,582 DEBUG --- test cleanup
+2022-02-07 14:18:01,583 INFO  
+2022-02-07 14:18:01,584 INFO  cleanup:
+2022-02-07 14:18:01,585 DEBUG Running registered cleanup function: <bound method TedgeMapperC8yThresholdPacketSize.mapper_cleanup of <TedgeMapperC8yThresholdPacketSize object at 0x75a7d4f0>>
+2022-02-07 14:18:01,585 INFO  mapper_cleanup
+2022-02-07 14:18:01,588 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:18:01,594 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 22019)
+2022-02-07 14:18:01,948 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-02-07 14:18:01,950 DEBUG ProcessUser cleanup function done.
+2022-02-07 14:18:01,952 INFO  
+2022-02-07 14:18:01,953 INFO  Test duration: 1.81 secs
+2022-02-07 14:18:01,954 INFO  Test final outcome:  PASSED
+2022-02-07 14:18:01,955 INFO  

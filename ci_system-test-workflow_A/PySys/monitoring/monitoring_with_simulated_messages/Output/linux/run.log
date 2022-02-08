@@ -1,0 +1,140 @@
+2022-02-07 14:03:12,001 INFO  ==============================================================
+2022-02-07 14:03:12,002 INFO  Id:    monitoring_with_simulated_messages
+2022-02-07 14:03:12,003 INFO  Dir:   monitoring/
+2022-02-07 14:03:12,003 INFO  Title: Validate the tedge dm agent messages that are produced from the simulated collectd messages
+2022-02-07 14:03:12,004 DEBUG Execution order hint: 0.0
+2022-02-07 14:03:12,004 INFO  ==============================================================
+2022-02-07 14:03:12,011 DEBUG Process parameters for sudo<collectd>
+  command line : /usr/bin/sudo systemctl stop collectd
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:12,016 DEBUG Waiting up to 600 secs for process sudo<collectd> (pid 14354)
+2022-02-07 14:03:12,320 INFO  Executed sudo<collectd>, exit status 0
+2022-02-07 14:03:12,321 DEBUG Process parameters for sudo<collectd_mapper>
+  command line : /usr/bin/sudo systemctl start tedge-mapper-collectd
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:12,327 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 14356)
+2022-02-07 14:03:12,631 INFO  Executed sudo<collectd_mapper>, exit status 0
+2022-02-07 14:03:12,632 DEBUG --- test execute
+2022-02-07 14:03:12,634 DEBUG Process parameters for sudo<tedge_sub>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic 'tedge/#'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : tedge/#
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:12,639 INFO  Started sudo<tedge_sub> with process id 14359
+2022-02-07 14:03:12,743 DEBUG Process parameters for sudo<tedge_temp>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1644242592.7419622:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1644242592.7419622:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:12,748 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 14365)
+2022-02-07 14:03:13,404 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-02-07 14:03:13,406 DEBUG Process parameters for sudo<tedge_pres>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1644242593.4052365:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1644242593.4052365:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:13,412 DEBUG Waiting up to 600 secs for process sudo<tedge_pres> (pid 14370)
+2022-02-07 14:03:13,717 INFO  Executed sudo<tedge_pres>, exit status 0
+2022-02-07 14:03:14,720 DEBUG Process parameters for sudo<kill_out>
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:14,726 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 14373)
+2022-02-07 14:03:15,030 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-07 14:03:15,031 DEBUG --- test validate
+2022-02-07 14:03:15,034 INFO  {"time":"2022-02-07T14:03:13.405236482+00:00","pressure":{"pres":500.5}}
+
+2022-02-07 14:03:15,055 WARN  Assert that (collectd_msg_validation_result == expected_result) with collectd_msg_validation_result=False, expected_result=True ... failed [run.py:87]
+2022-02-07 14:03:15,057 INFO     collectd_msg_validation_result: False
+2022-02-07 14:03:15,057 INFO                    expected_result: True
+2022-02-07 14:03:15,061 DEBUG --- test cleanup
+2022-02-07 14:03:15,062 INFO  
+2022-02-07 14:03:15,062 INFO  cleanup:
+2022-02-07 14:03:15,063 DEBUG Running registered cleanup function: <bound method MonitoringWithSimulatedMessages.monitoring_cleanup of <MonitoringWithSimulatedMessages object at 0x75cff6d0>>
+2022-02-07 14:03:15,063 INFO  monitoring_cleanup
+2022-02-07 14:03:15,064 DEBUG Process parameters for sudo<collectd_mapper>
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-collectd
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-07 14:03:15,069 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 14375)
+2022-02-07 14:03:15,424 INFO  Executed sudo<collectd_mapper>, exit status 0
+2022-02-07 14:03:15,425 DEBUG ProcessUser cleanup function done.
+2022-02-07 14:03:15,428 INFO  
+2022-02-07 14:03:15,429 INFO  Test duration: 3.43 secs
+2022-02-07 14:03:15,430 INFO  Test final outcome:  FAILED
+2022-02-07 14:03:15,431 INFO  Test outcome reason: Assert that (collectd_msg_validation_result == expected_result) with collectd_msg_validation_result=False, expected_result=True
+2022-02-07 14:03:15,432 INFO  
