@@ -1,10 +1,10 @@
-2022-02-07 14:18:02,011 INFO  ==============================================================
-2022-02-07 14:18:02,012 INFO  Id:    tedge_mapper_c8y_positive
-2022-02-07 14:18:02,012 INFO  Dir:   tedge_mapper_c8y/
-2022-02-07 14:18:02,013 INFO  Title: Validate the Cumulocity Mapper that publishes a Thin Edge JSON message on c8y/measurement/measurements/create when it receives a valid JSON message on tedge/measurements
-2022-02-07 14:18:02,013 DEBUG Execution order hint: 0.0
-2022-02-07 14:18:02,014 INFO  ==============================================================
-2022-02-07 14:18:02,018 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-02-09 11:26:49,430 INFO  ==============================================================
+2022-02-09 11:26:49,431 INFO  Id:    tedge_mapper_c8y_positive
+2022-02-09 11:26:49,431 INFO  Dir:   tedge_mapper_c8y/
+2022-02-09 11:26:49,432 INFO  Title: Validate the Cumulocity Mapper that publishes a Thin Edge JSON message on c8y/measurement/measurements/create when it receives a valid JSON message on tedge/measurements
+2022-02-09 11:26:49,432 DEBUG Execution order hint: 0.0
+2022-02-09 11:26:49,433 INFO  ==============================================================
+2022-02-09 11:26:49,440 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : start
@@ -18,10 +18,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:18:02,023 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 22021)
-2022-02-07 14:18:02,379 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-02-07 14:18:02,380 DEBUG --- test execute
-2022-02-07 14:18:02,382 DEBUG Process parameters for sudo<tedge_sub>
+2022-02-09 11:26:49,445 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 26433)
+2022-02-09 11:26:49,800 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-02-09 11:26:49,801 DEBUG --- test execute
+2022-02-09 11:26:49,802 DEBUG Process parameters for sudo<tedge_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic c8y/measurement/measurements/create
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -37,8 +37,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:18:02,388 INFO  Started sudo<tedge_sub> with process id 22030
-2022-02-07 14:18:02,492 DEBUG Process parameters for sudo<tedge_temp>
+2022-02-09 11:26:49,810 INFO  Started sudo<tedge_sub> with process id 26442
+2022-02-09 11:26:49,913 DEBUG Process parameters for sudo<tedge_temp>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -54,9 +54,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:18:02,497 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 22031)
-2022-02-07 14:18:02,802 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-02-07 14:18:02,804 DEBUG Process parameters for sudo<kill_out>
+2022-02-09 11:26:49,919 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 26443)
+2022-02-09 11:26:50,223 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-02-09 11:26:50,225 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -69,18 +69,18 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:18:02,812 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 22036)
-2022-02-07 14:18:03,117 INFO  Executed sudo<kill_out>, exit status 0
-2022-02-07 14:18:03,118 DEBUG --- test validate
-2022-02-07 14:18:03,121 INFO  Assert that (actual == expected) with actual="ThinEdgeMeasurement", expected="ThinEdgeMeasurement" ... passed
-2022-02-07 14:18:03,123 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
-2022-02-07 14:18:03,124 INFO  Assert that (actual == expected) with actual="2021-06-15T17:01:15.806181503+02:00", expected="2021-06-15T17:01:15.806181503+02:00" ... passed
-2022-02-07 14:18:03,129 DEBUG --- test cleanup
-2022-02-07 14:18:03,130 INFO  
-2022-02-07 14:18:03,130 INFO  cleanup:
-2022-02-07 14:18:03,131 DEBUG Running registered cleanup function: <bound method TedgeMapperC8y.mapper_cleanup of <TedgeMapperC8y object at 0x75a7d8b0>>
-2022-02-07 14:18:03,131 INFO  mapper_cleanup
-2022-02-07 14:18:03,132 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-02-09 11:26:50,233 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 26448)
+2022-02-09 11:26:50,538 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-09 11:26:50,539 DEBUG --- test validate
+2022-02-09 11:26:50,543 INFO  Assert that (actual == expected) with actual="ThinEdgeMeasurement", expected="ThinEdgeMeasurement" ... passed
+2022-02-09 11:26:50,545 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
+2022-02-09 11:26:50,546 INFO  Assert that (actual == expected) with actual="2021-06-15T17:01:15.806181503+02:00", expected="2021-06-15T17:01:15.806181503+02:00" ... passed
+2022-02-09 11:26:50,551 DEBUG --- test cleanup
+2022-02-09 11:26:50,552 INFO  
+2022-02-09 11:26:50,553 INFO  cleanup:
+2022-02-09 11:26:50,554 DEBUG Running registered cleanup function: <bound method TedgeMapperC8y.mapper_cleanup of <TedgeMapperC8y object at 0x75ca85b0>>
+2022-02-09 11:26:50,554 INFO  mapper_cleanup
+2022-02-09 11:26:50,555 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : stop
@@ -94,10 +94,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:18:03,139 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 22038)
-2022-02-07 14:18:03,462 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-02-07 14:18:03,463 DEBUG ProcessUser cleanup function done.
-2022-02-07 14:18:03,465 INFO  
-2022-02-07 14:18:03,465 INFO  Test duration: 1.45 secs
-2022-02-07 14:18:03,466 INFO  Test final outcome:  PASSED
-2022-02-07 14:18:03,466 INFO  
+2022-02-09 11:26:50,562 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 26450)
+2022-02-09 11:26:50,917 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-02-09 11:26:50,918 DEBUG ProcessUser cleanup function done.
+2022-02-09 11:26:50,919 INFO  
+2022-02-09 11:26:50,920 INFO  Test duration: 1.49 secs
+2022-02-09 11:26:50,920 INFO  Test final outcome:  PASSED
+2022-02-09 11:26:50,921 INFO  

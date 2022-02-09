@@ -1,10 +1,10 @@
-2022-02-07 14:57:18,747 INFO  ==============================================================
-2022-02-07 14:57:18,748 INFO  Id:    custom_init_system
-2022-02-07 14:57:18,749 INFO  Dir:   misc_features/
-2022-02-07 14:57:18,749 INFO  Title: Custom init system test
-2022-02-07 14:57:18,750 DEBUG Execution order hint: 0.0
-2022-02-07 14:57:18,750 INFO  ==============================================================
-2022-02-07 14:57:18,757 DEBUG Process parameters for sudo<copy_system_config>
+2022-02-09 12:05:46,587 INFO  ==============================================================
+2022-02-09 12:05:46,587 INFO  Id:    custom_init_system
+2022-02-09 12:05:46,588 INFO  Dir:   misc_features/
+2022-02-09 12:05:46,588 INFO  Title: Custom init system test
+2022-02-09 12:05:46,589 DEBUG Execution order hint: 0.0
+2022-02-09 12:05:46,589 INFO  ==============================================================
+2022-02-09 12:05:46,595 DEBUG Process parameters for sudo<copy_system_config>
   command line : /usr/bin/sudo cp /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/system.toml /etc/tedge/system.toml
     arg #1     : cp
     arg #2     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/system.toml
@@ -18,9 +18,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:18,763 DEBUG Waiting up to 600 secs for process sudo<copy_system_config> (pid 21806)
-2022-02-07 14:57:19,018 INFO  Executed sudo<copy_system_config>, exit status 0
-2022-02-07 14:57:19,020 DEBUG Process parameters for sudo<copy_dummy_init>
+2022-02-09 12:05:46,600 DEBUG Waiting up to 600 secs for process sudo<copy_system_config> (pid 30815)
+2022-02-09 12:05:46,853 INFO  Executed sudo<copy_system_config>, exit status 0
+2022-02-09 12:05:46,855 DEBUG Process parameters for sudo<copy_dummy_init>
   command line : /usr/bin/sudo cp -rfP /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/dummy_init /tmp
     arg #1     : cp
     arg #2     : -rfP
@@ -35,10 +35,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:19,025 DEBUG Waiting up to 600 secs for process sudo<copy_dummy_init> (pid 21808)
-2022-02-07 14:57:19,280 INFO  Executed sudo<copy_dummy_init>, exit status 0
-2022-02-07 14:57:19,280 DEBUG --- test execute
-2022-02-07 14:57:19,281 DEBUG Process parameters for sudo<tedge_connect>
+2022-02-09 12:05:46,859 DEBUG Waiting up to 600 secs for process sudo<copy_dummy_init> (pid 30817)
+2022-02-09 12:05:47,113 INFO  Executed sudo<copy_dummy_init>, exit status 0
+2022-02-09 12:05:47,114 DEBUG --- test execute
+2022-02-09 12:05:47,115 DEBUG Process parameters for sudo<tedge_connect>
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -52,9 +52,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:19,286 DEBUG Waiting up to 600 secs for process sudo<tedge_connect> (pid 21810)
-2022-02-07 14:57:44,782 INFO  Executed sudo<tedge_connect>, exit status 0, duration 25 secs
-2022-02-07 14:57:44,783 DEBUG Process parameters for sudo<tedge_disconnect>
+2022-02-09 12:05:47,120 DEBUG Waiting up to 600 secs for process sudo<tedge_connect> (pid 30819)
+2022-02-09 12:06:12,668 INFO  Executed sudo<tedge_connect>, exit status 0, duration 25 secs
+2022-02-09 12:06:12,670 DEBUG Process parameters for sudo<tedge_disconnect>
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -68,70 +68,70 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:44,788 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect> (pid 21841)
-2022-02-07 14:57:45,042 INFO  Executed sudo<tedge_disconnect>, exit status 0
-2022-02-07 14:57:45,043 DEBUG --- test validate
-2022-02-07 14:57:45,044 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/Output/linux/tedge_connect.out
-2022-02-07 14:57:45,046 INFO  Grep on input file tedge_connect.out ... passed
-2022-02-07 14:57:45,046 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/Output/linux/tedge_disconnect.out
-2022-02-07 14:57:45,048 INFO  Grep on input file tedge_disconnect.out ... passed
-2022-02-07 14:57:45,048 DEBUG Performing regex contains=False grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,049 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,050 DEBUG Performing regex contains=False grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,053 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,053 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,055 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "is_available" with line: 'is_available\n'
-2022-02-07 14:57:45,056 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,056 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,058 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart mosquitto" with line: 'restart mosquitto\n'
-2022-02-07 14:57:45,058 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,059 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,061 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable mosquitto" with line: 'enable mosquitto\n'
-2022-02-07 14:57:45,061 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,062 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,064 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-mapper-c8y" with line: 'restart tedge-mapper-c8y\n'
-2022-02-07 14:57:45,064 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,065 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,067 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-mapper-c8y" with line: 'enable tedge-mapper-c8y\n'
-2022-02-07 14:57:45,068 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,068 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,070 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-agent" with line: 'restart tedge-agent\n'
-2022-02-07 14:57:45,071 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,072 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,075 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-agent" with line: 'enable tedge-agent\n'
-2022-02-07 14:57:45,076 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,077 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,079 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-mapper-sm-c8y" with line: 'restart tedge-mapper-sm-c8y\n'
-2022-02-07 14:57:45,080 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,080 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,082 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-mapper-sm-c8y" with line: 'enable tedge-mapper-sm-c8y\n'
-2022-02-07 14:57:45,083 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,084 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,086 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "is-active mosquitto" with line: 'is-active mosquitto\n'
-2022-02-07 14:57:45,086 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,087 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,089 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-mapper-c8y" with line: 'stop tedge-mapper-c8y\n'
-2022-02-07 14:57:45,090 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,091 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,093 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-mapper-c8y" with line: 'disable tedge-mapper-c8y\n'
-2022-02-07 14:57:45,094 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,094 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,096 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-mapper-sm-c8y" with line: 'stop tedge-mapper-sm-c8y\n'
-2022-02-07 14:57:45,097 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,098 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,100 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-mapper-sm-c8y" with line: 'disable tedge-mapper-sm-c8y\n'
-2022-02-07 14:57:45,101 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,101 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,103 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-agent" with line: 'stop tedge-agent\n'
-2022-02-07 14:57:45,104 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,105 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
-2022-02-07 14:57:45,106 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-agent" with line: 'disable tedge-agent\n'
-2022-02-07 14:57:45,107 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
-2022-02-07 14:57:45,109 DEBUG --- test cleanup
-2022-02-07 14:57:45,109 INFO  
-2022-02-07 14:57:45,110 INFO  cleanup:
-2022-02-07 14:57:45,110 DEBUG Running registered cleanup function: <bound method CustomInitSystem.custom_cleanup of <CustomInitSystem object at 0x75405910>>
-2022-02-07 14:57:45,111 DEBUG Process parameters for sudo<remove_system_config>
+2022-02-09 12:06:12,679 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect> (pid 30833)
+2022-02-09 12:06:12,934 INFO  Executed sudo<tedge_disconnect>, exit status 0
+2022-02-09 12:06:12,934 DEBUG --- test validate
+2022-02-09 12:06:12,935 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/Output/linux/tedge_connect.out
+2022-02-09 12:06:12,936 INFO  Grep on input file tedge_connect.out ... passed
+2022-02-09 12:06:12,937 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/custom_init_system/Output/linux/tedge_disconnect.out
+2022-02-09 12:06:12,938 INFO  Grep on input file tedge_disconnect.out ... passed
+2022-02-09 12:06:12,938 DEBUG Performing regex contains=False grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,939 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,940 DEBUG Performing regex contains=False grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,942 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,943 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,944 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "is_available" with line: 'is_available\n'
+2022-02-09 12:06:12,945 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,945 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,946 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart mosquitto" with line: 'restart mosquitto\n'
+2022-02-09 12:06:12,947 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,947 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,949 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable mosquitto" with line: 'enable mosquitto\n'
+2022-02-09 12:06:12,949 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,950 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,951 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-mapper-c8y" with line: 'restart tedge-mapper-c8y\n'
+2022-02-09 12:06:12,952 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,952 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,954 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-mapper-c8y" with line: 'enable tedge-mapper-c8y\n'
+2022-02-09 12:06:12,954 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,955 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,956 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-agent" with line: 'restart tedge-agent\n'
+2022-02-09 12:06:12,957 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,957 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,959 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-agent" with line: 'enable tedge-agent\n'
+2022-02-09 12:06:12,959 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,960 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,961 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "restart tedge-mapper-sm-c8y" with line: 'restart tedge-mapper-sm-c8y\n'
+2022-02-09 12:06:12,962 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,962 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,964 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "enable tedge-mapper-sm-c8y" with line: 'enable tedge-mapper-sm-c8y\n'
+2022-02-09 12:06:12,965 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,965 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,966 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "is-active mosquitto" with line: 'is-active mosquitto\n'
+2022-02-09 12:06:12,967 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,967 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,969 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-mapper-c8y" with line: 'stop tedge-mapper-c8y\n'
+2022-02-09 12:06:12,969 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,970 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,971 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-mapper-c8y" with line: 'disable tedge-mapper-c8y\n'
+2022-02-09 12:06:12,972 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,972 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,974 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-mapper-sm-c8y" with line: 'stop tedge-mapper-sm-c8y\n'
+2022-02-09 12:06:12,974 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,975 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,976 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-mapper-sm-c8y" with line: 'disable tedge-mapper-sm-c8y\n'
+2022-02-09 12:06:12,977 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,977 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,979 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "stop tedge-agent" with line: 'stop tedge-agent\n'
+2022-02-09 12:06:12,979 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,980 DEBUG Performing regex contains=True grep on file: /tmp/dummy_init/dummy_init.out
+2022-02-09 12:06:12,981 DEBUG Grep on input file /tmp/dummy_init/dummy_init.out successfully matched expression "disable tedge-agent" with line: 'disable tedge-agent\n'
+2022-02-09 12:06:12,982 INFO  Grep on input file /tmp/dummy_init/dummy_init.out ... passed
+2022-02-09 12:06:12,983 DEBUG --- test cleanup
+2022-02-09 12:06:12,983 INFO  
+2022-02-09 12:06:12,984 INFO  cleanup:
+2022-02-09 12:06:12,984 DEBUG Running registered cleanup function: <bound method CustomInitSystem.custom_cleanup of <CustomInitSystem object at 0x7528bc90>>
+2022-02-09 12:06:12,985 DEBUG Process parameters for sudo<remove_system_config>
   command line : /usr/bin/sudo rm -f /etc/tedge/system.toml
     arg #1     : rm
     arg #2     : -f
@@ -145,9 +145,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:45,117 DEBUG Waiting up to 600 secs for process sudo<remove_system_config> (pid 21852)
-2022-02-07 14:57:45,321 INFO  Executed sudo<remove_system_config>, exit status 0
-2022-02-07 14:57:45,322 DEBUG Process parameters for sudo<remove_dummy_init>
+2022-02-09 12:06:12,989 DEBUG Waiting up to 600 secs for process sudo<remove_system_config> (pid 30844)
+2022-02-09 12:06:13,192 INFO  Executed sudo<remove_system_config>, exit status 0
+2022-02-09 12:06:13,193 DEBUG Process parameters for sudo<remove_dummy_init>
   command line : /usr/bin/sudo rm -rf /tmp/dummy_init
     arg #1     : rm
     arg #2     : -rf
@@ -161,10 +161,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-07 14:57:45,329 DEBUG Waiting up to 600 secs for process sudo<remove_dummy_init> (pid 21854)
-2022-02-07 14:57:45,583 INFO  Executed sudo<remove_dummy_init>, exit status 0
-2022-02-07 14:57:45,584 DEBUG ProcessUser cleanup function done.
-2022-02-07 14:57:45,586 INFO  
-2022-02-07 14:57:45,586 INFO  Test duration: 26.83 secs
-2022-02-07 14:57:45,587 INFO  Test final outcome:  PASSED
-2022-02-07 14:57:45,588 INFO  
+2022-02-09 12:06:13,198 DEBUG Waiting up to 600 secs for process sudo<remove_dummy_init> (pid 30846)
+2022-02-09 12:06:13,401 INFO  Executed sudo<remove_dummy_init>, exit status 0
+2022-02-09 12:06:13,402 DEBUG ProcessUser cleanup function done.
+2022-02-09 12:06:13,403 INFO  
+2022-02-09 12:06:13,404 INFO  Test duration: 26.81 secs
+2022-02-09 12:06:13,404 INFO  Test final outcome:  PASSED
+2022-02-09 12:06:13,405 INFO  
