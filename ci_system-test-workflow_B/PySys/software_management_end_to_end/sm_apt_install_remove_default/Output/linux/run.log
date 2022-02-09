@@ -1,17 +1,218 @@
-2022-02-09 11:42:04,955 INFO  ==============================================================
-2022-02-09 11:42:04,956 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
-2022-02-09 11:42:04,957 INFO  Dir:   software_management_end_to_end/
-2022-02-09 11:42:04,957 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
-2022-02-09 11:42:04,957 DEBUG Execution order hint: 0.0
-2022-02-09 11:42:04,958 INFO  ==============================================================
-2022-02-09 11:42:04,961 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-2022-02-09 11:42:04,962 DEBUG EnvironmentC8y Setup
-2022-02-09 11:42:04,969 WARN  Device ID is not set. Set with the env variable C8YDEVICEID ... failed 
-2022-02-09 11:42:04,969 WARN  Aborted test due to FAILED outcome
-2022-02-09 11:42:04,972 DEBUG --- test cleanup
-2022-02-09 11:42:04,973 DEBUG ProcessUser cleanup function done.
-2022-02-09 11:42:04,975 INFO  
-2022-02-09 11:42:04,975 INFO  Test duration: 0.03 secs
-2022-02-09 11:42:04,976 INFO  Test final outcome:  FAILED
-2022-02-09 11:42:04,976 INFO  Test outcome reason: Device ID is not set. Set with the env variable C8YDEVICEID
-2022-02-09 11:42:04,977 INFO  
+2022-02-09 15:17:50,675 INFO  ==============================================================
+2022-02-09 15:17:50,675 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
+2022-02-09 15:17:50,676 INFO  Dir:   software_management_end_to_end/
+2022-02-09 15:17:50,677 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
+2022-02-09 15:17:50,677 DEBUG Execution order hint: 0.0
+2022-02-09 15:17:50,678 INFO  ==============================================================
+2022-02-09 15:17:50,691 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+2022-02-09 15:17:50,692 DEBUG EnvironmentC8y Setup
+2022-02-09 15:17:50,693 INFO  EnvironmentC8y Setup
+2022-02-09 15:17:50,694 DEBUG Process parameters for systemctl<serv_mapper1>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:17:50,700 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper1> (pid 19617)
+2022-02-09 15:17:51,005 INFO  Executed systemctl<serv_mapper1>, exit status 3
+2022-02-09 15:17:51,084 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+2022-02-09 15:17:51,085 INFO  Delaying execution by 8 seconds
+2022-02-09 15:17:59,095 DEBUG Process parameters for sudo<tedge_connect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:17:59,104 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y> (pid 19621)
+2022-02-09 15:18:10,494 INFO  Executed sudo<tedge_connect_c8y>, exit status 0, duration 11 secs
+2022-02-09 15:18:10,498 DEBUG Process parameters for sudo<tedge_connect_c8y_test>
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:18:10,509 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y_test> (pid 19773)
+2022-02-09 15:18:10,868 INFO  Executed sudo<tedge_connect_c8y_test>, exit status 0
+2022-02-09 15:18:10,870 DEBUG Process parameters for systemctl<serv_mosq2>
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:18:10,876 DEBUG Waiting up to 600 secs for process systemctl<serv_mosq2> (pid 19789)
+2022-02-09 15:18:11,132 INFO  Executed systemctl<serv_mosq2>, exit status 0
+2022-02-09 15:18:11,133 DEBUG Process parameters for systemctl<serv_mapper3>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:18:11,138 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper3> (pid 19795)
+2022-02-09 15:18:11,393 INFO  Executed systemctl<serv_mapper3>, exit status 0
+2022-02-09 15:18:13,545 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14004578&pageSize=1&revert=true&dateFrom=1970-01-01T00%3A00%3A00.000Z
+2022-02-09 15:18:13,548 INFO  State of current operation: SUCCESSFUL
+2022-02-09 15:18:13,703 INFO  Assert that (False == value) with value=False ... passed
+2022-02-09 15:18:13,704 DEBUG --- test execute
+2022-02-09 15:18:13,874 INFO  Response status: 201
+2022-02-09 15:18:13,875 INFO  Response to action: {
+    "creationTime": "2022-02-09T15:18:13.836Z",
+    "deviceId": "14004578",
+    "deviceName": "offsiteb",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14019526",
+    "id": "14019526",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'install'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": " ",
+            "url": ""
+        }
+    ]
+}
+2022-02-09 15:18:13,876 INFO  Started operation: {'creationTime': '2022-02-09T15:18:13.836Z', 'deviceId': '14004578', 'deviceName': 'offsiteb', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14019526', 'id': '14019526', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': ' ', 'url': ''}]}
+2022-02-09 15:18:16,036 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:18,173 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:20,309 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:22,926 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:25,567 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:27,785 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:30,210 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:32,358 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:34,610 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:36,820 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:39,116 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:41,380 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:43,948 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:46,091 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:48,345 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:51,021 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:53,167 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:55,329 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:57,610 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:18:59,754 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:19:01,906 INFO  State of operation 14019526 : EXECUTING
+2022-02-09 15:19:04,066 INFO  State of operation 14019526 : SUCCESSFUL
+2022-02-09 15:19:04,239 INFO  Package rolldice is installed
+2022-02-09 15:19:04,241 INFO  Assert that (True == value) with value=True ... passed
+2022-02-09 15:19:04,402 INFO  Response status: 201
+2022-02-09 15:19:04,403 INFO  Response to action: {
+    "creationTime": "2022-02-09T15:19:04.369Z",
+    "deviceId": "14004578",
+    "deviceName": "offsiteb",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14019538",
+    "id": "14019538",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'delete'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "delete",
+            "id": "5152439",
+            "version": " ",
+            "url": ""
+        }
+    ]
+}
+2022-02-09 15:19:04,404 INFO  Started operation: {'creationTime': '2022-02-09T15:19:04.369Z', 'deviceId': '14004578', 'deviceName': 'offsiteb', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14019538', 'id': '14019538', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'delete'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'delete', 'id': '5152439', 'version': ' ', 'url': ''}]}
+2022-02-09 15:19:06,567 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:08,703 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:10,846 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:13,429 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:15,851 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:18,295 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:20,615 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:22,760 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:24,969 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:27,197 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:29,453 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:32,048 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:34,240 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:36,512 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:38,653 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:40,828 INFO  State of operation 14019538 : EXECUTING
+2022-02-09 15:19:42,990 INFO  State of operation 14019538 : SUCCESSFUL
+2022-02-09 15:19:42,991 DEBUG --- test validate
+2022-02-09 15:19:43,197 INFO  Assert that (False == value) with value=False ... passed
+2022-02-09 15:19:43,206 DEBUG --- test cleanup
+2022-02-09 15:19:43,207 INFO  
+2022-02-09 15:19:43,207 INFO  cleanup:
+2022-02-09 15:19:43,208 DEBUG Running registered cleanup function: <bound method SoftwareManagement.mysmcleanup of <PySysTest object at 0x760e4d90>>
+2022-02-09 15:19:43,208 DEBUG Running registered cleanup function: <bound method EnvironmentC8y.myenvcleanup of <PySysTest object at 0x760e4d90>>
+2022-02-09 15:19:43,208 DEBUG EnvironmentC8y Cleanup
+2022-02-09 15:19:43,302 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:19:43,308 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 20279)
+2022-02-09 15:19:46,476 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-02-09 15:19:46,477 DEBUG Process parameters for systemctl<serv_mapper5>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-09 15:19:46,482 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper5> (pid 20338)
+2022-02-09 15:19:46,788 INFO  Executed systemctl<serv_mapper5>, exit status 3
+2022-02-09 15:19:46,789 DEBUG ProcessUser cleanup function done.
+2022-02-09 15:19:46,792 INFO  
+2022-02-09 15:19:46,792 INFO  Test duration: 116.13 secs
+2022-02-09 15:19:46,793 INFO  Test final outcome:  PASSED
+2022-02-09 15:19:46,794 INFO  

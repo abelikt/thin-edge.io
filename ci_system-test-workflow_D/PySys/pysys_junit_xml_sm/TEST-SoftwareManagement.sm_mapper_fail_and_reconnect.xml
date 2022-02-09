@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="1" name="SoftwareManagement.sm_mapper_fail_and_reconnect" skipped="0" tests="1" time="94.18" timestamp="2022-02-09T11:43:33">
+<testsuite failures="1" name="SoftwareManagement.sm_mapper_fail_and_reconnect" skipped="0" tests="1" time="93.87" timestamp="2022-02-09T15:32:47">
 	<testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
 		<failure message="FAILED: Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; (+1 other failures)" type="FAILED"/>
-		<system-out>11:41:59 INFO  ==============================================================
-11:41:59 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
-11:41:59 INFO  Dir:   software_management_end_to_end/
-11:41:59 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
-11:41:59 DEBUG Execution order hint: 0.0
-11:41:59 INFO  ==============================================================
-11:41:59 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+		<system-out>15:31:14 INFO  ==============================================================
+15:31:14 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
+15:31:14 INFO  Dir:   software_management_end_to_end/
+15:31:14 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
+15:31:14 DEBUG Execution order hint: 0.0
+15:31:14 INFO  ==============================================================
+15:31:14 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+15:31:14 INFO  Delaying execution by 7 seconds
+15:31:21 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -22,9 +24,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:41:59 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 2393)
-11:42:15 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 15 secs
-11:42:15 DEBUG Process parameters for sudo&lt;install&gt;
+15:31:21 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 30095)
+15:31:32 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
+15:31:32 DEBUG Process parameters for sudo&lt;install&gt;
   command line : /usr/bin/sudo /usr/bin/apt-get install rolldice
     arg #1     : /usr/bin/apt-get
     arg #2     : install
@@ -38,9 +40,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:15 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 2542)
-11:42:40 INFO  Executed sudo&lt;install&gt;, exit status 0, duration 25 secs
-11:42:40 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+15:31:32 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 30241)
+15:31:55 INFO  Executed sudo&lt;install&gt;, exit status 0, duration 22 secs
+15:31:55 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/us
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -55,8 +57,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:40 INFO  Started sudo&lt;tedge_sub&gt; with process id 2696
-11:42:40 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
+15:31:55 INFO  Started sudo&lt;tedge_sub&gt; with process id 30393
+15:31:55 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/ds 528,tedge,rolldice,,,delete
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -72,10 +74,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:40 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 2697)
-11:42:41 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
-11:42:41 DEBUG --- test execute
-11:42:43 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
+15:31:55 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 30394)
+15:31:55 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
+15:31:55 DEBUG --- test execute
+15:31:57 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
   command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-mapper-sm-c8y.service
     arg #1     : /usr/bin/systemctl
     arg #2     : stop
@@ -89,9 +91,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:43 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 2708)
-11:42:44 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
-11:42:44 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
+15:31:57 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 30405)
+15:31:58 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
+15:31:58 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
   command line : /usr/bin/mosquitto_sub -v -t tedge/commands/res/software/update
     arg #1     : -v
     arg #2     : -t
@@ -105,8 +107,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:44 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 2711
-11:42:59 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
+15:31:58 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 30407
+15:32:13 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
   command line : /usr/bin/sudo /usr/bin/systemctl restart tedge-mapper-sm-c8y.service
     arg #1     : /usr/bin/systemctl
     arg #2     : restart
@@ -120,9 +122,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:42:59 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 2714)
-11:42:59 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
-11:43:29 DEBUG Process parameters for sudo&lt;kill_out&gt;
+15:32:13 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 30411)
+15:32:14 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
+15:32:44 DEBUG Process parameters for sudo&lt;kill_out&gt;
   command line : /usr/bin/sudo killall tedge mosquitto_sub
     arg #1     : killall
     arg #2     : tedge
@@ -136,20 +138,20 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:43:29 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 2729)
-11:43:30 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-11:43:30 DEBUG --- test validate
-11:43:30 INFO  Validate
-11:43:30 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-11:43:30 WARN  Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; ... failed [run.py:97]
-11:43:30 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-11:43:30 WARN  Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot; ... failed [run.py:98]
-11:43:30 DEBUG --- test cleanup
-11:43:30 INFO  
-11:43:30 INFO  cleanup:
-11:43:30 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x75c87ff0&gt;&gt;
-11:43:30 INFO  Stop sm-mapper and agent
-11:43:30 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+15:32:44 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 30421)
+15:32:44 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+15:32:44 DEBUG --- test validate
+15:32:44 INFO  Validate
+15:32:44 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
+15:32:44 WARN  Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; ... failed [run.py:97]
+15:32:44 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
+15:32:44 WARN  Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot; ... failed [run.py:98]
+15:32:44 DEBUG --- test cleanup
+15:32:44 INFO  
+15:32:44 INFO  cleanup:
+15:32:44 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x75c91a30&gt;&gt;
+15:32:44 INFO  Stop sm-mapper and agent
+15:32:44 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -163,14 +165,14 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-11:43:30 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 2734)
-11:43:33 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-11:43:33 DEBUG ProcessUser cleanup function done.
-11:43:33 INFO  
-11:43:33 INFO  Test duration: 94.18 secs
-11:43:33 INFO  Test final outcome:  FAILED
-11:43:33 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; (+1 other failures)
-11:43:33 INFO  
+15:32:44 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 30426)
+15:32:47 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+15:32:47 DEBUG ProcessUser cleanup function done.
+15:32:47 INFO  
+15:32:47 INFO  Test duration: 93.87 secs
+15:32:47 INFO  Test final outcome:  FAILED
+15:32:47 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;501,c8y_SoftwareUpdate&quot; (+1 other failures)
+15:32:47 INFO  
 </system-out>
 	</testcase>
 </testsuite>
