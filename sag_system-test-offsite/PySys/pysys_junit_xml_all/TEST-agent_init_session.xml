@@ -1,4 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="agent_init_session" skipped="0" tests="1" time="4.34" timestamp="2022-02-09T07:09:56">
-	<testcase classname="AgentInitSession" name="agent_init_session"/>
+<testsuite failures="1" name="agent_init_session" skipped="0" tests="1" time="4.35" timestamp="2022-02-14T13:45:31">
+	<testcase classname="AgentInitSession" name="agent_init_session">
+		<failure message="FAILED: Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot;" type="FAILED"/>
+		<system-out>13:45:27 INFO  ==============================================================
+13:45:27 INFO  Id:    agent_init_session
+13:45:27 INFO  Dir:   tedge_agent/
+13:45:27 INFO  Title: Validate tedge agent init session feature
+13:45:27 DEBUG Execution order hint: 0.0
+13:45:27 INFO  ==============================================================
+13:45:27 DEBUG Process parameters for sudo&lt;remove_lock&gt;
+  command line : /usr/bin/sudo rm -rf /var/lock/tedge_agent.lock
+    arg #1     : rm
+    arg #2     : -rf
+    arg #3     : /var/lock/tedge_agent.lock
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/remove_lock.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/remove_lock.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:27 DEBUG Waiting up to 600 secs for process sudo&lt;remove_lock&gt; (pid 30663)
+13:45:27 INFO  Executed sudo&lt;remove_lock&gt;, exit status 0
+13:45:27 DEBUG --- test execute
+13:45:27 DEBUG Process parameters for sudo&lt;agent_clear&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge_agent --clear
+    arg #1     : /usr/bin/tedge_agent
+    arg #2     : --clear
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_clear.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_clear.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:27 DEBUG Waiting up to 600 secs for process sudo&lt;agent_clear&gt; (pid 30665)
+13:45:28 INFO  Executed sudo&lt;agent_clear&gt;, exit status 0
+13:45:28 DEBUG Process parameters for sudo&lt;agent_init&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge_agent --init
+    arg #1     : /usr/bin/tedge_agent
+    arg #2     : --init
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_init.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_init.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:28 DEBUG Waiting up to 600 secs for process sudo&lt;agent_init&gt; (pid 30672)
+13:45:28 INFO  Executed sudo&lt;agent_init&gt;, exit status 0
+13:45:28 DEBUG Process parameters for sudo&lt;pub_req&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub --qos 1 tedge/commands/req/software/list '{&quot;id&quot;:&quot;Ld3KgqpcLDlrYH6sfpG7w&quot;}'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : --qos
+    arg #5     : 1
+    arg #6     : tedge/commands/req/software/list
+    arg #7     : {&quot;id&quot;:&quot;Ld3KgqpcLDlrYH6sfpG7w&quot;}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/pub_req.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/pub_req.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:28 DEBUG Waiting up to 600 secs for process sudo&lt;pub_req&gt; (pid 30679)
+13:45:28 INFO  Executed sudo&lt;pub_req&gt;, exit status 0
+13:45:28 DEBUG Process parameters for sudo&lt;sub_resp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub tedge/commands/res/software/list
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : tedge/commands/res/software/list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_resp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_resp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:28 INFO  Started sudo&lt;sub_resp&gt; with process id 30682
+13:45:28 DEBUG Process parameters for sudo&lt;agent_start&gt;
+  command line : /usr/bin/sudo /usr/bin/systemctl start tedge-agent
+    arg #1     : /usr/bin/systemctl
+    arg #2     : start
+    arg #3     : tedge-agent
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_start.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_start.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:28 DEBUG Waiting up to 600 secs for process sudo&lt;agent_start&gt; (pid 30683)
+13:45:29 INFO  Executed sudo&lt;agent_start&gt;, exit status 0
+13:45:29 INFO  Waiting for 2.0 seconds
+13:45:31 DEBUG Process parameters for sudo&lt;agent_stop&gt;
+  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-agent
+    arg #1     : /usr/bin/systemctl
+    arg #2     : stop
+    arg #3     : tedge-agent
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:31 DEBUG Waiting up to 600 secs for process sudo&lt;agent_stop&gt; (pid 30707)
+13:45:31 INFO  Executed sudo&lt;agent_stop&gt;, exit status 0
+13:45:31 DEBUG Process parameters for sudo&lt;sub_stop&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:45:31 DEBUG Waiting up to 600 secs for process sudo&lt;sub_stop&gt; (pid 30709)
+13:45:31 INFO  Executed sudo&lt;sub_stop&gt;, exit status 0
+13:45:31 DEBUG --- test validate
+13:45:31 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_resp.out
+13:45:31 WARN  Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot; ... failed [run.py:78]
+13:45:31 DEBUG --- test cleanup
+13:45:31 DEBUG ProcessUser cleanup function done.
+13:45:31 INFO  
+13:45:31 INFO  Test duration: 4.35 secs
+13:45:31 INFO  Test final outcome:  FAILED
+13:45:31 INFO  Test outcome reason: Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot;
+13:45:31 INFO  
+</system-out>
+	</testcase>
 </testsuite>
