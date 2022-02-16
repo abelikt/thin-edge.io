@@ -1,15 +1,137 @@
-2022-02-14 08:50:58,897 INFO  ==============================================================
-2022-02-14 08:50:58,898 INFO  Id:    apt_sequence_remove
-2022-02-14 08:50:58,898 INFO  Dir:   plugin_apt/
-2022-02-14 08:50:58,899 INFO  Title: Validate apt plugin prepare install remove finalize use case
-2022-02-14 08:50:58,899 DEBUG Execution order hint: 0.0
-2022-02-14 08:50:58,900 INFO  ==============================================================
-2022-02-14 08:50:58,903 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-2022-02-14 08:50:58,904 WARN  Aborted test due to SKIPPED outcome
-2022-02-14 08:50:58,914 DEBUG --- test cleanup
-2022-02-14 08:50:58,915 DEBUG ProcessUser cleanup function done.
-2022-02-14 08:50:58,916 INFO  
-2022-02-14 08:50:58,916 INFO  Test duration: 0.02 secs
-2022-02-14 08:50:58,917 INFO  Test final outcome:  SKIPPED
-2022-02-14 08:50:58,917 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-2022-02-14 08:50:58,918 INFO  
+2022-02-15 21:43:08,034 INFO  ==============================================================
+2022-02-15 21:43:08,035 INFO  Id:    apt_sequence_remove
+2022-02-15 21:43:08,036 INFO  Dir:   plugin_apt/
+2022-02-15 21:43:08,036 INFO  Title: Validate apt plugin prepare install remove finalize use case
+2022-02-15 21:43:08,037 DEBUG Execution order hint: 0.0
+2022-02-15 21:43:08,037 INFO  ==============================================================
+2022-02-15 21:43:08,042 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/apt-get install -y rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : install
+    arg #3     : -y
+    arg #4     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:43:08,046 DEBUG Waiting up to 600 secs for process sudo (pid 15988)
+2022-02-15 21:43:35,566 INFO  Executed sudo, exit status 0, duration 27 secs
+2022-02-15 21:43:35,568 DEBUG Process parameters for sudo<outp_check_0>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:43:35,572 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 16104)
+2022-02-15 21:43:39,744 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-02-15 21:43:39,746 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:43:39,747 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.out
+2022-02-15 21:43:39,751 DEBUG Grep on input file outp_check_0.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
+2022-02-15 21:43:39,752 INFO  Grep on input file outp_check_0.out ... passed
+2022-02-15 21:43:39,753 DEBUG --- test execute
+2022-02-15 21:43:39,755 DEBUG Process parameters for sudo<outp_prepare>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt prepare
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : prepare
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_prepare.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_prepare.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:43:39,761 DEBUG Waiting up to 600 secs for process sudo<outp_prepare> (pid 16110)
+2022-02-15 21:43:52,175 INFO  Executed sudo<outp_prepare>, exit status 0, duration 12 secs
+2022-02-15 21:43:52,178 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:43:52,183 DEBUG Process parameters for sudo<outp_remove>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt remove rolldice
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : remove
+    arg #3     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_remove.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_remove.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:43:52,190 DEBUG Waiting up to 600 secs for process sudo<outp_remove> (pid 16215)
+2022-02-15 21:44:08,100 INFO  Executed sudo<outp_remove>, exit status 0, duration 15 secs
+2022-02-15 21:44:08,102 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:44:08,105 DEBUG Process parameters for sudo<outp_finalize>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt finalize
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : finalize
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_finalize.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_finalize.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:44:08,111 DEBUG Waiting up to 600 secs for process sudo<outp_finalize> (pid 16253)
+2022-02-15 21:44:13,690 INFO  Executed sudo<outp_finalize>, exit status 0
+2022-02-15 21:44:13,691 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:44:13,692 DEBUG --- test validate
+2022-02-15 21:44:13,695 DEBUG Process parameters for sudo<outp_check_1>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:44:13,701 DEBUG Waiting up to 600 secs for process sudo<outp_check_1> (pid 16259)
+2022-02-15 21:44:15,160 INFO  Executed sudo<outp_check_1>, exit status 0
+2022-02-15 21:44:15,162 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:44:15,163 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.out
+2022-02-15 21:44:15,169 INFO  Grep on input file outp_check_1.out ... passed
+2022-02-15 21:44:15,175 DEBUG --- test cleanup
+2022-02-15 21:44:15,176 INFO  
+2022-02-15 21:44:15,177 INFO  cleanup:
+2022-02-15 21:44:15,177 DEBUG Running registered cleanup function: <bound method AptPluginInstallPrepareRemoveFinalize.cleanup_prepare of <AptPluginInstallPrepareRemoveFinalize object at 0x75e1bcb0>>
+2022-02-15 21:44:15,178 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : remove
+    arg #3     : -y
+    arg #4     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:44:15,183 DEBUG Waiting up to 600 secs for process sudo (pid 16265)
+2022-02-15 21:44:18,048 INFO  Executed sudo, exit status 0
+2022-02-15 21:44:18,049 DEBUG ProcessUser cleanup function done.
+2022-02-15 21:44:18,052 INFO  
+2022-02-15 21:44:18,053 INFO  Test duration: 70.02 secs
+2022-02-15 21:44:18,054 INFO  Test final outcome:  PASSED
+2022-02-15 21:44:18,055 INFO  

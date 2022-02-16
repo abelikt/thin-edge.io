@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="149" failures="8" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+<testsuites tests="149" failures="4" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
 <testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
 <testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
@@ -7,253 +7,20 @@
 <testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update" />
 <testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update" />
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="3" errors="0" failures="2" skipped="0" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path" />
-<testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
-		<failure message="BLOCKED: CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. (+3 other failures)" type="BLOCKED" />
-		<system-out>09:44:57 INFO  ==============================================================
-09:44:57 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
-09:44:57 INFO  Dir:   software_management_end_to_end/
-09:44:57 INFO  Title: Install package to directory specified in tedge config set tmp.path
-09:44:57 DEBUG Execution order hint: 0.0
-09:44:57 INFO  ==============================================================
-09:44:57 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:44:57 DEBUG EnvironmentC8y Setup
-09:44:57 INFO  EnvironmentC8y Setup
-09:44:57 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:44:57 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 10674)
-09:44:57 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:44:57 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:44:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 10678)
-09:45:08 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:45:08 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:08 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 10843)
-09:45:09 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:45:09 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:09 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 10846)
-09:45:09 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:45:09 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:09 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 10847)
-09:45:09 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:45:11 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:45:11 INFO  State of current operation: SUCCESSFUL
-09:45:11 INFO  Package rolldice is installed
-09:45:12 WARN  Assert that (False == value) with value=True ... failed 
-09:45:12 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo mkdir /tedge_download_path_test
-    arg #1     : mkdir
-    arg #2     : /tedge_download_path_test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:12 DEBUG Waiting up to 600 secs for process sudo (pid 10855)
-09:45:12 INFO  Executed sudo, exit status 0
-09:45:12 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo chmod a+rwx /tedge_download_path_test
-    arg #1     : chmod
-    arg #2     : a+rwx
-    arg #3     : /tedge_download_path_test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:12 DEBUG Waiting up to 600 secs for process sudo (pid 10857)
-09:45:12 INFO  Executed sudo, exit status 0
-09:45:12 WARN  caught &lt;class 'subprocess.CalledProcessError'&gt; while running test: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1.
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 55, in setup
-    self.CURRENT_DOWNLOAD_PATH = subprocess.check_output(f"{self.SUDO} {self.TEDGE} config get download.path", shell=True).decode("utf8").strip()
-  File "/usr/lib/python3.7/subprocess.py", line 395, in check_output
-    **kwargs).stdout
-  File "/usr/lib/python3.7/subprocess.py", line 487, in run
-    output=stdout, stderr=stderr)
-subprocess.CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1.
-09:45:12 WARN  CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. ... blocked 
-09:45:12 DEBUG --- test cleanup
-09:45:12 INFO  
-09:45:12 INFO  cleanup:
-09:45:12 DEBUG Running registered cleanup function: &lt;bound method AptInstallWithDownloadPath.mysmcleanup of &lt;AptInstallWithDownloadPath object at 0x753d15f0&gt;&gt;
-09:45:12 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo rm -rf /tedge_download_path_test
-    arg #1     : rm
-    arg #2     : -rf
-    arg #3     : /tedge_download_path_test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:12 DEBUG Waiting up to 600 secs for process sudo (pid 10862)
-09:45:12 INFO  Executed sudo, exit status 0
-09:45:12 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo /usr/bin/tedge config set download.path None
-    arg #1     : /usr/bin/tedge
-    arg #2     : config
-    arg #3     : set
-    arg #4     : download.path
-    arg #5     : None
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:12 DEBUG Waiting up to 600 secs for process sudo (pid 10864)
-09:45:12 WARN  Executed sudo, exit status 1
-09:45:12 WARN  Process sudo has no stdouterr= specified; providing this parameter will allow PySys to capture the process output that shows why it failed
-09:45:12 DEBUG Opening file using encoding=UTF-8: /dev/null
-09:45:12 DEBUG Opening file using encoding=UTF-8: /dev/null
-09:45:13 ERROR Error while running cleanup function: 
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1299, in cleanup
-    fn()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 102, in mysmcleanup
-    self.set_download_path(self.CURRENT_DOWNLOAD_PATH)
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 44, in set_download_path
-    arguments=[self.TEDGE, "config", "set", "download.path", f"{download_path}"]
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 478, in startProcess
-    abortOnError=abortOnError)
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1402, in addOutcome
-    self.abort(outcome, outcomeReason, callRecord)
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1421, in abort
-    raise AbortExecution(outcome, outcomeReason, callRecord)
-pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
-09:45:13 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;AptInstallWithDownloadPath object at 0x753d15f0&gt;&gt;
-09:45:13 DEBUG EnvironmentC8y Cleanup
-09:45:13 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 10870)
-09:45:15 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:45:15 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:45:15 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 10928)
-09:45:16 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:45:16 DEBUG ProcessUser cleanup function done.
-09:45:16 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo returned non-zero exit code 1 (AbortExecution) ... blocked 
-09:45:16 INFO  
-09:45:16 INFO  Test duration: 18.56 secs
-09:45:16 INFO  Test final outcome:  BLOCKED
-09:45:16 INFO  Test outcome reason: CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. (+3 other failures)
-09:45:16 INFO  
-</system-out>
-	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path" />
+<testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path" />
 <testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
 		<failure message="BLOCKED: CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. (+2 other failures)" type="BLOCKED" />
-		<system-out>09:58:17 INFO  ==============================================================
-09:58:17 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
-09:58:17 INFO  Dir:   software_management_end_to_end/
-09:58:17 INFO  Title: Install package to directory specified in tedge config set tmp.path
-09:58:17 DEBUG Execution order hint: 0.0
-09:58:17 INFO  ==============================================================
-09:58:17 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:58:17 DEBUG EnvironmentC8y Setup
-09:58:17 INFO  EnvironmentC8y Setup
-09:58:17 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+		<system-out>16:57:53 INFO  ==============================================================
+16:57:53 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+16:57:53 INFO  Dir:   software_management_end_to_end/
+16:57:53 INFO  Title: Install package to directory specified in tedge config set tmp.path
+16:57:53 DEBUG Execution order hint: 0.0
+16:57:53 INFO  ==============================================================
+16:57:54 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+16:57:54 DEBUG EnvironmentC8y Setup
+16:57:54 INFO  EnvironmentC8y Setup
+16:57:54 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -266,9 +33,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:17 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 19120)
-09:58:17 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:58:17 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+16:57:54 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 28505)
+16:57:54 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:57:54 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -282,9 +49,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 19124)
-09:58:30 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 12 secs
-09:58:30 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+16:57:54 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 28509)
+16:58:06 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
+16:58:06 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -299,9 +66,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:30 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 19288)
-09:58:30 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:58:30 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+16:58:06 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 28672)
+16:58:06 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:58:06 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
   command line : /usr/bin/systemctl status mosquitto
     arg #1     : status
     arg #2     : mosquitto
@@ -314,9 +81,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:30 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 19291)
-09:58:30 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:58:30 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+16:58:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 28675)
+16:58:06 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:58:06 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -329,12 +96,12 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:30 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 19292)
-09:58:31 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:58:33 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:58:33 INFO  State of current operation: SUCCESSFUL
-09:58:33 INFO  Assert that (False == value) with value=False ... passed
-09:58:33 DEBUG Process parameters for sudo
+16:58:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 28676)
+16:58:07 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:58:09 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14223702&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
+16:58:09 INFO  State of current operation: SUCCESSFUL
+16:58:09 INFO  Assert that (False == value) with value=False ... passed
+16:58:09 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo mkdir /tedge_download_path_test
     arg #1     : mkdir
     arg #2     : /tedge_download_path_test
@@ -347,9 +114,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:33 DEBUG Waiting up to 600 secs for process sudo (pid 19314)
-09:58:33 INFO  Executed sudo, exit status 0
-09:58:33 DEBUG Process parameters for sudo
+16:58:09 DEBUG Waiting up to 600 secs for process sudo (pid 28696)
+16:58:09 INFO  Executed sudo, exit status 0
+16:58:09 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo chmod a+rwx /tedge_download_path_test
     arg #1     : chmod
     arg #2     : a+rwx
@@ -363,9 +130,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:33 DEBUG Waiting up to 600 secs for process sudo (pid 19326)
-09:58:33 INFO  Executed sudo, exit status 0
-09:58:34 WARN  caught &lt;class 'subprocess.CalledProcessError'&gt; while running test: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1.
+16:58:09 DEBUG Waiting up to 600 secs for process sudo (pid 28708)
+16:58:09 INFO  Executed sudo, exit status 0
+16:58:09 WARN  caught &lt;class 'subprocess.CalledProcessError'&gt; while running test: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1.
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
     self.testObj.setup()
@@ -376,12 +143,12 @@ Traceback (most recent call last):
   File "/usr/lib/python3.7/subprocess.py", line 487, in run
     output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1.
-09:58:34 WARN  CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. ... blocked 
-09:58:34 DEBUG --- test cleanup
-09:58:34 INFO  
-09:58:34 INFO  cleanup:
-09:58:34 DEBUG Running registered cleanup function: &lt;bound method AptInstallWithDownloadPath.mysmcleanup of &lt;AptInstallWithDownloadPath object at 0x753d03b0&gt;&gt;
-09:58:34 DEBUG Process parameters for sudo
+16:58:10 WARN  CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. ... blocked 
+16:58:10 DEBUG --- test cleanup
+16:58:10 INFO  
+16:58:10 INFO  cleanup:
+16:58:10 DEBUG Running registered cleanup function: &lt;bound method AptInstallWithDownloadPath.mysmcleanup of &lt;AptInstallWithDownloadPath object at 0x753373b0&gt;&gt;
+16:58:10 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo rm -rf /tedge_download_path_test
     arg #1     : rm
     arg #2     : -rf
@@ -395,9 +162,9 @@ subprocess.CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get 
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:34 DEBUG Waiting up to 600 secs for process sudo (pid 19331)
-09:58:34 INFO  Executed sudo, exit status 0
-09:58:34 DEBUG Process parameters for sudo
+16:58:10 DEBUG Waiting up to 600 secs for process sudo (pid 28716)
+16:58:10 INFO  Executed sudo, exit status 0
+16:58:10 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo /usr/bin/tedge config set download.path None
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -413,12 +180,12 @@ subprocess.CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get 
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:34 DEBUG Waiting up to 600 secs for process sudo (pid 19333)
-09:58:34 WARN  Executed sudo, exit status 1
-09:58:34 WARN  Process sudo has no stdouterr= specified; providing this parameter will allow PySys to capture the process output that shows why it failed
-09:58:34 DEBUG Opening file using encoding=UTF-8: /dev/null
-09:58:34 DEBUG Opening file using encoding=UTF-8: /dev/null
-09:58:34 ERROR Error while running cleanup function: 
+16:58:10 DEBUG Waiting up to 600 secs for process sudo (pid 28718)
+16:58:10 WARN  Executed sudo, exit status 1
+16:58:10 WARN  Process sudo has no stdouterr= specified; providing this parameter will allow PySys to capture the process output that shows why it failed
+16:58:10 DEBUG Opening file using encoding=UTF-8: /dev/null
+16:58:10 DEBUG Opening file using encoding=UTF-8: /dev/null
+16:58:10 ERROR Error while running cleanup function: 
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1299, in cleanup
     fn()
@@ -433,9 +200,9 @@ Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1421, in abort
     raise AbortExecution(outcome, outcomeReason, callRecord)
 pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
-09:58:34 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;AptInstallWithDownloadPath object at 0x753d03b0&gt;&gt;
-09:58:34 DEBUG EnvironmentC8y Cleanup
-09:58:34 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+16:58:10 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;AptInstallWithDownloadPath object at 0x753373b0&gt;&gt;
+16:58:10 DEBUG EnvironmentC8y Cleanup
+16:58:10 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -449,9 +216,9 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:34 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 19339)
-09:58:37 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:58:37 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+16:58:10 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 28723)
+16:58:14 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:58:14 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -464,447 +231,25 @@ pysys.exceptions.AbortExecution: sudo returned non-zero exit code 1
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:58:37 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 19396)
-09:58:38 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:58:38 DEBUG ProcessUser cleanup function done.
-09:58:38 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo returned non-zero exit code 1 (AbortExecution) ... blocked 
-09:58:38 INFO  
-09:58:38 INFO  Test duration: 21.21 secs
-09:58:38 INFO  Test final outcome:  BLOCKED
-09:58:38 INFO  Test outcome reason: CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. (+2 other failures)
-09:58:38 INFO  
+16:58:14 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 28781)
+16:58:14 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:58:14 DEBUG ProcessUser cleanup function done.
+16:58:14 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo returned non-zero exit code 1 (AbortExecution) ... blocked 
+16:58:14 INFO  
+16:58:14 INFO  Test duration: 20.71 secs
+16:58:14 INFO  Test final outcome:  BLOCKED
+16:58:14 INFO  Test outcome reason: CalledProcessError: Command '/usr/bin/sudo /usr/bin/tedge config get download.path' returned non-zero exit status 1. (+2 other failures)
+16:58:14 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove">
-		<failure message="BLOCKED: TypeError: remove_package_apt() takes 1 positional argument but 2 were given" type="BLOCKED" />
-		<system-out>09:46:17 INFO  ==============================================================
-09:46:17 INFO  Id:    SoftwareManagement.sm_apt_install_remove
-09:46:17 INFO  Dir:   software_management_end_to_end/
-09:46:17 INFO  Title: Validate end to end behaviour for the apt plugin for installation and removal of packages
-09:46:17 DEBUG Execution order hint: 0.0
-09:46:17 INFO  ==============================================================
-09:46:17 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:46:17 DEBUG EnvironmentC8y Setup
-09:46:17 INFO  EnvironmentC8y Setup
-09:46:17 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:17 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 11367)
-09:46:17 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:46:17 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-09:46:17 INFO  Delaying execution by 8 seconds
-09:46:25 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:25 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 11373)
-09:46:36 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:46:36 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:36 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 11533)
-09:46:36 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:46:36 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:36 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 11536)
-09:46:37 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:46:37 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:37 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 11537)
-09:46:37 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:46:39 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:46:39 INFO  State of current operation: FAILED
-09:46:39 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:46:39 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-02-14T08:45:38.649Z",
-        "log": [
-            {
-                "time": "2022-02-14T08:45:38.586Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-02-14T08:45:38.620Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-02-14T08:45:38.545Z",
-    "deviceId": "14115101",
-    "deviceName": "octocatrpi3",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-02-14T08:45:39.844518497Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126497",
-    "id": "14126497",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:46:39 INFO  Package rolldice is installed
-09:46:39 WARN  caught &lt;class 'TypeError'&gt; while running test: remove_package_apt() takes 1 positional argument but 2 were given
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/run.py", line 29, in setup
-    self.remove_package_apt("rolldice")
-TypeError: remove_package_apt() takes 1 positional argument but 2 were given
-09:46:39 WARN  TypeError: remove_package_apt() takes 1 positional argument but 2 were given ... blocked 
-09:46:39 DEBUG --- test cleanup
-09:46:39 INFO  
-09:46:39 INFO  cleanup:
-09:46:39 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x753d1670&gt;&gt;
-09:46:39 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x753d1670&gt;&gt;
-09:46:39 DEBUG EnvironmentC8y Cleanup
-09:46:39 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:39 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 11548)
-09:46:42 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:46:42 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:42 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 11605)
-09:46:43 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:46:43 DEBUG ProcessUser cleanup function done.
-09:46:43 INFO  
-09:46:43 INFO  Test duration: 25.42 secs
-09:46:43 INFO  Test final outcome:  BLOCKED
-09:46:43 INFO  Test outcome reason: TypeError: remove_package_apt() takes 1 positional argument but 2 were given
-09:46:43 INFO  
-</system-out>
-	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default">
-		<failure message="FAILED: Assert that (False == value) with value=True" type="FAILED" />
-		<system-out>09:46:43 INFO  ==============================================================
-09:46:43 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
-09:46:43 INFO  Dir:   software_management_end_to_end/
-09:46:43 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
-09:46:43 DEBUG Execution order hint: 0.0
-09:46:43 INFO  ==============================================================
-09:46:43 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:46:43 DEBUG EnvironmentC8y Setup
-09:46:43 INFO  EnvironmentC8y Setup
-09:46:43 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:43 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 11606)
-09:46:43 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:46:43 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-09:46:43 INFO  Delaying execution by 8 seconds
-09:46:51 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:46:51 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 11615)
-09:47:02 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:47:02 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:47:02 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 11775)
-09:47:02 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:47:02 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:47:02 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 11778)
-09:47:02 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:47:02 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:47:02 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 11779)
-09:47:03 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:47:05 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:47:05 INFO  State of current operation: FAILED
-09:47:05 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14115101&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:47:05 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-02-14T08:45:38.649Z",
-        "log": [
-            {
-                "time": "2022-02-14T08:45:38.586Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-02-14T08:45:38.620Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-02-14T08:45:38.545Z",
-    "deviceId": "14115101",
-    "deviceName": "octocatrpi3",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-02-14T08:45:39.844518497Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126497",
-    "id": "14126497",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:47:05 INFO  Package rolldice is installed
-09:47:05 WARN  Assert that (False == value) with value=True ... failed 
-09:47:05 DEBUG --- test execute
-09:47:05 INFO  Response status: 201
-09:47:05 INFO  Response to action: {
-    "creationTime": "2022-02-14T08:47:05.462Z",
-    "deviceId": "14115101",
-    "deviceName": "octocatrpi3",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126499",
-    "id": "14126499",
-    "status": "PENDING",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "rolldice",
-            "action": "install",
-            "id": "5152439",
-            "version": " ",
-            "url": ""
-        }
-    ]
-}
-09:47:05 INFO  Started operation: {'creationTime': '2022-02-14T08:47:05.462Z', 'deviceId': '14115101', 'deviceName': 'octocatrpi3', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126499', 'id': '14126499', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': ' ', 'url': ''}]}
-09:47:07 INFO  State of operation 14126499 : EXECUTING
-09:47:09 INFO  State of operation 14126499 : EXECUTING
-09:47:11 INFO  State of operation 14126499 : EXECUTING
-09:47:14 INFO  State of operation 14126499 : EXECUTING
-09:47:16 INFO  State of operation 14126499 : EXECUTING
-09:47:18 INFO  State of operation 14126499 : EXECUTING
-09:47:20 INFO  State of operation 14126499 : SUCCESSFUL
-09:47:20 INFO  Package rolldice is installed
-09:47:20 INFO  Assert that (True == value) with value=True ... passed
-09:47:20 INFO  Response status: 201
-09:47:20 INFO  Response to action: {
-    "creationTime": "2022-02-14T08:47:20.753Z",
-    "deviceId": "14115101",
-    "deviceName": "octocatrpi3",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126501",
-    "id": "14126501",
-    "status": "PENDING",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'delete'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "rolldice",
-            "action": "delete",
-            "id": "5152439",
-            "version": " ",
-            "url": ""
-        }
-    ]
-}
-09:47:20 INFO  Started operation: {'creationTime': '2022-02-14T08:47:20.753Z', 'deviceId': '14115101', 'deviceName': 'octocatrpi3', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14126501', 'id': '14126501', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': ' ', 'url': '', 'action': 'delete'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'delete', 'id': '5152439', 'version': ' ', 'url': ''}]}
-09:47:22 INFO  State of operation 14126501 : EXECUTING
-09:47:25 INFO  State of operation 14126501 : EXECUTING
-09:47:27 INFO  State of operation 14126501 : EXECUTING
-09:47:29 INFO  State of operation 14126501 : EXECUTING
-09:47:31 INFO  State of operation 14126501 : EXECUTING
-09:47:33 INFO  State of operation 14126501 : EXECUTING
-09:47:36 INFO  State of operation 14126501 : EXECUTING
-09:47:38 INFO  State of operation 14126501 : EXECUTING
-09:47:41 INFO  State of operation 14126501 : EXECUTING
-09:47:43 INFO  State of operation 14126501 : EXECUTING
-09:47:45 INFO  State of operation 14126501 : EXECUTING
-09:47:47 INFO  State of operation 14126501 : EXECUTING
-09:47:49 INFO  State of operation 14126501 : EXECUTING
-09:47:51 INFO  State of operation 14126501 : EXECUTING
-09:47:57 INFO  State of operation 14126501 : EXECUTING
-09:48:00 INFO  State of operation 14126501 : EXECUTING
-09:48:02 INFO  State of operation 14126501 : SUCCESSFUL
-09:48:02 DEBUG --- test validate
-09:48:02 INFO  Assert that (False == value) with value=False ... passed
-09:48:02 DEBUG --- test cleanup
-09:48:02 INFO  
-09:48:02 INFO  cleanup:
-09:48:02 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x752dec30&gt;&gt;
-09:48:02 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x752dec30&gt;&gt;
-09:48:02 DEBUG EnvironmentC8y Cleanup
-09:48:02 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:48:02 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 12286)
-09:48:05 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:48:05 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:48:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 12344)
-09:48:05 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:48:05 DEBUG ProcessUser cleanup function done.
-09:48:05 INFO  
-09:48:05 INFO  Test duration: 82.94 secs
-09:48:05 INFO  Test final outcome:  FAILED
-09:48:05 INFO  Test outcome reason: Assert that (False == value) with value=True
-09:48:05 INFO  
-</system-out>
-	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
 </testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
@@ -922,358 +267,8 @@ TypeError: remove_package_apt() takes 1 positional argument but 2 were given
 <testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove" />
 </testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove_multiple" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
-</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="2" errors="0" failures="2" skipped="0" time="0"><testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
-		<failure message="FAILED: Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot;" type="FAILED" />
-		<system-out>09:40:07 INFO  ==============================================================
-09:40:07 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
-09:40:07 INFO  Dir:   software_management_end_to_end/
-09:40:07 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
-09:40:07 DEBUG Execution order hint: 0.0
-09:40:07 INFO  ==============================================================
-09:40:07 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-09:40:07 INFO  Delaying execution by 8 seconds
-09:40:15 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:15 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 8238)
-09:40:26 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
-09:40:26 DEBUG Process parameters for sudo&lt;install&gt;
-  command line : /usr/bin/sudo /usr/bin/apt-get install rolldice
-    arg #1     : /usr/bin/apt-get
-    arg #2     : install
-    arg #3     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:26 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 8399)
-09:40:29 INFO  Executed sudo&lt;install&gt;, exit status 0
-09:40:29 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/us
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : c8y/s/us
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:29 INFO  Started sudo&lt;tedge_sub&gt; with process id 8410
-09:40:29 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/ds 528,tedge,rolldice,,,delete
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : c8y/s/ds
-    arg #5     : 528,tedge,rolldice,,,delete
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:29 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 8411)
-09:40:29 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
-09:40:29 DEBUG --- test execute
-09:40:31 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : stop
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:31 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 8473)
-09:40:32 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
-09:40:32 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
-  command line : /usr/bin/mosquitto_sub -v -t tedge/commands/res/software/update
-    arg #1     : -v
-    arg #2     : -t
-    arg #3     : tedge/commands/res/software/update
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:32 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 8492
-09:40:47 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl restart tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : restart
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:40:47 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 8494)
-09:40:47 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
-09:41:17 DEBUG Process parameters for sudo&lt;kill_out&gt;
-  command line : /usr/bin/sudo killall tedge mosquitto_sub
-    arg #1     : killall
-    arg #2     : tedge
-    arg #3     : mosquitto_sub
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:17 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 8518)
-09:41:17 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-09:41:17 DEBUG --- test validate
-09:41:17 INFO  Validate
-09:41:17 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-09:41:17 DEBUG Grep on input file tedge_sub.out successfully matched expression "501,c8y_SoftwareUpdate" with line: '[c8y/s/us] 501,c8y_SoftwareUpdate\n'
-09:41:17 INFO  Grep on input file tedge_sub.out ... passed
-09:41:17 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-09:41:18 WARN  Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate" ... failed [run.py:98]
-09:41:18 DEBUG --- test cleanup
-09:41:18 INFO  
-09:41:18 INFO  cleanup:
-09:41:18 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x7530ac70&gt;&gt;
-09:41:18 INFO  Stop sm-mapper and agent
-09:41:18 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:18 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 8523)
-09:41:21 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:41:21 DEBUG ProcessUser cleanup function done.
-09:41:21 INFO  
-09:41:21 INFO  Test duration: 73.34 secs
-09:41:21 INFO  Test final outcome:  FAILED
-09:41:21 INFO  Test outcome reason: Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate"
-09:41:21 INFO  
-</system-out>
-	</testcase>
-<testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
-		<failure message="FAILED: Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot;" type="FAILED" />
-		<system-out>10:13:08 INFO  ==============================================================
-10:13:08 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
-10:13:08 INFO  Dir:   software_management_end_to_end/
-10:13:08 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
-10:13:08 DEBUG Execution order hint: 0.0
-10:13:08 INFO  ==============================================================
-10:13:08 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-10:13:08 INFO  Delaying execution by 8 seconds
-10:13:16 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:13:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 28789)
-10:13:28 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
-10:13:28 DEBUG Process parameters for sudo&lt;install&gt;
-  command line : /usr/bin/sudo /usr/bin/apt-get install rolldice
-    arg #1     : /usr/bin/apt-get
-    arg #2     : install
-    arg #3     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:13:28 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 28953)
-10:14:00 INFO  Executed sudo&lt;install&gt;, exit status 0, duration 32 secs
-10:14:00 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/us
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : c8y/s/us
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:00 INFO  Started sudo&lt;tedge_sub&gt; with process id 29115
-10:14:00 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/ds 528,tedge,rolldice,,,delete
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : c8y/s/ds
-    arg #5     : 528,tedge,rolldice,,,delete
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:00 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 29116)
-10:14:00 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
-10:14:00 DEBUG --- test execute
-10:14:02 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : stop
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:02 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 29160)
-10:14:02 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
-10:14:02 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
-  command line : /usr/bin/mosquitto_sub -v -t tedge/commands/res/software/update
-    arg #1     : -v
-    arg #2     : -t
-    arg #3     : tedge/commands/res/software/update
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:02 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 29210
-10:14:17 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl restart tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : restart
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:18 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 29212)
-10:14:18 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
-10:14:48 DEBUG Process parameters for sudo&lt;kill_out&gt;
-  command line : /usr/bin/sudo killall tedge mosquitto_sub
-    arg #1     : killall
-    arg #2     : tedge
-    arg #3     : mosquitto_sub
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:48 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 29222)
-10:14:48 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-10:14:48 DEBUG --- test validate
-10:14:48 INFO  Validate
-10:14:48 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-10:14:48 DEBUG Grep on input file tedge_sub.out successfully matched expression "501,c8y_SoftwareUpdate" with line: '[c8y/s/us] 501,c8y_SoftwareUpdate\n'
-10:14:48 INFO  Grep on input file tedge_sub.out ... passed
-10:14:48 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-10:14:48 WARN  Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate" ... failed [run.py:98]
-10:14:48 DEBUG --- test cleanup
-10:14:48 INFO  
-10:14:48 INFO  cleanup:
-10:14:48 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x752cde10&gt;&gt;
-10:14:48 INFO  Stop sm-mapper and agent
-10:14:48 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-10:14:48 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 29227)
-10:14:51 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:14:51 DEBUG ProcessUser cleanup function done.
-10:14:51 INFO  
-10:14:51 INFO  Test duration: 102.98 secs
-10:14:51 INFO  Test final outcome:  FAILED
-10:14:51 INFO  Test outcome reason: Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate"
-10:14:51 INFO  
-</system-out>
-	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
+<testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
 </testsuite><testsuite name="SoftwareManagement.sm_mixed_install_remove_multiple" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple" />
 </testsuite><testsuite name="agent_init_session" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AgentInitSession" name="agent_init_session" />
@@ -1346,7 +341,261 @@ TypeError: remove_package_apt() takes 1 positional argument but 2 were given
 </testsuite><testsuite name="local_mqtt_pub_sub_retain" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPublishWithRetain" name="local_mqtt_pub_sub_retain" />
 </testsuite><testsuite name="local_mqtt_pub_sub_with_sudo" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_sub_with_sudo" />
 </testsuite><testsuite name="local_mqtt_sub_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_sub_fail" />
-</testsuite><testsuite name="log_request_error_messages" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifySearchTextError" name="log_request_error_messages" />
+</testsuite><testsuite name="log_request_error_messages" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="LogRequestVerifySearchTextError" name="log_request_error_messages">
+		<failure message="BLOCKED: Exception: retry" type="BLOCKED" />
+		<system-out>16:29:05 INFO  ==============================================================
+16:29:05 INFO  Id:    log_request_error_messages
+16:29:05 INFO  Dir:   log_request_end_to_end/
+16:29:05 INFO  Title: Validate end to end behaviour for the log request operation check for error messages
+16:29:05 DEBUG Execution order hint: 0.0
+16:29:05 INFO  ==============================================================
+16:29:06 DEBUG EnvironmentC8y Setup
+16:29:06 INFO  EnvironmentC8y Setup
+16:29:06 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 13846)
+16:29:06 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:29:06 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 1 seconds
+16:29:06 INFO  Delaying execution by 10 seconds
+16:29:16 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 13850)
+16:29:27 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
+16:29:27 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:27 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 14011)
+16:29:27 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:29:27 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:27 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 14014)
+16:29:27 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:29:27 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:27 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 14015)
+16:29:28 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:29:28 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+  command line : /usr/bin/sudo rm -rf /tmp/sw_logs
+    arg #1     : rm
+    arg #2     : -rf
+    arg #3     : /tmp/sw_logs
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_logs.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_logs.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:28 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 14023)
+16:29:28 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:29:28 DEBUG Process parameters for sudo&lt;move_logs&gt;
+  command line : /usr/bin/sudo sh -c 'mv /tmp/sw_logs/* /var/log/tedge/agent/'
+    arg #1     : sh
+    arg #2     : -c
+    arg #3     : mv /tmp/sw_logs/* /var/log/tedge/agent/
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/move_logs.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/move_logs.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:28 DEBUG Waiting up to 600 secs for process sudo&lt;move_logs&gt; (pid 14025)
+16:29:28 INFO  Executed sudo&lt;move_logs&gt;, exit status 0
+16:29:28 DEBUG --- test execute
+16:29:28 DEBUG --- test validate
+16:29:29 INFO  log response None
+16:29:30 INFO  log response None
+16:29:31 INFO  log response None
+16:29:32 INFO  log response None
+16:29:33 INFO  log response None
+16:29:35 INFO  log response None
+16:29:36 INFO  log response None
+16:29:37 INFO  log response None
+16:29:38 INFO  log response None
+16:29:39 INFO  log response None
+16:29:40 INFO  log response None
+16:29:42 INFO  log response None
+16:29:43 INFO  log response None
+16:29:44 INFO  log response None
+16:29:45 INFO  log response None
+16:29:46 INFO  log response None
+16:29:47 INFO  log response None
+16:29:49 INFO  log response None
+16:29:50 INFO  log response None
+16:29:51 INFO  log response None
+16:29:51 WARN  caught &lt;class 'Exception'&gt; while running test: retry
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
+    self.testObj.validate()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/run.py", line 43, in validate
+    value=self.wait_until_logs_retrieved())
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 74, in retry_decorator
+    logger)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 33, in __retry_internal
+    return f()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/run.py", line 52, in wait_until_logs_retrieved
+    raise Exception("retry")
+Exception: retry
+16:29:51 WARN  Exception: retry ... blocked 
+16:29:51 DEBUG --- test cleanup
+16:29:51 INFO  
+16:29:51 INFO  cleanup:
+16:29:51 DEBUG Running registered cleanup function: &lt;bound method LogRequestVerifySearchTextError.cleanup_logs of &lt;LogRequestVerifySearchTextError object at 0x753c5c30&gt;&gt;
+16:29:51 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+  command line : /usr/bin/sudo sh -c 'rm -rf /var/log/tedge/agent/example-*'
+    arg #1     : sh
+    arg #2     : -c
+    arg #3     : rm -rf /var/log/tedge/agent/example-*
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_logs.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_logs.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:51 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 14030)
+16:29:51 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:29:51 DEBUG Process parameters for sudo&lt;rm_tmp_logs&gt;
+  command line : /usr/bin/sudo rm -rf /tmp/sw_logs
+    arg #1     : rm
+    arg #2     : -rf
+    arg #3     : /tmp/sw_logs
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_tmp_logs.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/rm_tmp_logs.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:51 DEBUG Waiting up to 600 secs for process sudo&lt;rm_tmp_logs&gt; (pid 14033)
+16:29:51 INFO  Executed sudo&lt;rm_tmp_logs&gt;, exit status 0
+16:29:51 DEBUG Process parameters for sudo&lt;send_failed&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/us 502,c8y_LogfileRequest
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : c8y/s/us
+    arg #5     : 502,c8y_LogfileRequest
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/send_failed.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/send_failed.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:51 DEBUG Waiting up to 600 secs for process sudo&lt;send_failed&gt; (pid 14035)
+16:29:52 INFO  Executed sudo&lt;send_failed&gt;, exit status 0
+16:29:52 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;LogRequestVerifySearchTextError object at 0x753c5c30&gt;&gt;
+16:29:52 DEBUG EnvironmentC8y Cleanup
+16:29:52 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:52 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 14041)
+16:29:55 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:29:55 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:29:55 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 14099)
+16:29:55 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:29:55 DEBUG ProcessUser cleanup function done.
+16:29:55 INFO  
+16:29:55 INFO  Test duration: 49.73 secs
+16:29:55 INFO  Test final outcome:  BLOCKED
+16:29:55 INFO  Test outcome reason: Exception: retry
+16:29:55 INFO  
+</system-out>
+	</testcase>
 </testsuite><testsuite name="log_request_num_lines" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifyNumberOfLines" name="log_request_num_lines" />
 </testsuite><testsuite name="mapper_awaits_before_reconnect" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect" />
 </testsuite><testsuite name="monitoring_smaller_interval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MonitoringSmallInterval" name="monitoring_smaller_interval" />
@@ -1385,40 +634,40 @@ TypeError: remove_package_apt() takes 1 positional argument but 2 were given
 </testsuite><testsuite name="valid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateValidDeviceId" name="valid_device_id" />
 </testsuite><testsuite name="publish_sawmill_record_statistics" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PublishSawmillRecordStatistics" name="publish_sawmill_record_statistics">
 		<failure message="FAILED">Device ID is not set. Set with the env variable C8YDEVICEID</failure>
-		<system-out>10:17:39 INFO  ==============================================================
-10:17:39 INFO  Id:    publish_sawmill_record_statistics
-10:17:39 INFO  Title: Publish sawmill and record process statistics
-10:17:39 DEBUG Execution order hint: 0.0
-10:17:39 INFO  ==============================================================
-10:17:40 DEBUG EnvironmentC8y Setup
-10:17:40 WARN  Device ID is not set. Set with the env variable C8YDEVICEID ... failed 
-10:17:40 WARN  Aborted test due to FAILED outcome
-10:17:40 DEBUG --- test cleanup
-10:17:40 DEBUG ProcessUser cleanup function done.
-10:17:40 INFO  
-10:17:40 INFO  Test duration: 0.94 secs
-10:17:40 INFO  Test final outcome:  FAILED
-10:17:40 INFO  Test outcome reason: Device ID is not set. Set with the env variable C8YDEVICEID
-10:17:40 INFO  
+		<system-out>17:15:33 INFO  ==============================================================
+17:15:33 INFO  Id:    publish_sawmill_record_statistics
+17:15:33 INFO  Title: Publish sawmill and record process statistics
+17:15:33 DEBUG Execution order hint: 0.0
+17:15:34 INFO  ==============================================================
+17:15:34 DEBUG EnvironmentC8y Setup
+17:15:34 WARN  Device ID is not set. Set with the env variable C8YDEVICEID ... failed 
+17:15:34 WARN  Aborted test due to FAILED outcome
+17:15:34 DEBUG --- test cleanup
+17:15:34 DEBUG ProcessUser cleanup function done.
+17:15:34 INFO  
+17:15:34 INFO  Test duration: 0.87 secs
+17:15:34 INFO  Test final outcome:  FAILED
+17:15:34 INFO  Test outcome reason: Device ID is not set. Set with the env variable C8YDEVICEID
+17:15:34 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="publish_sawmill_record_statistics_long" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PublishSawmillRecordStatisticsLong" name="publish_sawmill_record_statistics_long">
 		<failure message="FAILED">Device ID is not set. Set with the env variable C8YDEVICEID</failure>
-		<system-out>10:17:40 INFO  ==============================================================
-10:17:40 INFO  Id:    publish_sawmill_record_statistics_long
-10:17:40 INFO  Title: Publish sawmill and record process statistics long version
-10:17:40 DEBUG Execution order hint: 0.0
-10:17:40 INFO  ==============================================================
-10:17:40 DEBUG EnvironmentC8y Setup
-10:17:40 WARN  Device ID is not set. Set with the env variable C8YDEVICEID ... failed 
-10:17:40 WARN  Aborted test due to FAILED outcome
-10:17:40 DEBUG --- test cleanup
-10:17:40 DEBUG ProcessUser cleanup function done.
-10:17:40 INFO  
-10:17:40 INFO  Test duration: 0.01 secs
-10:17:40 INFO  Test final outcome:  FAILED
-10:17:40 INFO  Test outcome reason: Device ID is not set. Set with the env variable C8YDEVICEID
-10:17:40 INFO  
+		<system-out>17:15:34 INFO  ==============================================================
+17:15:34 INFO  Id:    publish_sawmill_record_statistics_long
+17:15:34 INFO  Title: Publish sawmill and record process statistics long version
+17:15:34 DEBUG Execution order hint: 0.0
+17:15:34 INFO  ==============================================================
+17:15:34 DEBUG EnvironmentC8y Setup
+17:15:34 WARN  Device ID is not set. Set with the env variable C8YDEVICEID ... failed 
+17:15:34 WARN  Aborted test due to FAILED outcome
+17:15:34 DEBUG --- test cleanup
+17:15:34 DEBUG ProcessUser cleanup function done.
+17:15:34 INFO  
+17:15:34 INFO  Test duration: 0.01 secs
+17:15:34 INFO  Test final outcome:  FAILED
+17:15:34 INFO  Test outcome reason: Device ID is not set. Set with the env variable C8YDEVICEID
+17:15:34 INFO  
 </system-out>
 	</testcase>
 </testsuite></testsuites>

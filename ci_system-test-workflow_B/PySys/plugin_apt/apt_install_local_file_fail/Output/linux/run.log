@@ -1,15 +1,86 @@
-2022-02-14 08:50:56,849 INFO  ==============================================================
-2022-02-14 08:50:56,850 INFO  Id:    apt_install_local_file_fail
-2022-02-14 08:50:56,850 INFO  Dir:   plugin_apt/
-2022-02-14 08:50:56,851 INFO  Title: Validate apt plugin install from local file - FAIL case
-2022-02-14 08:50:56,851 DEBUG Execution order hint: 0.0
-2022-02-14 08:50:56,852 INFO  ==============================================================
-2022-02-14 08:50:56,855 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-2022-02-14 08:50:56,856 WARN  Aborted test due to SKIPPED outcome
-2022-02-14 08:50:56,858 DEBUG --- test cleanup
-2022-02-14 08:50:56,859 DEBUG ProcessUser cleanup function done.
-2022-02-14 08:50:56,861 INFO  
-2022-02-14 08:50:56,861 INFO  Test duration: 0.01 secs
-2022-02-14 08:50:56,861 INFO  Test final outcome:  SKIPPED
-2022-02-14 08:50:56,862 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-2022-02-14 08:50:56,862 INFO  
+2022-02-15 21:37:55,716 INFO  ==============================================================
+2022-02-15 21:37:55,717 INFO  Id:    apt_install_local_file_fail
+2022-02-15 21:37:55,718 INFO  Dir:   plugin_apt/
+2022-02-15 21:37:55,718 INFO  Title: Validate apt plugin install from local file - FAIL case
+2022-02-15 21:37:55,719 DEBUG Execution order hint: 0.0
+2022-02-15 21:37:55,719 INFO  ==============================================================
+2022-02-15 21:37:55,723 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : remove
+    arg #3     : -y
+    arg #4     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:37:55,728 DEBUG Waiting up to 600 secs for process sudo (pid 14834)
+2022-02-15 21:38:06,311 INFO  Executed sudo, exit status 0
+2022-02-15 21:38:06,317 DEBUG Process parameters for sudo<outp_check_0>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_0.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_0.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:06,324 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 14871)
+2022-02-15 21:38:10,500 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-02-15 21:38:10,502 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:38:10,503 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_0.out
+2022-02-15 21:38:10,508 INFO  Grep on input file outp_check_0.out ... passed
+2022-02-15 21:38:10,509 DEBUG --- test execute
+2022-02-15 21:38:10,511 DEBUG Process parameters for sudo<outp_install>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install rolldice --file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/notafile.deb
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : install
+    arg #3     : rolldice
+    arg #4     : --file
+    arg #5     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/notafile.deb
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_install.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_install.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:10,516 DEBUG Waiting up to 600 secs for process sudo<outp_install> (pid 14878)
+2022-02-15 21:38:10,821 INFO  Executed sudo<outp_install>, exit status 5
+2022-02-15 21:38:10,823 INFO  Assert that (value==5) with value=5 ... passed
+2022-02-15 21:38:10,823 DEBUG --- test validate
+2022-02-15 21:38:10,825 DEBUG Process parameters for sudo<outp_check_1>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:10,831 DEBUG Waiting up to 600 secs for process sudo<outp_check_1> (pid 14881)
+2022-02-15 21:38:12,291 INFO  Executed sudo<outp_check_1>, exit status 0
+2022-02-15 21:38:12,292 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:38:12,293 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_fail/Output/linux/outp_check_1.out
+2022-02-15 21:38:12,298 INFO  Grep on input file outp_check_1.out ... passed
+2022-02-15 21:38:12,302 DEBUG --- test cleanup
+2022-02-15 21:38:12,303 DEBUG ProcessUser cleanup function done.
+2022-02-15 21:38:12,305 INFO  
+2022-02-15 21:38:12,305 INFO  Test duration: 16.59 secs
+2022-02-15 21:38:12,306 INFO  Test final outcome:  PASSED
+2022-02-15 21:38:12,307 INFO  

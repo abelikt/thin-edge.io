@@ -1,15 +1,95 @@
-2022-02-14 08:50:56,880 INFO  ==============================================================
-2022-02-14 08:50:56,881 INFO  Id:    apt_install_local_file_with_version
-2022-02-14 08:50:56,881 INFO  Dir:   plugin_apt/
-2022-02-14 08:50:56,882 INFO  Title: Validate apt plugin install from local file AND with a version - SUCCESS case
-2022-02-14 08:50:56,882 DEBUG Execution order hint: 0.0
-2022-02-14 08:50:56,883 INFO  ==============================================================
-2022-02-14 08:50:56,887 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-2022-02-14 08:50:56,887 WARN  Aborted test due to SKIPPED outcome
-2022-02-14 08:50:56,890 DEBUG --- test cleanup
-2022-02-14 08:50:56,891 DEBUG ProcessUser cleanup function done.
-2022-02-14 08:50:56,892 INFO  
-2022-02-14 08:50:56,893 INFO  Test duration: 0.01 secs
-2022-02-14 08:50:56,894 INFO  Test final outcome:  SKIPPED
-2022-02-14 08:50:56,894 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-2022-02-14 08:50:56,895 INFO  
+2022-02-15 21:38:12,329 INFO  ==============================================================
+2022-02-15 21:38:12,329 INFO  Id:    apt_install_local_file_with_version
+2022-02-15 21:38:12,330 INFO  Dir:   plugin_apt/
+2022-02-15 21:38:12,331 INFO  Title: Validate apt plugin install from local file AND with a version - SUCCESS case
+2022-02-15 21:38:12,331 DEBUG Execution order hint: 0.0
+2022-02-15 21:38:12,331 INFO  ==============================================================
+2022-02-15 21:38:13,505 INFO  URL of rolldice is b"'http://archive.raspbian.org/raspbian/pool/main/r/rolldice/rolldice_1.16-1+b1_armhf.deb'"
+2022-02-15 21:38:14,781 INFO  Downloaded rolldcice in version 1.16-1+b1
+2022-02-15 21:38:14,782 INFO  Filename is rolldice_1.16-1+b1_armhf.deb
+2022-02-15 21:38:14,783 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : remove
+    arg #3     : -y
+    arg #4     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:14,788 DEBUG Waiting up to 600 secs for process sudo (pid 14896)
+2022-02-15 21:38:17,602 INFO  Executed sudo, exit status 0
+2022-02-15 21:38:17,604 DEBUG Process parameters for sudo<outp_check_0>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_0.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_0.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:17,609 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 14900)
+2022-02-15 21:38:19,068 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-02-15 21:38:19,070 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:38:19,071 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_0.out
+2022-02-15 21:38:19,076 INFO  Grep on input file outp_check_0.out ... passed
+2022-02-15 21:38:19,078 DEBUG --- test execute
+2022-02-15 21:38:19,080 DEBUG Process parameters for sudo<outp_install>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install rolldice --module-version 1.16-1+b1 --file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/rolldice_1.16-1+b1_armhf.deb
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : install
+    arg #3     : rolldice
+    arg #4     : --module-version
+    arg #5     : 1.16-1+b1
+    arg #6     : --file
+    arg #7     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/rolldice_1.16-1+b1_armhf.deb
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_install.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_install.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:19,087 DEBUG Waiting up to 600 secs for process sudo<outp_install> (pid 14906)
+2022-02-15 21:38:47,339 INFO  Executed sudo<outp_install>, exit status 0, duration 28 secs
+2022-02-15 21:38:47,341 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:38:47,342 DEBUG --- test validate
+2022-02-15 21:38:47,346 DEBUG Process parameters for sudo<outp_check_1>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-15 21:38:47,352 DEBUG Waiting up to 600 secs for process sudo<outp_check_1> (pid 15035)
+2022-02-15 21:38:51,528 INFO  Executed sudo<outp_check_1>, exit status 0
+2022-02-15 21:38:51,529 INFO  Assert that (value==0) with value=0 ... passed
+2022-02-15 21:38:51,531 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_install_local_file_with_version/Output/linux/outp_check_1.out
+2022-02-15 21:38:51,536 DEBUG Grep on input file outp_check_1.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
+2022-02-15 21:38:51,537 INFO  Grep on input file outp_check_1.out ... passed
+2022-02-15 21:38:51,541 DEBUG --- test cleanup
+2022-02-15 21:38:51,542 INFO  
+2022-02-15 21:38:51,542 INFO  cleanup:
+2022-02-15 21:38:51,543 DEBUG Running registered cleanup function: <bound method AptPluginInstallFromLocalFileWithVersion.cleanup_remove_rolldice_binary of <AptPluginInstallFromLocalFileWithVersion object at 0x75e1ba50>>
+2022-02-15 21:38:51,545 DEBUG ProcessUser cleanup function done.
+2022-02-15 21:38:51,547 INFO  
+2022-02-15 21:38:51,548 INFO  Test duration: 39.22 secs
+2022-02-15 21:38:51,548 INFO  Test final outcome:  PASSED
+2022-02-15 21:38:51,549 INFO  
