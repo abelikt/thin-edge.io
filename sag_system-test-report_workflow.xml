@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="95" failures="6" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+<testsuites tests="95" failures="13" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update" />
@@ -14,191 +14,40 @@
 </testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove" />
 </testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove_multiple" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
 </testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
-		<failure message="FAILED: Grep on tedge_sub.out contains &quot;503,c8y_SoftwareUpdate&quot;" type="FAILED" />
-		<system-out>19:32:55 INFO  ==============================================================
-19:32:55 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
-19:32:55 INFO  Dir:   software_management_end_to_end/
-19:32:55 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
-19:32:55 DEBUG Execution order hint: 0.0
-19:32:55 INFO  ==============================================================
-19:32:55 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
-19:32:55 INFO  Delaying execution by 7 seconds
-19:33:02 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:02 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 9966)
-19:33:14 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 12 secs
-19:33:14 DEBUG Process parameters for sudo&lt;install&gt;
-  command line : /usr/bin/sudo /usr/bin/apt-get install rolldice
-    arg #1     : /usr/bin/apt-get
-    arg #2     : install
-    arg #3     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/install.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:14 DEBUG Waiting up to 600 secs for process sudo&lt;install&gt; (pid 10170)
-19:33:18 INFO  Executed sudo&lt;install&gt;, exit status 0
-19:33:18 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/us
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : c8y/s/us
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:18 INFO  Started sudo&lt;tedge_sub&gt; with process id 10195
-19:33:18 DEBUG Process parameters for sudo&lt;tedge_pub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/ds 528,tedge,rolldice,,,delete
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : c8y/s/ds
-    arg #5     : 528,tedge,rolldice,,,delete
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_pub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:18 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pub&gt; (pid 10196)
-19:33:18 INFO  Executed sudo&lt;tedge_pub&gt;, exit status 0
-19:33:18 DEBUG --- test execute
-19:33:20 DEBUG Process parameters for sudo&lt;sm_mapper_stop&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : stop
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_stop.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:20 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_stop&gt; (pid 10228)
-19:33:21 INFO  Executed sudo&lt;sm_mapper_stop&gt;, exit status 0
-19:33:21 DEBUG Process parameters for mosquitto_sub&lt;tedge_sub_agent&gt;
-  command line : /usr/bin/mosquitto_sub -v -t tedge/commands/res/software/update
-    arg #1     : -v
-    arg #2     : -t
-    arg #3     : tedge/commands/res/software/update
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub_agent.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:21 INFO  Started mosquitto_sub&lt;tedge_sub_agent&gt; with process id 10241
-19:33:36 DEBUG Process parameters for sudo&lt;sm_mapper_restart&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl restart tedge-mapper-sm-c8y.service
-    arg #1     : /usr/bin/systemctl
-    arg #2     : restart
-    arg #3     : tedge-mapper-sm-c8y.service
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/sm_mapper_restart.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:33:36 DEBUG Waiting up to 600 secs for process sudo&lt;sm_mapper_restart&gt; (pid 10302)
-19:33:36 INFO  Executed sudo&lt;sm_mapper_restart&gt;, exit status 0
-19:34:06 DEBUG Process parameters for sudo&lt;kill_out&gt;
-  command line : /usr/bin/sudo killall tedge mosquitto_sub
-    arg #1     : killall
-    arg #2     : tedge
-    arg #3     : mosquitto_sub
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:34:06 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 10430)
-19:34:06 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-19:34:06 DEBUG --- test validate
-19:34:06 INFO  Validate
-19:34:06 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-19:34:06 DEBUG Grep on input file tedge_sub.out successfully matched expression "501,c8y_SoftwareUpdate" with line: '[c8y/s/us] 501,c8y_SoftwareUpdate\n'
-19:34:06 INFO  Grep on input file tedge_sub.out ... passed
-19:34:06 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_sub.out
-19:34:06 WARN  Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate" ... failed [run.py:98]
-19:34:06 DEBUG --- test cleanup
-19:34:06 INFO  
-19:34:06 INFO  cleanup:
-19:34:06 DEBUG Running registered cleanup function: &lt;bound method SmMapperC8yReceiveLastMessageOnRestart.smcleanup of &lt;SmMapperC8yReceiveLastMessageOnRestart object at 0x7561a030&gt;&gt;
-19:34:06 INFO  Stop sm-mapper and agent
-19:34:06 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:34:06 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 10435)
-19:34:10 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-19:34:10 DEBUG ProcessUser cleanup function done.
-19:34:10 INFO  
-19:34:10 INFO  Test duration: 75.03 secs
-19:34:10 INFO  Test final outcome:  FAILED
-19:34:10 INFO  Test outcome reason: Grep on tedge_sub.out contains "503,c8y_SoftwareUpdate"
-19:34:10 INFO  
+		<failure message="BLOCKED: Failed to set up test: name 'BaseTest' is not defined" type="BLOCKED" />
+		<system-out>16:17:50 INFO  ==============================================================
+16:17:50 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
+16:17:50 INFO  Dir:   software_management_end_to_end/
+16:17:50 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
+16:17:50 DEBUG Execution order hint: 0.0
+16:17:50 INFO  ==============================================================
+16:17:50 WARN  Failed to set up test: name 'BaseTest' is not defined ... blocked 
+16:17:50 WARN  caught &lt;class 'NameError'&gt; while setting up test SoftwareManagement.sm_mapper_fail_and_reconnect: name 'BaseTest' is not defined
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1143, in __call__
+    exec(runpycode, runpy_namespace)
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_mapper_fail_and_reconnect/run.py", line 27, in &lt;module&gt;
+    class SmMapperC8yReceiveLastMessageOnRestart(BaseTest):
+NameError: name 'BaseTest' is not defined
+16:17:50 DEBUG --- test cleanup
+16:17:50 DEBUG ProcessUser cleanup function done.
+16:17:50 INFO  
+16:17:50 INFO  Test duration: 0.02 secs
+16:17:50 INFO  Test final outcome:  BLOCKED
+16:17:50 INFO  Test outcome reason: Failed to set up test: name 'BaseTest' is not defined
+16:17:50 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="SoftwareManagement.sm_mixed_install_remove_multiple" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple" />
 </testsuite><testsuite name="agent_init_session" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="AgentInitSession" name="agent_init_session">
-		<failure message="FAILED: Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot;" type="FAILED" />
-		<system-out>19:34:25 INFO  ==============================================================
-19:34:25 INFO  Id:    agent_init_session
-19:34:25 INFO  Dir:   tedge_agent/
-19:34:25 INFO  Title: Validate tedge agent init session feature
-19:34:25 DEBUG Execution order hint: 0.0
-19:34:25 INFO  ==============================================================
-19:34:25 DEBUG Process parameters for sudo&lt;remove_lock&gt;
+		<failure message="BLOCKED: sudo&lt;agent_start&gt; returned non-zero exit code 5 (+1 other failures)" type="BLOCKED" />
+		<system-out>16:18:04 INFO  ==============================================================
+16:18:04 INFO  Id:    agent_init_session
+16:18:04 INFO  Dir:   tedge_agent/
+16:18:04 INFO  Title: Validate tedge agent init session feature
+16:18:04 DEBUG Execution order hint: 0.0
+16:18:04 INFO  ==============================================================
+16:18:04 DEBUG Process parameters for sudo&lt;remove_lock&gt;
   command line : /usr/bin/sudo rm -rf /var/lock/tedge_agent.lock
     arg #1     : rm
     arg #2     : -rf
@@ -212,10 +61,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:25 DEBUG Waiting up to 600 secs for process sudo&lt;remove_lock&gt; (pid 10682)
-19:34:25 INFO  Executed sudo&lt;remove_lock&gt;, exit status 0
-19:34:25 DEBUG --- test execute
-19:34:25 DEBUG Process parameters for sudo&lt;agent_clear&gt;
+16:18:04 DEBUG Waiting up to 600 secs for process sudo&lt;remove_lock&gt; (pid 3743)
+16:18:05 INFO  Executed sudo&lt;remove_lock&gt;, exit status 0
+16:18:05 DEBUG --- test execute
+16:18:05 DEBUG Process parameters for sudo&lt;agent_clear&gt;
   command line : /usr/bin/sudo /usr/bin/tedge_agent --clear
     arg #1     : /usr/bin/tedge_agent
     arg #2     : --clear
@@ -228,9 +77,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:25 DEBUG Waiting up to 600 secs for process sudo&lt;agent_clear&gt; (pid 10684)
-19:34:25 INFO  Executed sudo&lt;agent_clear&gt;, exit status 0
-19:34:25 DEBUG Process parameters for sudo&lt;agent_init&gt;
+16:18:05 DEBUG Waiting up to 600 secs for process sudo&lt;agent_clear&gt; (pid 3745)
+16:18:05 INFO  Executed sudo&lt;agent_clear&gt;, exit status 0
+16:18:05 DEBUG Process parameters for sudo&lt;agent_init&gt;
   command line : /usr/bin/sudo /usr/bin/tedge_agent --init
     arg #1     : /usr/bin/tedge_agent
     arg #2     : --init
@@ -243,9 +92,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:25 DEBUG Waiting up to 600 secs for process sudo&lt;agent_init&gt; (pid 10691)
-19:34:26 INFO  Executed sudo&lt;agent_init&gt;, exit status 0
-19:34:26 DEBUG Process parameters for sudo&lt;pub_req&gt;
+16:18:05 DEBUG Waiting up to 600 secs for process sudo&lt;agent_init&gt; (pid 3752)
+16:18:05 INFO  Executed sudo&lt;agent_init&gt;, exit status 0
+16:18:05 DEBUG Process parameters for sudo&lt;pub_req&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub --qos 1 tedge/commands/req/software/list '{"id":"Ld3KgqpcLDlrYH6sfpG7w"}'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -263,9 +112,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:26 DEBUG Waiting up to 600 secs for process sudo&lt;pub_req&gt; (pid 10698)
-19:34:26 INFO  Executed sudo&lt;pub_req&gt;, exit status 0
-19:34:26 DEBUG Process parameters for sudo&lt;sub_resp&gt;
+16:18:05 DEBUG Waiting up to 600 secs for process sudo&lt;pub_req&gt; (pid 3759)
+16:18:06 INFO  Executed sudo&lt;pub_req&gt;, exit status 0
+16:18:06 DEBUG Process parameters for sudo&lt;sub_resp&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub tedge/commands/res/software/list
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -280,8 +129,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:26 INFO  Started sudo&lt;sub_resp&gt; with process id 10713
-19:34:26 DEBUG Process parameters for sudo&lt;agent_start&gt;
+16:18:06 INFO  Started sudo&lt;sub_resp&gt; with process id 3762
+16:18:06 DEBUG Process parameters for sudo&lt;agent_start&gt;
   command line : /usr/bin/sudo /usr/bin/systemctl start tedge-agent
     arg #1     : /usr/bin/systemctl
     arg #2     : start
@@ -295,50 +144,37 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:34:26 DEBUG Waiting up to 600 secs for process sudo&lt;agent_start&gt; (pid 10714)
-19:34:26 INFO  Executed sudo&lt;agent_start&gt;, exit status 0
-19:34:26 INFO  Waiting for 2.0 seconds
-19:34:28 DEBUG Process parameters for sudo&lt;agent_stop&gt;
-  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-agent
-    arg #1     : /usr/bin/systemctl
-    arg #2     : stop
-    arg #3     : tedge-agent
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:34:28 DEBUG Waiting up to 600 secs for process sudo&lt;agent_stop&gt; (pid 10736)
-19:34:29 INFO  Executed sudo&lt;agent_stop&gt;, exit status 0
-19:34:29 DEBUG Process parameters for sudo&lt;sub_stop&gt;
-  command line : /usr/bin/sudo killall tedge
-    arg #1     : killall
-    arg #2     : tedge
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:34:29 DEBUG Waiting up to 600 secs for process sudo&lt;sub_stop&gt; (pid 10738)
-19:34:29 INFO  Executed sudo&lt;sub_stop&gt;, exit status 0
-19:34:29 DEBUG --- test validate
-19:34:29 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_resp.out
-19:34:29 WARN  Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w" ... failed [run.py:78]
-19:34:29 DEBUG --- test cleanup
-19:34:29 DEBUG ProcessUser cleanup function done.
-19:34:29 INFO  
-19:34:29 INFO  Test duration: 4.23 secs
-19:34:29 INFO  Test final outcome:  FAILED
-19:34:29 INFO  Test outcome reason: Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w"
-19:34:29 INFO  
+16:18:06 DEBUG Waiting up to 600 secs for process sudo&lt;agent_start&gt; (pid 3763)
+16:18:06 WARN  Executed sudo&lt;agent_start&gt;, exit status 5
+16:18:06 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_start.err
+16:18:06 INFO  Contents of agent_start.err: 
+16:18:06 INFO    Failed to start tedge-agent.service: Unit tedge-mapper-sm-c8y.service not found.
+16:18:06 INFO    -----
+16:18:06 INFO  
+16:18:06 WARN  sudo&lt;agent_start&gt; returned non-zero exit code 5 ... blocked [run.py:60]
+16:18:06 WARN  Aborted test due to BLOCKED outcome
+16:18:06 DEBUG --- test cleanup
+16:18:06 WARN  caught &lt;class 'pysys.exceptions.ProcessError'&gt;: Error stopping process: [Errno 1] Operation not permitted
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 228, in stop
+    os.kill(self.pid, signal.SIGTERM)
+PermissionError: [Errno 1] Operation not permitted
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1309, in cleanup
+    if process.running(): process.stop()
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 242, in stop
+    raise ProcessError("Error stopping process: %s"%ex)
+pysys.exceptions.ProcessError: Error stopping process: [Errno 1] Operation not permitted
+16:18:06 DEBUG ProcessUser cleanup function done.
+16:18:06 WARN  Cleanup failed with 1 errors: Failed to stop process sudo&lt;sub_resp&gt;: Error stopping process: [Errno 1] Operation not permitted ... blocked 
+16:18:06 INFO  
+16:18:06 INFO  Test duration: 1.47 secs
+16:18:06 INFO  Test final outcome:  BLOCKED
+16:18:06 INFO  Test outcome reason: sudo&lt;agent_start&gt; returned non-zero exit code 5 (+1 other failures)
+16:18:06 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="apt_fail_noarg" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg" />
@@ -361,127 +197,7 @@
 </testsuite><testsuite name="apt_sequence_remove_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail" />
 </testsuite><testsuite name="apt_update_list" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginUpdateList" name="apt_update_list" />
 </testsuite><testsuite name="apt_wrong_option" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option" />
-</testsuite><testsuite name="c8y_jwt_token_retrieval" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="ValidateJWTTokenRetrieval" name="c8y_jwt_token_retrieval">
-		<failure message="FAILED: Grep on resp_jwt.out contains &quot;\[c8y/s/dat\] 71,&quot;" type="FAILED" />
-		<system-out>19:19:23 INFO  ==============================================================
-19:19:23 INFO  Id:    c8y_jwt_token_retrieval
-19:19:23 INFO  Dir:   cloud_c8y/
-19:19:23 INFO  Title: Validate the Cumulocity JWT Token Retrieval feature
-19:19:23 DEBUG Execution order hint: 0.0
-19:19:23 INFO  ==============================================================
-19:19:23 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:23 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 32192)
-19:19:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-19:19:23 DEBUG --- test execute
-19:19:23 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:23 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 32197)
-19:19:36 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 12 secs
-19:19:36 DEBUG Process parameters for sudo&lt;resp_jwt&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/dat
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : c8y/s/dat
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/resp_jwt.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/resp_jwt.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:36 INFO  Started sudo&lt;resp_jwt&gt; with process id 32401
-19:19:36 DEBUG Process parameters for sudo&lt;req_jwt&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/uat ''"'"''"'"''
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : c8y/s/uat
-    arg #5     : ''
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/req_jwt.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/req_jwt.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:36 DEBUG Waiting up to 600 secs for process sudo&lt;req_jwt&gt; (pid 32402)
-19:19:37 INFO  Executed sudo&lt;req_jwt&gt;, exit status 0
-19:19:38 DEBUG Process parameters for sudo&lt;kill_out&gt;
-  command line : /usr/bin/sudo killall tedge
-    arg #1     : killall
-    arg #2     : tedge
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:38 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 32419)
-19:19:38 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-19:19:38 DEBUG --- test validate
-19:19:38 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/resp_jwt.out
-19:19:38 WARN  Grep on resp_jwt.out contains "\[c8y/s/dat\] 71," ... failed [run.py:60]
-19:19:38 DEBUG --- test cleanup
-19:19:38 INFO  
-19:19:38 INFO  cleanup:
-19:19:38 DEBUG Running registered cleanup function: &lt;bound method ValidateJWTTokenRetrieval.jwt_token_cleanup of &lt;ValidateJWTTokenRetrieval object at 0x75605b90&gt;&gt;
-19:19:38 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-19:19:38 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 32424)
-19:19:43 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-19:19:43 DEBUG ProcessUser cleanup function done.
-19:19:43 INFO  
-19:19:43 INFO  Test duration: 19.91 secs
-19:19:43 INFO  Test final outcome:  FAILED
-19:19:43 INFO  Test outcome reason: Grep on resp_jwt.out contains "\[c8y/s/dat\] 71,"
-19:19:43 INFO  
-</system-out>
-	</testcase>
+</testsuite><testsuite name="c8y_jwt_token_retrieval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateJWTTokenRetrieval" name="c8y_jwt_token_retrieval" />
 </testsuite><testsuite name="c8y_restart_bridge" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RestartBridge" name="c8y_restart_bridge" />
 </testsuite><testsuite name="call_tedge_-V" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-V" />
 </testsuite><testsuite name="call_tedge_-h" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-h" />
@@ -506,15 +222,15 @@
 </testsuite><testsuite name="local_mqtt_sub_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_sub_fail" />
 </testsuite><testsuite name="log_request_error_messages" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="LogRequestVerifySearchTextError" name="log_request_error_messages">
 		<failure message="BLOCKED: Exception: retry" type="BLOCKED" />
-		<system-out>19:19:55 INFO  ==============================================================
-19:19:55 INFO  Id:    log_request_error_messages
-19:19:55 INFO  Dir:   log_request_end_to_end/
-19:19:55 INFO  Title: Validate end to end behaviour for the log request operation check for error messages
-19:19:55 DEBUG Execution order hint: 0.0
-19:19:55 INFO  ==============================================================
-19:19:55 DEBUG EnvironmentC8y Setup
-19:19:55 INFO  EnvironmentC8y Setup
-19:19:55 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+		<system-out>16:05:23 INFO  ==============================================================
+16:05:23 INFO  Id:    log_request_error_messages
+16:05:23 INFO  Dir:   log_request_end_to_end/
+16:05:23 INFO  Title: Validate end to end behaviour for the log request operation check for error messages
+16:05:23 DEBUG Execution order hint: 0.0
+16:05:23 INFO  ==============================================================
+16:05:24 DEBUG EnvironmentC8y Setup
+16:05:24 INFO  EnvironmentC8y Setup
+16:05:24 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -527,11 +243,11 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:19:55 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 32636)
-19:19:56 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-19:19:56 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-19:19:56 INFO  Delaying execution by 9 seconds
-19:20:05 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+16:05:24 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 27384)
+16:05:24 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:05:24 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 1 seconds
+16:05:24 INFO  Delaying execution by 10 seconds
+16:05:34 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -545,9 +261,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:05 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 32676)
-19:20:17 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 12 secs
-19:20:17 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+16:05:34 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 27436)
+16:05:45 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:05:45 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -562,9 +278,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 438)
-19:20:18 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-19:20:18 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+16:05:45 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 27575)
+16:05:45 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:05:45 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
   command line : /usr/bin/systemctl status mosquitto
     arg #1     : status
     arg #2     : mosquitto
@@ -577,9 +293,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:18 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 441)
-19:20:18 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-19:20:18 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+16:05:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 27578)
+16:05:45 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:05:45 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -592,9 +308,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:18 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 442)
-19:20:19 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-19:20:19 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+16:05:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 27591)
+16:05:46 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:05:46 DEBUG Process parameters for sudo&lt;rm_logs&gt;
   command line : /usr/bin/sudo rm -rf /tmp/sw_logs
     arg #1     : rm
     arg #2     : -rf
@@ -608,9 +324,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:19 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 443)
-19:20:19 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
-19:20:19 DEBUG Process parameters for sudo&lt;move_logs&gt;
+16:05:46 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 27592)
+16:05:46 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:05:46 DEBUG Process parameters for sudo&lt;move_logs&gt;
   command line : /usr/bin/sudo sh -c 'mv /tmp/sw_logs/* /var/log/tedge/agent/'
     arg #1     : sh
     arg #2     : -c
@@ -624,31 +340,31 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:19 DEBUG Waiting up to 600 secs for process sudo&lt;move_logs&gt; (pid 445)
-19:20:19 INFO  Executed sudo&lt;move_logs&gt;, exit status 0
-19:20:19 DEBUG --- test execute
-19:20:20 DEBUG --- test validate
-19:20:20 INFO  log response None
-19:20:21 INFO  log response None
-19:20:22 INFO  log response None
-19:20:23 INFO  log response None
-19:20:25 INFO  log response None
-19:20:26 INFO  log response None
-19:20:27 INFO  log response None
-19:20:28 INFO  log response None
-19:20:29 INFO  log response None
-19:20:30 INFO  log response None
-19:20:32 INFO  log response None
-19:20:33 INFO  log response None
-19:20:34 INFO  log response None
-19:20:35 INFO  log response None
-19:20:36 INFO  log response None
-19:20:37 INFO  log response None
-19:20:38 INFO  log response None
-19:20:40 INFO  log response None
-19:20:41 INFO  log response None
-19:20:42 INFO  log response None
-19:20:42 WARN  caught &lt;class 'Exception'&gt; while running test: retry
+16:05:46 DEBUG Waiting up to 600 secs for process sudo&lt;move_logs&gt; (pid 27594)
+16:05:46 INFO  Executed sudo&lt;move_logs&gt;, exit status 0
+16:05:46 DEBUG --- test execute
+16:05:46 DEBUG --- test validate
+16:05:47 INFO  log response None
+16:05:48 INFO  log response None
+16:05:49 INFO  log response None
+16:05:50 INFO  log response None
+16:05:51 INFO  log response None
+16:05:52 INFO  log response None
+16:05:53 INFO  log response None
+16:05:55 INFO  log response None
+16:05:56 INFO  log response None
+16:05:57 INFO  log response None
+16:05:58 INFO  log response None
+16:05:59 INFO  log response None
+16:06:00 INFO  log response None
+16:06:02 INFO  log response None
+16:06:03 INFO  log response None
+16:06:04 INFO  log response None
+16:06:05 INFO  log response None
+16:06:06 INFO  log response None
+16:06:07 INFO  log response None
+16:06:09 INFO  log response None
+16:06:09 WARN  caught &lt;class 'Exception'&gt; while running test: retry
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
     self.testObj.validate()
@@ -663,12 +379,12 @@ Traceback (most recent call last):
   File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_error_messages/run.py", line 52, in wait_until_logs_retrieved
     raise Exception("retry")
 Exception: retry
-19:20:42 WARN  Exception: retry ... blocked 
-19:20:42 DEBUG --- test cleanup
-19:20:42 INFO  
-19:20:42 INFO  cleanup:
-19:20:42 DEBUG Running registered cleanup function: &lt;bound method LogRequestVerifySearchTextError.cleanup_logs of &lt;LogRequestVerifySearchTextError object at 0x752f7bd0&gt;&gt;
-19:20:42 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+16:06:09 WARN  Exception: retry ... blocked 
+16:06:09 DEBUG --- test cleanup
+16:06:09 INFO  
+16:06:09 INFO  cleanup:
+16:06:09 DEBUG Running registered cleanup function: &lt;bound method LogRequestVerifySearchTextError.cleanup_logs of &lt;LogRequestVerifySearchTextError object at 0x753f6b30&gt;&gt;
+16:06:09 DEBUG Process parameters for sudo&lt;rm_logs&gt;
   command line : /usr/bin/sudo sh -c 'rm -rf /var/log/tedge/agent/example-*'
     arg #1     : sh
     arg #2     : -c
@@ -682,9 +398,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:42 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 597)
-19:20:42 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
-19:20:42 DEBUG Process parameters for sudo&lt;rm_tmp_logs&gt;
+16:06:09 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 27688)
+16:06:09 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:06:09 DEBUG Process parameters for sudo&lt;rm_tmp_logs&gt;
   command line : /usr/bin/sudo rm -rf /tmp/sw_logs
     arg #1     : rm
     arg #2     : -rf
@@ -698,9 +414,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:42 DEBUG Waiting up to 600 secs for process sudo&lt;rm_tmp_logs&gt; (pid 600)
-19:20:43 INFO  Executed sudo&lt;rm_tmp_logs&gt;, exit status 0
-19:20:43 DEBUG Process parameters for sudo&lt;send_failed&gt;
+16:06:09 DEBUG Waiting up to 600 secs for process sudo&lt;rm_tmp_logs&gt; (pid 27691)
+16:06:09 INFO  Executed sudo&lt;rm_tmp_logs&gt;, exit status 0
+16:06:09 DEBUG Process parameters for sudo&lt;send_failed&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/us 502,c8y_LogfileRequest
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -716,11 +432,11 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:43 DEBUG Waiting up to 600 secs for process sudo&lt;send_failed&gt; (pid 603)
-19:20:43 INFO  Executed sudo&lt;send_failed&gt;, exit status 0
-19:20:43 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;LogRequestVerifySearchTextError object at 0x752f7bd0&gt;&gt;
-19:20:43 DEBUG EnvironmentC8y Cleanup
-19:20:43 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+16:06:09 DEBUG Waiting up to 600 secs for process sudo&lt;send_failed&gt; (pid 27705)
+16:06:10 INFO  Executed sudo&lt;send_failed&gt;, exit status 0
+16:06:10 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;LogRequestVerifySearchTextError object at 0x753f6b30&gt;&gt;
+16:06:10 DEBUG EnvironmentC8y Cleanup
+16:06:10 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -734,9 +450,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:43 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 623)
-19:20:47 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-19:20:47 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+16:06:10 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 27711)
+16:06:12 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:06:12 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -749,27 +465,27 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:47 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 721)
-19:20:48 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-19:20:48 DEBUG ProcessUser cleanup function done.
-19:20:48 INFO  
-19:20:48 INFO  Test duration: 53.13 secs
-19:20:48 INFO  Test final outcome:  BLOCKED
-19:20:48 INFO  Test outcome reason: Exception: retry
-19:20:48 INFO  
+16:06:12 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 27751)
+16:06:12 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:06:12 DEBUG ProcessUser cleanup function done.
+16:06:12 INFO  
+16:06:12 INFO  Test duration: 49.18 secs
+16:06:12 INFO  Test final outcome:  BLOCKED
+16:06:12 INFO  Test outcome reason: Exception: retry
+16:06:12 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="log_request_num_lines" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="LogRequestVerifyNumberOfLines" name="log_request_num_lines">
 		<failure message="BLOCKED: Exception: retry" type="BLOCKED" />
-		<system-out>19:20:48 INFO  ==============================================================
-19:20:48 INFO  Id:    log_request_num_lines
-19:20:48 INFO  Dir:   log_request_end_to_end/
-19:20:48 INFO  Title: Validate end to end behaviour for the log request operation check for number of lines
-19:20:48 DEBUG Execution order hint: 0.0
-19:20:48 INFO  ==============================================================
-19:20:48 DEBUG EnvironmentC8y Setup
-19:20:48 INFO  EnvironmentC8y Setup
-19:20:48 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+		<system-out>16:06:12 INFO  ==============================================================
+16:06:12 INFO  Id:    log_request_num_lines
+16:06:12 INFO  Dir:   log_request_end_to_end/
+16:06:12 INFO  Title: Validate end to end behaviour for the log request operation check for number of lines
+16:06:12 DEBUG Execution order hint: 0.0
+16:06:12 INFO  ==============================================================
+16:06:12 DEBUG EnvironmentC8y Setup
+16:06:12 INFO  EnvironmentC8y Setup
+16:06:12 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -782,11 +498,11 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:48 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 722)
-19:20:48 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-19:20:48 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-19:20:48 INFO  Delaying execution by 6 seconds
-19:20:54 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+16:06:12 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 27772)
+16:06:13 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:06:13 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+16:06:13 INFO  Delaying execution by 9 seconds
+16:06:22 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -800,9 +516,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:20:54 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 759)
-19:21:07 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 12 secs
-19:21:07 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+16:06:22 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 27816)
+16:06:33 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:06:33 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -817,9 +533,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:07 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 986)
-19:21:07 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-19:21:07 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+16:06:33 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 27955)
+16:06:33 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:06:33 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
   command line : /usr/bin/systemctl status mosquitto
     arg #1     : status
     arg #2     : mosquitto
@@ -832,9 +548,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:07 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 1001)
-19:21:08 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-19:21:08 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+16:06:33 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 27958)
+16:06:33 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:06:33 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -847,9 +563,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:08 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 1002)
-19:21:08 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-19:21:08 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+16:06:33 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 27959)
+16:06:33 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:06:33 DEBUG Process parameters for sudo&lt;rm_logs&gt;
   command line : /usr/bin/sudo rm -rf /tmp/sw_logs
     arg #1     : rm
     arg #2     : -rf
@@ -863,9 +579,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:08 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 1003)
-19:21:08 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
-19:21:08 DEBUG Process parameters for sudo&lt;move_logs&gt;
+16:06:33 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 27972)
+16:06:34 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:06:34 DEBUG Process parameters for sudo&lt;move_logs&gt;
   command line : /usr/bin/sudo sh -c 'mv /tmp/sw_logs/* /var/log/tedge/agent/'
     arg #1     : sh
     arg #2     : -c
@@ -879,31 +595,31 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:08 DEBUG Waiting up to 600 secs for process sudo&lt;move_logs&gt; (pid 1005)
-19:21:08 INFO  Executed sudo&lt;move_logs&gt;, exit status 0
-19:21:08 DEBUG --- test execute
-19:21:09 DEBUG --- test validate
-19:21:09 INFO  log response None
-19:21:10 INFO  log response None
-19:21:11 INFO  log response None
-19:21:12 INFO  log response None
-19:21:13 INFO  log response None
-19:21:15 INFO  log response None
-19:21:16 INFO  log response None
-19:21:17 INFO  log response None
-19:21:18 INFO  log response None
-19:21:19 INFO  log response None
-19:21:20 INFO  log response None
-19:21:22 INFO  log response None
-19:21:23 INFO  log response None
-19:21:24 INFO  log response None
-19:21:25 INFO  log response None
-19:21:26 INFO  log response None
-19:21:27 INFO  log response None
-19:21:29 INFO  log response None
-19:21:30 INFO  log response None
-19:21:31 INFO  log response None
-19:21:31 WARN  caught &lt;class 'Exception'&gt; while running test: retry
+16:06:34 DEBUG Waiting up to 600 secs for process sudo&lt;move_logs&gt; (pid 27974)
+16:06:34 INFO  Executed sudo&lt;move_logs&gt;, exit status 0
+16:06:34 DEBUG --- test execute
+16:06:34 DEBUG --- test validate
+16:06:34 INFO  log response None
+16:06:35 INFO  log response None
+16:06:37 INFO  log response None
+16:06:38 INFO  log response None
+16:06:39 INFO  log response None
+16:06:40 INFO  log response None
+16:06:41 INFO  log response None
+16:06:42 INFO  log response None
+16:06:44 INFO  log response None
+16:06:45 INFO  log response None
+16:06:46 INFO  log response None
+16:06:47 INFO  log response None
+16:06:48 INFO  log response None
+16:06:49 INFO  log response None
+16:06:51 INFO  log response None
+16:06:52 INFO  log response None
+16:06:53 INFO  log response None
+16:06:54 INFO  log response None
+16:06:55 INFO  log response None
+16:06:56 INFO  log response None
+16:06:56 WARN  caught &lt;class 'Exception'&gt; while running test: retry
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
     self.testObj.validate()
@@ -918,12 +634,12 @@ Traceback (most recent call last):
   File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/log_request_end_to_end/log_request_num_lines/run.py", line 52, in wait_until_logs_retrieved
     raise Exception("retry")
 Exception: retry
-19:21:31 WARN  Exception: retry ... blocked 
-19:21:31 DEBUG --- test cleanup
-19:21:31 INFO  
-19:21:31 INFO  cleanup:
-19:21:31 DEBUG Running registered cleanup function: &lt;bound method LogRequestVerifyNumberOfLines.cleanup_logs of &lt;LogRequestVerifyNumberOfLines object at 0x752cfb30&gt;&gt;
-19:21:31 DEBUG Process parameters for sudo&lt;rm_logs&gt;
+16:06:56 WARN  Exception: retry ... blocked 
+16:06:56 DEBUG --- test cleanup
+16:06:56 INFO  
+16:06:56 INFO  cleanup:
+16:06:56 DEBUG Running registered cleanup function: &lt;bound method LogRequestVerifyNumberOfLines.cleanup_logs of &lt;LogRequestVerifyNumberOfLines object at 0x7533eaf0&gt;&gt;
+16:06:56 DEBUG Process parameters for sudo&lt;rm_logs&gt;
   command line : /usr/bin/sudo sh -c 'rm -rf /var/log/tedge/agent/example-*'
     arg #1     : sh
     arg #2     : -c
@@ -937,9 +653,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:31 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 1102)
-19:21:31 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
-19:21:31 DEBUG Process parameters for sudo&lt;rm_tmp_logs&gt;
+16:06:56 DEBUG Waiting up to 600 secs for process sudo&lt;rm_logs&gt; (pid 28062)
+16:06:57 INFO  Executed sudo&lt;rm_logs&gt;, exit status 0
+16:06:57 DEBUG Process parameters for sudo&lt;rm_tmp_logs&gt;
   command line : /usr/bin/sudo rm -rf /tmp/sw_logs
     arg #1     : rm
     arg #2     : -rf
@@ -953,9 +669,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:31 DEBUG Waiting up to 600 secs for process sudo&lt;rm_tmp_logs&gt; (pid 1117)
-19:21:31 INFO  Executed sudo&lt;rm_tmp_logs&gt;, exit status 0
-19:21:31 DEBUG Process parameters for sudo&lt;send_failed&gt;
+16:06:57 DEBUG Waiting up to 600 secs for process sudo&lt;rm_tmp_logs&gt; (pid 28065)
+16:06:57 INFO  Executed sudo&lt;rm_tmp_logs&gt;, exit status 0
+16:06:57 DEBUG Process parameters for sudo&lt;send_failed&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/us 502,c8y_LogfileRequest
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -971,11 +687,11 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:31 DEBUG Waiting up to 600 secs for process sudo&lt;send_failed&gt; (pid 1120)
-19:21:32 INFO  Executed sudo&lt;send_failed&gt;, exit status 0
-19:21:32 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;LogRequestVerifyNumberOfLines object at 0x752cfb30&gt;&gt;
-19:21:32 DEBUG EnvironmentC8y Cleanup
-19:21:32 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+16:06:57 DEBUG Waiting up to 600 secs for process sudo&lt;send_failed&gt; (pid 28067)
+16:06:57 INFO  Executed sudo&lt;send_failed&gt;, exit status 0
+16:06:57 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;LogRequestVerifyNumberOfLines object at 0x7533eaf0&gt;&gt;
+16:06:57 DEBUG EnvironmentC8y Cleanup
+16:06:57 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -989,9 +705,9 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:32 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 1126)
-19:21:36 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-19:21:36 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+16:06:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 28073)
+16:06:59 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:06:59 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -1004,17 +720,115 @@ Exception: retry
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-19:21:36 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 1200)
-19:21:36 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-19:21:36 DEBUG ProcessUser cleanup function done.
-19:21:36 INFO  
-19:21:36 INFO  Test duration: 48.52 secs
-19:21:36 INFO  Test final outcome:  BLOCKED
-19:21:36 INFO  Test outcome reason: Exception: retry
-19:21:36 INFO  
+16:06:59 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 28127)
+16:07:00 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:07:00 DEBUG ProcessUser cleanup function done.
+16:07:00 INFO  
+16:07:00 INFO  Test duration: 47.42 secs
+16:07:00 INFO  Test final outcome:  BLOCKED
+16:07:00 INFO  Test outcome reason: Exception: retry
+16:07:00 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="mapper_awaits_before_reconnect" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect" />
+</testsuite><testsuite name="mapper_awaits_before_reconnect" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect">
+		<failure message="FAILED: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0" type="FAILED" />
+		<system-out>16:19:45 INFO  ==============================================================
+16:19:45 INFO  Id:    mapper_awaits_before_reconnect
+16:19:45 INFO  Dir:   tedge_mapper_c8y/
+16:19:45 INFO  Title: Validate mapper doesn't reconnect too often
+16:19:45 DEBUG Execution order hint: 0.0
+16:19:45 INFO  ==============================================================
+16:19:45 DEBUG --- test execute
+16:19:45 DEBUG Process parameters for mosquitto_sub
+  command line : /usr/bin/mosquitto_sub -i tedge-mapper-c8y -t test
+    arg #1     : -i
+    arg #2     : tedge-mapper-c8y
+    arg #3     : -t
+    arg #4     : test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/mosquitto_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/mosquitto_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:45 INFO  Started mosquitto_sub with process id 4888
+16:19:45 INFO  Waiting for 0.1 seconds
+16:19:45 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+  command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:45 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 4889)
+16:19:45 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+16:19:45 INFO  Waiting for 5.0 seconds
+16:19:50 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:50 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 4922)
+16:19:51 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+16:19:51 DEBUG --- test validate
+16:19:51 DEBUG Process parameters for sudo&lt;tedge_mapper_journal&gt;
+  command line : /usr/bin/sudo journalctl -u tedge-mapper-c8y.service --since '2022-02-18 16:19:46' --until '2022-02-18 16:19:51'
+    arg #1     : journalctl
+    arg #2     : -u
+    arg #3     : tedge-mapper-c8y.service
+    arg #4     : --since
+    arg #5     : 2022-02-18 16:19:46
+    arg #6     : --until
+    arg #7     : 2022-02-18 16:19:51
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:51 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_journal&gt; (pid 4924)
+16:19:51 INFO  Executed sudo&lt;tedge_mapper_journal&gt;, exit status 0
+16:19:51 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
+16:19:51 DEBUG Grep on input file tedge_mapper_journal.out successfully matched expression "ERROR" with line: 'Feb 18 16:19:46 raspberrypi tedge_mapper[4891]: 2022-02-18T15:19:46.744277159Z ERROR tedge_mapper::core::mapper: MQTT connection error: Mqtt state: Io error Custom { kind: ConnectionAborted, error: "connection closed by peer" }\n'
+16:19:51 INFO  Grep on input file tedge_mapper_journal.out ... passed
+16:19:51 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+16:19:51 INFO  Line count on input file tedge_mapper_journal.out ... passed
+16:19:51 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+16:19:51 WARN  Line count on tedge_mapper_journal.out for "tedge_mapper::mapper: MQTT connection error:" expected &gt;=2 but got 0 ... failed [run.py:70]
+16:19:51 WARN  Aborted test due to FAILED outcome
+16:19:51 DEBUG --- test cleanup
+16:19:51 DEBUG Failed to kill process group (but process itself was killed fine) for mosquitto_sub: name 'SIGTERM' is not defined
+16:19:51 DEBUG Waiting up to 30 secs for process mosquitto_sub (pid 4888)
+16:19:51 DEBUG ProcessUser cleanup function done.
+16:19:51 INFO  
+16:19:51 INFO  Test duration: 6.14 secs
+16:19:51 INFO  Test final outcome:  FAILED
+16:19:51 INFO  Test outcome reason: Line count on tedge_mapper_journal.out for "tedge_mapper::mapper: MQTT connection error:" expected &gt;=2 but got 0
+16:19:51 INFO  
+</system-out>
+	</testcase>
 </testsuite><testsuite name="monitoring_smaller_interval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MonitoringSmallInterval" name="monitoring_smaller_interval" />
 </testsuite><testsuite name="monitoring_with_collectd" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MonitoringWithCollectd" name="monitoring_with_collectd" />
 </testsuite><testsuite name="monitoring_with_simulated_messages" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MonitoringWithSimulatedMessages" name="monitoring_with_simulated_messages" />
@@ -1025,49 +839,1385 @@ Exception: retry
 </testsuite><testsuite name="publish_flux" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishFlux" name="publish_flux" />
 </testsuite><testsuite name="publish_sawmill" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishSawmill" name="publish_sawmill" />
 </testsuite><testsuite name="runtime_start_two_mappers" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RuntimeMultiMappers" name="runtime_start_two_mappers" />
-</testsuite><testsuite name="sm_tedge_mapper_init_session" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeSMMapperInitSession" name="sm_tedge_mapper_init_session" />
-</testsuite><testsuite name="smoketest_json" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmokeTestJson" name="smoketest_json" />
-</testsuite><testsuite name="smoketest_json_400_samples_10ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples10ms" name="smoketest_json_400_samples_10ms" />
-</testsuite><testsuite name="smoketest_json_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples20ms" name="smoketest_json_400_samples_20ms" />
+</testsuite><testsuite name="sm_tedge_mapper_init_session" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeSMMapperInitSession" name="sm_tedge_mapper_init_session">
+		<failure message="BLOCKED: sudo&lt;stop_tedge_mapper&gt; returned non-zero exit code 5" type="BLOCKED" />
+		<system-out>16:19:52 INFO  ==============================================================
+16:19:52 INFO  Id:    sm_tedge_mapper_init_session
+16:19:52 INFO  Dir:   tedge_mapper_c8y/
+16:19:52 INFO  Title: Validate tedge_mapper_sm_c8y init session feature
+16:19:52 DEBUG Execution order hint: 0.0
+16:19:52 INFO  ==============================================================
+16:19:52 DEBUG EnvironmentC8y Setup
+16:19:52 INFO  EnvironmentC8y Setup
+16:19:52 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:52 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 4956)
+16:19:52 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:19:52 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:52 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 4960)
+16:20:03 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:20:03 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:03 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 5098)
+16:20:03 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:20:03 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:03 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 5101)
+16:20:03 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:20:03 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:03 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 5102)
+16:20:04 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:20:04 DEBUG --- test execute
+16:20:04 DEBUG Process parameters for sudo&lt;stop_tedge_mapper&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-sm-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-sm-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/stop_tedge_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/stop_tedge_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:04 DEBUG Waiting up to 600 secs for process sudo&lt;stop_tedge_mapper&gt; (pid 5103)
+16:20:04 WARN  Executed sudo&lt;stop_tedge_mapper&gt;, exit status 5
+16:20:04 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/stop_tedge_mapper.err
+16:20:04 INFO  Contents of stop_tedge_mapper.err: 
+16:20:04 INFO    Failed to stop tedge-mapper-sm-c8y.service: Unit tedge-mapper-sm-c8y.service not loaded.
+16:20:04 INFO    -----
+16:20:04 INFO  
+16:20:04 WARN  sudo&lt;stop_tedge_mapper&gt; returned non-zero exit code 5 ... blocked [run.py:39]
+16:20:04 WARN  Aborted test due to BLOCKED outcome
+16:20:04 DEBUG --- test cleanup
+16:20:04 INFO  
+16:20:04 INFO  cleanup:
+16:20:04 DEBUG Running registered cleanup function: &lt;bound method TedgeSMMapperInitSession.init_cleanup of &lt;TedgeSMMapperInitSession object at 0x7521fe50&gt;&gt;
+16:20:04 DEBUG EnvironmentC8y Cleanup
+16:20:04 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:04 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 5120)
+16:20:06 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:20:06 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 5160)
+16:20:07 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:20:07 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeSMMapperInitSession object at 0x7521fe50&gt;&gt;
+16:20:07 DEBUG EnvironmentC8y Cleanup
+16:20:07 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+16:20:07 INFO  Delaying execution by 9 seconds
+16:20:16 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 5200)
+16:20:16 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:20:16 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/sm_tedge_mapper_init_session/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:16 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 5214)
+16:20:16 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:20:16 DEBUG ProcessUser cleanup function done.
+16:20:16 INFO  
+16:20:16 INFO  Test duration: 24.17 secs
+16:20:16 INFO  Test final outcome:  BLOCKED
+16:20:16 INFO  Test outcome reason: sudo&lt;stop_tedge_mapper&gt; returned non-zero exit code 5
+16:20:16 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="smoketest_json" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="SmokeTestJson" name="smoketest_json">
+		<failure message="BLOCKED: python3&lt;stdout&gt; returned non-zero exit code 1" type="BLOCKED" />
+		<system-out>16:11:04 INFO  ==============================================================
+16:11:04 INFO  Id:    smoketest_json
+16:11:04 INFO  Dir:   smoketests/
+16:11:04 INFO  Title: Smoke Test Json
+16:11:04 DEBUG Execution order hint: 0.0
+16:11:04 INFO  ==============================================================
+16:11:05 DEBUG EnvironmentC8y Setup
+16:11:05 INFO  EnvironmentC8y Setup
+16:11:05 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 30000)
+16:11:05 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:11:05 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+16:11:05 INFO  Delaying execution by 8 seconds
+16:11:13 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 30040)
+16:11:23 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:11:23 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:23 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 30179)
+16:11:24 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:11:24 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:24 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 30182)
+16:11:24 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:11:24 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:24 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 30183)
+16:11:24 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:11:24 DEBUG C8y Roundtrip Setup
+16:11:24 DEBUG --- test execute
+16:11:24 DEBUG EnvironmentC8y Execute
+16:11:24 DEBUG C8y Roundtrip Execute
+16:11:34 DEBUG Process parameters for python3&lt;stdout&gt;
+  command line : /home/pi/env-pysys/bin/python3 /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py -m JSON -pub /home/pi -u octocat -t t493319102 -id 14374054 -o 10 -d 100 -s 20
+    arg #1     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py
+    arg #2     : -m
+    arg #3     : JSON
+    arg #4     : -pub
+    arg #5     : /home/pi
+    arg #6     : -u
+    arg #7     : octocat
+    arg #8     : -t
+    arg #9     : t493319102
+    arg #10    : -id
+    arg #11    : 14374054
+    arg #12    : -o
+    arg #13    : 10
+    arg #14    : -d
+    arg #15    : 100
+    arg #16    : -s
+    arg #17    : 20
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/stdout.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/stdout.err
+  environment  : C8YPASS=CsiqG9s25z//
+16:11:34 DEBUG Waiting up to 600 secs for process python3&lt;stdout&gt; (pid 30232)
+16:11:42 WARN  Executed python3&lt;stdout&gt;, exit status 1
+16:11:42 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/stdout.err
+16:11:42 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/stdout.out
+16:11:42 INFO  Contents of stdout.out: 
+16:11:42 INFO    Publishing sawtooth with delay 100ms height 20 iterations 1 template flux will cause 20 publishs.
+16:11:42 INFO    Iteraton: 0
+16:11:42 INFO    Execution took 2 s 2007 ms
+16:11:42 INFO    Publish rate: 100.350 ms/pub
+16:11:42 INFO    Publish per second: 9.965 pub/s
+16:11:42 INFO    Act: Publishing values with temperature_publisher
+16:11:42 INFO    Waiting 3s for values to arrive in C8y
+16:11:42 INFO    Assert: Retrieving data via REST interface
+16:11:42 INFO    Gathering values from 2022-02-18 15:11:31+00:00 to 2022-02-18 15:11:41+00:00
+16:11:42 INFO    Found 0 recorded values:
+16:11:42 INFO    Retrieved values:
+16:11:42 INFO    Expected:  0.0  ...  19.0
+16:11:42 INFO    Data verification FAILED
+16:11:42 INFO    -----
+16:11:42 INFO  
+16:11:42 WARN  python3&lt;stdout&gt; returned non-zero exit code 1 ... blocked 
+16:11:42 WARN  Aborted test due to BLOCKED outcome
+16:11:42 DEBUG --- test cleanup
+16:11:42 INFO  
+16:11:42 INFO  cleanup:
+16:11:42 DEBUG Running registered cleanup function: &lt;bound method Environment_roundtrip_c8y.myenvroundtripcleanup of &lt;SmokeTestJson object at 0x7526d890&gt;&gt;
+16:11:42 DEBUG C8y Roundtrip MyCleanup
+16:11:42 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;SmokeTestJson object at 0x7526d890&gt;&gt;
+16:11:42 DEBUG EnvironmentC8y Cleanup
+16:11:42 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:42 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 30270)
+16:11:45 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:11:45 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 30322)
+16:11:45 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:11:45 DEBUG ProcessUser cleanup function done.
+16:11:45 INFO  
+16:11:45 INFO  Test duration: 40.69 secs
+16:11:45 INFO  Test final outcome:  BLOCKED
+16:11:45 INFO  Test outcome reason: python3&lt;stdout&gt; returned non-zero exit code 1
+16:11:45 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="smoketest_json_400_samples_10ms" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="SmoketestJson400Samples10ms" name="smoketest_json_400_samples_10ms">
+		<failure message="BLOCKED: python3&lt;stdout&gt; returned non-zero exit code 1" type="BLOCKED" />
+		<system-out>16:11:45 INFO  ==============================================================
+16:11:45 INFO  Id:    smoketest_json_400_samples_10ms
+16:11:45 INFO  Dir:   smoketests/
+16:11:45 INFO  Title: Smoketest Json 400 Samples 10ms Delay
+16:11:45 DEBUG Execution order hint: 0.0
+16:11:45 INFO  ==============================================================
+16:11:45 DEBUG EnvironmentC8y Setup
+16:11:45 INFO  EnvironmentC8y Setup
+16:11:45 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 30323)
+16:11:46 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:11:46 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+16:11:46 INFO  Delaying execution by 8 seconds
+16:11:54 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:11:54 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 30366)
+16:12:04 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:12:04 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:04 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 30516)
+16:12:05 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:12:05 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 30519)
+16:12:05 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:12:05 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 30520)
+16:12:05 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:12:05 DEBUG C8y Roundtrip Setup
+16:12:05 DEBUG --- test execute
+16:12:05 DEBUG EnvironmentC8y Execute
+16:12:05 DEBUG C8y Roundtrip Execute
+16:12:25 DEBUG Process parameters for python3&lt;stdout&gt;
+  command line : /home/pi/env-pysys/bin/python3 /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py -m JSON -pub /home/pi -u octocat -t t493319102 -id 14374054 -o 20 -d 10 -s 400
+    arg #1     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py
+    arg #2     : -m
+    arg #3     : JSON
+    arg #4     : -pub
+    arg #5     : /home/pi
+    arg #6     : -u
+    arg #7     : octocat
+    arg #8     : -t
+    arg #9     : t493319102
+    arg #10    : -id
+    arg #11    : 14374054
+    arg #12    : -o
+    arg #13    : 20
+    arg #14    : -d
+    arg #15    : 10
+    arg #16    : -s
+    arg #17    : 400
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/stdout.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/stdout.err
+  environment  : C8YPASS=CsiqG9s25z//
+16:12:25 DEBUG Waiting up to 600 secs for process python3&lt;stdout&gt; (pid 30609)
+16:12:35 WARN  Executed python3&lt;stdout&gt;, exit status 1
+16:12:35 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/stdout.err
+16:12:35 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/stdout.out
+16:12:35 INFO  Contents of stdout.out: 
+16:12:35 INFO    Publishing sawtooth with delay 10ms height 400 iterations 1 template flux will cause 400 publishs.
+16:12:35 INFO    Iteraton: 0
+16:12:35 INFO    Execution took 4 s 4098 ms
+16:12:35 INFO    Publish rate: 10.245 ms/pub
+16:12:35 INFO    Publish per second: 97.609 pub/s
+16:12:35 INFO    Act: Publishing values with temperature_publisher
+16:12:35 INFO    Waiting 3s for values to arrive in C8y
+16:12:35 INFO    Assert: Retrieving data via REST interface
+16:12:35 INFO    Gathering values from 2022-02-18 15:12:14+00:00 to 2022-02-18 15:12:34+00:00
+16:12:35 INFO    Found 0 recorded values:
+16:12:35 INFO    Retrieved values:
+16:12:35 INFO    Expected:  0.0  ...  399.0
+16:12:35 INFO    Data verification FAILED
+16:12:35 INFO    -----
+16:12:35 INFO  
+16:12:35 WARN  python3&lt;stdout&gt; returned non-zero exit code 1 ... blocked 
+16:12:35 WARN  Aborted test due to BLOCKED outcome
+16:12:35 DEBUG --- test cleanup
+16:12:35 INFO  
+16:12:35 INFO  cleanup:
+16:12:35 DEBUG Running registered cleanup function: &lt;bound method Environment_roundtrip_c8y.myenvroundtripcleanup of &lt;SmoketestJson400Samples10ms object at 0x7526def0&gt;&gt;
+16:12:35 DEBUG C8y Roundtrip MyCleanup
+16:12:35 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;SmoketestJson400Samples10ms object at 0x7526def0&gt;&gt;
+16:12:35 DEBUG EnvironmentC8y Cleanup
+16:12:35 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:35 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 30658)
+16:12:37 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:12:37 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_10ms/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:37 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 30710)
+16:12:37 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:12:37 DEBUG ProcessUser cleanup function done.
+16:12:38 INFO  
+16:12:38 INFO  Test duration: 52.27 secs
+16:12:38 INFO  Test final outcome:  BLOCKED
+16:12:38 INFO  Test outcome reason: python3&lt;stdout&gt; returned non-zero exit code 1
+16:12:38 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="smoketest_json_400_samples_20ms" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="SmoketestJson400Samples20ms" name="smoketest_json_400_samples_20ms">
+		<failure message="BLOCKED: python3&lt;stdout&gt; returned non-zero exit code 1" type="BLOCKED" />
+		<system-out>16:12:38 INFO  ==============================================================
+16:12:38 INFO  Id:    smoketest_json_400_samples_20ms
+16:12:38 INFO  Dir:   smoketests/
+16:12:38 INFO  Title: Smoketest Json 400 Samples 20ms Delay
+16:12:38 DEBUG Execution order hint: 0.0
+16:12:38 INFO  ==============================================================
+16:12:38 DEBUG EnvironmentC8y Setup
+16:12:38 INFO  EnvironmentC8y Setup
+16:12:38 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:38 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 30717)
+16:12:38 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:12:38 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+16:12:38 INFO  Delaying execution by 8 seconds
+16:12:46 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:46 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 30757)
+16:12:56 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:12:56 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:56 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 30895)
+16:12:57 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:12:57 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:57 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 30898)
+16:12:57 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:12:57 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:12:57 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 30899)
+16:12:57 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:12:57 DEBUG C8y Roundtrip Setup
+16:12:57 DEBUG --- test execute
+16:12:57 DEBUG EnvironmentC8y Execute
+16:12:57 DEBUG C8y Roundtrip Execute
+16:13:17 DEBUG Process parameters for python3&lt;stdout&gt;
+  command line : /home/pi/env-pysys/bin/python3 /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py -m JSON -pub /home/pi -u octocat -t t493319102 -id 14374054 -o 20 -d 10 -s 400
+    arg #1     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/ci/roundtrip_local_to_c8y.py
+    arg #2     : -m
+    arg #3     : JSON
+    arg #4     : -pub
+    arg #5     : /home/pi
+    arg #6     : -u
+    arg #7     : octocat
+    arg #8     : -t
+    arg #9     : t493319102
+    arg #10    : -id
+    arg #11    : 14374054
+    arg #12    : -o
+    arg #13    : 20
+    arg #14    : -d
+    arg #15    : 10
+    arg #16    : -s
+    arg #17    : 400
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/stdout.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/stdout.err
+  environment  : C8YPASS=CsiqG9s25z//
+16:13:17 DEBUG Waiting up to 600 secs for process python3&lt;stdout&gt; (pid 30984)
+16:13:26 WARN  Executed python3&lt;stdout&gt;, exit status 1
+16:13:26 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/stdout.err
+16:13:26 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/stdout.out
+16:13:26 INFO  Contents of stdout.out: 
+16:13:26 INFO    Publishing sawtooth with delay 10ms height 400 iterations 1 template flux will cause 400 publishs.
+16:13:26 INFO    Iteraton: 0
+16:13:26 INFO    Execution took 4 s 4120 ms
+16:13:26 INFO    Publish rate: 10.300 ms/pub
+16:13:26 INFO    Publish per second: 97.087 pub/s
+16:13:26 INFO    Act: Publishing values with temperature_publisher
+16:13:26 INFO    Waiting 3s for values to arrive in C8y
+16:13:26 INFO    Assert: Retrieving data via REST interface
+16:13:26 INFO    Gathering values from 2022-02-18 15:13:06+00:00 to 2022-02-18 15:13:26+00:00
+16:13:26 INFO    Found 0 recorded values:
+16:13:26 INFO    Retrieved values:
+16:13:26 INFO    Expected:  0.0  ...  399.0
+16:13:26 INFO    Data verification FAILED
+16:13:26 INFO    -----
+16:13:26 INFO  
+16:13:26 WARN  python3&lt;stdout&gt; returned non-zero exit code 1 ... blocked 
+16:13:26 WARN  Aborted test due to BLOCKED outcome
+16:13:26 DEBUG --- test cleanup
+16:13:26 INFO  
+16:13:26 INFO  cleanup:
+16:13:26 DEBUG Running registered cleanup function: &lt;bound method Environment_roundtrip_c8y.myenvroundtripcleanup of &lt;SmoketestJson400Samples20ms object at 0x7526d150&gt;&gt;
+16:13:26 DEBUG C8y Roundtrip MyCleanup
+16:13:26 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;SmoketestJson400Samples20ms object at 0x7526d150&gt;&gt;
+16:13:26 DEBUG EnvironmentC8y Cleanup
+16:13:26 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:13:26 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 31034)
+16:13:28 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:13:28 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/smoketests/smoketest_json_400_samples_20ms/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:13:28 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 31086)
+16:13:29 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:13:29 DEBUG ProcessUser cleanup function done.
+16:13:29 INFO  
+16:13:29 INFO  Test duration: 51.16 secs
+16:13:29 INFO  Test final outcome:  BLOCKED
+16:13:29 INFO  Test outcome reason: python3&lt;stdout&gt; returned non-zero exit code 1
+16:13:29 INFO  
+</system-out>
+	</testcase>
 </testsuite><testsuite name="smoketest_smartrest" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest" name="smoketest_smartrest" />
 </testsuite><testsuite name="smoketest_smartrest_400_samples_1Xms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples1Xms" name="smoketest_smartrest_400_samples_1Xms" />
 </testsuite><testsuite name="smoketest_smartrest_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples20ms" name="smoketest_smartrest_400_samples_20ms" />
 </testsuite><testsuite name="tedge_agent_user_sudo_access" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeAgentUserSudoAccess" name="tedge_agent_user_sudo_access" />
 </testsuite><testsuite name="tedge_connect_test_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestNegative" name="tedge_connect_test_negative" />
 </testsuite><testsuite name="tedge_connect_test_positive" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestPositive" name="tedge_connect_test_positive" />
-</testsuite><testsuite name="tedge_connect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestSMServices" name="tedge_connect_test_sm_services" />
+</testsuite><testsuite name="tedge_connect_test_sm_services" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeConnectTestSMServices" name="tedge_connect_test_sm_services">
+		<failure message="BLOCKED: Grep on tedge_connect.out contains &quot;tedge-mapper-c8y service successfully started and enabled!&quot; failed due to &lt;class 'pysys.exceptions.FileNotFoundException'&gt;: unable to find file &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out&quot; (+1 other failures)" type="BLOCKED" />
+		<system-out>16:18:44 INFO  ==============================================================
+16:18:44 INFO  Id:    tedge_connect_test_sm_services
+16:18:44 INFO  Dir:   tedge_connect/
+16:18:44 INFO  Title: Validate Software Management Services started and enabled on tedge connect c8y
+16:18:44 DEBUG Execution order hint: 0.0
+16:18:44 INFO  ==============================================================
+16:18:44 DEBUG EnvironmentC8y Setup
+16:18:44 INFO  EnvironmentC8y Setup
+16:18:44 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:18:44 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 4252)
+16:18:45 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:18:45 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+16:18:45 INFO  Delaying execution by 9 seconds
+16:18:54 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:18:54 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 4294)
+16:19:04 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:19:04 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:04 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 4445)
+16:19:05 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:19:05 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 4448)
+16:19:05 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:19:05 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 4449)
+16:19:05 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:19:05 DEBUG --- test execute
+16:19:05 DEBUG EnvironmentC8y Execute
+16:19:05 DEBUG --- test validate
+16:19:05 DEBUG EnvironmentC8y Validate
+16:19:05 DEBUG Process parameters for systemctl&lt;serv_mosq&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mosq.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mosq.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq&gt; (pid 4450)
+16:19:05 INFO  Executed systemctl&lt;serv_mosq&gt;, exit status 0
+16:19:05 DEBUG Process parameters for systemctl&lt;serv_mapper4&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper4.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper4.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper4&gt; (pid 4451)
+16:19:06 INFO  Executed systemctl&lt;serv_mapper4&gt;, exit status 0
+16:19:06 INFO  Validate
+16:19:06 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect_c8y.out
+16:19:06 WARN  Grep on tedge_connect_c8y.out contains "tedge-agent service successfully started and enabled!" ... failed [run.py:33]
+16:19:06 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out
+16:19:06 WARN  caught &lt;class 'pysys.exceptions.FileNotFoundException'&gt;: unable to find file "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out"
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/basetest.py", line 1203, in assertGrep
+    result = getmatches(f, expr, ignores=ignores, returnFirstOnly=(contains==True), encoding=encoding or self.getDefaultFileEncoding(f), flags=reFlags, mappers=mappers)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/utils/filegrep.py", line 59, in getmatches
+    raise FileNotFoundException("unable to find file \"%s\"" % (file))
+pysys.exceptions.FileNotFoundException: unable to find file "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out"
+16:19:06 WARN  Grep on tedge_connect.out contains "tedge-mapper-c8y service successfully started and enabled!" failed due to &lt;class 'pysys.exceptions.FileNotFoundException'&gt;: unable to find file "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out" ... blocked [run.py:37]
+16:19:06 DEBUG --- test cleanup
+16:19:06 INFO  
+16:19:06 INFO  cleanup:
+16:19:06 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeConnectTestSMServices object at 0x751d3450&gt;&gt;
+16:19:06 DEBUG EnvironmentC8y Cleanup
+16:19:06 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:06 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 4455)
+16:19:08 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:19:08 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:19:08 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 4511)
+16:19:08 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:19:08 DEBUG ProcessUser cleanup function done.
+16:19:08 INFO  
+16:19:08 INFO  Test duration: 23.96 secs
+16:19:08 INFO  Test final outcome:  BLOCKED
+16:19:08 INFO  Test outcome reason: Grep on tedge_connect.out contains "tedge-mapper-c8y service successfully started and enabled!" failed due to &lt;class 'pysys.exceptions.FileNotFoundException'&gt;: unable to find file "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_connect/tedge_connect_test_sm_services/Output/linux/tedge_connect.out" (+1 other failures)
+16:19:08 INFO  
+</system-out>
+	</testcase>
 </testsuite><testsuite name="tedge_disconnect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeDisConnectTestSMServices" name="tedge_disconnect_test_sm_services" />
 </testsuite><testsuite name="tedge_mapper_az_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzError" name="tedge_mapper_az_negative" />
 </testsuite><testsuite name="tedge_mapper_az_with_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithTimestamp" name="tedge_mapper_az_with_timestamp" />
 </testsuite><testsuite name="tedge_mapper_az_without_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithoutTimestamp" name="tedge_mapper_az_without_timestamp" />
-</testsuite><testsuite name="tedge_mapper_c8y_alarms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms" />
-</testsuite><testsuite name="tedge_mapper_c8y_child_device_measurement" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yChildDevice" name="tedge_mapper_c8y_child_device_measurement" />
+</testsuite><testsuite name="tedge_mapper_c8y_alarms" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms">
+		<failure message="BLOCKED: IndexError: list index out of range" type="BLOCKED" />
+		<system-out>16:20:16 INFO  ==============================================================
+16:20:16 INFO  Id:    tedge_mapper_c8y_alarms
+16:20:16 INFO  Dir:   tedge_mapper_c8y/
+16:20:16 INFO  Title: Validate that alarms sent to tedge/alarms topic \ gets mapped as alarms in Cumulocity
+16:20:16 DEBUG Execution order hint: 0.0
+16:20:16 INFO  ==============================================================
+16:20:16 DEBUG EnvironmentC8y Setup
+16:20:16 INFO  EnvironmentC8y Setup
+16:20:16 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:16 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 5233)
+16:20:17 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:20:17 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 5238)
+16:20:27 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:20:27 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:27 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 5376)
+16:20:27 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:20:27 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:27 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 5379)
+16:20:28 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:20:28 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:28 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 5380)
+16:20:28 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:20:28 DEBUG --- test execute
+16:20:28 DEBUG Process parameters for tedge
+  command line : /usr/bin/tedge mqtt pub tedge/alarms/warning/temperature_high '{"message":"temperature is high", "time":"2021-12-15T15:22:06.464247777+05:30"}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/alarms/warning/temperature_high
+    arg #4     : {"message":"temperature is high", "time":"2021-12-15T15:22:06.464247777+05:30"}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : HOME=/home/pi
+16:20:28 DEBUG Waiting up to 600 secs for process tedge (pid 5393)
+16:20:28 INFO  Executed tedge, exit status 0
+16:20:28 DEBUG Process parameters for tedge
+  command line : /usr/bin/tedge mqtt pub tedge/alarms/major/temperature_very_high '{"message":"temperature is very high"}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/alarms/major/temperature_very_high
+    arg #4     : {"message":"temperature is very high"}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : HOME=/home/pi
+16:20:28 DEBUG Waiting up to 600 secs for process tedge (pid 5395)
+16:20:28 INFO  Executed tedge, exit status 0
+16:20:28 DEBUG Process parameters for tedge
+  command line : /usr/bin/tedge mqtt pub tedge/alarms/critical/temperature_dangerous '{"message":"temperature is dangerously high"}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/alarms/critical/temperature_dangerous
+    arg #4     : {"message":"temperature is dangerously high"}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : HOME=/home/pi
+16:20:28 DEBUG Waiting up to 600 secs for process tedge (pid 5397)
+16:20:29 INFO  Executed tedge, exit status 0
+16:20:29 DEBUG Process parameters for tedge
+  command line : /usr/bin/tedge mqtt pub tedge/alarms/minor/temperature_low '{"message":"temperature low"}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/alarms/minor/temperature_low
+    arg #4     : {"message":"temperature low"}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : HOME=/home/pi
+16:20:29 DEBUG Waiting up to 600 secs for process tedge (pid 5399)
+16:20:29 INFO  Executed tedge, exit status 0
+16:20:29 DEBUG Process parameters for tedge
+  command line : /usr/bin/tedge mqtt pub tedge/alarms/minor/temperature_low ''
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/alarms/minor/temperature_low
+    arg #4     : 
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : HOME=/home/pi
+16:20:29 DEBUG Waiting up to 600 secs for process tedge (pid 5401)
+16:20:29 INFO  Executed tedge, exit status 0
+16:20:30 DEBUG --- test validate
+16:20:30 WARN  caught &lt;class 'IndexError'&gt; while running test: list index out of range
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
+    self.testObj.validate()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/run.py", line 82, in validate
+    alarms[0], "temperature_dangerous", "CRITICAL", "temperature is dangerously high")
+IndexError: list index out of range
+16:20:30 WARN  IndexError: list index out of range ... blocked 
+16:20:30 DEBUG --- test cleanup
+16:20:30 INFO  
+16:20:30 INFO  cleanup:
+16:20:30 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8yAlarm.test_cleanup of &lt;TedgeMapperC8yAlarm object at 0x7505ebb0&gt;&gt;
+16:20:30 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeMapperC8yAlarm object at 0x7505ebb0&gt;&gt;
+16:20:30 DEBUG EnvironmentC8y Cleanup
+16:20:30 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:30 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 5406)
+16:20:33 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:20:33 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:33 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 5458)
+16:20:33 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:20:33 DEBUG ProcessUser cleanup function done.
+16:20:33 INFO  
+16:20:33 INFO  Test duration: 16.82 secs
+16:20:33 INFO  Test final outcome:  BLOCKED
+16:20:33 INFO  Test outcome reason: IndexError: list index out of range
+16:20:33 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="tedge_mapper_c8y_child_device_measurement" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeMapperC8yChildDevice" name="tedge_mapper_c8y_child_device_measurement">
+		<failure message="BLOCKED: TypeError: 'NoneType' object is not subscriptable (+1 other failures)" type="BLOCKED" />
+		<system-out>16:20:33 INFO  ==============================================================
+16:20:33 INFO  Id:    tedge_mapper_c8y_child_device_measurement
+16:20:33 INFO  Dir:   tedge_mapper_c8y/
+16:20:33 INFO  Title: Validate that measurements sent to tedge/measurements/child topic gets mapped as the child device's measurement in Cumulocity
+16:20:33 DEBUG Execution order hint: 0.0
+16:20:33 INFO  ==============================================================
+16:20:33 DEBUG EnvironmentC8y Setup
+16:20:33 INFO  EnvironmentC8y Setup
+16:20:33 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:33 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 5460)
+16:20:33 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+16:20:33 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+16:20:33 INFO  Delaying execution by 9 seconds
+16:20:42 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:42 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 5500)
+16:20:53 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+16:20:53 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:53 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 5650)
+16:20:53 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+16:20:53 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:53 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 5653)
+16:20:53 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+16:20:53 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:53 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 5654)
+16:20:54 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+16:20:54 INFO  Assert that (actual == expected) with actual=None, expected=None ... passed
+16:20:54 DEBUG --- test execute
+16:20:54 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-4e24c96c '{"temperature": 12, "time": "2021-01-01T10:10:10.100+02:00"}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/measurements/te-child-4e24c96c
+    arg #4     : {"temperature": 12, "time": "2021-01-01T10:10:10.100+02:00"}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
+  environment  : HOME=/home/pi
+16:20:54 DEBUG Waiting up to 600 secs for process tedge_pub (pid 5655)
+16:20:54 INFO  Executed tedge_pub, exit status 0
+16:20:54 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-4e24c96c '{"temperature": 11}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/measurements/te-child-4e24c96c
+    arg #4     : {"temperature": 11}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
+  environment  : HOME=/home/pi
+16:20:54 DEBUG Waiting up to 600 secs for process tedge_pub (pid 5657)
+16:20:55 INFO  Executed tedge_pub, exit status 0
+16:20:55 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements '{"temperature": 5}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/measurements
+    arg #4     : {"temperature": 5}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
+  environment  : HOME=/home/pi
+16:20:55 DEBUG Waiting up to 600 secs for process tedge_pub (pid 5659)
+16:20:55 INFO  Executed tedge_pub, exit status 0
+16:20:55 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/other-te-child-bc50fca7 '{"temperature": 6}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/measurements/other-te-child-bc50fca7
+    arg #4     : {"temperature": 6}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
+  environment  : HOME=/home/pi
+16:20:55 DEBUG Waiting up to 600 secs for process tedge_pub (pid 5661)
+16:20:55 INFO  Executed tedge_pub, exit status 0
+16:20:55 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-4e24c96c '{"temperature": 10}'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : tedge/measurements/te-child-4e24c96c
+    arg #4     : {"temperature": 10}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
+  environment  : HOME=/home/pi
+16:20:55 DEBUG Waiting up to 600 secs for process tedge_pub (pid 5675)
+16:20:55 INFO  Executed tedge_pub, exit status 0
+16:20:57 DEBUG --- test validate
+16:20:57 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
+    self.testObj.validate()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 95, in validate
+    self.child_device_json['id'], 3)
+TypeError: 'NoneType' object is not subscriptable
+16:20:57 WARN  TypeError: 'NoneType' object is not subscriptable ... blocked 
+16:20:57 DEBUG --- test cleanup
+16:20:57 INFO  
+16:20:57 INFO  cleanup:
+16:20:57 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8yChildDevice.test_cleanup of &lt;TedgeMapperC8yChildDevice object at 0x751d3af0&gt;&gt;
+16:20:57 ERROR Error while running cleanup function: 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1299, in cleanup
+    fn()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 132, in test_cleanup
+    self.child_device_json['id'])
+TypeError: 'NoneType' object is not subscriptable
+16:20:57 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeMapperC8yChildDevice object at 0x751d3af0&gt;&gt;
+16:20:57 DEBUG EnvironmentC8y Cleanup
+16:20:57 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:20:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 5680)
+16:21:00 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+16:21:00 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:21:00 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 5732)
+16:21:00 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+16:21:00 DEBUG ProcessUser cleanup function done.
+16:21:00 WARN  Cleanup failed with 1 errors: Cleanup function failed: 'NoneType' object is not subscriptable (TypeError) ... blocked 
+16:21:00 INFO  
+16:21:00 INFO  Test duration: 26.75 secs
+16:21:00 INFO  Test final outcome:  BLOCKED
+16:21:00 INFO  Test outcome reason: TypeError: 'NoneType' object is not subscriptable (+1 other failures)
+16:21:00 INFO  
+</system-out>
+	</testcase>
 </testsuite><testsuite name="tedge_mapper_c8y_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_negative" />
 </testsuite><testsuite name="tedge_mapper_c8y_packet_threshold_size" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yThresholdPacketSize" name="tedge_mapper_c8y_packet_threshold_size" />
 </testsuite><testsuite name="tedge_mapper_c8y_positive" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_positive" />
 </testsuite><testsuite name="tedge_software_update" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="tedge_software_update">
-		<failure message="BLOCKED: Failed to set up test: &quot;'__name__' not in globals&quot;" type="BLOCKED" />
-		<system-out>19:34:25 INFO  ==============================================================
-19:34:25 INFO  Id:    tedge_software_update
-19:34:25 INFO  Dir:   tedge/
-19:34:25 INFO  Title: Software install from download path
-19:34:25 DEBUG Execution order hint: 0.0
-19:34:25 INFO  ==============================================================
-19:34:25 WARN  Failed to set up test: "'__name__' not in globals" ... blocked 
-19:34:25 WARN  caught &lt;class 'KeyError'&gt; while setting up test tedge_software_update: "'__name__' not in globals"
+		<failure message="BLOCKED: Failed to set up test: No module named 'environments'" type="BLOCKED" />
+		<system-out>16:18:04 INFO  ==============================================================
+16:18:04 INFO  Id:    tedge_software_update
+16:18:04 INFO  Dir:   tedge/
+16:18:04 INFO  Title: Software install from download path
+16:18:04 DEBUG Execution order hint: 0.0
+16:18:04 INFO  ==============================================================
+16:18:04 WARN  Failed to set up test: No module named 'environments' ... blocked 
+16:18:04 WARN  caught &lt;class 'ModuleNotFoundError'&gt; while setting up test tedge_software_update: No module named 'environments'
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1143, in __call__
     exec(runpycode, runpy_namespace)
   File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/run.py", line 1, in &lt;module&gt;
-    from .environments.environment_c8y import EnvironmentC8y
-KeyError: "'__name__' not in globals"
-19:34:25 DEBUG --- test cleanup
-19:34:25 DEBUG ProcessUser cleanup function done.
-19:34:25 INFO  
-19:34:25 INFO  Test duration: 0.03 secs
-19:34:25 INFO  Test final outcome:  BLOCKED
-19:34:25 INFO  Test outcome reason: Failed to set up test: "'__name__' not in globals"
-19:34:25 INFO  
+    from environments.environment_c8y import EnvironmentC8y
+ModuleNotFoundError: No module named 'environments'
+16:18:04 DEBUG --- test cleanup
+16:18:04 DEBUG ProcessUser cleanup function done.
+16:18:04 INFO  
+16:18:04 INFO  Test duration: 0.03 secs
+16:18:04 INFO  Test final outcome:  BLOCKED
+16:18:04 INFO  Test outcome reason: Failed to set up test: No module named 'environments'
+16:18:04 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="valid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateValidDeviceId" name="valid_device_id" />
