@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="1" name="mapper_awaits_before_reconnect" skipped="0" tests="1" time="6.43" timestamp="2022-02-18T15:24:45">
+<testsuite failures="1" name="mapper_awaits_before_reconnect" skipped="0" tests="1" time="6.28" timestamp="2022-02-22T11:22:22">
 	<testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect">
 		<failure message="FAILED: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0" type="FAILED"/>
-		<system-out>15:24:39 INFO  ==============================================================
-15:24:39 INFO  Id:    mapper_awaits_before_reconnect
-15:24:39 INFO  Dir:   tedge_mapper_c8y/
-15:24:39 INFO  Title: Validate mapper doesn't reconnect too often
-15:24:39 DEBUG Execution order hint: 0.0
-15:24:39 INFO  ==============================================================
-15:24:39 DEBUG --- test execute
-15:24:39 DEBUG Process parameters for mosquitto_sub
+		<system-out>11:22:16 INFO  ==============================================================
+11:22:16 INFO  Id:    mapper_awaits_before_reconnect
+11:22:16 INFO  Dir:   tedge_mapper_c8y/
+11:22:16 INFO  Title: Validate mapper doesn't reconnect too often
+11:22:16 DEBUG Execution order hint: 0.0
+11:22:16 INFO  ==============================================================
+11:22:16 DEBUG --- test execute
+11:22:16 DEBUG Process parameters for mosquitto_sub
   command line : /usr/bin/mosquitto_sub -i tedge-mapper-c8y -t test
     arg #1     : -i
     arg #2     : tedge-mapper-c8y
@@ -24,9 +24,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-15:24:39 INFO  Started mosquitto_sub with process id 29805
-15:24:39 INFO  Waiting for 0.1 seconds
-15:24:39 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+11:22:16 INFO  Started mosquitto_sub with process id 9299
+11:22:16 INFO  Waiting for 0.1 seconds
+11:22:16 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
   command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : start
@@ -40,10 +40,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-15:24:39 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 29806)
-15:24:39 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
-15:24:39 INFO  Waiting for 5.0 seconds
-15:24:44 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+11:22:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 9300)
+11:22:16 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+11:22:16 INFO  Waiting for 5.0 seconds
+11:22:21 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
   command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : stop
@@ -57,18 +57,18 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-15:24:44 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 29815)
-15:24:45 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
-15:24:45 DEBUG --- test validate
-15:24:45 DEBUG Process parameters for sudo&lt;tedge_mapper_journal&gt;
-  command line : /usr/bin/sudo journalctl -u tedge-mapper-c8y.service --since '2022-02-18 15:24:40' --until '2022-02-18 15:24:45'
+11:22:21 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 9309)
+11:22:22 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+11:22:22 DEBUG --- test validate
+11:22:22 DEBUG Process parameters for sudo&lt;tedge_mapper_journal&gt;
+  command line : /usr/bin/sudo journalctl -u tedge-mapper-c8y.service --since '2022-02-22 11:22:17' --until '2022-02-22 11:22:22'
     arg #1     : journalctl
     arg #2     : -u
     arg #3     : tedge-mapper-c8y.service
     arg #4     : --since
-    arg #5     : 2022-02-18 15:24:40
+    arg #5     : 2022-02-22 11:22:17
     arg #6     : --until
-    arg #7     : 2022-02-18 15:24:45
+    arg #7     : 2022-02-22 11:22:22
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.err
@@ -78,25 +78,25 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-15:24:45 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_journal&gt; (pid 29817)
-15:24:45 INFO  Executed sudo&lt;tedge_mapper_journal&gt;, exit status 0
-15:24:45 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
-15:24:45 DEBUG Grep on input file tedge_mapper_journal.out successfully matched expression &quot;ERROR&quot; with line: 'Feb 18 15:24:40 raspberrypi tedge_mapper[29808]: 2022-02-18T15:24:40.747327305Z ERROR tedge_mapper::core::mapper: MQTT connection error: Mqtt state: Io error Custom { kind: ConnectionAborted, error: &quot;connection closed by peer&quot; }\n'
-15:24:45 INFO  Grep on input file tedge_mapper_journal.out ... passed
-15:24:45 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
-15:24:45 INFO  Line count on input file tedge_mapper_journal.out ... passed
-15:24:45 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
-15:24:45 WARN  Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0 ... failed [run.py:70]
-15:24:45 WARN  Aborted test due to FAILED outcome
-15:24:45 DEBUG --- test cleanup
-15:24:45 DEBUG Failed to kill process group (but process itself was killed fine) for mosquitto_sub: name 'SIGTERM' is not defined
-15:24:45 DEBUG Waiting up to 30 secs for process mosquitto_sub (pid 29805)
-15:24:45 DEBUG ProcessUser cleanup function done.
-15:24:45 INFO  
-15:24:45 INFO  Test duration: 6.43 secs
-15:24:45 INFO  Test final outcome:  FAILED
-15:24:45 INFO  Test outcome reason: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0
-15:24:45 INFO  
+11:22:22 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_journal&gt; (pid 9311)
+11:22:22 INFO  Executed sudo&lt;tedge_mapper_journal&gt;, exit status 0
+11:22:22 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
+11:22:22 DEBUG Grep on input file tedge_mapper_journal.out successfully matched expression &quot;ERROR&quot; with line: 'Feb 22 11:22:17 raspberrypi tedge_mapper[9302]: 2022-02-22T11:22:17.837098683Z ERROR tedge_mapper::core::mapper: MQTT connection error: Mqtt state: Io error Custom { kind: ConnectionAborted, error: &quot;connection closed by peer&quot; }\n'
+11:22:22 INFO  Grep on input file tedge_mapper_journal.out ... passed
+11:22:22 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+11:22:22 INFO  Line count on input file tedge_mapper_journal.out ... passed
+11:22:22 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+11:22:22 WARN  Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0 ... failed [run.py:70]
+11:22:22 WARN  Aborted test due to FAILED outcome
+11:22:22 DEBUG --- test cleanup
+11:22:22 DEBUG Failed to kill process group (but process itself was killed fine) for mosquitto_sub: name 'SIGTERM' is not defined
+11:22:22 DEBUG Waiting up to 30 secs for process mosquitto_sub (pid 9299)
+11:22:22 DEBUG ProcessUser cleanup function done.
+11:22:22 INFO  
+11:22:22 INFO  Test duration: 6.28 secs
+11:22:22 INFO  Test final outcome:  FAILED
+11:22:22 INFO  Test outcome reason: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0
+11:22:22 INFO  
 </system-out>
 	</testcase>
 </testsuite>

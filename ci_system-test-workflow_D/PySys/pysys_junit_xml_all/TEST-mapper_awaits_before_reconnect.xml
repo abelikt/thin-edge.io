@@ -1,4 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="mapper_awaits_before_reconnect" skipped="0" tests="1" time="6.3" timestamp="2022-02-16T09:37:17">
-	<testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect"/>
+<testsuite failures="1" name="mapper_awaits_before_reconnect" skipped="0" tests="1" time="6.26" timestamp="2022-02-22T10:46:53">
+	<testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect">
+		<failure message="FAILED: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0" type="FAILED"/>
+		<system-out>10:46:47 INFO  ==============================================================
+10:46:47 INFO  Id:    mapper_awaits_before_reconnect
+10:46:47 INFO  Dir:   tedge_mapper_c8y/
+10:46:47 INFO  Title: Validate mapper doesn't reconnect too often
+10:46:47 DEBUG Execution order hint: 0.0
+10:46:47 INFO  ==============================================================
+10:46:47 DEBUG --- test execute
+10:46:47 DEBUG Process parameters for mosquitto_sub
+  command line : /usr/bin/mosquitto_sub -i tedge-mapper-c8y -t test
+    arg #1     : -i
+    arg #2     : tedge-mapper-c8y
+    arg #3     : -t
+    arg #4     : test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/mosquitto_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/mosquitto_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+10:46:47 INFO  Started mosquitto_sub with process id 1817
+10:46:47 INFO  Waiting for 0.1 seconds
+10:46:47 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+  command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+10:46:47 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 1818)
+10:46:47 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+10:46:47 INFO  Waiting for 5.0 seconds
+10:46:52 DEBUG Process parameters for sudo&lt;tedge_mapper&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+10:46:52 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper&gt; (pid 1827)
+10:46:53 INFO  Executed sudo&lt;tedge_mapper&gt;, exit status 0
+10:46:53 DEBUG --- test validate
+10:46:53 DEBUG Process parameters for sudo&lt;tedge_mapper_journal&gt;
+  command line : /usr/bin/sudo journalctl -u tedge-mapper-c8y.service --since '2022-02-22 10:46:48' --until '2022-02-22 10:46:53'
+    arg #1     : journalctl
+    arg #2     : -u
+    arg #3     : tedge-mapper-c8y.service
+    arg #4     : --since
+    arg #5     : 2022-02-22 10:46:48
+    arg #6     : --until
+    arg #7     : 2022-02-22 10:46:53
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+10:46:53 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_journal&gt; (pid 1829)
+10:46:53 INFO  Executed sudo&lt;tedge_mapper_journal&gt;, exit status 0
+10:46:53 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out
+10:46:53 DEBUG Grep on input file tedge_mapper_journal.out successfully matched expression &quot;ERROR&quot; with line: 'Feb 22 10:46:48 offsited tedge_mapper[1820]: 2022-02-22T10:46:48.932735649Z ERROR tedge_mapper::core::mapper: MQTT connection error: Mqtt state: Io error Custom { kind: ConnectionAborted, error: &quot;connection closed by peer&quot; }\n'
+10:46:53 INFO  Grep on input file tedge_mapper_journal.out ... passed
+10:46:53 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+10:46:53 INFO  Line count on input file tedge_mapper_journal.out ... passed
+10:46:53 DEBUG Number of matching lines in /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/mapper_awaits_before_reconnect/Output/linux/tedge_mapper_journal.out is 0
+10:46:53 WARN  Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0 ... failed [run.py:70]
+10:46:53 WARN  Aborted test due to FAILED outcome
+10:46:53 DEBUG --- test cleanup
+10:46:53 DEBUG Failed to kill process group (but process itself was killed fine) for mosquitto_sub: name 'SIGTERM' is not defined
+10:46:53 DEBUG Waiting up to 30 secs for process mosquitto_sub (pid 1817)
+10:46:53 DEBUG ProcessUser cleanup function done.
+10:46:53 INFO  
+10:46:53 INFO  Test duration: 6.26 secs
+10:46:53 INFO  Test final outcome:  FAILED
+10:46:53 INFO  Test outcome reason: Line count on tedge_mapper_journal.out for &quot;tedge_mapper::mapper: MQTT connection error:&quot; expected &gt;=2 but got 0
+10:46:53 INFO  
+</system-out>
+	</testcase>
 </testsuite>

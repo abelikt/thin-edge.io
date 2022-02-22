@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="apt_fail_noarg" skipped="0" tests="1" time="3.72" timestamp="2022-02-16T09:38:59">
-	<testcase classname="AptPluginFailNoArg" name="apt_fail_noarg"/>
+<testsuite failures="1" name="apt_fail_noarg" skipped="0" tests="1" time="1.05" timestamp="2022-02-22T10:48:15">
+	<testcase classname="AptPluginFailNoArg" name="apt_fail_noarg">
+		<failure message="BLOCKED: sudo&lt;outp_install&gt; returned exit code 2 (expected ==1)" type="BLOCKED"/>
+		<system-out>10:48:14 INFO  ==============================================================
+10:48:14 INFO  Id:    apt_fail_noarg
+10:48:14 INFO  Dir:   plugin_apt/
+10:48:14 INFO  Title: Validate apt plugin fetures(prepare, list, install, remove finalize) without arguments
+10:48:14 DEBUG Execution order hint: 0.0
+10:48:14 INFO  ==============================================================
+10:48:15 DEBUG --- test execute
+10:48:15 DEBUG Process parameters for sudo&lt;outp_install&gt;
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : install
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux/outp_install.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux/outp_install.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+10:48:15 DEBUG Waiting up to 600 secs for process sudo&lt;outp_install&gt; (pid 32579)
+10:48:15 WARN  Executed sudo&lt;outp_install&gt;, exit status 2
+10:48:15 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux/outp_install.err
+10:48:15 INFO  Contents of outp_install.err: 
+10:48:15 INFO    error: The following required arguments were not provided:
+10:48:15 INFO        &lt;MODULE&gt;
+10:48:15 INFO    USAGE:
+10:48:15 INFO        apt install [OPTIONS] &lt;MODULE&gt;
+10:48:15 INFO    For more information try --help
+10:48:15 INFO    -----
+10:48:15 INFO  
+10:48:15 WARN  sudo&lt;outp_install&gt; returned exit code 2 (expected ==1) ... blocked [environment_apt_plugin.py:70,run.py:20]
+10:48:15 WARN  Aborted test due to BLOCKED outcome
+10:48:15 DEBUG --- test cleanup
+10:48:15 DEBUG ProcessUser cleanup function done.
+10:48:15 INFO  
+10:48:15 INFO  Test duration: 1.05 secs
+10:48:15 INFO  Test final outcome:  BLOCKED
+10:48:15 INFO  Test outcome reason: sudo&lt;outp_install&gt; returned exit code 2 (expected ==1)
+10:48:15 INFO  
+</system-out>
+	</testcase>
 </testsuite>

@@ -1,10 +1,10 @@
-2022-02-16 10:16:28,967 INFO  ==============================================================
-2022-02-16 10:16:28,968 INFO  Id:    c8y_jwt_token_retrieval
-2022-02-16 10:16:28,969 INFO  Dir:   cloud_c8y/
-2022-02-16 10:16:28,970 INFO  Title: Validate the Cumulocity JWT Token Retrieval feature
-2022-02-16 10:16:28,970 DEBUG Execution order hint: 0.0
-2022-02-16 10:16:28,971 INFO  ==============================================================
-2022-02-16 10:16:29,048 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
+2022-02-22 11:27:05,274 INFO  ==============================================================
+2022-02-22 11:27:05,275 INFO  Id:    c8y_jwt_token_retrieval
+2022-02-22 11:27:05,277 INFO  Dir:   cloud_c8y/
+2022-02-22 11:27:05,278 INFO  Title: Validate the Cumulocity JWT Token Retrieval feature
+2022-02-22 11:27:05,278 DEBUG Execution order hint: 0.0
+2022-02-22 11:27:05,279 INFO  ==============================================================
+2022-02-22 11:27:05,357 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -18,10 +18,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:29,052 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 17709)
-2022-02-16 10:16:29,255 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
-2022-02-16 10:16:29,256 DEBUG --- test execute
-2022-02-16 10:16:29,304 DEBUG Process parameters for sudo<tedge_connect_c8y>
+2022-02-22 11:27:05,361 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 5942)
+2022-02-22 11:27:05,565 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-02-22 11:27:05,566 DEBUG --- test execute
+2022-02-22 11:27:05,633 DEBUG Process parameters for sudo<tedge_connect_c8y>
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -35,9 +35,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:29,309 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y> (pid 17714)
-2022-02-16 10:16:40,179 INFO  Executed sudo<tedge_connect_c8y>, exit status 0
-2022-02-16 10:16:40,180 DEBUG Process parameters for sudo<resp_jwt>
+2022-02-22 11:27:05,638 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y> (pid 5947)
+2022-02-22 11:27:15,582 INFO  Executed sudo<tedge_connect_c8y>, exit status 0
+2022-02-22 11:27:15,583 DEBUG Process parameters for sudo<resp_jwt>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub c8y/s/dat
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -52,8 +52,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:40,184 INFO  Started sudo<resp_jwt> with process id 17874
-2022-02-16 10:16:40,187 DEBUG Process parameters for sudo<req_jwt>
+2022-02-22 11:27:15,587 INFO  Started sudo<resp_jwt> with process id 6064
+2022-02-22 11:27:15,591 DEBUG Process parameters for sudo<req_jwt>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub c8y/s/uat ''"'"''"'"''
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -69,9 +69,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:40,192 DEBUG Waiting up to 600 secs for process sudo<req_jwt> (pid 17875)
-2022-02-16 10:16:40,395 INFO  Executed sudo<req_jwt>, exit status 0
-2022-02-16 10:16:41,398 DEBUG Process parameters for sudo<kill_out>
+2022-02-22 11:27:15,595 DEBUG Waiting up to 600 secs for process sudo<req_jwt> (pid 6065)
+2022-02-22 11:27:15,799 INFO  Executed sudo<req_jwt>, exit status 0
+2022-02-22 11:27:16,801 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -84,17 +84,17 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:41,407 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 17887)
-2022-02-16 10:16:41,663 INFO  Executed sudo<kill_out>, exit status 0
-2022-02-16 10:16:41,663 DEBUG --- test validate
-2022-02-16 10:16:41,664 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/resp_jwt.out
-2022-02-16 10:16:41,667 DEBUG Grep on input file resp_jwt.out successfully matched expression "\[c8y/s/dat\] 71," with line: '[c8y/s/dat] 71,eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOm51bGwsImlzcyI6InRoaW4tZWRnZS1pby5ldS1sYXRlc3QuY3VtdWxvY2l0eS5jb20iLCJhdWQiOiJ0aGluLWVkZ2UtaW8uZXUtbGF0ZXN0LmN1bXVsb2NpdHkuY29tIiwic3ViIjoiZGV2aWNlX29jdG9jYXRycGkzIiwidGNpIjoiZGV2aWNlX3Rva2VuX2NvbmZpZyIsImlhdCI6MTY0NTAwMjczNiwibmJmIjoxNjQ1MDAyNzM2LCJleHAiOjE2NDUwMDYzMzYsInRmYSI6ZmFsc2UsInRlbiI6InQ0OTMzMTkxMDIiLCJ4c3JmVG9rZW4iOiJHVnZZTWpqTWtER1lKd3JRbnJZbCJ9.mVuEjzleac6gOWrrbh_tbtPRY0DJ-NnhGeoILL8PD_XWAc1O_QcuAhFHd7lZgK1mq6iI0LZuTd_Rf-yvpKK7OaHVyjZpHvcMyBlO01tBiw9x8bqmUMRfLHpo0IaHkKXZLgew7OZoCUbrXiAqNJxbWSmBOy8As9sYBapiuFSRi8A5b8waWb4GkC7jTp-vCrXpkeKVMdSEk0GksjNo-l43FU2Avs0ig4FktdtfDeRFohEoTcBbX0jjnWBBYQgS8gCOdltjEFwUa-xv8NKJm3GeXjVdDDfaWpdKVCYlrFJuCZ-g8Iy1XfyKQQRzquNTN6Y2z9-TnzhBqChIDKWDMlUcuA\n'
-2022-02-16 10:16:41,669 INFO  Grep on input file resp_jwt.out ... passed
-2022-02-16 10:16:41,671 DEBUG --- test cleanup
-2022-02-16 10:16:41,671 INFO  
-2022-02-16 10:16:41,672 INFO  cleanup:
-2022-02-16 10:16:41,672 DEBUG Running registered cleanup function: <bound method ValidateJWTTokenRetrieval.jwt_token_cleanup of <ValidateJWTTokenRetrieval object at 0x75637c70>>
-2022-02-16 10:16:41,726 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
+2022-02-22 11:27:16,805 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 6070)
+2022-02-22 11:27:17,071 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-22 11:27:17,072 DEBUG --- test validate
+2022-02-22 11:27:17,072 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/cloud_c8y/c8y_jwt_token_retrieval/Output/linux/resp_jwt.out
+2022-02-22 11:27:17,078 DEBUG Grep on input file resp_jwt.out successfully matched expression "\[c8y/s/dat\] 71," with line: '[c8y/s/dat] 71,eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOm51bGwsImlzcyI6InRoaW4tZWRnZS1pby5ldS1sYXRlc3QuY3VtdWxvY2l0eS5jb20iLCJhdWQiOiJ0aGluLWVkZ2UtaW8uZXUtbGF0ZXN0LmN1bXVsb2NpdHkuY29tIiwic3ViIjoiZGV2aWNlX29jdG9jYXRycGkzIiwidGNpIjoiZGV2aWNlX3Rva2VuX2NvbmZpZyIsImlhdCI6MTY0NTUyNTQ2NiwibmJmIjoxNjQ1NTI1NDY2LCJleHAiOjE2NDU1MjkwNjYsInRmYSI6ZmFsc2UsInRlbiI6InQ0OTMzMTkxMDIiLCJ4c3JmVG9rZW4iOiJPbG5PVHh6U2xCaEdmY1ZvWHhxRiJ9.qo-7wZDnAzTEG4aqmIhPatb--NXT-SAkcJYmqDeA6HM553I0jkqB26ZHUhTvTS67M68M9wY2MwParFvcFUKMcne-12DsWGxJjR6OmLBFT0vJpb7NcpguTFDqIrYIv4LaxUvDIFd3uXy5fYOa1ICM19ZqqXhsUlliEEObnZ3UuVPwmeJrqE-k-8biloAGnwtcRqmAHTesdAwbmpDO-h_gGGtGXTZ0GKltk1eVw1H6Edsv2N2aKmxbpM_jBU48aMAV6JbrJliV0W2HHTUfM25RaSjJxWzd6ONJyzooWklfzg4iOI_l_lmXjWrcIOFJ9IQk0fSWNLOi668OWjjZYKMzjA\n'
+2022-02-22 11:27:17,080 INFO  Grep on input file resp_jwt.out ... passed
+2022-02-22 11:27:17,083 DEBUG --- test cleanup
+2022-02-22 11:27:17,084 INFO  
+2022-02-22 11:27:17,084 INFO  cleanup:
+2022-02-22 11:27:17,085 DEBUG Running registered cleanup function: <bound method ValidateJWTTokenRetrieval.jwt_token_cleanup of <ValidateJWTTokenRetrieval object at 0x755e8c10>>
+2022-02-22 11:27:17,162 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -108,10 +108,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-16 10:16:41,731 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 17892)
-2022-02-16 10:16:44,656 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
-2022-02-16 10:16:44,657 DEBUG ProcessUser cleanup function done.
-2022-02-16 10:16:44,659 INFO  
-2022-02-16 10:16:44,659 INFO  Test duration: 15.69 secs
-2022-02-16 10:16:44,660 INFO  Test final outcome:  PASSED
-2022-02-16 10:16:44,660 INFO  
+2022-02-22 11:27:17,167 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 6075)
+2022-02-22 11:27:19,335 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-02-22 11:27:19,336 DEBUG ProcessUser cleanup function done.
+2022-02-22 11:27:19,338 INFO  
+2022-02-22 11:27:19,338 INFO  Test duration: 14.06 secs
+2022-02-22 11:27:19,338 INFO  Test final outcome:  PASSED
+2022-02-22 11:27:19,339 INFO  

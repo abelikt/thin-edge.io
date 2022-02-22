@@ -1,4 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="tedge_agent_user_sudo_access" skipped="0" tests="1" time="1.71" timestamp="2022-02-18T15:22:58">
-	<testcase classname="TedgeAgentUserSudoAccess" name="tedge_agent_user_sudo_access"/>
+<testsuite failures="1" name="tedge_agent_user_sudo_access" skipped="0" tests="1" time="1.1" timestamp="2022-02-22T11:20:31">
+	<testcase classname="TedgeAgentUserSudoAccess" name="tedge_agent_user_sudo_access">
+		<failure message="BLOCKED: sudo&lt;apt&gt; returned exit code 2 (expected ==1)" type="BLOCKED"/>
+		<system-out>11:20:30 INFO  ==============================================================
+11:20:30 INFO  Id:    tedge_agent_user_sudo_access
+11:20:30 INFO  Dir:   tedge/
+11:20:30 INFO  Title: Validate tedge-agent user has a limited sudo right
+11:20:30 DEBUG Execution order hint: 0.0
+11:20:30 INFO  ==============================================================
+11:20:30 INFO  Copy apt plugin 'deb'
+11:20:30 DEBUG Process parameters for sudo&lt;copy_apt_plugin&gt;
+  command line : /usr/bin/sudo cp /etc/tedge/sm-plugins/apt /etc/tedge/sm-plugins/deb
+    arg #1     : cp
+    arg #2     : /etc/tedge/sm-plugins/apt
+    arg #3     : /etc/tedge/sm-plugins/deb
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/copy_apt_plugin.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/copy_apt_plugin.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:20:30 DEBUG Waiting up to 600 secs for process sudo&lt;copy_apt_plugin&gt; (pid 8522)
+11:20:30 INFO  Executed sudo&lt;copy_apt_plugin&gt;, exit status 0
+11:20:30 DEBUG --- test execute
+11:20:30 DEBUG Process parameters for sudo&lt;apt&gt;
+  command line : /usr/bin/sudo -u tedge-agent /usr/bin/sudo /etc/tedge/sm-plugins/apt
+    arg #1     : -u
+    arg #2     : tedge-agent
+    arg #3     : /usr/bin/sudo
+    arg #4     : /etc/tedge/sm-plugins/apt
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:20:30 DEBUG Waiting up to 600 secs for process sudo&lt;apt&gt; (pid 8524)
+11:20:30 WARN  Executed sudo&lt;apt&gt;, exit status 2
+11:20:30 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.err
+11:20:30 INFO  Contents of apt.err: 
+11:20:30 INFO    tedge_apt_plugin
+11:20:30 INFO    USAGE:
+11:20:30 INFO        apt &lt;SUBCOMMAND&gt;
+11:20:30 INFO    OPTIONS:
+11:20:30 INFO        -h, --help    Print help information
+11:20:30 INFO    SUBCOMMANDS:
+11:20:30 INFO        finalize       Finalize a sequences of install/remove commands
+11:20:30 INFO        help           Print this message or the help of the given subcommand(s)
+11:20:30 INFO        install        Install a module
+11:20:30 INFO        list           List all the installed modules
+11:20:30 INFO        prepare        Prepare a sequences of install/remove commands
+11:20:30 INFO        remove         Uninstall a module
+11:20:30 INFO        update-list    Install or remove multiple modules at once
+11:20:30 INFO    -----
+11:20:30 INFO  
+11:20:30 WARN  sudo&lt;apt&gt; returned exit code 2 (expected ==1) ... blocked [run.py:35]
+11:20:30 WARN  Aborted test due to BLOCKED outcome
+11:20:30 DEBUG --- test cleanup
+11:20:30 INFO  
+11:20:30 INFO  cleanup:
+11:20:30 DEBUG Running registered cleanup function: &lt;bound method TedgeAgentUserSudoAccess.mycleanup of &lt;TedgeAgentUserSudoAccess object at 0x75d9c0f0&gt;&gt;
+11:20:30 INFO  Remove the copied apt 'deb' plugin
+11:20:30 DEBUG Process parameters for sudo&lt;remove_copied_apt_plugin&gt;
+  command line : /usr/bin/sudo rm /etc/tedge/sm-plugins/deb
+    arg #1     : rm
+    arg #2     : /etc/tedge/sm-plugins/deb
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/remove_copied_apt_plugin.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/remove_copied_apt_plugin.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:20:30 DEBUG Waiting up to 600 secs for process sudo&lt;remove_copied_apt_plugin&gt; (pid 8527)
+11:20:31 INFO  Executed sudo&lt;remove_copied_apt_plugin&gt;, exit status 0
+11:20:31 DEBUG ProcessUser cleanup function done.
+11:20:31 INFO  
+11:20:31 INFO  Test duration: 1.10 secs
+11:20:31 INFO  Test final outcome:  BLOCKED
+11:20:31 INFO  Test outcome reason: sudo&lt;apt&gt; returned exit code 2 (expected ==1)
+11:20:31 INFO  
+</system-out>
+	</testcase>
 </testsuite>

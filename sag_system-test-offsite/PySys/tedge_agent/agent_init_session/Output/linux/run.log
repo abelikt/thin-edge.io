@@ -1,10 +1,10 @@
-2022-02-18 15:22:58,132 INFO  ==============================================================
-2022-02-18 15:22:58,133 INFO  Id:    agent_init_session
-2022-02-18 15:22:58,133 INFO  Dir:   tedge_agent/
-2022-02-18 15:22:58,134 INFO  Title: Validate tedge agent init session feature
-2022-02-18 15:22:58,134 DEBUG Execution order hint: 0.0
-2022-02-18 15:22:58,134 INFO  ==============================================================
-2022-02-18 15:22:58,145 DEBUG Process parameters for sudo<remove_lock>
+2022-02-22 11:20:31,327 INFO  ==============================================================
+2022-02-22 11:20:31,328 INFO  Id:    agent_init_session
+2022-02-22 11:20:31,328 INFO  Dir:   tedge_agent/
+2022-02-22 11:20:31,329 INFO  Title: Validate tedge agent init session feature
+2022-02-22 11:20:31,329 DEBUG Execution order hint: 0.0
+2022-02-22 11:20:31,330 INFO  ==============================================================
+2022-02-22 11:20:31,337 DEBUG Process parameters for sudo<remove_lock>
   command line : /usr/bin/sudo rm -rf /var/lock/tedge_agent.lock
     arg #1     : rm
     arg #2     : -rf
@@ -18,10 +18,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:58,150 DEBUG Waiting up to 600 secs for process sudo<remove_lock> (pid 29098)
-2022-02-18 15:22:58,454 INFO  Executed sudo<remove_lock>, exit status 0
-2022-02-18 15:22:58,455 DEBUG --- test execute
-2022-02-18 15:22:58,457 DEBUG Process parameters for sudo<agent_clear>
+2022-02-22 11:20:31,342 DEBUG Waiting up to 600 secs for process sudo<remove_lock> (pid 8529)
+2022-02-22 11:20:31,646 INFO  Executed sudo<remove_lock>, exit status 0
+2022-02-22 11:20:31,647 DEBUG --- test execute
+2022-02-22 11:20:31,650 DEBUG Process parameters for sudo<agent_clear>
   command line : /usr/bin/sudo /usr/bin/tedge_agent --clear
     arg #1     : /usr/bin/tedge_agent
     arg #2     : --clear
@@ -34,9 +34,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:58,464 DEBUG Waiting up to 600 secs for process sudo<agent_clear> (pid 29100)
-2022-02-18 15:22:58,770 INFO  Executed sudo<agent_clear>, exit status 0
-2022-02-18 15:22:58,772 DEBUG Process parameters for sudo<agent_init>
+2022-02-22 11:20:31,656 DEBUG Waiting up to 600 secs for process sudo<agent_clear> (pid 8532)
+2022-02-22 11:20:31,961 INFO  Executed sudo<agent_clear>, exit status 0
+2022-02-22 11:20:31,963 DEBUG Process parameters for sudo<agent_init>
   command line : /usr/bin/sudo /usr/bin/tedge_agent --init
     arg #1     : /usr/bin/tedge_agent
     arg #2     : --init
@@ -49,9 +49,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:58,780 DEBUG Waiting up to 600 secs for process sudo<agent_init> (pid 29107)
-2022-02-18 15:22:59,086 INFO  Executed sudo<agent_init>, exit status 0
-2022-02-18 15:22:59,088 DEBUG Process parameters for sudo<pub_req>
+2022-02-22 11:20:31,968 DEBUG Waiting up to 600 secs for process sudo<agent_init> (pid 8539)
+2022-02-22 11:20:32,273 INFO  Executed sudo<agent_init>, exit status 0
+2022-02-22 11:20:32,275 DEBUG Process parameters for sudo<pub_req>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub --qos 1 tedge/commands/req/software/list '{"id":"Ld3KgqpcLDlrYH6sfpG7w"}'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -69,9 +69,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:59,095 DEBUG Waiting up to 600 secs for process sudo<pub_req> (pid 29114)
-2022-02-18 15:22:59,401 INFO  Executed sudo<pub_req>, exit status 0
-2022-02-18 15:22:59,403 DEBUG Process parameters for sudo<sub_resp>
+2022-02-22 11:20:32,281 DEBUG Waiting up to 600 secs for process sudo<pub_req> (pid 8546)
+2022-02-22 11:20:32,587 INFO  Executed sudo<pub_req>, exit status 0
+2022-02-22 11:20:32,589 DEBUG Process parameters for sudo<sub_resp>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub tedge/commands/res/software/list
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -86,8 +86,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:59,410 INFO  Started sudo<sub_resp> with process id 29117
-2022-02-18 15:22:59,415 DEBUG Process parameters for sudo<agent_start>
+2022-02-22 11:20:32,596 INFO  Started sudo<sub_resp> with process id 8549
+2022-02-22 11:20:32,600 DEBUG Process parameters for sudo<agent_start>
   command line : /usr/bin/sudo /usr/bin/systemctl start tedge-agent
     arg #1     : /usr/bin/systemctl
     arg #2     : start
@@ -101,34 +101,47 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-18 15:22:59,423 DEBUG Waiting up to 600 secs for process sudo<agent_start> (pid 29118)
-2022-02-18 15:22:59,778 WARN  Executed sudo<agent_start>, exit status 5
-2022-02-18 15:22:59,779 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_start.err
-2022-02-18 15:22:59,782 INFO  Contents of agent_start.err: 
-2022-02-18 15:22:59,783 INFO    Failed to start tedge-agent.service: Unit tedge-mapper-sm-c8y.service not found.
-2022-02-18 15:22:59,783 INFO    -----
-2022-02-18 15:22:59,784 INFO  
-2022-02-18 15:22:59,803 WARN  sudo<agent_start> returned non-zero exit code 5 ... blocked [run.py:60]
-2022-02-18 15:22:59,804 WARN  Aborted test due to BLOCKED outcome
-2022-02-18 15:22:59,809 DEBUG --- test cleanup
-2022-02-18 15:22:59,810 WARN  caught <class 'pysys.exceptions.ProcessError'>: Error stopping process: [Errno 1] Operation not permitted
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 228, in stop
-    os.kill(self.pid, signal.SIGTERM)
-PermissionError: [Errno 1] Operation not permitted
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1309, in cleanup
-    if process.running(): process.stop()
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 242, in stop
-    raise ProcessError("Error stopping process: %s"%ex)
-pysys.exceptions.ProcessError: Error stopping process: [Errno 1] Operation not permitted
-2022-02-18 15:22:59,815 DEBUG ProcessUser cleanup function done.
-2022-02-18 15:22:59,820 WARN  Cleanup failed with 1 errors: Failed to stop process sudo<sub_resp>: Error stopping process: [Errno 1] Operation not permitted ... blocked 
-2022-02-18 15:22:59,822 INFO  
-2022-02-18 15:22:59,823 INFO  Test duration: 1.69 secs
-2022-02-18 15:22:59,823 INFO  Test final outcome:  BLOCKED
-2022-02-18 15:22:59,824 INFO  Test outcome reason: sudo<agent_start> returned non-zero exit code 5 (+1 other failures)
-2022-02-18 15:22:59,824 INFO  
+2022-02-22 11:20:32,607 DEBUG Waiting up to 600 secs for process sudo<agent_start> (pid 8550)
+2022-02-22 11:20:32,912 INFO  Executed sudo<agent_start>, exit status 0
+2022-02-22 11:20:32,913 INFO  Waiting for 2.0 seconds
+2022-02-22 11:20:34,917 DEBUG Process parameters for sudo<agent_stop>
+  command line : /usr/bin/sudo /usr/bin/systemctl stop tedge-agent
+    arg #1     : /usr/bin/systemctl
+    arg #2     : stop
+    arg #3     : tedge-agent
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/agent_stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-22 11:20:34,922 DEBUG Waiting up to 600 secs for process sudo<agent_stop> (pid 8577)
+2022-02-22 11:20:35,226 INFO  Executed sudo<agent_stop>, exit status 0
+2022-02-22 11:20:35,228 DEBUG Process parameters for sudo<sub_stop>
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-02-22 11:20:35,233 DEBUG Waiting up to 600 secs for process sudo<sub_stop> (pid 8579)
+2022-02-22 11:20:35,538 INFO  Executed sudo<sub_stop>, exit status 0
+2022-02-22 11:20:35,539 DEBUG --- test validate
+2022-02-22 11:20:35,540 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_agent/agent_init_session/Output/linux/sub_resp.out
+2022-02-22 11:20:35,546 DEBUG Grep on input file sub_resp.out successfully matched expression "Ld3KgqpcLDlrYH6sfpG7w" with line: '[tedge/commands/res/software/list] {"id":"Ld3KgqpcLDlrYH6sfpG7w","status":"executing"}\n'
+2022-02-22 11:20:35,548 INFO  Grep on input file sub_resp.out ... passed
+2022-02-22 11:20:35,554 DEBUG --- test cleanup
+2022-02-22 11:20:35,555 DEBUG ProcessUser cleanup function done.
+2022-02-22 11:20:35,557 INFO  
+2022-02-22 11:20:35,557 INFO  Test duration: 4.23 secs
+2022-02-22 11:20:35,558 INFO  Test final outcome:  PASSED
+2022-02-22 11:20:35,558 INFO  
