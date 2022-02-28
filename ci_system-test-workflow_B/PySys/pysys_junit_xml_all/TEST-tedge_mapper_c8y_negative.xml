@@ -1,4 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="tedge_mapper_c8y_negative" skipped="0" tests="1" time="1.49" timestamp="2022-02-22T10:48:06">
-	<testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_negative"/>
+<testsuite failures="1" name="tedge_mapper_c8y_negative" skipped="0" tests="1" time="1.5" timestamp="2022-02-24T13:48:37">
+	<testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_negative">
+		<failure message="FAILED: Grep on tedge_sub.out contains &quot;Invalid JSON&quot;" type="FAILED"/>
+		<system-out>13:48:36 INFO  ==============================================================
+13:48:36 INFO  Id:    tedge_mapper_c8y_negative
+13:48:36 INFO  Dir:   tedge_mapper_c8y/
+13:48:36 INFO  Title: Validate the Cumulocity Mapper that publishes an error message on tedge/errors when it receives an invalid JSON message on tedge/measurements
+13:48:36 DEBUG Execution order hint: 0.0
+13:48:36 INFO  ==============================================================
+13:48:36 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+  command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:36 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 769)
+13:48:36 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+13:48:36 DEBUG --- test execute
+13:48:36 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic tedge/errors
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : tedge/errors
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:36 INFO  Started sudo&lt;tedge_sub&gt; with process id 777
+13:48:36 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : tedge/measurements
+    arg #5     : {
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:36 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 778)
+13:48:36 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+13:48:36 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:36 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 783)
+13:48:37 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+13:48:37 DEBUG --- test validate
+13:48:37 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_sub.out
+13:48:37 WARN  Grep on tedge_sub.out contains &quot;Invalid JSON&quot; ... failed [run.py:63]
+13:48:37 DEBUG --- test cleanup
+13:48:37 INFO  
+13:48:37 INFO  cleanup:
+13:48:37 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8y.mapper_cleanup of &lt;TedgeMapperC8y object at 0x75b76d30&gt;&gt;
+13:48:37 INFO  mapper_cleanup
+13:48:37 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:37 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 786)
+13:48:37 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+13:48:37 DEBUG ProcessUser cleanup function done.
+13:48:37 INFO  
+13:48:37 INFO  Test duration: 1.50 secs
+13:48:37 INFO  Test final outcome:  FAILED
+13:48:37 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;Invalid JSON&quot;
+13:48:37 INFO  
+</system-out>
+	</testcase>
 </testsuite>

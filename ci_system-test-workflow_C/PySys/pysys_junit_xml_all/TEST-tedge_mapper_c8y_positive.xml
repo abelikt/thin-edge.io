@@ -1,4 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="tedge_mapper_c8y_positive" skipped="0" tests="1" time="1.48" timestamp="2022-02-22T10:47:51">
-	<testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_positive"/>
+<testsuite failures="1" name="tedge_mapper_c8y_positive" skipped="0" tests="1" time="1.45" timestamp="2022-02-24T13:48:20">
+	<testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_positive">
+		<failure message="BLOCKED: JSONDecodeError: Expecting value: line 1 column 1 (char 0)" type="BLOCKED"/>
+		<system-out>13:48:18 INFO  ==============================================================
+13:48:18 INFO  Id:    tedge_mapper_c8y_positive
+13:48:18 INFO  Dir:   tedge_mapper_c8y/
+13:48:18 INFO  Title: Validate the Cumulocity Mapper that publishes a Thin Edge JSON message on c8y/measurement/measurements/create when it receives a valid JSON message on tedge/measurements
+13:48:18 DEBUG Execution order hint: 0.0
+13:48:18 INFO  ==============================================================
+13:48:18 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+  command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:18 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 18974)
+13:48:19 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+13:48:19 DEBUG --- test execute
+13:48:19 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic c8y/measurement/measurements/create
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : c8y/measurement/measurements/create
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:19 INFO  Started sudo&lt;tedge_sub&gt; with process id 18977
+13:48:19 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{&quot;temperature&quot;: 12, &quot;time&quot;: &quot;2021-06-15T17:01:15.806181503+02:00&quot;}'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : tedge/measurements
+    arg #5     : {&quot;temperature&quot;: 12, &quot;time&quot;: &quot;2021-06-15T17:01:15.806181503+02:00&quot;}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:19 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 18983)
+13:48:19 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+13:48:19 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:19 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 18988)
+13:48:19 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+13:48:19 DEBUG --- test validate
+13:48:19 WARN  caught &lt;class 'json.decoder.JSONDecodeError'&gt; while running test: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1211, in __call__
+    self.testObj.validate()
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/run.py&quot;, line 65, in validate
+    c8y_json = json.load(f)
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 348, in loads
+    return _default_decoder.decode(s)
+  File &quot;/usr/lib/python3.7/json/decoder.py&quot;, line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File &quot;/usr/lib/python3.7/json/decoder.py&quot;, line 355, in raw_decode
+    raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+13:48:19 WARN  JSONDecodeError: Expecting value: line 1 column 1 (char 0) ... blocked 
+13:48:19 DEBUG --- test cleanup
+13:48:19 INFO  
+13:48:19 INFO  cleanup:
+13:48:19 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8y.mapper_cleanup of &lt;TedgeMapperC8y object at 0x75c35b70&gt;&gt;
+13:48:19 INFO  mapper_cleanup
+13:48:19 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_mapper_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_positive/Output/linux/tedge_mapper_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+13:48:19 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 18990)
+13:48:20 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+13:48:20 DEBUG ProcessUser cleanup function done.
+13:48:20 INFO  
+13:48:20 INFO  Test duration: 1.45 secs
+13:48:20 INFO  Test final outcome:  BLOCKED
+13:48:20 INFO  Test outcome reason: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+13:48:20 INFO  
+</system-out>
+	</testcase>
 </testsuite>

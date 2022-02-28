@@ -1,10 +1,10 @@
-2022-02-22 11:10:02,951 INFO  ==============================================================
-2022-02-22 11:10:02,952 INFO  Id:    monitoring_with_collectd
-2022-02-22 11:10:02,953 INFO  Dir:   monitoring/
-2022-02-22 11:10:02,953 INFO  Title: Validate tedge dm agent messages that are produced by batching the collectd messages
-2022-02-22 11:10:02,954 DEBUG Execution order hint: 0.0
-2022-02-22 11:10:02,954 INFO  ==============================================================
-2022-02-22 11:10:02,968 DEBUG Process parameters for sudo<collectd>
+2022-02-25 15:48:56,703 INFO  ==============================================================
+2022-02-25 15:48:56,704 INFO  Id:    monitoring_with_collectd
+2022-02-25 15:48:56,704 INFO  Dir:   monitoring/
+2022-02-25 15:48:56,705 INFO  Title: Validate tedge dm agent messages that are produced by batching the collectd messages
+2022-02-25 15:48:56,705 DEBUG Execution order hint: 0.0
+2022-02-25 15:48:56,705 INFO  ==============================================================
+2022-02-25 15:48:56,713 DEBUG Process parameters for sudo<collectd>
   command line : /usr/bin/sudo systemctl start collectd
     arg #1     : systemctl
     arg #2     : start
@@ -18,9 +18,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:02,973 DEBUG Waiting up to 600 secs for process sudo<collectd> (pid 3689)
-2022-02-22 11:10:03,378 INFO  Executed sudo<collectd>, exit status 0
-2022-02-22 11:10:03,380 DEBUG Process parameters for sudo<collectd_mapper>
+2022-02-25 15:48:56,718 DEBUG Waiting up to 600 secs for process sudo<collectd> (pid 27160)
+2022-02-25 15:48:57,124 INFO  Executed sudo<collectd>, exit status 0
+2022-02-25 15:48:57,125 DEBUG Process parameters for sudo<collectd_mapper>
   command line : /usr/bin/sudo systemctl start tedge-mapper-collectd
     arg #1     : systemctl
     arg #2     : start
@@ -34,10 +34,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:03,386 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 3703)
-2022-02-22 11:10:03,690 INFO  Executed sudo<collectd_mapper>, exit status 0
-2022-02-22 11:10:03,691 DEBUG --- test execute
-2022-02-22 11:10:03,793 DEBUG Process parameters for sudo<tedge_sub>
+2022-02-25 15:48:57,130 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 27174)
+2022-02-25 15:48:57,435 INFO  Executed sudo<collectd_mapper>, exit status 0
+2022-02-25 15:48:57,437 DEBUG --- test execute
+2022-02-25 15:48:57,539 DEBUG Process parameters for sudo<tedge_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic 'tedge/#'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -53,8 +53,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:03,800 INFO  Started sudo<tedge_sub> with process id 3711
-2022-02-22 11:10:03,804 DEBUG Process parameters for sudo<collectd_sub>
+2022-02-25 15:48:57,546 INFO  Started sudo<tedge_sub> with process id 27182
+2022-02-25 15:48:57,552 DEBUG Process parameters for sudo<collectd_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub 'collectd/#'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -69,8 +69,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:03,812 INFO  Started sudo<collectd_sub> with process id 3712
-2022-02-22 11:10:15,821 DEBUG Process parameters for sudo<kill_out>
+2022-02-25 15:48:57,578 INFO  Started sudo<collectd_sub> with process id 27183
+2022-02-25 15:49:09,598 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -83,19 +83,19 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:15,827 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 3718)
-2022-02-22 11:10:16,132 INFO  Executed sudo<kill_out>, exit status 0
-2022-02-22 11:10:16,132 DEBUG --- test validate
-2022-02-22 11:10:16,133 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_collectd/Output/linux/tedge_sub.out
-2022-02-22 11:10:16,139 DEBUG Grep on input file tedge_sub.out successfully matched expression "time|cpu|memory|df-root" with line: '{"time":"2022-02-22T11:10:04.328999996Z","memory":{"percent-used":16.8108080662768},"cpu":{"percent-active":25.4742547425474}}\n'
-2022-02-22 11:10:16,140 INFO  Grep on input file tedge_sub.out ... passed
-2022-02-22 11:10:16,145 INFO  Assert that (collectd_msg_validation_result == expected_result) with collectd_msg_validation_result=True, expected_result=True ... passed
-2022-02-22 11:10:16,151 DEBUG --- test cleanup
-2022-02-22 11:10:16,151 INFO  
-2022-02-22 11:10:16,152 INFO  cleanup:
-2022-02-22 11:10:16,152 DEBUG Running registered cleanup function: <bound method MonitoringWithCollectd.monitoring_cleanup of <MonitoringWithCollectd object at 0x76084c10>>
-2022-02-22 11:10:16,153 INFO  monitoring_cleanup
-2022-02-22 11:10:16,154 DEBUG Process parameters for sudo<collectd_mapper>
+2022-02-25 15:49:09,606 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 27194)
+2022-02-25 15:49:09,911 INFO  Executed sudo<kill_out>, exit status 0
+2022-02-25 15:49:09,912 DEBUG --- test validate
+2022-02-25 15:49:09,912 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_collectd/Output/linux/tedge_sub.out
+2022-02-25 15:49:09,917 DEBUG Grep on input file tedge_sub.out successfully matched expression "time|cpu|memory|df-root" with line: '{"time":"2022-02-25T15:48:58.069999933Z","memory":{"percent-used":18.8256848126867},"cpu":{"percent-active":26.9021739130435}}\n'
+2022-02-25 15:49:09,918 INFO  Grep on input file tedge_sub.out ... passed
+2022-02-25 15:49:09,922 INFO  Assert that (collectd_msg_validation_result == expected_result) with collectd_msg_validation_result=True, expected_result=True ... passed
+2022-02-25 15:49:09,927 DEBUG --- test cleanup
+2022-02-25 15:49:09,928 INFO  
+2022-02-25 15:49:09,928 INFO  cleanup:
+2022-02-25 15:49:09,929 DEBUG Running registered cleanup function: <bound method MonitoringWithCollectd.monitoring_cleanup of <MonitoringWithCollectd object at 0x75c56050>>
+2022-02-25 15:49:09,929 INFO  monitoring_cleanup
+2022-02-25 15:49:09,931 DEBUG Process parameters for sudo<collectd_mapper>
   command line : /usr/bin/sudo systemctl stop tedge-mapper-collectd
     arg #1     : systemctl
     arg #2     : stop
@@ -109,9 +109,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:16,159 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 3720)
-2022-02-22 11:10:16,514 INFO  Executed sudo<collectd_mapper>, exit status 0
-2022-02-22 11:10:16,516 DEBUG Process parameters for sudo<collectd>
+2022-02-25 15:49:09,938 DEBUG Waiting up to 600 secs for process sudo<collectd_mapper> (pid 27196)
+2022-02-25 15:49:10,243 INFO  Executed sudo<collectd_mapper>, exit status 0
+2022-02-25 15:49:10,244 DEBUG Process parameters for sudo<collectd>
   command line : /usr/bin/sudo systemctl stop collectd
     arg #1     : systemctl
     arg #2     : stop
@@ -125,10 +125,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-02-22 11:10:16,522 DEBUG Waiting up to 600 secs for process sudo<collectd> (pid 3723)
-2022-02-22 11:10:16,827 INFO  Executed sudo<collectd>, exit status 0
-2022-02-22 11:10:16,828 DEBUG ProcessUser cleanup function done.
-2022-02-22 11:10:16,830 INFO  
-2022-02-22 11:10:16,831 INFO  Test duration: 13.88 secs
-2022-02-22 11:10:16,831 INFO  Test final outcome:  PASSED
-2022-02-22 11:10:16,832 INFO  
+2022-02-25 15:49:10,248 DEBUG Waiting up to 600 secs for process sudo<collectd> (pid 27198)
+2022-02-25 15:49:10,552 INFO  Executed sudo<collectd>, exit status 0
+2022-02-25 15:49:10,554 DEBUG ProcessUser cleanup function done.
+2022-02-25 15:49:10,555 INFO  
+2022-02-25 15:49:10,556 INFO  Test duration: 13.85 secs
+2022-02-25 15:49:10,556 INFO  Test final outcome:  PASSED
+2022-02-25 15:49:10,557 INFO  
