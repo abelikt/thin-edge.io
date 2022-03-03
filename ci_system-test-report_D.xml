@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="147" failures="9" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+<testsuites tests="147" failures="3" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
 <testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
 </testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
 <testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
@@ -10,17 +10,17 @@
 </testsuite><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path" />
 <testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path" />
 <testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:10:51 INFO  ==============================================================
-09:10:51 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
-09:10:51 INFO  Dir:   software_management_end_to_end/
-09:10:51 INFO  Title: Install package to directory specified in tedge config set tmp.path
-09:10:51 DEBUG Execution order hint: 0.0
-09:10:51 INFO  ==============================================================
-09:10:52 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:10:52 DEBUG EnvironmentC8y Setup
-09:10:52 INFO  EnvironmentC8y Setup
-09:10:52 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+		<failure message="BLOCKED: AssertionError:" type="BLOCKED" />
+		<system-out>11:30:39 INFO  ==============================================================
+11:30:39 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+11:30:39 INFO  Dir:   software_management_end_to_end/
+11:30:39 INFO  Title: Install package to directory specified in tedge config set tmp.path
+11:30:39 DEBUG Execution order hint: 0.0
+11:30:39 INFO  ==============================================================
+11:30:40 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+11:30:40 DEBUG EnvironmentC8y Setup
+11:30:40 INFO  EnvironmentC8y Setup
+11:30:40 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -33,9 +33,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:10:52 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 22622)
-09:10:53 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:10:53 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+11:30:40 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 11347)
+11:30:40 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+11:30:40 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -49,9 +49,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:10:53 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 22626)
-09:11:04 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 11 secs
-09:11:04 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+11:30:40 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 11351)
+11:30:51 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+11:30:51 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -66,9 +66,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:04 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 22738)
-09:11:06 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:11:06 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+11:30:51 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 11457)
+11:30:52 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+11:30:52 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
   command line : /usr/bin/systemctl status mosquitto
     arg #1     : status
     arg #2     : mosquitto
@@ -81,9 +81,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 22742)
-09:11:06 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:11:06 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+11:30:52 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 11464)
+11:30:53 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+11:30:53 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -96,25 +96,136 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 22743)
-09:11:07 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:11:09 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:11:09 INFO  State of current operation: SUCCESSFUL
-09:11:09 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
+11:30:53 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 11465)
+11:30:54 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+11:30:56 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=15217490&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
+11:30:56 INFO  State of current operation: SUCCESSFUL
+11:30:56 INFO  Assert that (False == value) with value=False ... passed
+11:30:56 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo mkdir /tedge_download_path_test
+    arg #1     : mkdir
+    arg #2     : /tedge_download_path_test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:30:56 DEBUG Waiting up to 600 secs for process sudo (pid 11471)
+11:30:57 INFO  Executed sudo, exit status 0
+11:30:57 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo chmod a+rwx /tedge_download_path_test
+    arg #1     : chmod
+    arg #2     : a+rwx
+    arg #3     : /tedge_download_path_test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:30:57 DEBUG Waiting up to 600 secs for process sudo (pid 11485)
+11:30:57 INFO  Executed sudo, exit status 0
+11:30:57 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/tedge config set tmp.path /tedge_download_path_test
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : set
+    arg #4     : tmp.path
+    arg #5     : /tedge_download_path_test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:30:57 DEBUG Waiting up to 600 secs for process sudo (pid 11490)
+11:30:57 INFO  Executed sudo, exit status 0
+11:30:57 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:30:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 11495)
+11:31:00 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+11:31:00 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+11:31:00 INFO  Delaying execution by 9 seconds
+11:31:09 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+11:31:09 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 11542)
+11:31:19 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+11:31:19 DEBUG --- test execute
+11:31:19 INFO  Response status: 201
+11:31:19 INFO  Response to action: {
+    "creationTime": "2022-03-03T11:31:19.912Z",
+    "deviceId": "15217490",
+    "deviceName": "offsited",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/15235274",
+    "id": "15235274",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "::apt",
+            "url": "https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463"
+        }
+    ]
+}
+11:31:19 INFO  Started operation: {'creationTime': '2022-03-03T11:31:19.912Z', 'deviceId': '15217490', 'deviceName': 'offsited', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/15235274', 'id': '15235274', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463'}]}
+11:31:24 WARN  caught &lt;class 'AssertionError'&gt; while running test: 
 Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 49, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:11:10 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:11:10 DEBUG --- test cleanup
-09:11:10 INFO  
-09:11:10 INFO  cleanup:
-09:11:10 DEBUG Running registered cleanup function: &lt;bound method AptInstallWithDownloadPath.mysmcleanup of &lt;AptInstallWithDownloadPath object at 0x75d4f990&gt;&gt;
-09:11:10 DEBUG Process parameters for sudo
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1209, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 76, in execute
+    assert_install_in_download_path(install_directory=self.DOWNLOAD_DIR)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 74, in retry_decorator
+    logger)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 33, in __retry_internal
+    return f()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 28, in assert_install_in_download_path
+    assert "rolldice" in os.listdir(f"{install_directory}")
+AssertionError
+11:31:24 WARN  AssertionError: ... blocked 
+11:31:24 DEBUG --- test cleanup
+11:31:24 INFO  
+11:31:24 INFO  cleanup:
+11:31:24 DEBUG Running registered cleanup function: &lt;bound method AptInstallWithDownloadPath.mysmcleanup of &lt;AptInstallWithDownloadPath object at 0x75d4c9b0&gt;&gt;
+11:31:24 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo rm -rf /tedge_download_path_test
     arg #1     : rm
     arg #2     : -rf
@@ -128,9 +239,9 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:10 DEBUG Waiting up to 600 secs for process sudo (pid 22760)
-09:11:10 INFO  Executed sudo, exit status 0
-09:11:10 DEBUG Process parameters for sudo
+11:31:24 DEBUG Waiting up to 600 secs for process sudo (pid 11740)
+11:31:25 INFO  Executed sudo, exit status 0
+11:31:25 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo /usr/bin/tedge config set tmp.path None
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -146,9 +257,9 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:10 DEBUG Waiting up to 600 secs for process sudo (pid 22762)
-09:11:10 INFO  Executed sudo, exit status 0
-09:11:10 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+11:31:25 DEBUG Waiting up to 600 secs for process sudo (pid 11756)
+11:31:25 INFO  Executed sudo, exit status 0
+11:31:25 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -162,11 +273,11 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:10 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 22767)
-09:11:13 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:11:13 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-09:11:13 INFO  Delaying execution by 9 seconds
-09:11:22 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+11:31:25 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 11778)
+11:31:28 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+11:31:28 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
+11:31:28 INFO  Delaying execution by 9 seconds
+11:31:37 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -180,13 +291,13 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:22 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 22813)
-09:11:32 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:11:32 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;AptInstallWithDownloadPath object at 0x75d4f990&gt;&gt;
-09:11:32 DEBUG EnvironmentC8y Cleanup
-09:11:32 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 9 seconds
-09:11:32 INFO  Delaying execution by 2 seconds
-09:11:34 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+11:31:37 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 11849)
+11:31:47 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+11:31:47 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;AptInstallWithDownloadPath object at 0x75d4c9b0&gt;&gt;
+11:31:47 DEBUG EnvironmentC8y Cleanup
+11:31:48 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 10 seconds
+11:31:48 INFO  Delaying execution by 1 seconds
+11:31:49 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -200,9 +311,9 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:34 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 22945)
-09:11:36 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:11:36 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+11:31:49 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 11967)
+11:31:51 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+11:31:51 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -215,1120 +326,34 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:11:36 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 22985)
-09:11:37 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:11:37 DEBUG ProcessUser cleanup function done.
-09:11:37 INFO  
-09:11:37 INFO  Test duration: 45.14 secs
-09:11:37 INFO  Test final outcome:  BLOCKED
-09:11:37 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:11:37 INFO  
+11:31:51 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 12007)
+11:31:51 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+11:31:51 DEBUG ProcessUser cleanup function done.
+11:31:51 INFO  
+11:31:51 INFO  Test duration: 72.43 secs
+11:31:51 INFO  Test final outcome:  BLOCKED
+11:31:51 INFO  Test outcome reason: AssertionError:
+11:31:51 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:11:37 INFO  ==============================================================
-09:11:37 INFO  Id:    SoftwareManagement.sm_apt_install_fail
-09:11:37 INFO  Dir:   software_management_end_to_end/
-09:11:37 INFO  Title: Validate end to end behaviour for a failing installation
-09:11:37 DEBUG Execution order hint: 0.0
-09:11:37 INFO  ==============================================================
-09:11:37 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:11:37 DEBUG EnvironmentC8y Setup
-09:11:37 INFO  EnvironmentC8y Setup
-09:11:37 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:11:37 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 22994)
-09:11:37 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:11:37 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-09:11:37 INFO  Delaying execution by 9 seconds
-09:11:46 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:11:46 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 23000)
-09:11:56 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:11:56 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:11:56 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 23108)
-09:11:57 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:11:57 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:11:57 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 23114)
-09:11:57 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:11:57 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:11:57 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 23115)
-09:11:57 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:11:59 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:11:59 INFO  State of current operation: SUCCESSFUL
-09:11:59 DEBUG --- test execute
-09:12:00 INFO  Response status: 201
-09:12:00 INFO  Response to action: {
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "PENDING",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:12:00 INFO  Started operation: {'creationTime': '2022-03-02T09:12:00.047Z', 'deviceId': '14879013', 'deviceName': 'offsited', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684', 'id': '14902684', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'does_not_exist', 'action': 'install', 'id': '5446165', 'version': '::apt', 'url': ''}]}
-09:12:02 INFO  State of operation 14902684 : EXECUTING
-09:12:04 INFO  State of operation 14902684 : EXECUTING
-09:12:06 INFO  State of operation 14902684 : EXECUTING
-09:12:08 INFO  State of operation 14902684 : EXECUTING
-09:12:11 INFO  State of operation 14902684 : EXECUTING
-09:12:14 INFO  State of operation 14902684 : EXECUTING
-09:12:16 INFO  State of operation 14902684 : EXECUTING
-09:12:19 INFO  State of operation 14902684 : EXECUTING
-09:12:21 INFO  State of operation 14902684 : EXECUTING
-09:12:23 INFO  State of operation 14902684 : EXECUTING
-09:12:25 INFO  State of operation 14902684 : EXECUTING
-09:12:27 INFO  State of operation 14902684 : FAILED
-09:12:27 DEBUG --- test validate
-09:12:27 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
-    self.testObj.validate()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/run.py", line 31, in validate
-    "False == value", value=self.check_is_installed("does_not_exist")
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:12:27 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:12:27 DEBUG --- test cleanup
-09:12:27 INFO  
-09:12:27 INFO  cleanup:
-09:12:27 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x75d64a50&gt;&gt;
-09:12:27 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x75d64a50&gt;&gt;
-09:12:27 DEBUG EnvironmentC8y Cleanup
-09:12:28 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:28 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 23296)
-09:12:30 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:12:30 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:30 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 23336)
-09:12:30 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:12:30 DEBUG ProcessUser cleanup function done.
-09:12:30 INFO  
-09:12:30 INFO  Test duration: 53.53 secs
-09:12:30 INFO  Test final outcome:  BLOCKED
-09:12:30 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:12:30 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:12:30 INFO  ==============================================================
-09:12:30 INFO  Id:    SoftwareManagement.sm_apt_install_remove
-09:12:30 INFO  Dir:   software_management_end_to_end/
-09:12:30 INFO  Title: Validate end to end behaviour for the apt plugin for installation and removal of packages
-09:12:30 DEBUG Execution order hint: 0.0
-09:12:30 INFO  ==============================================================
-09:12:30 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:12:30 DEBUG EnvironmentC8y Setup
-09:12:30 INFO  EnvironmentC8y Setup
-09:12:30 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:30 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 23347)
-09:12:31 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:12:31 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-09:12:31 INFO  Delaying execution by 8 seconds
-09:12:39 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:39 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 23351)
-09:12:49 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:12:49 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:49 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 23463)
-09:12:50 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:12:50 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:50 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 23467)
-09:12:50 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:12:50 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:50 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 23468)
-09:12:50 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:12:52 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:12:52 INFO  State of current operation: FAILED
-09:12:52 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:12:52 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-03-02T09:12:00.117Z",
-        "log": [
-            {
-                "time": "2022-03-02T09:12:00.072Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-03-02T09:12:00.080Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-03-02T09:12:02.000354016Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:12:52 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/run.py", line 28, in setup
-    if self.check_is_installed("rolldice"):
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:12:52 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:12:52 DEBUG --- test cleanup
-09:12:52 INFO  
-09:12:52 INFO  cleanup:
-09:12:52 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x75d64490&gt;&gt;
-09:12:52 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x75d64490&gt;&gt;
-09:12:52 DEBUG EnvironmentC8y Cleanup
-09:12:53 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:53 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 23488)
-09:12:55 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:12:55 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:55 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 23529)
-09:12:55 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:12:55 DEBUG ProcessUser cleanup function done.
-09:12:55 INFO  
-09:12:55 INFO  Test duration: 24.97 secs
-09:12:55 INFO  Test final outcome:  BLOCKED
-09:12:55 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:12:55 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:12:55 INFO  ==============================================================
-09:12:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
-09:12:55 INFO  Dir:   software_management_end_to_end/
-09:12:55 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
-09:12:55 DEBUG Execution order hint: 0.0
-09:12:55 INFO  ==============================================================
-09:12:55 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:12:55 DEBUG EnvironmentC8y Setup
-09:12:55 INFO  EnvironmentC8y Setup
-09:12:55 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:12:55 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 23530)
-09:12:56 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:12:56 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-09:12:56 INFO  Delaying execution by 8 seconds
-09:13:04 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:04 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 23539)
-09:13:14 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:13:14 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:14 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 23645)
-09:13:14 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:13:14 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:14 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 23652)
-09:13:15 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:13:15 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:15 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 23653)
-09:13:15 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:13:17 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:13:17 INFO  State of current operation: FAILED
-09:13:17 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:13:17 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-03-02T09:12:00.117Z",
-        "log": [
-            {
-                "time": "2022-03-02T09:12:00.072Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-03-02T09:12:00.080Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-03-02T09:12:02.000354016Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:13:17 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/run.py", line 27, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:13:17 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:13:17 DEBUG --- test cleanup
-09:13:17 INFO  
-09:13:17 INFO  cleanup:
-09:13:17 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x75cafdd0&gt;&gt;
-09:13:17 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x75cafdd0&gt;&gt;
-09:13:17 DEBUG EnvironmentC8y Cleanup
-09:13:17 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 23673)
-09:13:20 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:13:20 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:20 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 23714)
-09:13:20 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:13:20 DEBUG ProcessUser cleanup function done.
-09:13:20 INFO  
-09:13:20 INFO  Test duration: 24.74 secs
-09:13:20 INFO  Test final outcome:  BLOCKED
-09:13:20 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:13:20 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:13:20 INFO  ==============================================================
-09:13:20 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
-09:13:20 INFO  Dir:   software_management_end_to_end/
-09:13:20 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
-09:13:20 DEBUG Execution order hint: 0.0
-09:13:20 INFO  ==============================================================
-09:13:20 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:13:20 DEBUG EnvironmentC8y Setup
-09:13:20 INFO  EnvironmentC8y Setup
-09:13:20 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:20 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 23717)
-09:13:20 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:13:20 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-09:13:20 INFO  Delaying execution by 9 seconds
-09:13:29 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:29 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 23721)
-09:13:40 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:13:40 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:40 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 23830)
-09:13:40 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:13:40 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:40 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 23834)
-09:13:40 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:13:40 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:40 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 23835)
-09:13:41 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:13:43 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:13:43 INFO  State of current operation: FAILED
-09:13:43 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:13:43 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-03-02T09:12:00.117Z",
-        "log": [
-            {
-                "time": "2022-03-02T09:12:00.072Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-03-02T09:12:00.080Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-03-02T09:12:02.000354016Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:13:43 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/run.py", line 55, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:13:43 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:13:43 DEBUG --- test cleanup
-09:13:43 INFO  
-09:13:43 INFO  cleanup:
-09:13:43 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x75d64510&gt;&gt;
-09:13:43 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x75d64510&gt;&gt;
-09:13:43 DEBUG EnvironmentC8y Cleanup
-09:13:43 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:43 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 23855)
-09:13:45 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:13:45 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 23895)
-09:13:46 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:13:46 DEBUG ProcessUser cleanup function done.
-09:13:46 INFO  
-09:13:46 INFO  Test duration: 25.61 secs
-09:13:46 INFO  Test final outcome:  BLOCKED
-09:13:46 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:13:46 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:13:46 INFO  ==============================================================
-09:13:46 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
-09:13:46 INFO  Dir:   software_management_end_to_end/
-09:13:46 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
-09:13:46 DEBUG Execution order hint: 0.0
-09:13:46 INFO  ==============================================================
-09:13:46 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:13:46 DEBUG EnvironmentC8y Setup
-09:13:46 INFO  EnvironmentC8y Setup
-09:13:46 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:46 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 23896)
-09:13:46 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:13:46 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-09:13:46 INFO  Delaying execution by 9 seconds
-09:13:55 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:13:55 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 23902)
-09:14:06 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:14:06 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:06 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 24013)
-09:14:06 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:14:06 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 24019)
-09:14:06 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:14:06 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:06 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 24020)
-09:14:07 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:14:09 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:14:09 INFO  State of current operation: FAILED
-09:14:09 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:14:09 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-03-02T09:12:00.117Z",
-        "log": [
-            {
-                "time": "2022-03-02T09:12:00.072Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-03-02T09:12:00.080Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-03-02T09:12:02.000354016Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:14:09 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/run.py", line 76, in setup
-    self.assertThat("False == value", value=self.check_is_installed("asciijump"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:14:09 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:14:09 DEBUG --- test cleanup
-09:14:09 INFO  
-09:14:09 INFO  cleanup:
-09:14:09 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x760a6bf0&gt;&gt;
-09:14:09 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x760a6bf0&gt;&gt;
-09:14:09 DEBUG EnvironmentC8y Cleanup
-09:14:09 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:09 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 24040)
-09:14:11 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:14:11 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:11 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 24080)
-09:14:12 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:14:12 DEBUG ProcessUser cleanup function done.
-09:14:12 INFO  
-09:14:12 INFO  Test duration: 26.00 secs
-09:14:12 INFO  Test final outcome:  BLOCKED
-09:14:12 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:14:12 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="3" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
-<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>09:14:12 INFO  ==============================================================
-09:14:12 INFO  Id:    SoftwareManagement.sm_apt_install_remove_with_version
-09:14:12 INFO  Dir:   software_management_end_to_end/
-09:14:12 INFO  Title: Validate end to end behaviour for the apt plugin for packages with version
-09:14:12 DEBUG Execution order hint: 0.0
-09:14:12 INFO  ==============================================================
-09:14:12 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-09:14:12 DEBUG EnvironmentC8y Setup
-09:14:12 INFO  EnvironmentC8y Setup
-09:14:12 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:12 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 24090)
-09:14:12 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-09:14:12 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-09:14:12 INFO  Delaying execution by 9 seconds
-09:14:21 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_connect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_connect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:21 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 24094)
-09:14:31 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-09:14:31 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
-    arg #1     : /usr/bin/tedge
-    arg #2     : connect
-    arg #3     : c8y
-    arg #4     : --test
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_connect_c8y_test.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_connect_c8y_test.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:31 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 24204)
-09:14:32 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-09:14:32 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
-  command line : /usr/bin/systemctl status mosquitto
-    arg #1     : status
-    arg #2     : mosquitto
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mosq2.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mosq2.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:32 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 24208)
-09:14:32 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-09:14:32 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper3.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper3.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:32 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 24209)
-09:14:32 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-09:14:34 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:14:34 INFO  State of current operation: FAILED
-09:14:34 DEBUG Final URL of the request: https://thin-edge-io.eu-latest.cumulocity.com/devicecontrol/operations?deviceId=14879013&amp;pageSize=1&amp;revert=true&amp;dateFrom=1970-01-01T00%3A00%3A00.000Z
-09:14:34 DEBUG State of current operation: {
-    "delivery": {
-        "time": "2022-03-02T09:12:00.117Z",
-        "log": [
-            {
-                "time": "2022-03-02T09:12:00.072Z",
-                "status": "PENDING"
-            },
-            {
-                "time": "2022-03-02T09:12:00.080Z",
-                "status": "SEND"
-            }
-        ],
-        "status": "DELIVERED"
-    },
-    "creationTime": "2022-03-02T09:12:00.047Z",
-    "deviceId": "14879013",
-    "deviceName": "offsited",
-    "failureReason": "1 error, see device log file /var/log/tedge/agent/software-update-2022-03-02T09:12:02.000354016Z.log",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/14902684",
-    "id": "14902684",
-    "status": "FAILED",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-09:14:35 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1207, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/run.py", line 29, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 395, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-09:14:35 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-09:14:35 DEBUG --- test cleanup
-09:14:35 INFO  
-09:14:35 INFO  cleanup:
-09:14:35 DEBUG Running registered cleanup function: &lt;bound method SoftwareManagement.mysmcleanup of &lt;PySysTest object at 0x75cafe70&gt;&gt;
-09:14:35 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;PySysTest object at 0x75cafe70&gt;&gt;
-09:14:35 DEBUG EnvironmentC8y Cleanup
-09:14:35 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
-    arg #1     : /usr/bin/tedge
-    arg #2     : disconnect
-    arg #3     : c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_disconnect_c8y.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/tedge_disconnect_c8y.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:35 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 24229)
-09:14:37 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-09:14:37 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
-  command line : /usr/bin/systemctl status tedge-mapper-c8y
-    arg #1     : status
-    arg #2     : tedge-mapper-c8y
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper5.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/Output/linux/serv_mapper5.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:14:37 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 24269)
-09:14:37 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-09:14:37 DEBUG ProcessUser cleanup function done.
-09:14:37 INFO  
-09:14:37 INFO  Test duration: 25.58 secs
-09:14:37 INFO  Test final outcome:  BLOCKED
-09:14:37 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-09:14:37 INFO  
-</system-out>
-	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
 </testsuite><testsuite name="SoftwareManagement.sm_docker_install_remove_multiple" tests="3" errors="0" failures="0" skipped="0" time="0"><testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
 <testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
 <testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
@@ -1336,22 +361,22 @@ TypeError: 'NoneType' object is not iterable
 <testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove" />
 </testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove_multiple" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
-</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
-<testcase classname="SmMapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
+</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="MapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
+<testcase classname="MapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect" />
 </testsuite><testsuite name="SoftwareManagement.sm_mixed_install_remove_multiple" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple" />
 <testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple" />
 </testsuite><testsuite name="agent_init_session" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AgentInitSession" name="agent_init_session" />
 </testsuite><testsuite name="apt_fail_noarg" tests="2" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg" />
 <testcase classname="AptPluginFailNoArg" name="apt_fail_noarg">
 		<failure message="BLOCKED: sudo&lt;outp_install&gt; returned exit code 2 (expected ==1)" type="BLOCKED" />
-		<system-out>08:55:57 INFO  ==============================================================
-08:55:57 INFO  Id:    apt_fail_noarg
-08:55:57 INFO  Dir:   plugin_apt/
-08:55:57 INFO  Title: Validate apt plugin fetures(prepare, list, install, remove finalize) without arguments
-08:55:57 DEBUG Execution order hint: 0.0
-08:55:57 INFO  ==============================================================
-08:55:58 DEBUG --- test execute
-08:55:58 DEBUG Process parameters for sudo&lt;outp_install&gt;
+		<system-out>11:15:35 INFO  ==============================================================
+11:15:35 INFO  Id:    apt_fail_noarg
+11:15:35 INFO  Dir:   plugin_apt/
+11:15:35 INFO  Title: Validate apt plugin fetures(prepare, list, install, remove finalize) without arguments
+11:15:35 DEBUG Execution order hint: 0.0
+11:15:35 INFO  ==============================================================
+11:15:36 DEBUG --- test execute
+11:15:36 DEBUG Process parameters for sudo&lt;outp_install&gt;
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install
     arg #1     : /etc/tedge/sm-plugins/apt
     arg #2     : install
@@ -1364,26 +389,26 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-08:55:58 DEBUG Waiting up to 600 secs for process sudo&lt;outp_install&gt; (pid 17447)
-08:55:58 WARN  Executed sudo&lt;outp_install&gt;, exit status 2
-08:55:58 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux/outp_install.err
-08:55:58 INFO  Contents of outp_install.err: 
-08:55:58 INFO    error: The following required arguments were not provided:
-08:55:58 INFO        &lt;MODULE&gt;
-08:55:58 INFO    USAGE:
-08:55:58 INFO        apt install [OPTIONS] &lt;MODULE&gt;
-08:55:58 INFO    For more information try --help
-08:55:58 INFO    -----
-08:55:58 INFO  
-08:55:58 WARN  sudo&lt;outp_install&gt; returned exit code 2 (expected ==1) ... blocked [environment_apt_plugin.py:70,run.py:20]
-08:55:58 WARN  Aborted test due to BLOCKED outcome
-08:55:58 DEBUG --- test cleanup
-08:55:58 DEBUG ProcessUser cleanup function done.
-08:55:58 INFO  
-08:55:58 INFO  Test duration: 1.13 secs
-08:55:58 INFO  Test final outcome:  BLOCKED
-08:55:58 INFO  Test outcome reason: sudo&lt;outp_install&gt; returned exit code 2 (expected ==1)
-08:55:58 INFO  
+11:15:36 DEBUG Waiting up to 600 secs for process sudo&lt;outp_install&gt; (pid 6045)
+11:15:36 WARN  Executed sudo&lt;outp_install&gt;, exit status 2
+11:15:36 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_fail_noarg/Output/linux/outp_install.err
+11:15:36 INFO  Contents of outp_install.err: 
+11:15:36 INFO    error: The following required arguments were not provided:
+11:15:36 INFO        &lt;MODULE&gt;
+11:15:36 INFO    USAGE:
+11:15:36 INFO        apt install [OPTIONS] &lt;MODULE&gt;
+11:15:36 INFO    For more information try --help
+11:15:36 INFO    -----
+11:15:36 INFO  
+11:15:36 WARN  sudo&lt;outp_install&gt; returned exit code 2 (expected ==1) ... blocked [environment_apt_plugin.py:70,run.py:20]
+11:15:36 WARN  Aborted test due to BLOCKED outcome
+11:15:36 DEBUG --- test cleanup
+11:15:36 DEBUG ProcessUser cleanup function done.
+11:15:36 INFO  
+11:15:36 INFO  Test duration: 1.12 secs
+11:15:36 INFO  Test final outcome:  BLOCKED
+11:15:36 INFO  Test outcome reason: sudo&lt;outp_install&gt; returned exit code 2 (expected ==1)
+11:15:36 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="apt_finalize" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFinalize" name="apt_finalize" />
@@ -1425,14 +450,14 @@ TypeError: 'NoneType' object is not iterable
 </testsuite><testsuite name="apt_wrong_option" tests="2" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option" />
 <testcase classname="AptPluginWrongOption" name="apt_wrong_option">
 		<failure message="BLOCKED: sudo&lt;outp&gt; returned exit code 2 (expected ==1)" type="BLOCKED" />
-		<system-out>09:07:57 INFO  ==============================================================
-09:07:57 INFO  Id:    apt_wrong_option
-09:07:57 INFO  Dir:   plugin_apt/
-09:07:57 INFO  Title: Validate apt plugin install
-09:07:57 DEBUG Execution order hint: 0.0
-09:07:57 INFO  ==============================================================
-09:07:57 DEBUG --- test execute
-09:07:57 DEBUG Process parameters for sudo&lt;outp&gt;
+		<system-out>11:27:43 INFO  ==============================================================
+11:27:43 INFO  Id:    apt_wrong_option
+11:27:43 INFO  Dir:   plugin_apt/
+11:27:43 INFO  Title: Validate apt plugin install
+11:27:43 DEBUG Execution order hint: 0.0
+11:27:43 INFO  ==============================================================
+11:27:43 DEBUG --- test execute
+11:27:43 DEBUG Process parameters for sudo&lt;outp&gt;
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt nonsense
     arg #1     : /etc/tedge/sm-plugins/apt
     arg #2     : nonsense
@@ -1445,25 +470,25 @@ TypeError: 'NoneType' object is not iterable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-09:07:57 DEBUG Waiting up to 600 secs for process sudo&lt;outp&gt; (pid 20244)
-09:07:58 WARN  Executed sudo&lt;outp&gt;, exit status 2
-09:07:58 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_wrong_option/Output/linux/outp.err
-09:07:58 INFO  Contents of outp.err: 
-09:07:58 INFO    error: Found argument 'nonsense' which wasn't expected, or isn't valid in this context
-09:07:58 INFO    USAGE:
-09:07:58 INFO        apt &lt;SUBCOMMAND&gt;
-09:07:58 INFO    For more information try --help
-09:07:58 INFO    -----
-09:07:58 INFO  
-09:07:58 WARN  sudo&lt;outp&gt; returned exit code 2 (expected ==1) ... blocked [environment_apt_plugin.py:70,run.py:17]
-09:07:58 WARN  Aborted test due to BLOCKED outcome
-09:07:58 DEBUG --- test cleanup
-09:07:58 DEBUG ProcessUser cleanup function done.
-09:07:58 INFO  
-09:07:58 INFO  Test duration: 0.36 secs
-09:07:58 INFO  Test final outcome:  BLOCKED
-09:07:58 INFO  Test outcome reason: sudo&lt;outp&gt; returned exit code 2 (expected ==1)
-09:07:58 INFO  
+11:27:43 DEBUG Waiting up to 600 secs for process sudo&lt;outp&gt; (pid 8991)
+11:27:44 WARN  Executed sudo&lt;outp&gt;, exit status 2
+11:27:44 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_wrong_option/Output/linux/outp.err
+11:27:44 INFO  Contents of outp.err: 
+11:27:44 INFO    error: Found argument 'nonsense' which wasn't expected, or isn't valid in this context
+11:27:44 INFO    USAGE:
+11:27:44 INFO        apt &lt;SUBCOMMAND&gt;
+11:27:44 INFO    For more information try --help
+11:27:44 INFO    -----
+11:27:44 INFO  
+11:27:44 WARN  sudo&lt;outp&gt; returned exit code 2 (expected ==1) ... blocked [environment_apt_plugin.py:70,run.py:17]
+11:27:44 WARN  Aborted test due to BLOCKED outcome
+11:27:44 DEBUG --- test cleanup
+11:27:44 DEBUG ProcessUser cleanup function done.
+11:27:44 INFO  
+11:27:44 INFO  Test duration: 0.36 secs
+11:27:44 INFO  Test final outcome:  BLOCKED
+11:27:44 INFO  Test outcome reason: sudo&lt;outp&gt; returned exit code 2 (expected ==1)
+11:27:44 INFO  
 </system-out>
 	</testcase>
 </testsuite><testsuite name="c8y_jwt_token_retrieval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateJWTTokenRetrieval" name="c8y_jwt_token_retrieval" />

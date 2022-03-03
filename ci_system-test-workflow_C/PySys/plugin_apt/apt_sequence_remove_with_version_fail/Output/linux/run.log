@@ -1,10 +1,10 @@
-2022-03-02 09:05:13,312 INFO  ==============================================================
-2022-03-02 09:05:13,313 INFO  Id:    apt_sequence_remove_with_version_fail
-2022-03-02 09:05:13,313 INFO  Dir:   plugin_apt/
-2022-03-02 09:05:13,314 INFO  Title: Validate apt plugin remove with version fails when the version not found
-2022-03-02 09:05:13,314 DEBUG Execution order hint: 0.0
-2022-03-02 09:05:13,315 INFO  ==============================================================
-2022-03-02 09:05:13,319 DEBUG Process parameters for sudo<outp_install>
+2022-03-03 11:24:18,160 INFO  ==============================================================
+2022-03-03 11:24:18,161 INFO  Id:    apt_sequence_remove_with_version_fail
+2022-03-03 11:24:18,162 INFO  Dir:   plugin_apt/
+2022-03-03 11:24:18,162 INFO  Title: Validate apt plugin remove with version fails when the version not found
+2022-03-03 11:24:18,163 DEBUG Execution order hint: 0.0
+2022-03-03 11:24:18,163 INFO  ==============================================================
+2022-03-03 11:24:18,167 DEBUG Process parameters for sudo<outp_install>
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install rolldice
     arg #1     : /etc/tedge/sm-plugins/apt
     arg #2     : install
@@ -18,11 +18,11 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 09:05:13,324 DEBUG Waiting up to 600 secs for process sudo<outp_install> (pid 16907)
-2022-03-02 09:05:40,277 INFO  Executed sudo<outp_install>, exit status 0, duration 26 secs
-2022-03-02 09:05:40,280 INFO  Assert that (value==0) with value=0 ... passed
-2022-03-02 09:05:40,281 DEBUG --- test execute
-2022-03-02 09:05:40,282 DEBUG Process parameters for sudo<outp_remove>
+2022-03-03 11:24:18,172 DEBUG Waiting up to 600 secs for process sudo<outp_install> (pid 20743)
+2022-03-03 11:24:39,802 INFO  Executed sudo<outp_install>, exit status 0, duration 21 secs
+2022-03-03 11:24:39,805 INFO  Assert that (value==0) with value=0 ... passed
+2022-03-03 11:24:39,806 DEBUG --- test execute
+2022-03-03 11:24:39,810 DEBUG Process parameters for sudo<outp_remove>
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt remove rolldice --module-version 1.111111
     arg #1     : /etc/tedge/sm-plugins/apt
     arg #2     : remove
@@ -38,14 +38,14 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 09:05:40,289 DEBUG Waiting up to 600 secs for process sudo<outp_remove> (pid 17010)
-2022-03-02 09:05:44,968 INFO  Executed sudo<outp_remove>, exit status 2
-2022-03-02 09:05:44,969 INFO  Assert that (value==2) with value=2 ... passed
-2022-03-02 09:05:44,970 DEBUG --- test validate
-2022-03-02 09:05:44,970 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_remove.err
-2022-03-02 09:05:44,974 DEBUG Grep on input file outp_remove.err successfully matched expression "1.111111" with line: "E: Version '1.111111' for 'rolldice' was not found\n"
-2022-03-02 09:05:44,975 INFO  Grep on input file outp_remove.err ... passed
-2022-03-02 09:05:44,976 DEBUG Process parameters for sudo<outp_check_0>
+2022-03-03 11:24:39,816 DEBUG Waiting up to 600 secs for process sudo<outp_remove> (pid 20846)
+2022-03-03 11:24:44,542 INFO  Executed sudo<outp_remove>, exit status 2
+2022-03-03 11:24:44,543 INFO  Assert that (value==2) with value=2 ... passed
+2022-03-03 11:24:44,544 DEBUG --- test validate
+2022-03-03 11:24:44,545 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_remove.err
+2022-03-03 11:24:44,549 DEBUG Grep on input file outp_remove.err successfully matched expression "1.111111" with line: "E: Version '1.111111' for 'rolldice' was not found\n"
+2022-03-03 11:24:44,550 INFO  Grep on input file outp_remove.err ... passed
+2022-03-03 11:24:44,552 DEBUG Process parameters for sudo<outp_check_0>
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
     arg #1     : /etc/tedge/sm-plugins/apt
     arg #2     : list
@@ -58,17 +58,17 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 09:05:44,982 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 17015)
-2022-03-02 09:05:46,441 INFO  Executed sudo<outp_check_0>, exit status 0
-2022-03-02 09:05:46,443 INFO  Assert that (value==0) with value=0 ... passed
-2022-03-02 09:05:46,443 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_check_0.out
-2022-03-02 09:05:46,449 DEBUG Grep on input file outp_check_0.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
-2022-03-02 09:05:46,450 INFO  Grep on input file outp_check_0.out ... passed
-2022-03-02 09:05:46,455 DEBUG --- test cleanup
-2022-03-02 09:05:46,456 INFO  
-2022-03-02 09:05:46,456 INFO  cleanup:
-2022-03-02 09:05:46,457 DEBUG Running registered cleanup function: <bound method AptPluginRemoveWithVersionFails.cleanup_remove_rolldice_module of <AptPluginRemoveWithVersionFails object at 0x75e08750>>
-2022-03-02 09:05:46,458 DEBUG Process parameters for sudo
+2022-03-03 11:24:44,558 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 20851)
+2022-03-03 11:24:46,018 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-03-03 11:24:46,019 INFO  Assert that (value==0) with value=0 ... passed
+2022-03-03 11:24:46,020 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_check_0.out
+2022-03-03 11:24:46,025 DEBUG Grep on input file outp_check_0.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
+2022-03-03 11:24:46,026 INFO  Grep on input file outp_check_0.out ... passed
+2022-03-03 11:24:46,031 DEBUG --- test cleanup
+2022-03-03 11:24:46,032 INFO  
+2022-03-03 11:24:46,032 INFO  cleanup:
+2022-03-03 11:24:46,033 DEBUG Running registered cleanup function: <bound method AptPluginRemoveWithVersionFails.cleanup_remove_rolldice_module of <AptPluginRemoveWithVersionFails object at 0x75d78ed0>>
+2022-03-03 11:24:46,034 DEBUG Process parameters for sudo
   command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
     arg #1     : /usr/bin/apt-get
     arg #2     : remove
@@ -83,10 +83,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 09:05:46,464 DEBUG Waiting up to 600 secs for process sudo (pid 17021)
-2022-03-02 09:05:56,870 INFO  Executed sudo, exit status 0
-2022-03-02 09:05:56,871 DEBUG ProcessUser cleanup function done.
-2022-03-02 09:05:56,873 INFO  
-2022-03-02 09:05:56,873 INFO  Test duration: 43.56 secs
-2022-03-02 09:05:56,874 INFO  Test final outcome:  PASSED
-2022-03-02 09:05:56,874 INFO  
+2022-03-03 11:24:46,041 DEBUG Waiting up to 600 secs for process sudo (pid 20857)
+2022-03-03 11:24:56,909 INFO  Executed sudo, exit status 0
+2022-03-03 11:24:56,911 DEBUG ProcessUser cleanup function done.
+2022-03-03 11:24:56,914 INFO  
+2022-03-03 11:24:56,914 INFO  Test duration: 38.76 secs
+2022-03-03 11:24:56,915 INFO  Test final outcome:  PASSED
+2022-03-03 11:24:56,916 INFO  
