@@ -1,86 +1,14 @@
-2022-02-24 13:45:35,590 INFO  ==============================================================
-2022-02-24 13:45:35,590 INFO  Id:    tedge_agent_user_sudo_access
-2022-02-24 13:45:35,591 INFO  Dir:   tedge/
-2022-02-24 13:45:35,592 INFO  Title: Validate tedge-agent user has a limited sudo right
-2022-02-24 13:45:35,592 DEBUG Execution order hint: 0.0
-2022-02-24 13:45:35,592 INFO  ==============================================================
-2022-02-24 13:45:35,596 INFO  Copy apt plugin 'deb'
-2022-02-24 13:45:35,597 DEBUG Process parameters for sudo<copy_apt_plugin>
-  command line : /usr/bin/sudo cp /etc/tedge/sm-plugins/apt /etc/tedge/sm-plugins/deb
-    arg #1     : cp
-    arg #2     : /etc/tedge/sm-plugins/apt
-    arg #3     : /etc/tedge/sm-plugins/deb
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/copy_apt_plugin.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/copy_apt_plugin.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-02-24 13:45:35,602 DEBUG Waiting up to 600 secs for process sudo<copy_apt_plugin> (pid 31745)
-2022-02-24 13:45:35,957 INFO  Executed sudo<copy_apt_plugin>, exit status 0
-2022-02-24 13:45:35,958 DEBUG --- test execute
-2022-02-24 13:45:35,961 DEBUG Process parameters for sudo<apt>
-  command line : /usr/bin/sudo -u tedge-agent /usr/bin/sudo /etc/tedge/sm-plugins/apt
-    arg #1     : -u
-    arg #2     : tedge-agent
-    arg #3     : /usr/bin/sudo
-    arg #4     : /etc/tedge/sm-plugins/apt
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-02-24 13:45:35,969 DEBUG Waiting up to 600 secs for process sudo<apt> (pid 31747)
-2022-02-24 13:45:36,324 WARN  Executed sudo<apt>, exit status 2
-2022-02-24 13:45:36,325 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/apt.err
-2022-02-24 13:45:36,328 INFO  Contents of apt.err: 
-2022-02-24 13:45:36,329 INFO    tedge_apt_plugin
-2022-02-24 13:45:36,330 INFO    USAGE:
-2022-02-24 13:45:36,330 INFO        apt <SUBCOMMAND>
-2022-02-24 13:45:36,331 INFO    OPTIONS:
-2022-02-24 13:45:36,331 INFO        -h, --help    Print help information
-2022-02-24 13:45:36,332 INFO    SUBCOMMANDS:
-2022-02-24 13:45:36,332 INFO        finalize       Finalize a sequences of install/remove commands
-2022-02-24 13:45:36,333 INFO        help           Print this message or the help of the given subcommand(s)
-2022-02-24 13:45:36,333 INFO        install        Install a module
-2022-02-24 13:45:36,334 INFO        list           List all the installed modules
-2022-02-24 13:45:36,335 INFO        prepare        Prepare a sequences of install/remove commands
-2022-02-24 13:45:36,335 INFO        remove         Uninstall a module
-2022-02-24 13:45:36,336 INFO        update-list    Install or remove multiple modules at once
-2022-02-24 13:45:36,337 INFO    -----
-2022-02-24 13:45:36,337 INFO  
-2022-02-24 13:45:36,355 WARN  sudo<apt> returned exit code 2 (expected ==1) ... blocked [run.py:35]
-2022-02-24 13:45:36,355 WARN  Aborted test due to BLOCKED outcome
-2022-02-24 13:45:36,359 DEBUG --- test cleanup
-2022-02-24 13:45:36,360 INFO  
-2022-02-24 13:45:36,360 INFO  cleanup:
-2022-02-24 13:45:36,360 DEBUG Running registered cleanup function: <bound method TedgeAgentUserSudoAccess.mycleanup of <TedgeAgentUserSudoAccess object at 0x75b767d0>>
-2022-02-24 13:45:36,361 INFO  Remove the copied apt 'deb' plugin
-2022-02-24 13:45:36,362 DEBUG Process parameters for sudo<remove_copied_apt_plugin>
-  command line : /usr/bin/sudo rm /etc/tedge/sm-plugins/deb
-    arg #1     : rm
-    arg #2     : /etc/tedge/sm-plugins/deb
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/remove_copied_apt_plugin.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_agent_user_sudo_access/Output/linux/remove_copied_apt_plugin.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-02-24 13:45:36,366 DEBUG Waiting up to 600 secs for process sudo<remove_copied_apt_plugin> (pid 31750)
-2022-02-24 13:45:36,671 INFO  Executed sudo<remove_copied_apt_plugin>, exit status 0
-2022-02-24 13:45:36,672 DEBUG ProcessUser cleanup function done.
-2022-02-24 13:45:36,676 INFO  
-2022-02-24 13:45:36,677 INFO  Test duration: 1.09 secs
-2022-02-24 13:45:36,678 INFO  Test final outcome:  BLOCKED
-2022-02-24 13:45:36,679 INFO  Test outcome reason: sudo<apt> returned exit code 2 (expected ==1)
-2022-02-24 13:45:36,680 INFO  
+2022-03-02 08:52:55,934 INFO  ==============================================================
+2022-03-02 08:52:55,934 INFO  Id:    tedge_agent_user_sudo_access
+2022-03-02 08:52:55,935 INFO  Dir:   tedge/
+2022-03-02 08:52:55,935 INFO  Title: Validate tedge-agent user has a limited sudo right
+2022-03-02 08:52:55,936 DEBUG Execution order hint: 0.0
+2022-03-02 08:52:55,936 INFO  ==============================================================
+2022-03-02 08:52:55,940 INFO  #955 ... skipped
+2022-03-02 08:52:55,941 DEBUG --- test cleanup
+2022-03-02 08:52:55,941 DEBUG ProcessUser cleanup function done.
+2022-03-02 08:52:55,943 INFO  
+2022-03-02 08:52:55,943 INFO  Test duration: 0.01 secs
+2022-03-02 08:52:55,944 INFO  Test final outcome:  SKIPPED
+2022-03-02 08:52:55,944 INFO  Test outcome reason: #955
+2022-03-02 08:52:55,945 INFO  

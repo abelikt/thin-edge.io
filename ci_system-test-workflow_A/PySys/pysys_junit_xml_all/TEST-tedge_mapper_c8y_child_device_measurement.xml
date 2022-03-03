@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="1" name="tedge_mapper_c8y_child_device_measurement" skipped="0" tests="1" time="26.95" timestamp="2022-02-24T13:48:12">
+<testsuite failures="1" name="tedge_mapper_c8y_child_device_measurement" skipped="0" tests="1" time="18.19" timestamp="2022-03-02T08:55:31">
 	<testcase classname="TedgeMapperC8yChildDevice" name="tedge_mapper_c8y_child_device_measurement">
 		<failure message="BLOCKED: TypeError: 'NoneType' object is not subscriptable (+1 other failures)" type="BLOCKED"/>
-		<system-out>13:47:45 INFO  ==============================================================
-13:47:45 INFO  Id:    tedge_mapper_c8y_child_device_measurement
-13:47:45 INFO  Dir:   tedge_mapper_c8y/
-13:47:45 INFO  Title: Validate that measurements sent to tedge/measurements/child topic gets mapped as the child device's measurement in Cumulocity
-13:47:45 DEBUG Execution order hint: 0.0
-13:47:45 INFO  ==============================================================
-13:47:45 DEBUG EnvironmentC8y Setup
-13:47:45 INFO  EnvironmentC8y Setup
-13:47:45 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
+		<system-out>08:55:12 INFO  ==============================================================
+08:55:12 INFO  Id:    tedge_mapper_c8y_child_device_measurement
+08:55:12 INFO  Dir:   tedge_mapper_c8y/
+08:55:12 INFO  Title: Validate that measurements sent to tedge/measurements/child topic gets mapped as the child device's measurement in Cumulocity
+08:55:12 DEBUG Execution order hint: 0.0
+08:55:12 INFO  ==============================================================
+08:55:12 DEBUG EnvironmentC8y Setup
+08:55:12 INFO  EnvironmentC8y Setup
+08:55:12 DEBUG Process parameters for systemctl&lt;serv_mapper1&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -23,11 +23,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:47:45 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 26851)
-13:47:45 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-13:47:45 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 2 seconds
-13:47:45 INFO  Delaying execution by 9 seconds
-13:47:54 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
+08:55:12 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper1&gt; (pid 17417)
+08:55:13 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+08:55:13 DEBUG Process parameters for sudo&lt;tedge_connect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -41,9 +39,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:47:54 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 26857)
-13:48:05 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
-13:48:05 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
+08:55:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y&gt; (pid 17421)
+08:55:23 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0
+08:55:23 DEBUG Process parameters for sudo&lt;tedge_connect_c8y_test&gt;
   command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
     arg #1     : /usr/bin/tedge
     arg #2     : connect
@@ -58,9 +56,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:48:05 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 26971)
-13:48:05 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-13:48:05 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
+08:55:23 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_connect_c8y_test&gt; (pid 17529)
+08:55:24 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+08:55:24 DEBUG Process parameters for systemctl&lt;serv_mosq2&gt;
   command line : /usr/bin/systemctl status mosquitto
     arg #1     : status
     arg #2     : mosquitto
@@ -73,9 +71,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:48:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 26979)
-13:48:05 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-13:48:05 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
+08:55:24 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mosq2&gt; (pid 17536)
+08:55:24 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+08:55:24 DEBUG Process parameters for systemctl&lt;serv_mapper3&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -88,35 +86,35 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:48:05 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 26980)
-13:48:06 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-13:48:06 INFO  Assert that (actual == expected) with actual=None, expected=None ... passed
-13:48:06 DEBUG --- test execute
-13:48:06 DEBUG Process parameters for tedge_pub
-  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-84cd2769 '{&quot;temperature&quot;: 12, &quot;time&quot;: &quot;2021-01-01T10:10:10.100+02:00&quot;}'
+08:55:24 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper3&gt; (pid 17537)
+08:55:24 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+08:55:25 INFO  Assert that (actual == expected) with actual=None, expected=None ... passed
+08:55:25 DEBUG --- test execute
+08:55:25 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-5e883868 '{&quot;temperature&quot;: 12, &quot;time&quot;: &quot;2021-01-01T10:10:10.100+02:00&quot;}'
     arg #1     : mqtt
     arg #2     : pub
-    arg #3     : tedge/measurements/te-child-84cd2769
+    arg #3     : tedge/measurements/te-child-5e883868
     arg #4     : {&quot;temperature&quot;: 12, &quot;time&quot;: &quot;2021-01-01T10:10:10.100+02:00&quot;}
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
   environment  : HOME=/home/pi
-13:48:06 DEBUG Waiting up to 600 secs for process tedge_pub (pid 26981)
-13:48:06 INFO  Executed tedge_pub, exit status 0
-13:48:06 DEBUG Process parameters for tedge_pub
-  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-84cd2769 '{&quot;temperature&quot;: 11}'
+08:55:25 DEBUG Waiting up to 600 secs for process tedge_pub (pid 17539)
+08:55:25 INFO  Executed tedge_pub, exit status 0
+08:55:25 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-5e883868 '{&quot;temperature&quot;: 11}'
     arg #1     : mqtt
     arg #2     : pub
-    arg #3     : tedge/measurements/te-child-84cd2769
+    arg #3     : tedge/measurements/te-child-5e883868
     arg #4     : {&quot;temperature&quot;: 11}
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
   environment  : HOME=/home/pi
-13:48:06 DEBUG Waiting up to 600 secs for process tedge_pub (pid 26983)
-13:48:07 INFO  Executed tedge_pub, exit status 0
-13:48:07 DEBUG Process parameters for tedge_pub
+08:55:25 DEBUG Waiting up to 600 secs for process tedge_pub (pid 17540)
+08:55:25 INFO  Executed tedge_pub, exit status 0
+08:55:25 DEBUG Process parameters for tedge_pub
   command line : /usr/bin/tedge mqtt pub tedge/measurements '{&quot;temperature&quot;: 5}'
     arg #1     : mqtt
     arg #2     : pub
@@ -126,55 +124,55 @@
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
   environment  : HOME=/home/pi
-13:48:07 DEBUG Waiting up to 600 secs for process tedge_pub (pid 26985)
-13:48:07 INFO  Executed tedge_pub, exit status 0
-13:48:07 DEBUG Process parameters for tedge_pub
-  command line : /usr/bin/tedge mqtt pub tedge/measurements/other-te-child-f4b610de '{&quot;temperature&quot;: 6}'
+08:55:25 DEBUG Waiting up to 600 secs for process tedge_pub (pid 17541)
+08:55:25 INFO  Executed tedge_pub, exit status 0
+08:55:25 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/other-te-child-6915e75e '{&quot;temperature&quot;: 6}'
     arg #1     : mqtt
     arg #2     : pub
-    arg #3     : tedge/measurements/other-te-child-f4b610de
+    arg #3     : tedge/measurements/other-te-child-6915e75e
     arg #4     : {&quot;temperature&quot;: 6}
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
   environment  : HOME=/home/pi
-13:48:07 DEBUG Waiting up to 600 secs for process tedge_pub (pid 26987)
-13:48:07 INFO  Executed tedge_pub, exit status 0
-13:48:07 DEBUG Process parameters for tedge_pub
-  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-84cd2769 '{&quot;temperature&quot;: 10}'
+08:55:25 DEBUG Waiting up to 600 secs for process tedge_pub (pid 17542)
+08:55:26 INFO  Executed tedge_pub, exit status 0
+08:55:26 DEBUG Process parameters for tedge_pub
+  command line : /usr/bin/tedge mqtt pub tedge/measurements/te-child-5e883868 '{&quot;temperature&quot;: 10}'
     arg #1     : mqtt
     arg #2     : pub
-    arg #3     : tedge/measurements/te-child-84cd2769
+    arg #3     : tedge/measurements/te-child-5e883868
     arg #4     : {&quot;temperature&quot;: 10}
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/Output/linux/tedge_pub.err
   environment  : HOME=/home/pi
-13:48:07 DEBUG Waiting up to 600 secs for process tedge_pub (pid 26989)
-13:48:07 INFO  Executed tedge_pub, exit status 0
-13:48:09 DEBUG --- test validate
-13:48:09 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not subscriptable
+08:55:26 DEBUG Waiting up to 600 secs for process tedge_pub (pid 17543)
+08:55:26 INFO  Executed tedge_pub, exit status 0
+08:55:28 DEBUG --- test validate
+08:55:28 WARN  caught &lt;class 'TypeError'&gt; while running test: 'NoneType' object is not subscriptable
 Traceback (most recent call last):
   File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1211, in __call__
     self.testObj.validate()
   File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py&quot;, line 95, in validate
     self.child_device_json['id'], 3)
 TypeError: 'NoneType' object is not subscriptable
-13:48:09 WARN  TypeError: 'NoneType' object is not subscriptable ... blocked 
-13:48:09 DEBUG --- test cleanup
-13:48:09 INFO  
-13:48:09 INFO  cleanup:
-13:48:09 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8yChildDevice.test_cleanup of &lt;TedgeMapperC8yChildDevice object at 0x75c9b850&gt;&gt;
-13:48:09 ERROR Error while running cleanup function: 
+08:55:28 WARN  TypeError: 'NoneType' object is not subscriptable ... blocked 
+08:55:28 DEBUG --- test cleanup
+08:55:28 INFO  
+08:55:28 INFO  cleanup:
+08:55:28 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8yChildDevice.test_cleanup of &lt;TedgeMapperC8yChildDevice object at 0x75b87730&gt;&gt;
+08:55:28 ERROR Error while running cleanup function: 
 Traceback (most recent call last):
   File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py&quot;, line 1299, in cleanup
     fn()
   File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py&quot;, line 132, in test_cleanup
     self.child_device_json['id'])
 TypeError: 'NoneType' object is not subscriptable
-13:48:09 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeMapperC8yChildDevice object at 0x75c9b850&gt;&gt;
-13:48:09 DEBUG EnvironmentC8y Cleanup
-13:48:09 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
+08:55:28 DEBUG Running registered cleanup function: &lt;bound method EnvironmentC8y.myenvcleanup of &lt;TedgeMapperC8yChildDevice object at 0x75b87730&gt;&gt;
+08:55:28 DEBUG EnvironmentC8y Cleanup
+08:55:28 DEBUG Process parameters for sudo&lt;tedge_disconnect_c8y&gt;
   command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
     arg #1     : /usr/bin/tedge
     arg #2     : disconnect
@@ -188,9 +186,9 @@ TypeError: 'NoneType' object is not subscriptable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:48:09 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 26994)
-13:48:12 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-13:48:12 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
+08:55:28 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_disconnect_c8y&gt; (pid 17547)
+08:55:30 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+08:55:30 DEBUG Process parameters for systemctl&lt;serv_mapper5&gt;
   command line : /usr/bin/systemctl status tedge-mapper-c8y
     arg #1     : status
     arg #2     : tedge-mapper-c8y
@@ -203,15 +201,15 @@ TypeError: 'NoneType' object is not subscriptable
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-13:48:12 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 27034)
-13:48:12 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-13:48:12 DEBUG ProcessUser cleanup function done.
-13:48:12 WARN  Cleanup failed with 1 errors: Cleanup function failed: 'NoneType' object is not subscriptable (TypeError) ... blocked 
-13:48:12 INFO  
-13:48:12 INFO  Test duration: 26.95 secs
-13:48:12 INFO  Test final outcome:  BLOCKED
-13:48:12 INFO  Test outcome reason: TypeError: 'NoneType' object is not subscriptable (+1 other failures)
-13:48:12 INFO  
+08:55:30 DEBUG Waiting up to 600 secs for process systemctl&lt;serv_mapper5&gt; (pid 17588)
+08:55:31 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+08:55:31 DEBUG ProcessUser cleanup function done.
+08:55:31 WARN  Cleanup failed with 1 errors: Cleanup function failed: 'NoneType' object is not subscriptable (TypeError) ... blocked 
+08:55:31 INFO  
+08:55:31 INFO  Test duration: 18.19 secs
+08:55:31 INFO  Test final outcome:  BLOCKED
+08:55:31 INFO  Test outcome reason: TypeError: 'NoneType' object is not subscriptable (+1 other failures)
+08:55:31 INFO  
 </system-out>
 	</testcase>
 </testsuite>
