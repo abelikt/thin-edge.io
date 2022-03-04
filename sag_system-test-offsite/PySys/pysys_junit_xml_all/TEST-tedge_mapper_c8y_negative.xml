@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="1" name="tedge_mapper_c8y_negative" skipped="0" tests="1" time="1.5" timestamp="2022-03-02T12:53:59">
+<testsuite failures="1" name="tedge_mapper_c8y_negative" skipped="0" tests="1" time="1.53" timestamp="2022-03-04T12:57:40">
 	<testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_negative">
 		<failure message="FAILED: Grep on tedge_sub.out contains &quot;Invalid JSON&quot;" type="FAILED"/>
-		<system-out>12:53:57 INFO  ==============================================================
-12:53:57 INFO  Id:    tedge_mapper_c8y_negative
-12:53:57 INFO  Dir:   tedge_mapper_c8y/
-12:53:57 INFO  Title: Validate the Cumulocity Mapper that publishes an error message on tedge/errors when it receives an invalid JSON message on tedge/measurements
-12:53:57 DEBUG Execution order hint: 0.0
-12:53:57 INFO  ==============================================================
-12:53:57 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+		<system-out>12:57:39 INFO  ==============================================================
+12:57:39 INFO  Id:    tedge_mapper_c8y_negative
+12:57:39 INFO  Dir:   tedge_mapper_c8y/
+12:57:39 INFO  Title: Validate the Cumulocity Mapper that publishes an error message on tedge/errors when it receives an invalid JSON message on tedge/measurements
+12:57:39 DEBUG Execution order hint: 0.0
+12:57:39 INFO  ==============================================================
+12:57:39 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
   command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : start
@@ -22,10 +22,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-12:53:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 11306)
-12:53:57 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
-12:53:57 DEBUG --- test execute
-12:53:57 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+12:57:39 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 25016)
+12:57:39 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+12:57:39 DEBUG --- test execute
+12:57:39 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic tedge/errors
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -41,8 +41,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-12:53:57 INFO  Started sudo&lt;tedge_sub&gt; with process id 11313
-12:53:57 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+12:57:39 INFO  Started sudo&lt;tedge_sub&gt; with process id 25023
+12:57:39 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -58,9 +58,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-12:53:57 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 11314)
-12:53:58 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
-12:53:58 DEBUG Process parameters for sudo&lt;kill_out&gt;
+12:57:39 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 25024)
+12:57:40 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+12:57:40 DEBUG Process parameters for sudo&lt;kill_out&gt;
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -73,17 +73,17 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-12:53:58 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 11317)
-12:53:58 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-12:53:58 DEBUG --- test validate
-12:53:58 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_sub.out
-12:53:58 WARN  Grep on tedge_sub.out contains &quot;Invalid JSON&quot; ... failed [run.py:63]
-12:53:58 DEBUG --- test cleanup
-12:53:58 INFO  
-12:53:58 INFO  cleanup:
-12:53:58 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8y.mapper_cleanup of &lt;TedgeMapperC8y object at 0x759e1a10&gt;&gt;
-12:53:58 INFO  mapper_cleanup
-12:53:58 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
+12:57:40 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 25027)
+12:57:40 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+12:57:40 DEBUG --- test validate
+12:57:40 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_negative/Output/linux/tedge_sub.out
+12:57:40 WARN  Grep on tedge_sub.out contains &quot;Invalid JSON&quot; ... failed [run.py:63]
+12:57:40 DEBUG --- test cleanup
+12:57:40 INFO  
+12:57:40 INFO  cleanup:
+12:57:40 DEBUG Running registered cleanup function: &lt;bound method TedgeMapperC8y.mapper_cleanup of &lt;TedgeMapperC8y object at 0x76740890&gt;&gt;
+12:57:40 INFO  mapper_cleanup
+12:57:40 DEBUG Process parameters for sudo&lt;tedge_mapper_c8y&gt;
   command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : stop
@@ -97,14 +97,14 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-12:53:58 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 11319)
-12:53:58 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
-12:53:58 DEBUG ProcessUser cleanup function done.
-12:53:58 INFO  
-12:53:58 INFO  Test duration: 1.50 secs
-12:53:58 INFO  Test final outcome:  FAILED
-12:53:58 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;Invalid JSON&quot;
-12:53:58 INFO  
+12:57:40 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_mapper_c8y&gt; (pid 25029)
+12:57:40 INFO  Executed sudo&lt;tedge_mapper_c8y&gt;, exit status 0
+12:57:40 DEBUG ProcessUser cleanup function done.
+12:57:40 INFO  
+12:57:40 INFO  Test duration: 1.53 secs
+12:57:40 INFO  Test final outcome:  FAILED
+12:57:40 INFO  Test outcome reason: Grep on tedge_sub.out contains &quot;Invalid JSON&quot;
+12:57:40 INFO  
 </system-out>
 	</testcase>
 </testsuite>

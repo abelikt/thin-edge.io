@@ -1,21 +1,289 @@
-2022-03-02 13:45:50,891 INFO  ==============================================================
-2022-03-02 13:45:50,892 INFO  Id:    tedge_software_update
-2022-03-02 13:45:50,893 INFO  Dir:   tedge/
-2022-03-02 13:45:50,894 INFO  Title: Software install from download path
-2022-03-02 13:45:50,894 DEBUG Execution order hint: 0.0
-2022-03-02 13:45:50,895 INFO  ==============================================================
-2022-03-02 13:45:50,907 WARN  Failed to set up test: No module named 'environments' ... blocked 
-2022-03-02 13:45:50,908 WARN  caught <class 'ModuleNotFoundError'> while setting up test tedge_software_update: No module named 'environments'
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1143, in __call__
-    exec(runpycode, runpy_namespace)
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/run.py", line 1, in <module>
-    from environments.environment_c8y import EnvironmentC8y
-ModuleNotFoundError: No module named 'environments'
-2022-03-02 13:45:50,910 DEBUG --- test cleanup
-2022-03-02 13:45:50,911 DEBUG ProcessUser cleanup function done.
-2022-03-02 13:45:50,913 INFO  
-2022-03-02 13:45:50,913 INFO  Test duration: 0.02 secs
-2022-03-02 13:45:50,914 INFO  Test final outcome:  BLOCKED
-2022-03-02 13:45:50,915 INFO  Test outcome reason: Failed to set up test: No module named 'environments'
-2022-03-02 13:45:50,915 INFO  
+2022-03-04 13:44:07,242 INFO  ==============================================================
+2022-03-04 13:44:07,243 INFO  Id:    tedge_software_update
+2022-03-04 13:44:07,243 INFO  Dir:   tedge/
+2022-03-04 13:44:07,244 INFO  Title: Software install from download path
+2022-03-04 13:44:07,244 DEBUG Execution order hint: 0.0
+2022-03-04 13:44:07,245 INFO  ==============================================================
+2022-03-04 13:44:07,249 DEBUG EnvironmentC8y Setup
+2022-03-04 13:44:07,250 INFO  EnvironmentC8y Setup
+2022-03-04 13:44:07,251 DEBUG Process parameters for systemctl<serv_mapper1>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper1.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper1.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:07,256 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper1> (pid 23246)
+2022-03-04 13:44:07,511 INFO  Executed systemctl<serv_mapper1>, exit status 3
+2022-03-04 13:44:07,570 DEBUG Process parameters for sudo<tedge_connect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:07,576 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y> (pid 23250)
+2022-03-04 13:44:18,281 INFO  Executed sudo<tedge_connect_c8y>, exit status 0
+2022-03-04 13:44:18,282 DEBUG Process parameters for sudo<tedge_connect_c8y_test>
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y --test
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+    arg #4     : --test
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_connect_c8y_test.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_connect_c8y_test.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:18,288 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y_test> (pid 23397)
+2022-03-04 13:44:18,593 INFO  Executed sudo<tedge_connect_c8y_test>, exit status 0
+2022-03-04 13:44:18,594 DEBUG Process parameters for systemctl<serv_mosq2>
+  command line : /usr/bin/systemctl status mosquitto
+    arg #1     : status
+    arg #2     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mosq2.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mosq2.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:18,600 DEBUG Waiting up to 600 secs for process systemctl<serv_mosq2> (pid 23399)
+2022-03-04 13:44:18,858 INFO  Executed systemctl<serv_mosq2>, exit status 0
+2022-03-04 13:44:18,860 DEBUG Process parameters for systemctl<serv_mapper3>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper3.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper3.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:18,865 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper3> (pid 23403)
+2022-03-04 13:44:19,119 INFO  Executed systemctl<serv_mapper3>, exit status 0
+2022-03-04 13:44:19,120 INFO  Setup
+2022-03-04 13:44:19,121 DEBUG --- test execute
+2022-03-04 13:44:19,122 DEBUG Process parameters for sudo<mkdir>
+  command line : /usr/bin/sudo mkdir -p /tedge_download_dir
+    arg #1     : mkdir
+    arg #2     : -p
+    arg #3     : /tedge_download_dir
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/mkdir.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/mkdir.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:19,127 DEBUG Waiting up to 600 secs for process sudo<mkdir> (pid 23404)
+2022-03-04 13:44:19,382 INFO  Executed sudo<mkdir>, exit status 0
+2022-03-04 13:44:19,384 DEBUG Process parameters for sudo<chmod>
+  command line : /usr/bin/sudo chmod a+rwx /tedge_download_dir
+    arg #1     : chmod
+    arg #2     : a+rwx
+    arg #3     : /tedge_download_dir
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/chmod.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/chmod.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:19,389 DEBUG Waiting up to 600 secs for process sudo<chmod> (pid 23418)
+2022-03-04 13:44:19,645 INFO  Executed sudo<chmod>, exit status 0
+2022-03-04 13:44:19,646 DEBUG Process parameters for sudo<tedge_config_get_original>
+  command line : /usr/bin/sudo /usr/bin/tedge config get tmp.path
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : get
+    arg #4     : tmp.path
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_original.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_original.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:19,652 DEBUG Waiting up to 600 secs for process sudo<tedge_config_get_original> (pid 23420)
+2022-03-04 13:44:19,906 INFO  Executed sudo<tedge_config_get_original>, exit status 0
+2022-03-04 13:44:19,908 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/tedge config set tmp.path /tedge_download_dir
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : set
+    arg #4     : tmp.path
+    arg #5     : /tedge_download_dir
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:19,913 DEBUG Waiting up to 600 secs for process sudo (pid 23422)
+2022-03-04 13:44:20,168 INFO  Executed sudo, exit status 0
+2022-03-04 13:44:20,169 DEBUG Process parameters for sudo<tedge_config_get_new_value>
+  command line : /usr/bin/sudo /usr/bin/tedge config get tmp.path
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : get
+    arg #4     : tmp.path
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_new_value.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_new_value.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:20,174 DEBUG Waiting up to 600 secs for process sudo<tedge_config_get_new_value> (pid 23424)
+2022-03-04 13:44:20,429 INFO  Executed sudo<tedge_config_get_new_value>, exit status 0
+2022-03-04 13:44:20,430 DEBUG Process parameters for sudo<rolldice_download>
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/commands/req/software/update '{"id":"1234","updateList":[{"type":"apt","modules":[{"name":"rolldice","version":"::apt","url":"https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/11643549","action":"install"}]}]}'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : tedge/commands/req/software/update
+    arg #5     : {"id":"1234","updateList":[{"type":"apt","modules":[{"name":"rolldice","version":"::apt","url":"https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/11643549","action":"install"}]}]}
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/rolldice_download.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/rolldice_download.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:20,436 DEBUG Waiting up to 600 secs for process sudo<rolldice_download> (pid 23426)
+2022-03-04 13:44:20,690 INFO  Executed sudo<rolldice_download>, exit status 0
+2022-03-04 13:44:20,691 DEBUG --- test validate
+2022-03-04 13:44:20,692 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_new_value.out
+2022-03-04 13:44:20,694 DEBUG Grep on input file tedge_config_get_new_value.out successfully matched expression "/tedge_download_dir" with line: '/tedge_download_dir\n'
+2022-03-04 13:44:20,695 INFO  Grep on input file tedge_config_get_new_value.out ... passed
+2022-03-04 13:44:20,698 DEBUG --- test cleanup
+2022-03-04 13:44:20,699 INFO  
+2022-03-04 13:44:20,699 INFO  cleanup:
+2022-03-04 13:44:20,700 DEBUG Running registered cleanup function: <bound method PySysTest.mycleanup of <PySysTest object at 0x75388030>>
+2022-03-04 13:44:20,701 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/tedge config set tmp.path /tmp
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : set
+    arg #4     : tmp.path
+    arg #5     : /tmp
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:20,707 DEBUG Waiting up to 600 secs for process sudo (pid 23433)
+2022-03-04 13:44:20,962 INFO  Executed sudo, exit status 0
+2022-03-04 13:44:20,964 DEBUG Process parameters for sudo<tedge_config_get_cleanup>
+  command line : /usr/bin/sudo /usr/bin/tedge config get tmp.path
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : get
+    arg #4     : tmp.path
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_cleanup.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_cleanup.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:20,970 DEBUG Waiting up to 600 secs for process sudo<tedge_config_get_cleanup> (pid 23436)
+2022-03-04 13:44:21,226 INFO  Executed sudo<tedge_config_get_cleanup>, exit status 0
+2022-03-04 13:44:21,227 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_config_get_cleanup.out
+2022-03-04 13:44:21,229 DEBUG Grep on input file tedge_config_get_cleanup.out successfully matched expression "/tmp" with line: '/tmp\n'
+2022-03-04 13:44:21,230 INFO  Grep on input file tedge_config_get_cleanup.out ... passed
+2022-03-04 13:44:21,232 DEBUG Process parameters for sudo<rmdir>
+  command line : /usr/bin/sudo rmdir /tedge_download_dir
+    arg #1     : rmdir
+    arg #2     : /tedge_download_dir
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/rmdir.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/rmdir.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:21,238 DEBUG Waiting up to 600 secs for process sudo<rmdir> (pid 23438)
+2022-03-04 13:44:21,492 INFO  Executed sudo<rmdir>, exit status 0
+2022-03-04 13:44:21,493 DEBUG Running registered cleanup function: <bound method EnvironmentC8y.myenvcleanup of <PySysTest object at 0x75388030>>
+2022-03-04 13:44:21,494 DEBUG EnvironmentC8y Cleanup
+2022-03-04 13:44:21,556 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:21,562 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 23443)
+2022-03-04 13:44:24,052 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-03-04 13:44:24,054 DEBUG Process parameters for systemctl<serv_mapper5>
+  command line : /usr/bin/systemctl status tedge-mapper-c8y
+    arg #1     : status
+    arg #2     : tedge-mapper-c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper5.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge/tedge_software_update/Output/linux/serv_mapper5.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-04 13:44:24,059 DEBUG Waiting up to 600 secs for process systemctl<serv_mapper5> (pid 23554)
+2022-03-04 13:44:24,314 INFO  Executed systemctl<serv_mapper5>, exit status 3
+2022-03-04 13:44:24,315 DEBUG ProcessUser cleanup function done.
+2022-03-04 13:44:24,316 INFO  
+2022-03-04 13:44:24,317 INFO  Test duration: 17.07 secs
+2022-03-04 13:44:24,318 INFO  Test final outcome:  PASSED
+2022-03-04 13:44:24,318 INFO  

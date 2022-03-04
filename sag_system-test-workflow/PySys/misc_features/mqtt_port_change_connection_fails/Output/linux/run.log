@@ -1,11 +1,11 @@
-2022-03-02 13:35:22,202 INFO  ==============================================================
-2022-03-02 13:35:22,203 INFO  Id:    mqtt_port_change_connection_fails
-2022-03-02 13:35:22,203 INFO  Dir:   misc_features/
-2022-03-02 13:35:22,204 INFO  Title: mqtt port change connection fails
-2022-03-02 13:35:22,204 DEBUG Execution order hint: 0.0
-2022-03-02 13:35:22,205 INFO  ==============================================================
-2022-03-02 13:35:22,208 DEBUG --- test execute
-2022-03-02 13:35:22,209 DEBUG Process parameters for sudo<mqtt_port_set>
+2022-03-04 13:33:47,310 INFO  ==============================================================
+2022-03-04 13:33:47,311 INFO  Id:    mqtt_port_change_connection_fails
+2022-03-04 13:33:47,311 INFO  Dir:   misc_features/
+2022-03-04 13:33:47,312 INFO  Title: mqtt port change connection fails
+2022-03-04 13:33:47,312 DEBUG Execution order hint: 0.0
+2022-03-04 13:33:47,313 INFO  ==============================================================
+2022-03-04 13:33:47,319 DEBUG --- test execute
+2022-03-04 13:33:47,320 DEBUG Process parameters for sudo<mqtt_port_set>
   command line : /usr/bin/sudo /usr/bin/tedge config set mqtt.port 8880
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -21,9 +21,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 13:35:22,214 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_set> (pid 14389)
-2022-03-02 13:35:22,469 INFO  Executed sudo<mqtt_port_set>, exit status 0
-2022-03-02 13:35:22,470 DEBUG Process parameters for sudo<mqtt_pub>
+2022-03-04 13:33:47,325 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_set> (pid 16318)
+2022-03-04 13:33:47,580 INFO  Executed sudo<mqtt_port_set>, exit status 0
+2022-03-04 13:33:47,582 DEBUG Process parameters for sudo<mqtt_pub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{ "temperature": 25 }'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -39,20 +39,20 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 13:35:22,475 DEBUG Waiting up to 600 secs for process sudo<mqtt_pub> (pid 14391)
-2022-03-02 13:35:22,730 INFO  Executed sudo<mqtt_pub>, exit status 1
-2022-03-02 13:35:22,730 DEBUG --- test validate
-2022-03-02 13:35:22,731 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_change_connection_fails/Output/linux/mqtt_pub.err
-2022-03-02 13:35:22,734 DEBUG Grep on input file mqtt_pub.err successfully matched expression "ERROR: the message has not been published" with line: 'ERROR: the message has not been published\n'
-2022-03-02 13:35:22,734 INFO  Grep on input file mqtt_pub.err ... passed
-2022-03-02 13:35:22,735 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_change_connection_fails/Output/linux/mqtt_pub.err
-2022-03-02 13:35:22,737 DEBUG Grep on input file mqtt_pub.err successfully matched expression "Error: failed to publish the message" with line: 'Error: failed to publish the message "{ "temperature": 25 }" on the topic "tedge/measurements" with QoS "AtMostOnce".\n'
-2022-03-02 13:35:22,738 INFO  Grep on input file mqtt_pub.err ... passed
-2022-03-02 13:35:22,739 DEBUG --- test cleanup
-2022-03-02 13:35:22,740 INFO  
-2022-03-02 13:35:22,740 INFO  cleanup:
-2022-03-02 13:35:22,741 DEBUG Running registered cleanup function: <bound method MqttPortChangeConnectionFails.mqtt_cleanup of <MqttPortChangeConnectionFails object at 0x75705130>>
-2022-03-02 13:35:22,742 DEBUG Process parameters for sudo<mqtt_port_unset>
+2022-03-04 13:33:47,587 DEBUG Waiting up to 600 secs for process sudo<mqtt_pub> (pid 16320)
+2022-03-04 13:33:47,841 INFO  Executed sudo<mqtt_pub>, exit status 1
+2022-03-04 13:33:47,842 DEBUG --- test validate
+2022-03-04 13:33:47,843 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_change_connection_fails/Output/linux/mqtt_pub.err
+2022-03-04 13:33:47,845 DEBUG Grep on input file mqtt_pub.err successfully matched expression "ERROR: the message has not been published" with line: 'ERROR: the message has not been published\n'
+2022-03-04 13:33:47,846 INFO  Grep on input file mqtt_pub.err ... passed
+2022-03-04 13:33:47,847 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_change_connection_fails/Output/linux/mqtt_pub.err
+2022-03-04 13:33:47,849 DEBUG Grep on input file mqtt_pub.err successfully matched expression "Error: failed to publish the message" with line: 'Error: failed to publish the message "{ "temperature": 25 }" on the topic "tedge/measurements" with QoS "AtMostOnce".\n'
+2022-03-04 13:33:47,850 INFO  Grep on input file mqtt_pub.err ... passed
+2022-03-04 13:33:47,851 DEBUG --- test cleanup
+2022-03-04 13:33:47,852 INFO  
+2022-03-04 13:33:47,852 INFO  cleanup:
+2022-03-04 13:33:47,853 DEBUG Running registered cleanup function: <bound method MqttPortChangeConnectionFails.mqtt_cleanup of <MqttPortChangeConnectionFails object at 0x756c67b0>>
+2022-03-04 13:33:47,854 DEBUG Process parameters for sudo<mqtt_port_unset>
   command line : /usr/bin/sudo /usr/bin/tedge config unset mqtt.port
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -67,10 +67,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-02 13:35:22,747 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_unset> (pid 14393)
-2022-03-02 13:35:23,002 INFO  Executed sudo<mqtt_port_unset>, exit status 0
-2022-03-02 13:35:23,002 DEBUG ProcessUser cleanup function done.
-2022-03-02 13:35:23,004 INFO  
-2022-03-02 13:35:23,005 INFO  Test duration: 0.80 secs
-2022-03-02 13:35:23,005 INFO  Test final outcome:  PASSED
-2022-03-02 13:35:23,006 INFO  
+2022-03-04 13:33:47,859 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_unset> (pid 16322)
+2022-03-04 13:33:48,114 INFO  Executed sudo<mqtt_port_unset>, exit status 0
+2022-03-04 13:33:48,115 DEBUG ProcessUser cleanup function done.
+2022-03-04 13:33:48,116 INFO  
+2022-03-04 13:33:48,117 INFO  Test duration: 0.80 secs
+2022-03-04 13:33:48,118 INFO  Test final outcome:  PASSED
+2022-03-04 13:33:48,119 INFO  
