@@ -2,10 +2,10 @@ name: system-test-offsite
 
 on:
   workflow_dispatch:
-    branches: [ main]
+    branches: [ main, rc]
   workflow_run:
     workflows: ["integration-test-workflow"]
-    branches: [main]
+    branches: [main, rc]
     types:
       - completed
 
@@ -29,7 +29,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: debian-packages-armv7-unknown-linux-gnueabihf
           path: debian-package_unpack
 
@@ -47,7 +47,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: sawtooth_publisher_armv7-unknown-linux-gnueabihf
           path: /home/pi/examples
 
@@ -78,7 +78,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: tedge_dummy_plugin_armv7-unknown-linux-gnueabihf
           path: /home/pi/tedge_dummy_plugin
 

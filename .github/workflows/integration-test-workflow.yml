@@ -2,10 +2,10 @@ name: integration-test-workflow
 
 on:
   workflow_dispatch:
-    branches: [main]
+    branches: [main, rc]
   workflow_run:
     workflows: ["build-workflow"]
-    branches: [main]
+    branches: [main, rc]
     types:
       - completed
 env:
@@ -27,7 +27,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: debian-packages-amd64
           path: debian-package_unpack
 
@@ -127,7 +127,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: debian-packages-armv7-unknown-linux-gnueabihf
           path: debian-package_unpack
 
@@ -180,7 +180,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: sawtooth_publisher_armv7-unknown-linux-gnueabihf
           path: /home/pi/examples
 
@@ -194,7 +194,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: build-workflow.yml
           workflow_conclusion: success
-          branch: main
+          branch: rc
           name: tedge_dummy_plugin_armv7-unknown-linux-gnueabihf
           path: /home/pi/tedge_dummy_plugin
 
