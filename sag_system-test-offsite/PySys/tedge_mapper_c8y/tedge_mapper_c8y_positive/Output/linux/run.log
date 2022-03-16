@@ -1,10 +1,10 @@
-2022-03-04 12:57:42,983 INFO  ==============================================================
-2022-03-04 12:57:42,984 INFO  Id:    tedge_mapper_c8y_positive
-2022-03-04 12:57:42,985 INFO  Dir:   tedge_mapper_c8y/
-2022-03-04 12:57:42,985 INFO  Title: Validate the Cumulocity Mapper that publishes a Thin Edge JSON message on c8y/measurement/measurements/create when it receives a valid JSON message on tedge/measurements
-2022-03-04 12:57:42,986 DEBUG Execution order hint: 0.0
-2022-03-04 12:57:42,986 INFO  ==============================================================
-2022-03-04 12:57:42,992 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-03-16 06:03:48,415 INFO  ==============================================================
+2022-03-16 06:03:48,416 INFO  Id:    tedge_mapper_c8y_positive
+2022-03-16 06:03:48,417 INFO  Dir:   tedge_mapper_c8y/
+2022-03-16 06:03:48,417 INFO  Title: Validate the Cumulocity Mapper that publishes a Thin Edge JSON message on c8y/measurement/measurements/create when it receives a valid JSON message on tedge/measurements
+2022-03-16 06:03:48,418 DEBUG Execution order hint: 0.0
+2022-03-16 06:03:48,418 INFO  ==============================================================
+2022-03-16 06:03:48,452 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : start
@@ -18,10 +18,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:57:42,998 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 25059)
-2022-03-04 12:57:43,356 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-03-04 12:57:43,356 DEBUG --- test execute
-2022-03-04 12:57:43,358 DEBUG Process parameters for sudo<tedge_sub>
+2022-03-16 06:03:48,458 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 8827)
+2022-03-16 06:03:48,814 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-03-16 06:03:48,815 DEBUG --- test execute
+2022-03-16 06:03:48,816 DEBUG Process parameters for sudo<tedge_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic c8y/measurement/measurements/create
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -37,8 +37,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:57:43,363 INFO  Started sudo<tedge_sub> with process id 25066
-2022-03-04 12:57:43,467 DEBUG Process parameters for sudo<tedge_temp>
+2022-03-16 06:03:48,823 INFO  Started sudo<tedge_sub> with process id 8834
+2022-03-16 06:03:48,927 DEBUG Process parameters for sudo<tedge_temp>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{"temperature": 12, "time": "2021-06-15T17:01:15.806181503+02:00"}'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -54,9 +54,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:57:43,473 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 25067)
-2022-03-04 12:57:43,802 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-03-04 12:57:43,805 DEBUG Process parameters for sudo<kill_out>
+2022-03-16 06:03:48,933 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 8835)
+2022-03-16 06:03:49,237 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-03-16 06:03:49,240 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -69,10 +69,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:57:43,813 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 25070)
-2022-03-04 12:57:44,119 INFO  Executed sudo<kill_out>, exit status 0
-2022-03-04 12:57:44,120 DEBUG --- test validate
-2022-03-04 12:57:44,123 WARN  caught <class 'json.decoder.JSONDecodeError'> while running test: Expecting value: line 1 column 1 (char 0)
+2022-03-16 06:03:49,247 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 8838)
+2022-03-16 06:03:49,553 INFO  Executed sudo<kill_out>, exit status 0
+2022-03-16 06:03:49,554 DEBUG --- test validate
+2022-03-16 06:03:49,557 WARN  caught <class 'json.decoder.JSONDecodeError'> while running test: Expecting value: line 1 column 1 (char 0)
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1211, in __call__
     self.testObj.validate()
@@ -87,13 +87,13 @@ Traceback (most recent call last):
   File "/usr/lib/python3.7/json/decoder.py", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2022-03-04 12:57:44,155 WARN  JSONDecodeError: Expecting value: line 1 column 1 (char 0) ... blocked 
-2022-03-04 12:57:44,156 DEBUG --- test cleanup
-2022-03-04 12:57:44,157 INFO  
-2022-03-04 12:57:44,157 INFO  cleanup:
-2022-03-04 12:57:44,158 DEBUG Running registered cleanup function: <bound method TedgeMapperC8y.mapper_cleanup of <TedgeMapperC8y object at 0x75c54550>>
-2022-03-04 12:57:44,158 INFO  mapper_cleanup
-2022-03-04 12:57:44,160 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-03-16 06:03:49,774 WARN  JSONDecodeError: Expecting value: line 1 column 1 (char 0) ... blocked 
+2022-03-16 06:03:49,775 DEBUG --- test cleanup
+2022-03-16 06:03:49,776 INFO  
+2022-03-16 06:03:49,777 INFO  cleanup:
+2022-03-16 06:03:49,778 DEBUG Running registered cleanup function: <bound method TedgeMapperC8y.mapper_cleanup of <TedgeMapperC8y object at 0x759c4210>>
+2022-03-16 06:03:49,778 INFO  mapper_cleanup
+2022-03-16 06:03:49,780 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : stop
@@ -107,11 +107,11 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:57:44,165 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 25072)
-2022-03-04 12:57:44,521 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-03-04 12:57:44,522 DEBUG ProcessUser cleanup function done.
-2022-03-04 12:57:44,526 INFO  
-2022-03-04 12:57:44,526 INFO  Test duration: 1.55 secs
-2022-03-04 12:57:44,528 INFO  Test final outcome:  BLOCKED
-2022-03-04 12:57:44,528 INFO  Test outcome reason: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-2022-03-04 12:57:44,529 INFO  
+2022-03-16 06:03:49,785 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 8840)
+2022-03-16 06:03:50,090 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-03-16 06:03:50,091 DEBUG ProcessUser cleanup function done.
+2022-03-16 06:03:50,092 INFO  
+2022-03-16 06:03:50,093 INFO  Test duration: 1.75 secs
+2022-03-16 06:03:50,093 INFO  Test final outcome:  BLOCKED
+2022-03-16 06:03:50,094 INFO  Test outcome reason: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2022-03-16 06:03:50,094 INFO  

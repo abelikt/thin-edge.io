@@ -1,10 +1,10 @@
-2022-03-04 12:32:55,689 INFO  ==============================================================
-2022-03-04 12:32:55,690 INFO  Id:    docker_plugin_update
-2022-03-04 12:32:55,691 INFO  Dir:   plugin_docker/
-2022-03-04 12:32:55,691 INFO  Title: Validate docker plugin install updates existing containers
-2022-03-04 12:32:55,692 DEBUG Execution order hint: 0.0
-2022-03-04 12:32:55,692 INFO  ==============================================================
-2022-03-04 12:32:55,696 DEBUG Process parameters for sudo<docker_images>
+2022-03-15 18:12:22,898 INFO  ==============================================================
+2022-03-15 18:12:22,898 INFO  Id:    docker_plugin_update
+2022-03-15 18:12:22,899 INFO  Dir:   plugin_docker/
+2022-03-15 18:12:22,900 INFO  Title: Validate docker plugin install updates existing containers
+2022-03-15 18:12:22,900 DEBUG Execution order hint: 0.0
+2022-03-15 18:12:22,901 INFO  ==============================================================
+2022-03-15 18:12:22,906 DEBUG Process parameters for sudo<docker_images>
   command line : /usr/bin/sudo docker images
     arg #1     : docker
     arg #2     : images
@@ -17,11 +17,11 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:32:55,701 DEBUG Waiting up to 600 secs for process sudo<docker_images> (pid 3868)
-2022-03-04 12:32:56,159 INFO  Executed sudo<docker_images>, exit status 0
-2022-03-04 12:32:56,160 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_images.out
-2022-03-04 12:32:56,163 INFO  Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_images.out ... passed
-2022-03-04 12:32:56,165 DEBUG Process parameters for sudo<docker_run>
+2022-03-15 18:12:22,910 DEBUG Waiting up to 600 secs for process sudo<docker_images> (pid 7448)
+2022-03-15 18:12:23,368 INFO  Executed sudo<docker_images>, exit status 0
+2022-03-15 18:12:23,369 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_images.out
+2022-03-15 18:12:23,374 INFO  Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_images.out ... passed
+2022-03-15 18:12:23,376 DEBUG Process parameters for sudo<docker_run>
   command line : /usr/bin/sudo docker run -d registry:2.6.2
     arg #1     : docker
     arg #2     : run
@@ -36,120 +36,29 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:32:56,169 DEBUG Waiting up to 600 secs for process sudo<docker_run> (pid 3878)
-2022-03-04 12:33:11,423 INFO  Executed sudo<docker_run>, exit status 0, duration 15 secs
-2022-03-04 12:33:11,429 DEBUG Process parameters for sudo<docker_ps>
-  command line : /usr/bin/sudo docker ps
-    arg #1     : docker
-    arg #2     : ps
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-03-04 12:33:11,433 DEBUG Waiting up to 600 secs for process sudo<docker_ps> (pid 4084)
-2022-03-04 12:33:12,943 INFO  Executed sudo<docker_ps>, exit status 0
-2022-03-04 12:33:12,944 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-2022-03-04 12:33:12,948 DEBUG Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out successfully matched expression "registry:2.6.2" with line: '3c58487afb8d        registry:2.6.2      "/entrypoint.sh /etc…"   3 seconds ago       Up 1 second         5000/tcp            hungry_banach\n'
-2022-03-04 12:33:12,949 INFO  Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out ... passed
-2022-03-04 12:33:12,950 DEBUG --- test execute
-2022-03-04 12:33:12,951 DEBUG Process parameters for sudo<plugin_install>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/docker install registry --module-version 2.7.1
-    arg #1     : /etc/tedge/sm-plugins/docker
-    arg #2     : install
-    arg #3     : registry
-    arg #4     : --module-version
-    arg #5     : 2.7.1
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/plugin_install.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/plugin_install.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-03-04 12:33:12,956 DEBUG Waiting up to 600 secs for process sudo<plugin_install> (pid 4094)
-2022-03-04 12:33:30,477 INFO  Executed sudo<plugin_install>, exit status 0, duration 17 secs
-2022-03-04 12:33:30,485 DEBUG Process parameters for sudo<docker_ps_latest>
-  command line : /usr/bin/sudo docker ps -q --latest
-    arg #1     : docker
-    arg #2     : ps
-    arg #3     : -q
-    arg #4     : --latest
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps_latest.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps_latest.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-03-04 12:33:30,490 DEBUG Waiting up to 600 secs for process sudo<docker_ps_latest> (pid 4368)
-2022-03-04 12:33:31,148 INFO  Executed sudo<docker_ps_latest>, exit status 0
-2022-03-04 12:33:31,151 DEBUG --- test validate
-2022-03-04 12:33:31,152 DEBUG Process parameters for sudo<docker_ps>
-  command line : /usr/bin/sudo docker ps
-    arg #1     : docker
-    arg #2     : ps
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-03-04 12:33:31,157 DEBUG Waiting up to 600 secs for process sudo<docker_ps> (pid 4379)
-2022-03-04 12:33:31,612 INFO  Executed sudo<docker_ps>, exit status 0
-2022-03-04 12:33:31,613 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-2022-03-04 12:33:31,615 INFO  Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out ... passed
-2022-03-04 12:33:31,617 DEBUG Process parameters for sudo<docker_ps>
-  command line : /usr/bin/sudo docker ps
-    arg #1     : docker
-    arg #2     : ps
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-03-04 12:33:31,622 DEBUG Waiting up to 600 secs for process sudo<docker_ps> (pid 4390)
-2022-03-04 12:33:32,077 INFO  Executed sudo<docker_ps>, exit status 0
-2022-03-04 12:33:32,078 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out
-2022-03-04 12:33:32,081 DEBUG Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out successfully matched expression "registry:2.7.1" with line: 'de6192c38317        registry:2.7.1      "/entrypoint.sh /etc…"   4 seconds ago       Up 1 second         5000/tcp            tender_curie\n'
-2022-03-04 12:33:32,083 INFO  Grep on input file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_ps.out ... passed
-2022-03-04 12:33:32,088 DEBUG --- test cleanup
-2022-03-04 12:33:32,089 INFO  
-2022-03-04 12:33:32,089 INFO  cleanup:
-2022-03-04 12:33:32,090 DEBUG Running registered cleanup function: <bound method DockerPlugin.cleanup_containers of <DockerPluginUpdateTest object at 0x7608a470>>
-2022-03-04 12:33:32,091 INFO  Removing containers scheduled to be cleaned up: ['1936c344b6bd', '8ee8ba19a4ff', '84a26a671251c06d3ecb32f5d7f38baf633e54625b70443afbdbcbcdda099385\n', 'b55c9cfe0586f5598b78118bff921b3e2428adc23acd81ead722bfb7dd555efa\n', '3c58487afb8d9fcdd5e8f4752b7fa3c7ed9eb5583ac434794adb052977b20847\n', 'de6192c38317']
-2022-03-04 12:33:32,092 DEBUG Process parameters for sudo<containers_for_cleanup>
-  command line : /usr/bin/sudo docker rm -f 1936c344b6bd 8ee8ba19a4ff '84a26a671251c06d3ecb32f5d7f38baf633e54625b70443afbdbcbcdda099385
-' 'b55c9cfe0586f5598b78118bff921b3e2428adc23acd81ead722bfb7dd555efa
-' '3c58487afb8d9fcdd5e8f4752b7fa3c7ed9eb5583ac434794adb052977b20847
-' de6192c38317
+2022-03-15 18:12:23,383 DEBUG Waiting up to 600 secs for process sudo<docker_run> (pid 7458)
+2022-03-15 18:12:25,145 WARN  Executed sudo<docker_run>, exit status 125
+2022-03-15 18:12:25,147 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/docker_run.err
+2022-03-15 18:12:25,150 INFO  Contents of docker_run.err: 
+2022-03-15 18:12:25,151 INFO    Unable to find image 'registry:2.6.2' locally
+2022-03-15 18:12:25,152 INFO    docker: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit.
+2022-03-15 18:12:25,153 INFO    See 'docker run --help'.
+2022-03-15 18:12:25,153 INFO    -----
+2022-03-15 18:12:25,154 INFO  
+2022-03-15 18:12:25,187 WARN  sudo<docker_run> returned non-zero exit code 125 ... blocked 
+2022-03-15 18:12:25,187 WARN  Aborted test due to BLOCKED outcome
+2022-03-15 18:12:25,191 DEBUG --- test cleanup
+2022-03-15 18:12:25,192 INFO  
+2022-03-15 18:12:25,192 INFO  cleanup:
+2022-03-15 18:12:25,192 DEBUG Running registered cleanup function: <bound method DockerPlugin.cleanup_containers of <DockerPluginUpdateTest object at 0x75fef3b0>>
+2022-03-15 18:12:25,193 INFO  Removing containers scheduled to be cleaned up: ['5e8f08df1b1f', 'c15f2ec3da0b']
+2022-03-15 18:12:25,194 DEBUG Process parameters for sudo<containers_for_cleanup>
+  command line : /usr/bin/sudo docker rm -f 5e8f08df1b1f c15f2ec3da0b
     arg #1     : docker
     arg #2     : rm
     arg #3     : -f
-    arg #4     : 1936c344b6bd
-    arg #5     : 8ee8ba19a4ff
-    arg #6     : 84a26a671251c06d3ecb32f5d7f38baf633e54625b70443afbdbcbcdda099385
-
-    arg #7     : b55c9cfe0586f5598b78118bff921b3e2428adc23acd81ead722bfb7dd555efa
-
-    arg #8     : 3c58487afb8d9fcdd5e8f4752b7fa3c7ed9eb5583ac434794adb052977b20847
-
-    arg #9     : de6192c38317
+    arg #4     : 5e8f08df1b1f
+    arg #5     : c15f2ec3da0b
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/containers_for_cleanup.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/containers_for_cleanup.err
@@ -159,22 +68,18 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:33:32,097 DEBUG Waiting up to 600 secs for process sudo<containers_for_cleanup> (pid 4400)
-2022-03-04 12:33:34,114 WARN  Executed sudo<containers_for_cleanup>, exit status 1
-2022-03-04 12:33:34,116 DEBUG Running registered cleanup function: <bound method DockerPlugin.cleanup_images of <DockerPluginUpdateTest object at 0x7608a470>>
-2022-03-04 12:33:34,117 INFO  Removing images scheduled to be cleaned up: ['registry', 'registry', 'registry:2.7.1', 'registry', 'registry:2.7.1', 'registry:2.6.2', 'registry:2.7.1']
-2022-03-04 12:33:34,119 DEBUG Process parameters for sudo<containers_for_cleanup>
-  command line : /usr/bin/sudo docker rmi -f registry registry registry:2.7.1 registry registry:2.7.1 registry:2.6.2 registry:2.7.1
+2022-03-15 18:12:25,198 DEBUG Waiting up to 600 secs for process sudo<containers_for_cleanup> (pid 7475)
+2022-03-15 18:12:25,653 WARN  Executed sudo<containers_for_cleanup>, exit status 1
+2022-03-15 18:12:25,654 DEBUG Running registered cleanup function: <bound method DockerPlugin.cleanup_images of <DockerPluginUpdateTest object at 0x75fef3b0>>
+2022-03-15 18:12:25,655 INFO  Removing images scheduled to be cleaned up: ['registry', 'registry', 'registry:2.7.1']
+2022-03-15 18:12:25,656 DEBUG Process parameters for sudo<containers_for_cleanup>
+  command line : /usr/bin/sudo docker rmi -f registry registry registry:2.7.1
     arg #1     : docker
     arg #2     : rmi
     arg #3     : -f
     arg #4     : registry
     arg #5     : registry
     arg #6     : registry:2.7.1
-    arg #7     : registry
-    arg #8     : registry:2.7.1
-    arg #9     : registry:2.6.2
-    arg #10    : registry:2.7.1
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux
   stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/containers_for_cleanup.out
   stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_update/Output/linux/containers_for_cleanup.err
@@ -184,10 +89,11 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-04 12:33:34,125 DEBUG Waiting up to 600 secs for process sudo<containers_for_cleanup> (pid 4453)
-2022-03-04 12:33:38,301 INFO  Executed sudo<containers_for_cleanup>, exit status 0
-2022-03-04 12:33:38,302 DEBUG ProcessUser cleanup function done.
-2022-03-04 12:33:38,304 INFO  
-2022-03-04 12:33:38,304 INFO  Test duration: 42.62 secs
-2022-03-04 12:33:38,305 INFO  Test final outcome:  PASSED
-2022-03-04 12:33:38,305 INFO  
+2022-03-15 18:12:25,660 DEBUG Waiting up to 600 secs for process sudo<containers_for_cleanup> (pid 7486)
+2022-03-15 18:12:26,116 INFO  Executed sudo<containers_for_cleanup>, exit status 0
+2022-03-15 18:12:26,117 DEBUG ProcessUser cleanup function done.
+2022-03-15 18:12:26,120 INFO  
+2022-03-15 18:12:26,121 INFO  Test duration: 3.23 secs
+2022-03-15 18:12:26,122 INFO  Test final outcome:  BLOCKED
+2022-03-15 18:12:26,122 INFO  Test outcome reason: sudo<docker_run> returned non-zero exit code 125
+2022-03-15 18:12:26,123 INFO  
