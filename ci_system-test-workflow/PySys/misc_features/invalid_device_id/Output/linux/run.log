@@ -1,10 +1,10 @@
-2022-03-15 18:37:42,115 INFO  ==============================================================
-2022-03-15 18:37:42,116 INFO  Id:    invalid_device_id
-2022-03-15 18:37:42,117 INFO  Dir:   misc_features/
-2022-03-15 18:37:42,117 INFO  Title: Invalid Device ID
-2022-03-15 18:37:42,117 DEBUG Execution order hint: 0.0
-2022-03-15 18:37:42,118 INFO  ==============================================================
-2022-03-15 18:37:42,121 DEBUG Process parameters for sudo<create_cert_dir>
+2022-03-21 13:40:09,711 INFO  ==============================================================
+2022-03-21 13:40:09,712 INFO  Id:    invalid_device_id
+2022-03-21 13:40:09,712 INFO  Dir:   misc_features/
+2022-03-21 13:40:09,713 INFO  Title: Invalid Device ID
+2022-03-21 13:40:09,713 DEBUG Execution order hint: 0.0
+2022-03-21 13:40:09,714 INFO  ==============================================================
+2022-03-21 13:40:09,717 DEBUG Process parameters for sudo<create_cert_dir>
   command line : /usr/bin/sudo mkdir /tmp/test-device-certs
     arg #1     : mkdir
     arg #2     : /tmp/test-device-certs
@@ -17,9 +17,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:42,127 DEBUG Waiting up to 600 secs for process sudo<create_cert_dir> (pid 28801)
-2022-03-15 18:37:42,380 INFO  Executed sudo<create_cert_dir>, exit status 0
-2022-03-15 18:37:42,382 DEBUG Process parameters for sudo<create_cert_dir>
+2022-03-21 13:40:09,723 DEBUG Waiting up to 600 secs for process sudo<create_cert_dir> (pid 9928)
+2022-03-21 13:40:09,976 INFO  Executed sudo<create_cert_dir>, exit status 0
+2022-03-21 13:40:09,978 DEBUG Process parameters for sudo<create_cert_dir>
   command line : /usr/bin/sudo chown mosquitto:mosquitto /tmp/test-device-certs
     arg #1     : chown
     arg #2     : mosquitto:mosquitto
@@ -33,9 +33,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:42,387 DEBUG Waiting up to 600 secs for process sudo<create_cert_dir> (pid 28803)
-2022-03-15 18:37:42,640 INFO  Executed sudo<create_cert_dir>, exit status 0
-2022-03-15 18:37:42,642 DEBUG Process parameters for sudo<set_cert_path>
+2022-03-21 13:40:09,983 DEBUG Waiting up to 600 secs for process sudo<create_cert_dir> (pid 9930)
+2022-03-21 13:40:10,236 INFO  Executed sudo<create_cert_dir>, exit status 0
+2022-03-21 13:40:10,238 DEBUG Process parameters for sudo<set_cert_path>
   command line : /usr/bin/sudo /usr/bin/tedge config set device.cert.path /tmp/test-device-certs/tedge-certificate.pem
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -51,9 +51,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:42,647 DEBUG Waiting up to 600 secs for process sudo<set_cert_path> (pid 28805)
-2022-03-15 18:37:42,900 INFO  Executed sudo<set_cert_path>, exit status 0
-2022-03-15 18:37:42,902 DEBUG Process parameters for sudo<set_key_path>
+2022-03-21 13:40:10,243 DEBUG Waiting up to 600 secs for process sudo<set_cert_path> (pid 9932)
+2022-03-21 13:40:10,497 INFO  Executed sudo<set_cert_path>, exit status 0
+2022-03-21 13:40:10,499 DEBUG Process parameters for sudo<set_key_path>
   command line : /usr/bin/sudo /usr/bin/tedge config set device.key.path /tmp/test-device-certs/tedge-private-key.pem
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -69,10 +69,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:42,907 DEBUG Waiting up to 600 secs for process sudo<set_key_path> (pid 28807)
-2022-03-15 18:37:43,161 INFO  Executed sudo<set_key_path>, exit status 0
-2022-03-15 18:37:43,162 DEBUG --- test execute
-2022-03-15 18:37:43,163 DEBUG Process parameters for sudo<cert_create>
+2022-03-21 13:40:10,504 DEBUG Waiting up to 600 secs for process sudo<set_key_path> (pid 9934)
+2022-03-21 13:40:10,758 INFO  Executed sudo<set_key_path>, exit status 0
+2022-03-21 13:40:10,758 DEBUG --- test execute
+2022-03-21 13:40:10,759 DEBUG Process parameters for sudo<cert_create>
   command line : /usr/bin/sudo /usr/bin/tedge cert create --device-id ''"'"':?=()*@!%,-.123ThinEdgeDevice-id'
     arg #1     : /usr/bin/tedge
     arg #2     : cert
@@ -88,17 +88,17 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:43,168 DEBUG Waiting up to 600 secs for process sudo<cert_create> (pid 28809)
-2022-03-15 18:37:43,422 INFO  Executed sudo<cert_create>, exit status 1
-2022-03-15 18:37:43,423 DEBUG --- test validate
-2022-03-15 18:37:43,423 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/invalid_device_id/Output/linux/cert_create.err
-2022-03-15 18:37:43,425 DEBUG Grep on input file cert_create.err successfully matched expression "DeviceID Error" with line: '    0: DeviceID Error\n'
-2022-03-15 18:37:43,426 INFO  Grep on input file cert_create.err ... passed
-2022-03-15 18:37:43,427 DEBUG --- test cleanup
-2022-03-15 18:37:43,427 INFO  
-2022-03-15 18:37:43,428 INFO  cleanup:
-2022-03-15 18:37:43,428 DEBUG Running registered cleanup function: <bound method InvalidDeviceId.device_id_cleanup of <InvalidDeviceId object at 0x752a4e70>>
-2022-03-15 18:37:43,429 DEBUG Process parameters for sudo<unset_cert_path>
+2022-03-21 13:40:10,765 DEBUG Waiting up to 600 secs for process sudo<cert_create> (pid 9936)
+2022-03-21 13:40:11,018 INFO  Executed sudo<cert_create>, exit status 1
+2022-03-21 13:40:11,019 DEBUG --- test validate
+2022-03-21 13:40:11,019 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/invalid_device_id/Output/linux/cert_create.err
+2022-03-21 13:40:11,021 DEBUG Grep on file cert_create.err successfully matched expression "DeviceID Error" with line: '    0: DeviceID Error\n'
+2022-03-21 13:40:11,022 INFO  Grep on file cert_create.err ... passed
+2022-03-21 13:40:11,023 DEBUG --- test cleanup
+2022-03-21 13:40:11,024 INFO  
+2022-03-21 13:40:11,024 INFO  cleanup:
+2022-03-21 13:40:11,024 DEBUG Running registered cleanup function: <bound method InvalidDeviceId.device_id_cleanup of <InvalidDeviceId object at 0x75353cd0>>
+2022-03-21 13:40:11,025 DEBUG Process parameters for sudo<unset_cert_path>
   command line : /usr/bin/sudo /usr/bin/tedge config unset device.cert.path
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -113,9 +113,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:43,434 DEBUG Waiting up to 600 secs for process sudo<unset_cert_path> (pid 28811)
-2022-03-15 18:37:43,690 INFO  Executed sudo<unset_cert_path>, exit status 0
-2022-03-15 18:37:43,691 DEBUG Process parameters for sudo<unset_key_path>
+2022-03-21 13:40:11,030 DEBUG Waiting up to 600 secs for process sudo<unset_cert_path> (pid 9938)
+2022-03-21 13:40:11,284 INFO  Executed sudo<unset_cert_path>, exit status 0
+2022-03-21 13:40:11,286 DEBUG Process parameters for sudo<unset_key_path>
   command line : /usr/bin/sudo /usr/bin/tedge config unset device.key.path
     arg #1     : /usr/bin/tedge
     arg #2     : config
@@ -130,9 +130,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:43,696 DEBUG Waiting up to 600 secs for process sudo<unset_key_path> (pid 28813)
-2022-03-15 18:37:43,950 INFO  Executed sudo<unset_key_path>, exit status 0
-2022-03-15 18:37:43,951 DEBUG Process parameters for sudo<remove_cert_dir>
+2022-03-21 13:40:11,291 DEBUG Waiting up to 600 secs for process sudo<unset_key_path> (pid 9940)
+2022-03-21 13:40:11,544 INFO  Executed sudo<unset_key_path>, exit status 0
+2022-03-21 13:40:11,546 DEBUG Process parameters for sudo<remove_cert_dir>
   command line : /usr/bin/sudo rm -rf /tmp/test-device-certs
     arg #1     : rm
     arg #2     : -rf
@@ -146,10 +146,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-15 18:37:43,956 DEBUG Waiting up to 600 secs for process sudo<remove_cert_dir> (pid 28815)
-2022-03-15 18:37:44,210 INFO  Executed sudo<remove_cert_dir>, exit status 0
-2022-03-15 18:37:44,211 DEBUG ProcessUser cleanup function done.
-2022-03-15 18:37:44,212 INFO  
-2022-03-15 18:37:44,213 INFO  Test duration: 2.09 secs
-2022-03-15 18:37:44,213 INFO  Test final outcome:  PASSED
-2022-03-15 18:37:44,214 INFO  
+2022-03-21 13:40:11,551 DEBUG Waiting up to 600 secs for process sudo<remove_cert_dir> (pid 9942)
+2022-03-21 13:40:11,804 INFO  Executed sudo<remove_cert_dir>, exit status 0
+2022-03-21 13:40:11,805 DEBUG ProcessUser cleanup function done.
+2022-03-21 13:40:11,807 INFO  
+2022-03-21 13:40:11,807 INFO  Test duration: 2.09 secs
+2022-03-21 13:40:11,808 INFO  Test final outcome:  PASSED
+2022-03-21 13:40:11,808 INFO  
