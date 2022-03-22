@@ -1,11 +1,11 @@
-2022-03-21 13:34:44,151 INFO  ==============================================================
-2022-03-21 13:34:44,152 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
-2022-03-21 13:34:44,152 INFO  Dir:   plugin_apama/
-2022-03-21 13:34:44,153 INFO  Title: Validate apama plugin updating one project with another
-2022-03-21 13:34:44,153 DEBUG Execution order hint: 0.0
-2022-03-21 13:34:44,154 INFO  ==============================================================
-2022-03-21 13:34:44,158 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
-2022-03-21 13:34:44,161 DEBUG Process parameters for sudo<create_project_dir>
+2022-03-21 17:37:21,254 INFO  ==============================================================
+2022-03-21 17:37:21,254 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+2022-03-21 17:37:21,255 INFO  Dir:   plugin_apama/
+2022-03-21 17:37:21,255 INFO  Title: Validate apama plugin updating one project with another
+2022-03-21 17:37:21,256 DEBUG Execution order hint: 0.0
+2022-03-21 17:37:21,256 INFO  ==============================================================
+2022-03-21 17:37:21,264 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-03-21 17:37:21,267 DEBUG Process parameters for sudo<create_project_dir>
   command line : /usr/bin/sudo mkdir -p /etc/tedge/apama
     arg #1     : mkdir
     arg #2     : -p
@@ -19,9 +19,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:44,165 DEBUG Waiting up to 600 secs for process sudo<create_project_dir> (pid 32450)
-2022-03-21 13:34:44,419 INFO  Executed sudo<create_project_dir>, exit status 0
-2022-03-21 13:34:44,420 DEBUG Process parameters for sudo<unzip_apama_project>
+2022-03-21 17:37:21,272 DEBUG Waiting up to 600 secs for process sudo<create_project_dir> (pid 1375)
+2022-03-21 17:37:21,577 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-03-21 17:37:21,579 DEBUG Process parameters for sudo<unzip_apama_project>
   command line : /usr/bin/sudo unzip /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip -d /tmp/tedge_apama_project
     arg #1     : unzip
     arg #2     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip
@@ -36,9 +36,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:44,425 DEBUG Waiting up to 600 secs for process sudo<unzip_apama_project> (pid 32452)
-2022-03-21 13:34:44,830 INFO  Executed sudo<unzip_apama_project>, exit status 0
-2022-03-21 13:34:44,832 DEBUG Process parameters for sudo<move_apama_project>
+2022-03-21 17:37:21,586 DEBUG Waiting up to 600 secs for process sudo<unzip_apama_project> (pid 1377)
+2022-03-21 17:37:21,949 INFO  Executed sudo<unzip_apama_project>, exit status 0
+2022-03-21 17:37:21,951 DEBUG Process parameters for sudo<move_apama_project>
   command line : /usr/bin/sudo mv /tmp/tedge_apama_project/project /etc/tedge/apama/project
     arg #1     : mv
     arg #2     : /tmp/tedge_apama_project/project
@@ -52,9 +52,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:44,836 DEBUG Waiting up to 600 secs for process sudo<move_apama_project> (pid 32454)
-2022-03-21 13:34:45,141 INFO  Executed sudo<move_apama_project>, exit status 0
-2022-03-21 13:34:45,143 DEBUG Process parameters for sudo<restart_apama_service>
+2022-03-21 17:37:21,956 DEBUG Waiting up to 600 secs for process sudo<move_apama_project> (pid 1379)
+2022-03-21 17:37:22,262 INFO  Executed sudo<move_apama_project>, exit status 0
+2022-03-21 17:37:22,264 DEBUG Process parameters for sudo<restart_apama_service>
   command line : /usr/bin/sudo service apama restart
     arg #1     : service
     arg #2     : apama
@@ -68,21 +68,21 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:45,150 DEBUG Waiting up to 600 secs for process sudo<restart_apama_service> (pid 32456)
-2022-03-21 13:34:45,505 WARN  Executed sudo<restart_apama_service>, exit status 5
-2022-03-21 13:34:45,506 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/restart_apama_service.err
-2022-03-21 13:34:45,509 INFO  Contents of restart_apama_service.err: 
-2022-03-21 13:34:45,510 INFO    Failed to restart apama.service: Unit apama.service not found.
-2022-03-21 13:34:45,511 INFO    -----
-2022-03-21 13:34:45,511 INFO  
-2022-03-21 13:34:45,542 WARN  sudo<restart_apama_service> returned non-zero exit code 5 ... blocked 
-2022-03-21 13:34:45,543 WARN  Aborted test due to BLOCKED outcome
-2022-03-21 13:34:45,546 DEBUG --- test cleanup
-2022-03-21 13:34:45,547 INFO  
-2022-03-21 13:34:45,548 INFO  cleanup:
-2022-03-21 13:34:45,548 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginUpdateTest object at 0x75fa7390>>
-2022-03-21 13:34:45,549 INFO  Removing apama project
-2022-03-21 13:34:45,551 DEBUG Process parameters for sudo<remove_apama_project>
+2022-03-21 17:37:22,271 DEBUG Waiting up to 600 secs for process sudo<restart_apama_service> (pid 1381)
+2022-03-21 17:37:22,626 WARN  Executed sudo<restart_apama_service>, exit status 5
+2022-03-21 17:37:22,627 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/restart_apama_service.err
+2022-03-21 17:37:22,629 INFO  Contents of restart_apama_service.err: 
+2022-03-21 17:37:22,630 INFO    Failed to restart apama.service: Unit apama.service not found.
+2022-03-21 17:37:22,631 INFO    -----
+2022-03-21 17:37:22,631 INFO  
+2022-03-21 17:37:22,667 WARN  sudo<restart_apama_service> returned non-zero exit code 5 ... blocked 
+2022-03-21 17:37:22,667 WARN  Aborted test due to BLOCKED outcome
+2022-03-21 17:37:22,671 DEBUG --- test cleanup
+2022-03-21 17:37:22,671 INFO  
+2022-03-21 17:37:22,672 INFO  cleanup:
+2022-03-21 17:37:22,672 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginUpdateTest object at 0x75fe9370>>
+2022-03-21 17:37:22,673 INFO  Removing apama project
+2022-03-21 17:37:22,674 DEBUG Process parameters for sudo<remove_apama_project>
   command line : /usr/bin/sudo rm -rf /etc/tedge/apama/project
     arg #1     : rm
     arg #2     : -rf
@@ -96,9 +96,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:45,555 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 32461)
-2022-03-21 13:34:45,859 INFO  Executed sudo<remove_apama_project>, exit status 0
-2022-03-21 13:34:45,861 DEBUG Process parameters for sudo<stop_apama_service>
+2022-03-21 17:37:22,678 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 1386)
+2022-03-21 17:37:22,982 INFO  Executed sudo<remove_apama_project>, exit status 0
+2022-03-21 17:37:22,984 DEBUG Process parameters for sudo<stop_apama_service>
   command line : /usr/bin/sudo service apama stop
     arg #1     : service
     arg #2     : apama
@@ -112,14 +112,14 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-21 13:34:45,867 DEBUG Waiting up to 600 secs for process sudo<stop_apama_service> (pid 32463)
-2022-03-21 13:34:53,913 WARN  Executed sudo<stop_apama_service>, exit status 5
-2022-03-21 13:34:53,914 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/stop_apama_service.err
-2022-03-21 13:34:53,917 INFO  Contents of stop_apama_service.err: 
-2022-03-21 13:34:53,919 INFO    Failed to stop apama.service: Unit apama.service not loaded.
-2022-03-21 13:34:53,919 INFO    -----
-2022-03-21 13:34:53,920 INFO  
-2022-03-21 13:34:53,940 ERROR Error while running cleanup function: 
+2022-03-21 17:37:22,988 DEBUG Waiting up to 600 secs for process sudo<stop_apama_service> (pid 1388)
+2022-03-21 17:37:31,232 WARN  Executed sudo<stop_apama_service>, exit status 5
+2022-03-21 17:37:31,234 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/stop_apama_service.err
+2022-03-21 17:37:31,237 INFO  Contents of stop_apama_service.err: 
+2022-03-21 17:37:31,237 INFO    Failed to stop apama.service: Unit apama.service not loaded.
+2022-03-21 17:37:31,238 INFO    -----
+2022-03-21 17:37:31,238 INFO  
+2022-03-21 17:37:31,257 ERROR Error while running cleanup function: 
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
     fn()
@@ -134,10 +134,10 @@ Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1420, in abort
     raise AbortExecution(outcome, outcomeReason, callRecord)
 pysys.exceptions.AbortExecution: sudo<stop_apama_service> returned non-zero exit code 5
-2022-03-21 13:34:53,942 DEBUG ProcessUser cleanup function done.
-2022-03-21 13:34:53,949 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<stop_apama_service> returned non-zero exit code 5 (AbortExecution) ... blocked 
-2022-03-21 13:34:53,951 INFO  
-2022-03-21 13:34:53,951 INFO  Test duration: 9.81 secs
-2022-03-21 13:34:53,952 INFO  Test final outcome:  BLOCKED
-2022-03-21 13:34:53,952 INFO  Test outcome reason: sudo<restart_apama_service> returned non-zero exit code 5 (+2 other failures)
-2022-03-21 13:34:53,953 INFO  
+2022-03-21 17:37:31,259 DEBUG ProcessUser cleanup function done.
+2022-03-21 17:37:31,266 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<stop_apama_service> returned non-zero exit code 5 (AbortExecution) ... blocked 
+2022-03-21 17:37:31,268 INFO  
+2022-03-21 17:37:31,268 INFO  Test duration: 10.03 secs
+2022-03-21 17:37:31,269 INFO  Test final outcome:  BLOCKED
+2022-03-21 17:37:31,269 INFO  Test outcome reason: sudo<restart_apama_service> returned non-zero exit code 5 (+2 other failures)
+2022-03-21 17:37:31,270 INFO  
