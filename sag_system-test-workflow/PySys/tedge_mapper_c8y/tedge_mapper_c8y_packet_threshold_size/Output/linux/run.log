@@ -1,10 +1,10 @@
-2022-03-16 14:13:16,626 INFO  ==============================================================
-2022-03-16 14:13:16,627 INFO  Id:    tedge_mapper_c8y_packet_threshold_size
-2022-03-16 14:13:16,627 INFO  Dir:   tedge_mapper_c8y/
-2022-03-16 14:13:16,628 INFO  Title: Validate the Cumulocity Mapper accepted threshold packet size when it receives a message on tedge/measurements
-2022-03-16 14:13:16,628 DEBUG Execution order hint: 0.0
-2022-03-16 14:13:16,629 INFO  ==============================================================
-2022-03-16 14:13:16,633 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-03-23 20:01:26,070 INFO  ==============================================================
+2022-03-23 20:01:26,071 INFO  Id:    tedge_mapper_c8y_packet_threshold_size
+2022-03-23 20:01:26,072 INFO  Dir:   tedge_mapper_c8y/
+2022-03-23 20:01:26,073 INFO  Title: Validate the Cumulocity Mapper accepted threshold packet size when it receives a message on tedge/measurements
+2022-03-23 20:01:26,073 DEBUG Execution order hint: 0.0
+2022-03-23 20:01:26,074 INFO  ==============================================================
+2022-03-23 20:01:26,081 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl start tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : start
@@ -18,10 +18,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:16,639 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 2654)
-2022-03-16 14:13:16,893 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-03-16 14:13:16,894 DEBUG --- test execute
-2022-03-16 14:13:16,895 DEBUG Process parameters for sudo<tedge_sub>
+2022-03-23 20:01:26,087 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 18189)
+2022-03-23 20:01:26,394 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-03-23 20:01:26,395 DEBUG --- test execute
+2022-03-23 20:01:26,396 DEBUG Process parameters for sudo<tedge_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic tedge/errors
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -37,8 +37,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:16,901 INFO  Started sudo<tedge_sub> with process id 2661
-2022-03-16 14:13:17,005 DEBUG Process parameters for sudo<tedge_msg>
+2022-03-23 20:01:26,402 INFO  Started sudo<tedge_sub> with process id 18196
+2022-03-23 20:01:26,506 DEBUG Process parameters for sudo<tedge_msg>
   command line : /usr/bin/sudo dd if=/dev/zero of=/tmp/big_message.txt bs=10 count=1 seek=2048
     arg #1     : dd
     arg #2     : if=/dev/zero
@@ -55,9 +55,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:17,012 DEBUG Waiting up to 600 secs for process sudo<tedge_msg> (pid 2662)
-2022-03-16 14:13:17,266 INFO  Executed sudo<tedge_msg>, exit status 0
-2022-03-16 14:13:17,267 DEBUG Process parameters for sudo<tedge_pub>
+2022-03-23 20:01:26,513 DEBUG Waiting up to 600 secs for process sudo<tedge_msg> (pid 18197)
+2022-03-23 20:01:26,817 INFO  Executed sudo<tedge_msg>, exit status 0
+2022-03-23 20:01:26,819 DEBUG Process parameters for sudo<tedge_pub>
   command line : /usr/bin/sudo /usr/bin/mosquitto_pub -t tedge/measurements -f /tmp/big_message.txt
     arg #1     : /usr/bin/mosquitto_pub
     arg #2     : -t
@@ -73,9 +73,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:17,273 DEBUG Waiting up to 600 secs for process sudo<tedge_pub> (pid 2665)
-2022-03-16 14:13:17,526 INFO  Executed sudo<tedge_pub>, exit status 0
-2022-03-16 14:13:17,528 DEBUG Process parameters for sudo<kill_out>
+2022-03-23 20:01:26,826 DEBUG Waiting up to 600 secs for process sudo<tedge_pub> (pid 18200)
+2022-03-23 20:01:27,080 INFO  Executed sudo<tedge_pub>, exit status 0
+2022-03-23 20:01:27,081 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -88,17 +88,17 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:17,533 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 2667)
-2022-03-16 14:13:17,787 INFO  Executed sudo<kill_out>, exit status 0
-2022-03-16 14:13:17,787 DEBUG --- test validate
-2022-03-16 14:13:17,788 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_sub.out
-2022-03-16 14:13:17,801 WARN  Grep on tedge_sub.out contains "The input size 20489 is too big. The threshold is 16384." ... failed [run.py:71]
-2022-03-16 14:13:17,802 DEBUG --- test cleanup
-2022-03-16 14:13:17,803 INFO  
-2022-03-16 14:13:17,803 INFO  cleanup:
-2022-03-16 14:13:17,804 DEBUG Running registered cleanup function: <bound method TedgeMapperC8yThresholdPacketSize.mapper_cleanup of <TedgeMapperC8yThresholdPacketSize object at 0x7518eb90>>
-2022-03-16 14:13:17,804 INFO  mapper_cleanup
-2022-03-16 14:13:17,805 DEBUG Process parameters for sudo<tedge_mapper_c8y>
+2022-03-23 20:01:27,087 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 18214)
+2022-03-23 20:01:27,342 INFO  Executed sudo<kill_out>, exit status 0
+2022-03-23 20:01:27,342 DEBUG --- test validate
+2022-03-23 20:01:27,343 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_packet_threshold_size/Output/linux/tedge_sub.out
+2022-03-23 20:01:27,359 WARN  Grep on tedge_sub.out contains "The input size 20489 is too big. The threshold is 16384." ... failed [run.py:71]
+2022-03-23 20:01:27,361 DEBUG --- test cleanup
+2022-03-23 20:01:27,362 INFO  
+2022-03-23 20:01:27,362 INFO  cleanup:
+2022-03-23 20:01:27,362 DEBUG Running registered cleanup function: <bound method TedgeMapperC8yThresholdPacketSize.mapper_cleanup of <TedgeMapperC8yThresholdPacketSize object at 0x752b7a50>>
+2022-03-23 20:01:27,363 INFO  mapper_cleanup
+2022-03-23 20:01:27,364 DEBUG Process parameters for sudo<tedge_mapper_c8y>
   command line : /usr/bin/sudo systemctl stop tedge-mapper-c8y
     arg #1     : systemctl
     arg #2     : stop
@@ -112,11 +112,11 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-16 14:13:17,810 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 2669)
-2022-03-16 14:13:18,064 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
-2022-03-16 14:13:18,065 DEBUG ProcessUser cleanup function done.
-2022-03-16 14:13:18,067 INFO  
-2022-03-16 14:13:18,067 INFO  Test duration: 1.44 secs
-2022-03-16 14:13:18,068 INFO  Test final outcome:  FAILED
-2022-03-16 14:13:18,068 INFO  Test outcome reason: Grep on tedge_sub.out contains "The input size 20489 is too big. The threshold is 16384."
-2022-03-16 14:13:18,068 INFO  
+2022-03-23 20:01:27,370 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_c8y> (pid 18216)
+2022-03-23 20:01:27,674 INFO  Executed sudo<tedge_mapper_c8y>, exit status 0
+2022-03-23 20:01:27,675 DEBUG ProcessUser cleanup function done.
+2022-03-23 20:01:27,677 INFO  
+2022-03-23 20:01:27,678 INFO  Test duration: 1.60 secs
+2022-03-23 20:01:27,679 INFO  Test final outcome:  FAILED
+2022-03-23 20:01:27,679 INFO  Test outcome reason: Grep on tedge_sub.out contains "The input size 20489 is too big. The threshold is 16384."
+2022-03-23 20:01:27,680 INFO  
