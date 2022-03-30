@@ -1,12 +1,12 @@
-2022-03-22 14:33:16,505 INFO  ==============================================================
-2022-03-22 14:33:16,506 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_install
-2022-03-22 14:33:16,508 INFO  Dir:   plugin_apama/
-2022-03-22 14:33:16,508 INFO  Title: Validate apama plugin install
-2022-03-22 14:33:16,509 DEBUG Execution order hint: 0.0
-2022-03-22 14:33:16,510 INFO  ==============================================================
-2022-03-22 14:33:16,531 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
-2022-03-22 14:33:16,532 DEBUG --- test execute
-2022-03-22 14:33:16,533 DEBUG Process parameters for sudo<plugin_install>
+2022-03-29 17:27:44,730 INFO  ==============================================================
+2022-03-29 17:27:44,730 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_install
+2022-03-29 17:27:44,732 INFO  Dir:   plugin_apama/
+2022-03-29 17:27:44,733 INFO  Title: Validate apama plugin install
+2022-03-29 17:27:44,733 DEBUG Execution order hint: 0.0
+2022-03-29 17:27:44,734 INFO  ==============================================================
+2022-03-29 17:27:44,847 WARN  Assertion that path exists=False for "/etc/tedge/apama/project" ... failed 
+2022-03-29 17:27:44,848 DEBUG --- test execute
+2022-03-29 17:27:44,849 DEBUG Process parameters for sudo<plugin_install>
   command line : /usr/bin/sudo /etc/tedge/sm-plugins/apama install QuickStart::project --file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip
     arg #1     : /etc/tedge/sm-plugins/apama
     arg #2     : install
@@ -22,38 +22,60 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-22 14:33:16,538 DEBUG Waiting up to 600 secs for process sudo<plugin_install> (pid 19874)
-2022-03-22 14:33:16,842 WARN  Executed sudo<plugin_install>, exit status 2
-2022-03-22 14:33:16,848 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/plugin_install.err
-2022-03-22 14:33:16,851 INFO  Contents of plugin_install.err: 
-2022-03-22 14:33:16,852 INFO    ERROR: Apama not installed at /opt/softwareag/Apama
-2022-03-22 14:33:16,852 INFO    -----
-2022-03-22 14:33:16,853 INFO  
-2022-03-22 14:33:16,938 WARN  sudo<plugin_install> returned non-zero exit code 2 ... blocked [run.py:25]
-2022-03-22 14:33:16,938 WARN  Aborted test due to BLOCKED outcome
-2022-03-22 14:33:16,942 DEBUG --- test cleanup
-2022-03-22 14:33:16,943 INFO  
-2022-03-22 14:33:16,943 INFO  cleanup:
-2022-03-22 14:33:16,944 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginInstallTest object at 0x76030cf0>>
-2022-03-22 14:33:16,946 DEBUG Process parameters for sudo<remove_apama_tmp_dir>
-  command line : /usr/bin/sudo rm -rf /tmp/tedge_apama_project
+2022-03-29 17:27:44,854 DEBUG Waiting up to 600 secs for process sudo<plugin_install> (pid 27064)
+2022-03-29 17:27:45,208 WARN  Executed sudo<plugin_install>, exit status 2
+2022-03-29 17:27:45,213 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/plugin_install.err
+2022-03-29 17:27:45,216 INFO  Contents of plugin_install.err: 
+2022-03-29 17:27:45,217 INFO    ERROR: Device or resource busy (os error 16)
+2022-03-29 17:27:45,218 INFO    -----
+2022-03-29 17:27:45,219 INFO  
+2022-03-29 17:27:45,232 WARN  sudo<plugin_install> returned non-zero exit code 2 ... blocked [run.py:25]
+2022-03-29 17:27:45,233 WARN  Aborted test due to BLOCKED outcome
+2022-03-29 17:27:45,237 DEBUG --- test cleanup
+2022-03-29 17:27:45,238 INFO  
+2022-03-29 17:27:45,238 INFO  cleanup:
+2022-03-29 17:27:45,238 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginInstallTest object at 0x76026cd0>>
+2022-03-29 17:27:45,239 INFO  Removing apama project
+2022-03-29 17:27:45,240 DEBUG Process parameters for sudo<remove_apama_project>
+  command line : /usr/bin/sudo rm -rf /etc/tedge/apama/project
     arg #1     : rm
     arg #2     : -rf
-    arg #3     : /tmp/tedge_apama_project
+    arg #3     : /etc/tedge/apama/project
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/remove_apama_tmp_dir.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/remove_apama_tmp_dir.err
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/remove_apama_project.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/remove_apama_project.err
   environment  : LD_LIBRARY_PATH=/usr/lib
   environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
                    #1  /bin
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-22 14:33:16,950 DEBUG Waiting up to 600 secs for process sudo<remove_apama_tmp_dir> (pid 19876)
-2022-03-22 14:33:17,204 INFO  Executed sudo<remove_apama_tmp_dir>, exit status 0
-2022-03-22 14:33:17,205 DEBUG ProcessUser cleanup function done.
-2022-03-22 14:33:17,207 INFO  
-2022-03-22 14:33:17,207 INFO  Test duration: 0.71 secs
-2022-03-22 14:33:17,208 INFO  Test final outcome:  BLOCKED
-2022-03-22 14:33:17,209 INFO  Test outcome reason: sudo<plugin_install> returned non-zero exit code 2
-2022-03-22 14:33:17,210 INFO  
+2022-03-29 17:27:45,244 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 27066)
+2022-03-29 17:27:45,510 WARN  Executed sudo<remove_apama_project>, exit status 1
+2022-03-29 17:27:45,511 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_install/Output/linux/remove_apama_project.err
+2022-03-29 17:27:45,514 INFO  Contents of remove_apama_project.err: 
+2022-03-29 17:27:45,515 INFO    rm: cannot remove '/etc/tedge/apama/project/logs/.nfs00000000000617da00002789': Device or resource busy
+2022-03-29 17:27:45,515 INFO    -----
+2022-03-29 17:27:45,515 INFO  
+2022-03-29 17:27:45,533 ERROR Error while running cleanup function: 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
+    fn()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/environment_apama_plugin.py", line 136, in cleanup_project
+    self.remove_project()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/environment_apama_plugin.py", line 89, in remove_project
+    stdouterr="remove_apama_project"
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 482, in startProcess
+    abortOnError=abortOnError)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1401, in addOutcome
+    self.abort(outcome, outcomeReason, callRecord)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1420, in abort
+    raise AbortExecution(outcome, outcomeReason, callRecord)
+pysys.exceptions.AbortExecution: sudo<remove_apama_project> returned non-zero exit code 1
+2022-03-29 17:27:45,535 DEBUG ProcessUser cleanup function done.
+2022-03-29 17:27:45,541 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<remove_apama_project> returned non-zero exit code 1 (AbortExecution) ... blocked 
+2022-03-29 17:27:45,543 INFO  
+2022-03-29 17:27:45,543 INFO  Test duration: 0.82 secs
+2022-03-29 17:27:45,544 INFO  Test final outcome:  BLOCKED
+2022-03-29 17:27:45,544 INFO  Test outcome reason: sudo<plugin_install> returned non-zero exit code 2 (+2 other failures)
+2022-03-29 17:27:45,544 INFO  

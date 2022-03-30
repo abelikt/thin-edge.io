@@ -1,11 +1,11 @@
-2022-03-28 18:35:49,576 INFO  ==============================================================
-2022-03-28 18:35:49,577 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_mon_support
-2022-03-28 18:35:49,578 INFO  Dir:   plugin_apama/
-2022-03-28 18:35:49,578 INFO  Title: Validate mon file support of apama plugin
-2022-03-28 18:35:49,579 DEBUG Execution order hint: 0.0
-2022-03-28 18:35:49,579 INFO  ==============================================================
-2022-03-28 18:35:49,596 WARN  Assertion that path exists=False for "/etc/tedge/apama/project" ... failed 
-2022-03-28 18:35:49,597 DEBUG Process parameters for sudo<create_project_dir>
+2022-03-29 17:28:16,999 INFO  ==============================================================
+2022-03-29 17:28:17,000 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_mon_support
+2022-03-29 17:28:17,000 INFO  Dir:   plugin_apama/
+2022-03-29 17:28:17,001 INFO  Title: Validate mon file support of apama plugin
+2022-03-29 17:28:17,002 DEBUG Execution order hint: 0.0
+2022-03-29 17:28:17,002 INFO  ==============================================================
+2022-03-29 17:28:17,022 WARN  Assertion that path exists=False for "/etc/tedge/apama/project" ... failed 
+2022-03-29 17:28:17,024 DEBUG Process parameters for sudo<create_project_dir>
   command line : /usr/bin/sudo mkdir -p /etc/tedge/apama
     arg #1     : mkdir
     arg #2     : -p
@@ -19,9 +19,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-28 18:35:49,601 DEBUG Waiting up to 600 secs for process sudo<create_project_dir> (pid 27589)
-2022-03-28 18:35:49,906 INFO  Executed sudo<create_project_dir>, exit status 0
-2022-03-28 18:35:49,908 DEBUG Process parameters for sudo<unzip_apama_project>
+2022-03-29 17:28:17,028 DEBUG Waiting up to 600 secs for process sudo<create_project_dir> (pid 19753)
+2022-03-29 17:28:17,332 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-03-29 17:28:17,334 DEBUG Process parameters for sudo<unzip_apama_project>
   command line : /usr/bin/sudo unzip /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip -d /tmp/tedge_apama_project
     arg #1     : unzip
     arg #2     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip
@@ -36,9 +36,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-28 18:35:49,915 DEBUG Waiting up to 600 secs for process sudo<unzip_apama_project> (pid 27591)
-2022-03-28 18:45:49,932 WARN  Process sudo<unzip_apama_project> (pid 27591) timed out after 600 seconds, stopping process
-2022-03-28 18:45:49,951 DEBUG Failed to stop process sudo<unzip_apama_project> (pid 27591): 
+2022-03-29 17:28:17,340 DEBUG Waiting up to 600 secs for process sudo<unzip_apama_project> (pid 19756)
+2022-03-29 17:38:17,370 WARN  Process sudo<unzip_apama_project> (pid 19756) timed out after 600 seconds, stopping process
+2022-03-29 17:38:17,373 DEBUG Failed to stop process sudo<unzip_apama_project> (pid 19756): 
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 465, in startProcess
     process.start()
@@ -46,7 +46,7 @@ Traceback (most recent call last):
     self.wait(self.timeout)
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/__init__.py", line 263, in wait
     raise ProcessTimeout('Waiting for completion of %r timed out after %d seconds'%(self, int(timeout)))
-pysys.exceptions.ProcessTimeout: Waiting for completion of sudo<unzip_apama_project> (pid 27591) timed out after 600 seconds
+pysys.exceptions.ProcessTimeout: Waiting for completion of sudo<unzip_apama_project> (pid 19756) timed out after 600 seconds
 
 During handling of the above exception, another exception occurred:
 
@@ -54,7 +54,7 @@ Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 226, in stop
     os.kill(self.pid, sig)
 PermissionError: [Errno 1] Operation not permitted
-2022-03-28 18:45:49,986 WARN  ProcessError occurred while running test - Error stopping process sudo<unzip_apama_project> (pid 27591) due to PermissionError: [Errno 1] Operation not permitted
+2022-03-29 17:38:17,414 WARN  ProcessError occurred while running test - Error stopping process sudo<unzip_apama_project> (pid 19756) due to PermissionError: [Errno 1] Operation not permitted
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 465, in startProcess
     process.start()
@@ -62,7 +62,7 @@ Traceback (most recent call last):
     self.wait(self.timeout)
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/__init__.py", line 263, in wait
     raise ProcessTimeout('Waiting for completion of %r timed out after %d seconds'%(self, int(timeout)))
-pysys.exceptions.ProcessTimeout: Waiting for completion of sudo<unzip_apama_project> (pid 27591) timed out after 600 seconds
+pysys.exceptions.ProcessTimeout: Waiting for completion of sudo<unzip_apama_project> (pid 19756) timed out after 600 seconds
 
 During handling of the above exception, another exception occurred:
 
@@ -84,14 +84,14 @@ Traceback (most recent call last):
     process.stop()
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/plat-unix/helper.py", line 252, in stop
     raise ProcessError("Error stopping process %r due to %s: %s"%(self, type(ex).__name__, ex))
-pysys.exceptions.ProcessError: Error stopping process sudo<unzip_apama_project> (pid 27591) due to PermissionError: [Errno 1] Operation not permitted
-2022-03-28 18:45:50,008 WARN  ProcessError: Error stopping process sudo<unzip_apama_project> (pid 27591) due to PermissionError: [Errno 1] Operation not permitted ... blocked 
-2022-03-28 18:45:50,009 DEBUG --- test cleanup
-2022-03-28 18:45:50,010 INFO  
-2022-03-28 18:45:50,010 INFO  cleanup:
-2022-03-28 18:45:50,010 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginMonSupportTest object at 0x76032530>>
-2022-03-28 18:45:50,013 INFO  Removing apama project
-2022-03-28 18:45:50,015 DEBUG Process parameters for sudo<remove_apama_project>
+pysys.exceptions.ProcessError: Error stopping process sudo<unzip_apama_project> (pid 19756) due to PermissionError: [Errno 1] Operation not permitted
+2022-03-29 17:38:17,435 WARN  ProcessError: Error stopping process sudo<unzip_apama_project> (pid 19756) due to PermissionError: [Errno 1] Operation not permitted ... blocked 
+2022-03-29 17:38:17,436 DEBUG --- test cleanup
+2022-03-29 17:38:17,437 INFO  
+2022-03-29 17:38:17,438 INFO  cleanup:
+2022-03-29 17:38:17,438 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginMonSupportTest object at 0x75fbf530>>
+2022-03-29 17:38:17,440 INFO  Removing apama project
+2022-03-29 17:38:17,443 DEBUG Process parameters for sudo<remove_apama_project>
   command line : /usr/bin/sudo rm -rf /etc/tedge/apama/project
     arg #1     : rm
     arg #2     : -rf
@@ -105,14 +105,14 @@ pysys.exceptions.ProcessError: Error stopping process sudo<unzip_apama_project> 
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-28 18:45:50,020 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 27792)
-2022-03-28 18:45:50,324 WARN  Executed sudo<remove_apama_project>, exit status 1
-2022-03-28 18:45:50,326 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_mon_support/Output/linux/remove_apama_project.err
-2022-03-28 18:45:50,329 INFO  Contents of remove_apama_project.err: 
-2022-03-28 18:45:50,330 INFO    rm: cannot remove '/etc/tedge/apama/project/logs/.nfs0000000000062c4400003052': Device or resource busy
-2022-03-28 18:45:50,331 INFO    -----
-2022-03-28 18:45:50,332 INFO  
-2022-03-28 18:45:50,355 ERROR Error while running cleanup function: 
+2022-03-29 17:38:17,448 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 19975)
+2022-03-29 17:38:17,752 WARN  Executed sudo<remove_apama_project>, exit status 1
+2022-03-29 17:38:17,754 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_mon_support/Output/linux/remove_apama_project.err
+2022-03-29 17:38:17,757 INFO  Contents of remove_apama_project.err: 
+2022-03-29 17:38:17,758 INFO    rm: cannot remove '/etc/tedge/apama/project/logs/.nfs0000000000062c4c00003aaa': Device or resource busy
+2022-03-29 17:38:17,759 INFO    -----
+2022-03-29 17:38:17,759 INFO  
+2022-03-29 17:38:17,781 ERROR Error while running cleanup function: 
 Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
     fn()
@@ -127,10 +127,10 @@ Traceback (most recent call last):
   File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1420, in abort
     raise AbortExecution(outcome, outcomeReason, callRecord)
 pysys.exceptions.AbortExecution: sudo<remove_apama_project> returned non-zero exit code 1
-2022-03-28 18:45:50,357 DEBUG ProcessUser cleanup function done.
-2022-03-28 18:45:50,363 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<remove_apama_project> returned non-zero exit code 1 (AbortExecution) ... blocked 
-2022-03-28 18:45:50,365 INFO  
-2022-03-28 18:45:50,365 INFO  Test duration: 600.80 secs
-2022-03-28 18:45:50,366 INFO  Test final outcome:  BLOCKED
-2022-03-28 18:45:50,366 INFO  Test outcome reason: ProcessError: Error stopping process sudo<unzip_apama_project> (pid 27591) due to PermissionError: [Errno 1] Operation not permitted (+3 other failures)
-2022-03-28 18:45:50,366 INFO  
+2022-03-29 17:38:17,783 DEBUG ProcessUser cleanup function done.
+2022-03-29 17:38:17,789 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<remove_apama_project> returned non-zero exit code 1 (AbortExecution) ... blocked 
+2022-03-29 17:38:17,790 INFO  
+2022-03-29 17:38:17,791 INFO  Test duration: 600.80 secs
+2022-03-29 17:38:17,791 INFO  Test final outcome:  BLOCKED
+2022-03-29 17:38:17,792 INFO  Test outcome reason: ProcessError: Error stopping process sudo<unzip_apama_project> (pid 19756) due to PermissionError: [Errno 1] Operation not permitted (+3 other failures)
+2022-03-29 17:38:17,792 INFO  
