@@ -1,4 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="local_mqtt_pub_sub_retain" skipped="0" tests="1" time="4.65" timestamp="2022-03-30T08:15:41">
-	<testcase classname="MqttPublishWithRetain" name="local_mqtt_pub_sub_retain"/>
+<testsuite failures="1" name="local_mqtt_pub_sub_retain" skipped="0" tests="1" time="4.83" timestamp="2022-04-04T08:17:55">
+	<testcase classname="MqttPublishWithRetain" name="local_mqtt_pub_sub_retain">
+		<failure message="FAILED: Grep on temp_sensor_sub.out contains &quot;\[test/alarms/temp_sensor\] alarm msg 2&quot; (+1 other failures)" type="FAILED"/>
+		<system-out>08:17:51 DEBUG deletedir failed to update permissions and delete /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux on this attempt: [Errno 2] No such file or directory: '/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux'
+08:17:51 INFO  ==============================================================
+08:17:51 INFO  Id:    local_mqtt_pub_sub_retain
+08:17:51 INFO  Dir:   local_mqtt/
+08:17:51 INFO  Title: Validate local publishing with retain flag
+08:17:51 DEBUG Execution order hint: 0.0
+08:17:51 INFO  ==============================================================
+08:17:51 DEBUG --- test execute
+08:17:51 DEBUG Process parameters for tedge&lt;pub_to_set_alarm&gt;
+  command line : /usr/bin/tedge mqtt pub --retain --qos 1 test/alarms/temp_sensor 'alarm msg 1'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : --retain
+    arg #4     : --qos
+    arg #5     : 1
+    arg #6     : test/alarms/temp_sensor
+    arg #7     : alarm msg 1
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_set_alarm.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_set_alarm.err
+  environment  : HOME=/home/pi
+08:17:51 DEBUG Waiting up to 600 secs for process tedge&lt;pub_to_set_alarm&gt; (pid 13048)
+08:17:51 INFO  Executed tedge&lt;pub_to_set_alarm&gt;, exit status 0
+08:17:51 DEBUG Process parameters for tedge&lt;pub_to_set_alarm&gt;
+  command line : /usr/bin/tedge mqtt pub --retain --qos 1 test/alarms/temp_sensor 'alarm msg 2'
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : --retain
+    arg #4     : --qos
+    arg #5     : 1
+    arg #6     : test/alarms/temp_sensor
+    arg #7     : alarm msg 2
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_set_alarm.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_set_alarm.err
+  environment  : HOME=/home/pi
+08:17:51 DEBUG Waiting up to 600 secs for process tedge&lt;pub_to_set_alarm&gt; (pid 13049)
+08:17:51 INFO  Executed tedge&lt;pub_to_set_alarm&gt;, exit status 0
+08:17:52 DEBUG Process parameters for tedge&lt;temp_sensor_sub&gt;
+  command line : /usr/bin/tedge mqtt sub 'test/alarms/#'
+    arg #1     : mqtt
+    arg #2     : sub
+    arg #3     : test/alarms/#
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_sub.err
+  environment  : HOME=/home/pi
+08:17:52 INFO  Started tedge&lt;temp_sensor_sub&gt; with process id 13050
+08:17:52 DEBUG Process parameters for tedge&lt;pub_to_clear_alarm&gt;
+  command line : /usr/bin/tedge mqtt pub --retain --qos 1 test/alarms/temp_sensor ''
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : --retain
+    arg #4     : --qos
+    arg #5     : 1
+    arg #6     : test/alarms/temp_sensor
+    arg #7     : 
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_clear_alarm.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_clear_alarm.err
+  environment  : HOME=/home/pi
+08:17:52 DEBUG Waiting up to 600 secs for process tedge&lt;pub_to_clear_alarm&gt; (pid 13051)
+08:17:52 INFO  Executed tedge&lt;pub_to_clear_alarm&gt;, exit status 0
+08:17:53 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+08:17:53 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 13052)
+08:17:54 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+08:17:54 DEBUG Process parameters for tedge&lt;pub_to_clear_alarm&gt;
+  command line : /usr/bin/tedge mqtt pub --retain --qos 1 test/alarms/temp_sensor ''
+    arg #1     : mqtt
+    arg #2     : pub
+    arg #3     : --retain
+    arg #4     : --qos
+    arg #5     : 1
+    arg #6     : test/alarms/temp_sensor
+    arg #7     : 
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_clear_alarm.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/pub_to_clear_alarm.err
+  environment  : HOME=/home/pi
+08:17:54 DEBUG Waiting up to 600 secs for process tedge&lt;pub_to_clear_alarm&gt; (pid 13054)
+08:17:54 INFO  Executed tedge&lt;pub_to_clear_alarm&gt;, exit status 0
+08:17:54 DEBUG Process parameters for tedge&lt;temp_sensor_empty_message&gt;
+  command line : /usr/bin/tedge mqtt sub 'test/alarms/#'
+    arg #1     : mqtt
+    arg #2     : sub
+    arg #3     : test/alarms/#
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_empty_message.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_empty_message.err
+  environment  : HOME=/home/pi
+08:17:54 INFO  Started tedge&lt;temp_sensor_empty_message&gt; with process id 13055
+08:17:55 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/kill_out.err
+  environment  : HOME=/home/pi
+08:17:55 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 13056)
+08:17:55 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+08:17:55 DEBUG --- test validate
+08:17:55 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_sub.out
+08:17:55 WARN  Grep on temp_sensor_sub.out contains &quot;\[test/alarms/temp_sensor\] alarm msg 2&quot; ... failed [run.py:104]
+08:17:55 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_sub.out
+08:17:55 WARN  Grep on temp_sensor_sub.out contains &quot;\[test/alarms/temp_sensor\] &quot; ... failed [run.py:105]
+08:17:55 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_pub_sub_retain/Output/linux/temp_sensor_empty_message.out
+08:17:55 INFO  Grep on file temp_sensor_empty_message.out ... passed
+08:17:55 DEBUG --- test cleanup
+08:17:55 DEBUG ProcessUser cleanup function done.
+08:17:55 INFO  
+08:17:55 INFO  Test duration: 4.83 secs
+08:17:55 INFO  Test final outcome:  FAILED
+08:17:55 INFO  Test outcome reason: Grep on temp_sensor_sub.out contains &quot;\[test/alarms/temp_sensor\] alarm msg 2&quot; (+1 other failures)
+08:17:55 INFO  
+</system-out>
+	</testcase>
 </testsuite>
