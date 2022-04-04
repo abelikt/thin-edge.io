@@ -1,56 +1,117 @@
-2022-03-29 17:37:26,127 INFO  ==============================================================
-2022-03-29 17:37:26,128 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_remove
-2022-03-29 17:37:26,128 INFO  Dir:   plugin_apama/
-2022-03-29 17:37:26,129 INFO  Title: Validate apama plugin remove
-2022-03-29 17:37:26,129 DEBUG Execution order hint: 0.0
-2022-03-29 17:37:26,130 INFO  ==============================================================
-2022-03-29 17:37:26,190 WARN  Assertion that path exists=False for "/etc/tedge/apama/project" ... failed 
-2022-03-29 17:37:26,190 WARN  Aborted test due to FAILED outcome
-2022-03-29 17:37:26,212 DEBUG --- test cleanup
-2022-03-29 17:37:26,213 INFO  
-2022-03-29 17:37:26,213 INFO  cleanup:
-2022-03-29 17:37:26,214 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginRemoveTest object at 0x75f8a990>>
-2022-03-29 17:37:26,214 INFO  Removing apama project
-2022-03-29 17:37:26,215 DEBUG Process parameters for sudo<remove_apama_project>
-  command line : /usr/bin/sudo rm -rf /etc/tedge/apama/project
-    arg #1     : rm
-    arg #2     : -rf
-    arg #3     : /etc/tedge/apama/project
+2022-03-30 09:06:28,994 INFO  ==============================================================
+2022-03-30 09:06:28,995 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_remove
+2022-03-30 09:06:28,995 INFO  Dir:   plugin_apama/
+2022-03-30 09:06:28,996 INFO  Title: Validate apama plugin remove
+2022-03-30 09:06:28,996 DEBUG Execution order hint: 0.0
+2022-03-30 09:06:28,997 INFO  ==============================================================
+2022-03-30 09:06:29,001 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-03-30 09:06:29,003 DEBUG Process parameters for sudo<create_project_dir>
+  command line : /usr/bin/sudo mkdir -p /etc/tedge/apama
+    arg #1     : mkdir
+    arg #2     : -p
+    arg #3     : /etc/tedge/apama
   working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/remove_apama_project.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/remove_apama_project.err
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/create_project_dir.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/create_project_dir.err
   environment  : LD_LIBRARY_PATH=/usr/lib
   environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
                    #1  /bin
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 17:37:26,220 DEBUG Waiting up to 600 secs for process sudo<remove_apama_project> (pid 31734)
-2022-03-29 17:37:26,525 WARN  Executed sudo<remove_apama_project>, exit status 1
-2022-03-29 17:37:26,526 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/remove_apama_project.err
-2022-03-29 17:37:26,529 INFO  Contents of remove_apama_project.err: 
-2022-03-29 17:37:26,530 INFO    rm: cannot remove '/etc/tedge/apama/project/logs/.nfs000000000006136800003a76': Device or resource busy
-2022-03-29 17:37:26,531 INFO    -----
-2022-03-29 17:37:26,532 INFO  
-2022-03-29 17:37:26,555 ERROR Error while running cleanup function: 
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
-    fn()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/environment_apama_plugin.py", line 136, in cleanup_project
-    self.remove_project()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/environment_apama_plugin.py", line 89, in remove_project
-    stdouterr="remove_apama_project"
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 482, in startProcess
-    abortOnError=abortOnError)
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1401, in addOutcome
-    self.abort(outcome, outcomeReason, callRecord)
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1420, in abort
-    raise AbortExecution(outcome, outcomeReason, callRecord)
-pysys.exceptions.AbortExecution: sudo<remove_apama_project> returned non-zero exit code 1
-2022-03-29 17:37:26,558 DEBUG ProcessUser cleanup function done.
-2022-03-29 17:37:26,564 WARN  Cleanup failed with 1 errors: Cleanup function failed: sudo<remove_apama_project> returned non-zero exit code 1 (AbortExecution) ... blocked 
-2022-03-29 17:37:26,566 INFO  
-2022-03-29 17:37:26,567 INFO  Test duration: 0.44 secs
-2022-03-29 17:37:26,567 INFO  Test final outcome:  BLOCKED
-2022-03-29 17:37:26,568 INFO  Test outcome reason: sudo<remove_apama_project> returned non-zero exit code 1 (+2 other failures)
-2022-03-29 17:37:26,569 INFO  
+2022-03-30 09:06:29,008 DEBUG Waiting up to 600 secs for process sudo<create_project_dir> (pid 5298)
+2022-03-30 09:06:29,324 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-03-30 09:06:29,327 DEBUG Process parameters for sudo<unzip_apama_project>
+  command line : /usr/bin/sudo unzip /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip -d /tmp/tedge_apama_project
+    arg #1     : unzip
+    arg #2     : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/Input/quickstart.zip
+    arg #3     : -d
+    arg #4     : /tmp/tedge_apama_project
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/unzip_apama_project.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/unzip_apama_project.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-30 09:06:29,334 DEBUG Waiting up to 600 secs for process sudo<unzip_apama_project> (pid 5300)
+2022-03-30 09:06:29,689 INFO  Executed sudo<unzip_apama_project>, exit status 0
+2022-03-30 09:06:29,691 DEBUG Process parameters for sudo<move_apama_project>
+  command line : /usr/bin/sudo mv /tmp/tedge_apama_project/project /etc/tedge/apama/project
+    arg #1     : mv
+    arg #2     : /tmp/tedge_apama_project/project
+    arg #3     : /etc/tedge/apama/project
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/move_apama_project.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/move_apama_project.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-30 09:06:29,697 DEBUG Waiting up to 600 secs for process sudo<move_apama_project> (pid 5302)
+2022-03-30 09:06:30,002 INFO  Executed sudo<move_apama_project>, exit status 0
+2022-03-30 09:06:30,004 DEBUG Process parameters for sudo<restart_apama_service>
+  command line : /usr/bin/sudo service apama restart
+    arg #1     : service
+    arg #2     : apama
+    arg #3     : restart
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/restart_apama_service.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/restart_apama_service.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-30 09:06:30,011 DEBUG Waiting up to 600 secs for process sudo<restart_apama_service> (pid 5304)
+2022-03-30 09:06:30,517 INFO  Executed sudo<restart_apama_service>, exit status 0
+2022-03-30 09:06:30,518 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
+2022-03-30 09:06:30,519 DEBUG --- test execute
+2022-03-30 09:06:30,520 DEBUG Process parameters for sudo<plugin_remove>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apama remove QuickStart::project
+    arg #1     : /etc/tedge/sm-plugins/apama
+    arg #2     : remove
+    arg #3     : QuickStart::project
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/plugin_remove.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/plugin_remove.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-30 09:06:30,524 DEBUG Waiting up to 600 secs for process sudo<plugin_remove> (pid 5320)
+2022-03-30 09:06:39,249 INFO  Executed sudo<plugin_remove>, exit status 0
+2022-03-30 09:06:39,251 DEBUG --- test validate
+2022-03-30 09:06:39,252 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-03-30 09:06:39,258 DEBUG --- test cleanup
+2022-03-30 09:06:39,259 INFO  
+2022-03-30 09:06:39,259 INFO  cleanup:
+2022-03-30 09:06:39,260 DEBUG Running registered cleanup function: <bound method ApamaPlugin.cleanup_project of <ApamaPluginRemoveTest object at 0x75fe09b0>>
+2022-03-30 09:06:39,262 DEBUG Process parameters for sudo<remove_apama_tmp_dir>
+  command line : /usr/bin/sudo rm -rf /tmp/tedge_apama_project
+    arg #1     : rm
+    arg #2     : -rf
+    arg #3     : /tmp/tedge_apama_project
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/remove_apama_tmp_dir.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_remove/Output/linux/remove_apama_tmp_dir.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-03-30 09:06:39,268 DEBUG Waiting up to 600 secs for process sudo<remove_apama_tmp_dir> (pid 5382)
+2022-03-30 09:06:39,573 INFO  Executed sudo<remove_apama_tmp_dir>, exit status 0
+2022-03-30 09:06:39,574 DEBUG ProcessUser cleanup function done.
+2022-03-30 09:06:39,577 INFO  
+2022-03-30 09:06:39,577 INFO  Test duration: 10.59 secs
+2022-03-30 09:06:39,578 INFO  Test final outcome:  PASSED
+2022-03-30 09:06:39,579 INFO  

@@ -1,10 +1,10 @@
-2022-03-29 16:51:48,698 INFO  ==============================================================
-2022-03-29 16:51:48,699 INFO  Id:    tedge_mapper_az_without_timestamp
-2022-03-29 16:51:48,700 INFO  Dir:   tedge_mapper_az/
-2022-03-29 16:51:48,700 INFO  Title: Validate the Azure Mapper that publishes a Thin Edge JSON message without timestamp on az/messages/events/ when it receives a valid JSON message on tedge/measurements and az.mapper.timestamp is configured false
-2022-03-29 16:51:48,700 DEBUG Execution order hint: 0.0
-2022-03-29 16:51:48,701 INFO  ==============================================================
-2022-03-29 16:51:48,706 DEBUG Process parameters for sudo<tedge_temp>
+2022-03-30 08:29:39,731 INFO  ==============================================================
+2022-03-30 08:29:39,731 INFO  Id:    tedge_mapper_az_without_timestamp
+2022-03-30 08:29:39,732 INFO  Dir:   tedge_mapper_az/
+2022-03-30 08:29:39,733 INFO  Title: Validate the Azure Mapper that publishes a Thin Edge JSON message without timestamp on az/messages/events/ when it receives a valid JSON message on tedge/measurements and az.mapper.timestamp is configured false
+2022-03-30 08:29:39,733 DEBUG Execution order hint: 0.0
+2022-03-30 08:29:39,734 INFO  ==============================================================
+2022-03-30 08:29:39,760 DEBUG Process parameters for sudo<tedge_temp>
   command line : /usr/bin/sudo tedge config set az.mapper.timestamp false
     arg #1     : tedge
     arg #2     : config
@@ -20,9 +20,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:48,712 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 17895)
-2022-03-29 16:51:48,994 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-03-29 16:51:48,996 DEBUG Process parameters for sudo<tedge_mapper_az>
+2022-03-30 08:29:39,767 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 23317)
+2022-03-30 08:29:40,072 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-03-30 08:29:40,074 DEBUG Process parameters for sudo<tedge_mapper_az>
   command line : /usr/bin/sudo systemctl start tedge-mapper-az
     arg #1     : systemctl
     arg #2     : start
@@ -36,10 +36,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:49,001 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 17897)
-2022-03-29 16:51:49,358 INFO  Executed sudo<tedge_mapper_az>, exit status 0
-2022-03-29 16:51:49,358 DEBUG --- test execute
-2022-03-29 16:51:49,360 DEBUG Process parameters for sudo<tedge_sub>
+2022-03-30 08:29:40,082 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 23319)
+2022-03-30 08:29:40,387 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-03-30 08:29:40,387 DEBUG --- test execute
+2022-03-30 08:29:40,392 DEBUG Process parameters for sudo<tedge_sub>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic az/messages/events/
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -55,8 +55,8 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:49,366 INFO  Started sudo<tedge_sub> with process id 17904
-2022-03-29 16:51:49,470 DEBUG Process parameters for sudo<tedge_temp>
+2022-03-30 08:29:40,398 INFO  Started sudo<tedge_sub> with process id 23322
+2022-03-30 08:29:40,502 DEBUG Process parameters for sudo<tedge_temp>
   command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{"temperature": 12}'
     arg #1     : /usr/bin/tedge
     arg #2     : mqtt
@@ -72,9 +72,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:49,475 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 17905)
-2022-03-29 16:51:49,780 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-03-29 16:51:49,782 DEBUG Process parameters for sudo<kill_out>
+2022-03-30 08:29:40,507 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 23327)
+2022-03-30 08:29:40,812 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-03-30 08:29:40,813 DEBUG Process parameters for sudo<kill_out>
   command line : /usr/bin/sudo killall tedge
     arg #1     : killall
     arg #2     : tedge
@@ -87,18 +87,18 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:49,789 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 17908)
-2022-03-29 16:51:50,095 INFO  Executed sudo<kill_out>, exit status 0
-2022-03-29 16:51:50,096 DEBUG --- test validate
-2022-03-29 16:51:50,100 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
-2022-03-29 16:51:50,101 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_sub.out
-2022-03-29 16:51:50,105 INFO  Grep on file tedge_sub.out ... passed
-2022-03-29 16:51:50,111 DEBUG --- test cleanup
-2022-03-29 16:51:50,113 INFO  
-2022-03-29 16:51:50,113 INFO  cleanup:
-2022-03-29 16:51:50,114 DEBUG Running registered cleanup function: <bound method TedgeMapperAzWithoutTimestamp.mapper_cleanup of <TedgeMapperAzWithoutTimestamp object at 0x75c4ed30>>
-2022-03-29 16:51:50,114 INFO  mapper_cleanup
-2022-03-29 16:51:50,115 DEBUG Process parameters for sudo<tedge_mapper_az>
+2022-03-30 08:29:40,820 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 23330)
+2022-03-30 08:29:41,125 INFO  Executed sudo<kill_out>, exit status 0
+2022-03-30 08:29:41,126 DEBUG --- test validate
+2022-03-30 08:29:41,129 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
+2022-03-30 08:29:41,130 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_sub.out
+2022-03-30 08:29:41,134 INFO  Grep on file tedge_sub.out ... passed
+2022-03-30 08:29:41,139 DEBUG --- test cleanup
+2022-03-30 08:29:41,140 INFO  
+2022-03-30 08:29:41,140 INFO  cleanup:
+2022-03-30 08:29:41,140 DEBUG Running registered cleanup function: <bound method TedgeMapperAzWithoutTimestamp.mapper_cleanup of <TedgeMapperAzWithoutTimestamp object at 0x75cdd370>>
+2022-03-30 08:29:41,141 INFO  mapper_cleanup
+2022-03-30 08:29:41,142 DEBUG Process parameters for sudo<tedge_mapper_az>
   command line : /usr/bin/sudo systemctl stop tedge-mapper-az
     arg #1     : systemctl
     arg #2     : stop
@@ -112,9 +112,9 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:50,120 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 17910)
-2022-03-29 16:51:50,475 INFO  Executed sudo<tedge_mapper_az>, exit status 0
-2022-03-29 16:51:50,476 DEBUG Process parameters for sudo<tedge_temp>
+2022-03-30 08:29:41,149 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 23332)
+2022-03-30 08:29:41,456 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-03-30 08:29:41,457 DEBUG Process parameters for sudo<tedge_temp>
   command line : /usr/bin/sudo tedge config unset az.mapper.timestamp
     arg #1     : tedge
     arg #2     : config
@@ -129,10 +129,10 @@
                    #2  /usr/bin
                    #3  /usr/sbin
                    #4  /usr/local/bin
-2022-03-29 16:51:50,481 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 17912)
-2022-03-29 16:51:50,786 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-03-29 16:51:50,787 DEBUG ProcessUser cleanup function done.
-2022-03-29 16:51:50,790 INFO  
-2022-03-29 16:51:50,790 INFO  Test duration: 2.09 secs
-2022-03-29 16:51:50,791 INFO  Test final outcome:  PASSED
-2022-03-29 16:51:50,792 INFO  
+2022-03-30 08:29:41,462 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 23334)
+2022-03-30 08:29:41,767 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-03-30 08:29:41,768 DEBUG ProcessUser cleanup function done.
+2022-03-30 08:29:41,772 INFO  
+2022-03-30 08:29:41,772 INFO  Test duration: 2.04 secs
+2022-03-30 08:29:41,774 INFO  Test final outcome:  PASSED
+2022-03-30 08:29:41,775 INFO  
