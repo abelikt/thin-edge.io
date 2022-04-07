@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite failures="1" name="monitoring_smaller_interval" skipped="0" tests="1" time="15.4" timestamp="2022-04-07T16:15:24">
+	<testcase classname="MonitoringSmallInterval" name="monitoring_smaller_interval">
+		<failure message="BLOCKED: TypeError: 'int' object is not subscriptable" type="BLOCKED"/>
+		<system-out>16:15:09 DEBUG deletedir failed to update permissions and delete /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux on this attempt: [Errno 2] No such file or directory: '/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux'
+16:15:09 INFO  ==============================================================
+16:15:09 INFO  Id:    monitoring_smaller_interval
+16:15:09 INFO  Dir:   monitoring/
+16:15:09 INFO  Title: Validate the tedge dm agent messages that are produced with smaller sampling interval than the batching window. Here the simulated collectd messages are used
+16:15:09 DEBUG Execution order hint: 0.0
+16:15:09 INFO  ==============================================================
+16:15:09 DEBUG Process parameters for sudo&lt;collectd&gt;
+  command line : /usr/bin/sudo systemctl stop collectd
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:09 DEBUG Waiting up to 600 secs for process sudo&lt;collectd&gt; (pid 30364)
+16:15:10 INFO  Executed sudo&lt;collectd&gt;, exit status 0
+16:15:10 DEBUG Process parameters for sudo&lt;collectd_mapper&gt;
+  command line : /usr/bin/sudo systemctl start tedge-mapper-collectd
+    arg #1     : systemctl
+    arg #2     : start
+    arg #3     : tedge-mapper-collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:10 DEBUG Waiting up to 600 secs for process sudo&lt;collectd_mapper&gt; (pid 30366)
+16:15:10 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
+16:15:10 DEBUG --- test execute
+16:15:10 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic 'tedge/#'
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : sub
+    arg #4     : --no-topic
+    arg #5     : tedge/#
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_sub.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_sub.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:10 INFO  Started sudo&lt;tedge_sub&gt; with process id 30373
+16:15:10 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348110.9244735:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348110.9244735:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:10 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30374)
+16:15:11 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:11 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348111.4459288:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348111.4459288:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:11 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30377)
+16:15:11 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:12 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348112.0629563:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348112.0629563:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:12 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30379)
+16:15:12 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:12 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348112.580271:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348112.580271:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:12 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30381)
+16:15:13 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:13 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348113.1981733:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348113.1981733:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30383)
+16:15:13 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:13 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348113.7153776:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348113.7153776:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:13 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30385)
+16:15:14 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:14 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348114.332503:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348114.332503:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:14 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30387)
+16:15:14 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:14 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348114.899996:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348114.899996:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:14 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30389)
+16:15:15 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:15 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348115.5182312:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348115.5182312:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:15 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30391)
+16:15:16 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:16 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348116.0358362:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348116.0358362:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30393)
+16:15:16 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:16 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348116.8534143:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348116.8534143:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:16 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30395)
+16:15:17 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:17 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348117.3705325:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348117.3705325:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30397)
+16:15:17 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:17 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348117.9878032:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348117.9878032:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:17 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30399)
+16:15:18 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:18 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348118.5050619:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348118.5050619:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:18 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30401)
+16:15:19 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:19 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348119.1219537:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348119.1219537:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:19 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30403)
+16:15:19 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:19 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348119.6395514:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348119.6395514:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:19 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30405)
+16:15:20 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:20 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348120.2568882:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348120.2568882:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:20 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30407)
+16:15:20 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:20 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348120.773908:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348120.773908:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:20 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30409)
+16:15:21 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:21 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649348121.3914194:25.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/temperature/temp
+    arg #5     : 1649348121.3914194:25.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_temp.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:21 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 30411)
+16:15:21 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+16:15:21 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
+  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649348121.9086592:500.5
+    arg #1     : /usr/bin/tedge
+    arg #2     : mqtt
+    arg #3     : pub
+    arg #4     : collectd/host/pressure/pres
+    arg #5     : 1649348121.9086592:500.5
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/tedge_pres.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:21 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 30413)
+16:15:22 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+16:15:23 DEBUG Process parameters for sudo&lt;kill_out&gt;
+  command line : /usr/bin/sudo killall tedge
+    arg #1     : killall
+    arg #2     : tedge
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/kill_out.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/kill_out.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:23 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 30415)
+16:15:24 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+16:15:24 DEBUG --- test validate
+16:15:24 INFO  0
+
+16:15:24 WARN  TypeError occurred while running test - 'int' object is not subscriptable
+Traceback (most recent call last):
+  File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1296, in __call__
+    self.testObj.validate()
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/run.py&quot;, line 104, in validate
+    collectd_msg_validation_result=self.validate_json(),
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/run.py&quot;, line 114, in validate_json
+    if not self.validate_time():
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/run.py&quot;, line 134, in validate_time
+    if self.js_msg[&quot;time&quot;]:
+TypeError: 'int' object is not subscriptable
+16:15:24 WARN  TypeError: 'int' object is not subscriptable ... blocked 
+16:15:24 DEBUG --- test cleanup
+16:15:24 INFO  
+16:15:24 INFO  cleanup:
+16:15:24 DEBUG Running registered cleanup function: &lt;bound method MonitoringSmallInterval.monitoring_cleanup of &lt;MonitoringSmallInterval object at 0x75ccb3d0&gt;&gt;
+16:15:24 INFO  monitoring_cleanup
+16:15:24 DEBUG Process parameters for sudo&lt;collectd_mapper&gt;
+  command line : /usr/bin/sudo systemctl stop tedge-mapper-collectd
+    arg #1     : systemctl
+    arg #2     : stop
+    arg #3     : tedge-mapper-collectd
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd_mapper.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_smaller_interval/Output/linux/collectd_mapper.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+16:15:24 DEBUG Waiting up to 600 secs for process sudo&lt;collectd_mapper&gt; (pid 30417)
+16:15:24 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
+16:15:24 DEBUG ProcessUser cleanup function done.
+16:15:24 INFO  
+16:15:24 INFO  Test duration: 15.40 secs
+16:15:24 INFO  Test final outcome:  BLOCKED
+16:15:24 INFO  Test outcome reason: TypeError: 'int' object is not subscriptable
+16:15:24 INFO  
+</system-out>
+	</testcase>
+</testsuite>

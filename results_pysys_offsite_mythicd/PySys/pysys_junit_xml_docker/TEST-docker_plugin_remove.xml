@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite failures="1" name="docker_plugin_remove" skipped="0" tests="1" time="4.6" timestamp="2022-04-07T17:09:17">
+	<testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove">
+		<failure message="BLOCKED: sudo&lt;docker_run&gt; returned non-zero exit code 125" type="BLOCKED"/>
+		<system-out>17:09:12 INFO  ==============================================================
+17:09:12 INFO  Id:    docker_plugin_remove
+17:09:12 INFO  Dir:   plugin_docker/
+17:09:12 INFO  Title: Validate docker plugin remove
+17:09:12 DEBUG Execution order hint: 0.0
+17:09:12 INFO  ==============================================================
+17:09:12 DEBUG Process parameters for sudo&lt;docker_images&gt;
+  command line : /usr/bin/sudo docker images
+    arg #1     : docker
+    arg #2     : images
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+17:09:12 DEBUG Waiting up to 600 secs for process sudo&lt;docker_images&gt; (pid 8942)
+17:09:13 INFO  Executed sudo&lt;docker_images&gt;, exit status 0
+17:09:13 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out
+17:09:13 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out ... passed
+17:09:13 DEBUG Process parameters for sudo&lt;docker_run&gt;
+  command line : /usr/bin/sudo docker run -d registry
+    arg #1     : docker
+    arg #2     : run
+    arg #3     : -d
+    arg #4     : registry
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_run.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_run.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+17:09:13 DEBUG Waiting up to 600 secs for process sudo&lt;docker_run&gt; (pid 8954)
+17:09:15 WARN  Executed sudo&lt;docker_run&gt;, exit status 125
+17:09:15 DEBUG Opening file using encoding=UTF-8: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_run.err
+17:09:15 INFO  Contents of docker_run.err: 
+  Unable to find image 'registry:latest' locally
+  docker: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit.
+  See 'docker run --help'.
+  -----
+
+17:09:15 WARN  sudo&lt;docker_run&gt; returned non-zero exit code 125 ... blocked 
+17:09:15 WARN  Aborted test due to BLOCKED outcome
+17:09:15 DEBUG --- test cleanup
+17:09:15 INFO  
+17:09:15 INFO  cleanup:
+17:09:15 DEBUG Running registered cleanup function: &lt;bound method DockerPlugin.cleanup_containers of &lt;DockerPluginRemoveTest object at 0x76000cd0&gt;&gt;
+17:09:15 INFO  Removing containers scheduled to be cleaned up: ['', '']
+17:09:15 DEBUG Process parameters for sudo&lt;containers_for_cleanup&gt;
+  command line : /usr/bin/sudo docker rm -f '' ''
+    arg #1     : docker
+    arg #2     : rm
+    arg #3     : -f
+    arg #4     : 
+    arg #5     : 
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/containers_for_cleanup.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/containers_for_cleanup.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+17:09:15 DEBUG Waiting up to 600 secs for process sudo&lt;containers_for_cleanup&gt; (pid 8971)
+17:09:16 WARN  Executed sudo&lt;containers_for_cleanup&gt;, exit status 1
+17:09:16 DEBUG Running registered cleanup function: &lt;bound method DockerPlugin.cleanup_images of &lt;DockerPluginRemoveTest object at 0x76000cd0&gt;&gt;
+17:09:16 INFO  Removing images scheduled to be cleaned up: ['registry', 'registry:2.7.1']
+17:09:16 DEBUG Process parameters for sudo&lt;containers_for_cleanup&gt;
+  command line : /usr/bin/sudo docker rmi -f registry registry:2.7.1
+    arg #1     : docker
+    arg #2     : rmi
+    arg #3     : -f
+    arg #4     : registry
+    arg #5     : registry:2.7.1
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/containers_for_cleanup.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/containers_for_cleanup.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+17:09:16 DEBUG Waiting up to 600 secs for process sudo&lt;containers_for_cleanup&gt; (pid 8981)
+17:09:17 INFO  Executed sudo&lt;containers_for_cleanup&gt;, exit status 0
+17:09:17 DEBUG ProcessUser cleanup function done.
+17:09:17 INFO  
+17:09:17 INFO  Test duration: 4.60 secs
+17:09:17 INFO  Test final outcome:  BLOCKED
+17:09:17 INFO  Test outcome reason: sudo&lt;docker_run&gt; returned non-zero exit code 125
+17:09:17 INFO  
+</system-out>
+	</testcase>
+</testsuite>

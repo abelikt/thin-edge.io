@@ -1,0 +1,106 @@
+2022-04-07 16:13:54,751 INFO  ==============================================================
+2022-04-07 16:13:54,752 INFO  Id:    mqtt_port_set
+2022-04-07 16:13:54,753 INFO  Dir:   misc_features/
+2022-04-07 16:13:54,754 INFO  Title: mqtt port set
+2022-04-07 16:13:54,755 DEBUG Execution order hint: 0.0
+2022-04-07 16:13:54,756 INFO  ==============================================================
+2022-04-07 16:13:54,761 DEBUG --- test execute
+2022-04-07 16:13:54,763 DEBUG Process parameters for sudo<mqtt_port_set>
+  command line : /usr/bin/sudo /usr/bin/tedge config set mqtt.port 8880
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : set
+    arg #4     : mqtt.port
+    arg #5     : 8880
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/mqtt_port_set.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/mqtt_port_set.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:13:54,771 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_set> (pid 26260)
+2022-04-07 16:13:55,530 INFO  Executed sudo<mqtt_port_set>, exit status 0
+2022-04-07 16:13:55,532 DEBUG --- test validate
+2022-04-07 16:13:55,534 DEBUG Process parameters for sudo<tedge_get>
+  command line : /usr/bin/sudo /usr/bin/tedge config list
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_get.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_get.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:13:55,541 DEBUG Waiting up to 600 secs for process sudo<tedge_get> (pid 26262)
+2022-04-07 16:13:56,049 INFO  Executed sudo<tedge_get>, exit status 0
+2022-04-07 16:13:56,050 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_get.out
+2022-04-07 16:13:56,055 DEBUG Grep on file tedge_get.out successfully matched expression "mqtt.port=8880" with line: 'mqtt.port=8880\n'
+2022-04-07 16:13:56,056 INFO  Grep on file tedge_get.out ... passed
+2022-04-07 16:13:56,057 DEBUG Performing regex contains=True grep on file: /etc/tedge/tedge.toml
+2022-04-07 16:13:56,061 DEBUG Grep on file /etc/tedge/tedge.toml successfully matched expression "port = 8880" with line: 'port = 8880\n'
+2022-04-07 16:13:56,063 INFO  Grep on file /etc/tedge/tedge.toml ... passed
+2022-04-07 16:13:56,068 DEBUG --- test cleanup
+2022-04-07 16:13:56,069 INFO  
+2022-04-07 16:13:56,069 INFO  cleanup:
+2022-04-07 16:13:56,070 DEBUG Running registered cleanup function: <bound method MqttPortSet.mqtt_cleanup of <MqttPortSet object at 0x76081fd0>>
+2022-04-07 16:13:56,072 DEBUG Process parameters for sudo<mqtt_port_unset>
+  command line : /usr/bin/sudo /usr/bin/tedge config unset mqtt.port
+    arg #1     : /usr/bin/tedge
+    arg #2     : config
+    arg #3     : unset
+    arg #4     : mqtt.port
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/mqtt_port_unset.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/mqtt_port_unset.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:13:56,080 DEBUG Waiting up to 600 secs for process sudo<mqtt_port_unset> (pid 26264)
+2022-04-07 16:13:56,587 INFO  Executed sudo<mqtt_port_unset>, exit status 0
+2022-04-07 16:13:56,701 DEBUG Process parameters for sudo<tedge_connect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge connect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : connect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_connect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_connect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:13:56,709 DEBUG Waiting up to 600 secs for process sudo<tedge_connect_c8y> (pid 26269)
+2022-04-07 16:14:11,283 INFO  Executed sudo<tedge_connect_c8y>, exit status 0, duration 14 secs
+2022-04-07 16:14:11,404 DEBUG Process parameters for sudo<tedge_disconnect_c8y>
+  command line : /usr/bin/sudo /usr/bin/tedge disconnect c8y
+    arg #1     : /usr/bin/tedge
+    arg #2     : disconnect
+    arg #3     : c8y
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_disconnect_c8y.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/misc_features/mqtt_port_set/Output/linux/tedge_disconnect_c8y.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:14:11,413 DEBUG Waiting up to 600 secs for process sudo<tedge_disconnect_c8y> (pid 26382)
+2022-04-07 16:14:15,353 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-04-07 16:14:15,354 DEBUG ProcessUser cleanup function done.
+2022-04-07 16:14:15,357 INFO  
+2022-04-07 16:14:15,358 INFO  Test duration: 20.61 secs
+2022-04-07 16:14:15,359 INFO  Test final outcome:  PASSED
+2022-04-07 16:14:15,360 INFO  

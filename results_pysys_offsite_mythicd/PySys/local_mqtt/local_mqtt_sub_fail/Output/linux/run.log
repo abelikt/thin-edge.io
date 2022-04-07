@@ -1,0 +1,61 @@
+2022-04-07 16:12:10,270 INFO  ==============================================================
+2022-04-07 16:12:10,271 INFO  Id:    local_mqtt_sub_fail
+2022-04-07 16:12:10,273 INFO  Dir:   local_mqtt/
+2022-04-07 16:12:10,274 INFO  Title: Validate local publishing when mosquitto is stopped
+2022-04-07 16:12:10,276 DEBUG Execution order hint: 0.0
+2022-04-07 16:12:10,277 INFO  ==============================================================
+2022-04-07 16:12:10,284 DEBUG Process parameters for sudo<stop>
+  command line : /usr/bin/sudo /usr/bin/systemctl stop mosquitto
+    arg #1     : /usr/bin/systemctl
+    arg #2     : stop
+    arg #3     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/stop.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/stop.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:12:10,291 DEBUG Waiting up to 600 secs for process sudo<stop> (pid 25832)
+2022-04-07 16:12:10,900 INFO  Executed sudo<stop>, exit status 0
+2022-04-07 16:12:10,901 DEBUG --- test execute
+2022-04-07 16:12:10,903 DEBUG Process parameters for tedge_sub_fail
+  command line : /usr/bin/tedge mqtt sub atopic
+    arg #1     : mqtt
+    arg #2     : sub
+    arg #3     : atopic
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/tedge_sub_fail.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/tedge_sub_fail.err
+  environment  : HOME=/home/pi
+2022-04-07 16:12:10,910 DEBUG Waiting up to 600 secs for process tedge_sub_fail (pid 25834)
+2022-04-07 16:12:11,316 INFO  Executed tedge_sub_fail, exit status 1
+2022-04-07 16:12:11,318 INFO  Assert that (value==1) with value=1 ... passed
+2022-04-07 16:12:11,319 DEBUG --- test validate
+2022-04-07 16:12:11,323 DEBUG --- test cleanup
+2022-04-07 16:12:11,325 INFO  
+2022-04-07 16:12:11,325 INFO  cleanup:
+2022-04-07 16:12:11,326 DEBUG Running registered cleanup function: <bound method PySysTest.mycleanup of <PySysTest object at 0x76019c70>>
+2022-04-07 16:12:11,328 DEBUG Process parameters for sudo<start>
+  command line : /usr/bin/sudo /usr/bin/systemctl start mosquitto
+    arg #1     : /usr/bin/systemctl
+    arg #2     : start
+    arg #3     : mosquitto
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/start.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/local_mqtt/local_mqtt_sub_fail/Output/linux/start.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:12:11,334 DEBUG Waiting up to 600 secs for process sudo<start> (pid 25835)
+2022-04-07 16:12:11,941 INFO  Executed sudo<start>, exit status 0
+2022-04-07 16:12:11,942 DEBUG ProcessUser cleanup function done.
+2022-04-07 16:12:11,946 INFO  
+2022-04-07 16:12:11,946 INFO  Test duration: 1.68 secs
+2022-04-07 16:12:11,947 INFO  Test final outcome:  PASSED
+2022-04-07 16:12:11,948 INFO  

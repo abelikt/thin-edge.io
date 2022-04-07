@@ -1,0 +1,92 @@
+2022-04-07 16:47:37,863 INFO  ==============================================================
+2022-04-07 16:47:37,864 INFO  Id:    apt_sequence_remove_with_version_fail
+2022-04-07 16:47:37,865 INFO  Dir:   plugin_apt/
+2022-04-07 16:47:37,866 INFO  Title: Validate apt plugin remove with version fails when the version not found
+2022-04-07 16:47:37,867 DEBUG Execution order hint: 0.0
+2022-04-07 16:47:37,868 INFO  ==============================================================
+2022-04-07 16:47:37,874 DEBUG Process parameters for sudo<outp_install>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt install rolldice
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : install
+    arg #3     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_install.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_install.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:47:37,881 DEBUG Waiting up to 600 secs for process sudo<outp_install> (pid 3080)
+2022-04-07 16:48:16,128 INFO  Executed sudo<outp_install>, exit status 0, duration 38 secs
+2022-04-07 16:48:16,131 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-07 16:48:16,133 DEBUG --- test execute
+2022-04-07 16:48:16,141 DEBUG Process parameters for sudo<outp_remove>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt remove rolldice --module-version 1.111111
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : remove
+    arg #3     : rolldice
+    arg #4     : --module-version
+    arg #5     : 1.111111
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_remove.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_remove.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:48:16,149 DEBUG Waiting up to 600 secs for process sudo<outp_remove> (pid 3210)
+2022-04-07 16:48:22,228 INFO  Executed sudo<outp_remove>, exit status 2
+2022-04-07 16:48:22,231 INFO  Assert that (value==2) with value=2 ... passed
+2022-04-07 16:48:22,232 DEBUG --- test validate
+2022-04-07 16:48:22,233 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_remove.err
+2022-04-07 16:48:22,238 DEBUG Grep on file outp_remove.err successfully matched expression "1.111111" with line: "E: Version '1.111111' for 'rolldice' was not found\n"
+2022-04-07 16:48:22,239 INFO  Grep on file outp_remove.err ... passed
+2022-04-07 16:48:22,241 DEBUG Process parameters for sudo<outp_check_0>
+  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
+    arg #1     : /etc/tedge/sm-plugins/apt
+    arg #2     : list
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux
+  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_check_0.out
+  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_check_0.err
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:48:22,248 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 3215)
+2022-04-07 16:48:24,815 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-04-07 16:48:24,817 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-07 16:48:24,818 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux/outp_check_0.out
+2022-04-07 16:48:24,823 DEBUG Grep on file outp_check_0.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
+2022-04-07 16:48:24,824 INFO  Grep on file outp_check_0.out ... passed
+2022-04-07 16:48:24,829 DEBUG --- test cleanup
+2022-04-07 16:48:24,831 INFO  
+2022-04-07 16:48:24,831 INFO  cleanup:
+2022-04-07 16:48:24,832 DEBUG Running registered cleanup function: <bound method AptPluginRemoveWithVersionFails.cleanup_remove_rolldice_module of <AptPluginRemoveWithVersionFails object at 0x75ddced0>>
+2022-04-07 16:48:24,834 DEBUG Process parameters for sudo
+  command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
+    arg #1     : /usr/bin/apt-get
+    arg #2     : remove
+    arg #3     : -y
+    arg #4     : rolldice
+  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove_with_version_fail/Output/linux
+  stdout       : None
+  stderr       : None
+  environment  : LD_LIBRARY_PATH=/usr/lib
+  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
+                   #1  /bin
+                   #2  /usr/bin
+                   #3  /usr/sbin
+                   #4  /usr/local/bin
+2022-04-07 16:48:24,841 DEBUG Waiting up to 600 secs for process sudo (pid 3221)
+2022-04-07 16:48:38,157 INFO  Executed sudo, exit status 0, duration 13 secs
+2022-04-07 16:48:38,159 DEBUG ProcessUser cleanup function done.
+2022-04-07 16:48:38,162 INFO  
+2022-04-07 16:48:38,163 INFO  Test duration: 60.31 secs
+2022-04-07 16:48:38,164 INFO  Test final outcome:  PASSED
+2022-04-07 16:48:38,165 INFO  
