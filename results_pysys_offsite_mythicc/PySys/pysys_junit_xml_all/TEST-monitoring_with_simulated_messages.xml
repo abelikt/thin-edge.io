@@ -1,119 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="1" name="monitoring_with_simulated_messages" skipped="0" tests="1" time="4.78" timestamp="2022-04-11T09:41:49">
+<testsuite failures="1" name="monitoring_with_simulated_messages" skipped="0" tests="1" time="4.49" timestamp="2022-04-12T08:37:03">
 	<testcase classname="MonitoringWithSimulatedMessages" name="monitoring_with_simulated_messages">
 		<failure message="BLOCKED: TypeError: 'int' object is not subscriptable" type="BLOCKED"/>
-		<system-out>09:41:45 DEBUG deletedir failed to update permissions and delete /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux on this attempt: [Errno 2] No such file or directory: '/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux'
-09:41:45 INFO  ==============================================================
-09:41:45 INFO  Id:    monitoring_with_simulated_messages
-09:41:45 INFO  Dir:   monitoring/
-09:41:45 INFO  Title: Validate the tedge dm agent messages that are produced from the simulated collectd messages
-09:41:45 DEBUG Execution order hint: 0.0
-09:41:45 INFO  ==============================================================
-09:41:45 DEBUG Process parameters for sudo&lt;collectd&gt;
-  command line : /usr/bin/sudo systemctl stop collectd
-    arg #1     : systemctl
-    arg #2     : stop
-    arg #3     : collectd
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:45 DEBUG Waiting up to 600 secs for process sudo&lt;collectd&gt; (pid 28532)
-09:41:45 INFO  Executed sudo&lt;collectd&gt;, exit status 0
-09:41:45 DEBUG Process parameters for sudo&lt;collectd_mapper&gt;
-  command line : /usr/bin/sudo systemctl start tedge-mapper-collectd
-    arg #1     : systemctl
-    arg #2     : start
-    arg #3     : tedge-mapper-collectd
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:45 DEBUG Waiting up to 600 secs for process sudo&lt;collectd_mapper&gt; (pid 28534)
-09:41:46 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
-09:41:46 DEBUG --- test execute
-09:41:46 DEBUG Process parameters for sudo&lt;tedge_sub&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic 'tedge/#'
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : --no-topic
-    arg #5     : tedge/#
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_sub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_sub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:46 INFO  Started sudo&lt;tedge_sub&gt; with process id 28537
-09:41:46 DEBUG Process parameters for sudo&lt;tedge_temp&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/temperature/temp 1649670106.400783:25.5
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : collectd/host/temperature/temp
-    arg #5     : 1649670106.400783:25.5
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_temp.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_temp.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:46 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_temp&gt; (pid 28542)
-09:41:46 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
-09:41:46 DEBUG Process parameters for sudo&lt;tedge_pres&gt;
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub collectd/host/pressure/pres 1649670106.9197245:500.5
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : collectd/host/pressure/pres
-    arg #5     : 1649670106.9197245:500.5
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_pres.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/tedge_pres.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:46 DEBUG Waiting up to 600 secs for process sudo&lt;tedge_pres&gt; (pid 28545)
-09:41:47 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
-09:41:48 DEBUG Process parameters for sudo&lt;kill_out&gt;
-  command line : /usr/bin/sudo killall tedge
-    arg #1     : killall
-    arg #2     : tedge
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:48 DEBUG Waiting up to 600 secs for process sudo&lt;kill_out&gt; (pid 28547)
-09:41:49 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
-09:41:49 DEBUG --- test validate
-09:41:49 INFO  0
+		<system-out>08:36:59 INFO  ==============================================================
+08:36:59 INFO  Id:    monitoring_with_simulated_messages
+08:36:59 INFO  Dir:   monitoring/
+08:36:59 INFO  Title: Validate the tedge dm agent messages that are produced from the simulated collectd messages
+08:36:59 INFO  ==============================================================
+08:36:59 INFO  Executed sudo&lt;collectd&gt;, exit status 0
+08:37:00 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
+08:37:00 INFO  Started sudo&lt;tedge_sub&gt; with process id 23518
+08:37:01 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+08:37:01 INFO  Executed sudo&lt;tedge_pres&gt;, exit status 0
+08:37:03 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+08:37:03 INFO  0
 
-09:41:49 WARN  TypeError occurred while running test - 'int' object is not subscriptable
+08:37:03 WARN  TypeError occurred while running test - 'int' object is not subscriptable
 Traceback (most recent call last):
   File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1296, in __call__
     self.testObj.validate()
@@ -124,34 +26,16 @@ Traceback (most recent call last):
   File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/run.py&quot;, line 127, in validate_time
     if self.js_msg[&quot;time&quot;]:
 TypeError: 'int' object is not subscriptable
-09:41:49 WARN  TypeError: 'int' object is not subscriptable ... blocked 
-09:41:49 DEBUG --- test cleanup
-09:41:49 INFO  
-09:41:49 INFO  cleanup:
-09:41:49 DEBUG Running registered cleanup function: &lt;bound method MonitoringWithSimulatedMessages.monitoring_cleanup of &lt;MonitoringWithSimulatedMessages object at 0x75da0950&gt;&gt;
-09:41:49 INFO  monitoring_cleanup
-09:41:49 DEBUG Process parameters for sudo&lt;collectd_mapper&gt;
-  command line : /usr/bin/sudo systemctl stop tedge-mapper-collectd
-    arg #1     : systemctl
-    arg #2     : stop
-    arg #3     : tedge-mapper-collectd
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/monitoring/monitoring_with_simulated_messages/Output/linux/collectd_mapper.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-09:41:49 DEBUG Waiting up to 600 secs for process sudo&lt;collectd_mapper&gt; (pid 28549)
-09:41:49 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
-09:41:49 DEBUG ProcessUser cleanup function done.
-09:41:49 INFO  
-09:41:49 INFO  Test duration: 4.78 secs
-09:41:49 INFO  Test final outcome:  BLOCKED
-09:41:49 INFO  Test outcome reason: TypeError: 'int' object is not subscriptable
-09:41:49 INFO  
+08:37:03 WARN  TypeError: 'int' object is not subscriptable ... blocked 
+08:37:03 INFO  
+08:37:03 INFO  cleanup:
+08:37:03 INFO  monitoring_cleanup
+08:37:03 INFO  Executed sudo&lt;collectd_mapper&gt;, exit status 0
+08:37:03 INFO  
+08:37:03 INFO  Test duration: 4.49 secs
+08:37:03 INFO  Test final outcome:  BLOCKED
+08:37:03 INFO  Test outcome reason: TypeError: 'int' object is not subscriptable
+08:37:03 INFO  
 </system-out>
 	</testcase>
 </testsuite>

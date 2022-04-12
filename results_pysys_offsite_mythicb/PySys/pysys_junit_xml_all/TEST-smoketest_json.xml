@@ -1,4 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="smoketest_json" skipped="0" tests="1" time="46.37" timestamp="2022-04-11T09:45:15">
-	<testcase classname="SmokeTestJson" name="smoketest_json"/>
+<testsuite failures="1" name="smoketest_json" skipped="0" tests="1" time="45.05" timestamp="2022-04-12T08:40:53">
+	<testcase classname="SmokeTestJson" name="smoketest_json">
+		<failure message="BLOCKED: python3&lt;stdout&gt; returned non-zero exit code 1" type="BLOCKED"/>
+		<system-out>08:40:08 INFO  ==============================================================
+08:40:08 INFO  Id:    smoketest_json
+08:40:08 INFO  Dir:   smoketests/
+08:40:08 INFO  Title: Smoke Test Json
+08:40:08 INFO  ==============================================================
+08:40:08 INFO  EnvironmentC8y Setup
+08:40:08 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+08:40:08 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+08:40:08 INFO  Delaying execution by 7 seconds
+08:40:29 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+08:40:30 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+08:40:31 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+08:40:31 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+08:40:48 WARN  Executed python3&lt;stdout&gt;, exit status 1
+08:40:48 INFO  Contents of stdout.out: 
+  Publishing sawtooth with delay 100ms height 20 iterations 1 template flux will cause 20 publishs.
+  Iteraton: 0
+  Execution took 2 s 2019 ms
+  Publish rate: 100.950 ms/pub
+  Publish per second: 9.906 pub/s
+  Act: Publishing values with temperature_publisher
+  Waiting 3s for values to arrive in C8y
+  Assert: Retrieving data via REST interface
+  Gathering values from 2022-04-12 08:40:38+00:00 to 2022-04-12 08:40:48+00:00
+  Found 0 recorded values:
+  Retrieved values:
+  Expected:  0.0  ...  19.0
+  Data verification FAILED
+  -----
+
+08:40:48 WARN  python3&lt;stdout&gt; returned non-zero exit code 1 ... blocked 
+08:40:48 WARN  Aborted test due to BLOCKED outcome
+08:40:48 INFO  
+08:40:48 INFO  cleanup:
+08:40:52 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+08:40:53 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+08:40:53 INFO  
+08:40:53 INFO  Test duration: 45.05 secs
+08:40:53 INFO  Test final outcome:  BLOCKED
+08:40:53 INFO  Test outcome reason: python3&lt;stdout&gt; returned non-zero exit code 1
+08:40:53 INFO  
+</system-out>
+	</testcase>
 </testsuite>

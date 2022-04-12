@@ -1,137 +1,25 @@
-2022-04-11 10:12:25,288 INFO  ==============================================================
-2022-04-11 10:12:25,289 INFO  Id:    apt_sequence_remove
-2022-04-11 10:12:25,290 INFO  Dir:   plugin_apt/
-2022-04-11 10:12:25,292 INFO  Title: Validate apt plugin prepare install remove finalize use case
-2022-04-11 10:12:25,292 DEBUG Execution order hint: 0.0
-2022-04-11 10:12:25,293 INFO  ==============================================================
-2022-04-11 10:12:25,299 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo /usr/bin/apt-get install -y rolldice
-    arg #1     : /usr/bin/apt-get
-    arg #2     : install
-    arg #3     : -y
-    arg #4     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:12:25,307 DEBUG Waiting up to 600 secs for process sudo (pid 27450)
-2022-04-11 10:13:03,601 INFO  Executed sudo, exit status 0, duration 38 secs
-2022-04-11 10:13:03,607 DEBUG Process parameters for sudo<outp_check_0>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
-    arg #1     : /etc/tedge/sm-plugins/apt
-    arg #2     : list
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:03,615 DEBUG Waiting up to 600 secs for process sudo<outp_check_0> (pid 27595)
-2022-04-11 10:13:09,055 INFO  Executed sudo<outp_check_0>, exit status 0
-2022-04-11 10:13:09,057 INFO  Assert that (value==0) with value=0 ... passed
-2022-04-11 10:13:09,058 DEBUG Performing regex contains=True grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_0.out
-2022-04-11 10:13:09,063 DEBUG Grep on file outp_check_0.out successfully matched expression "rolldice" with line: 'rolldice\t1.16-1+b1\n'
-2022-04-11 10:13:09,064 INFO  Grep on file outp_check_0.out ... passed
-2022-04-11 10:13:09,065 DEBUG --- test execute
-2022-04-11 10:13:09,067 DEBUG Process parameters for sudo<outp_prepare>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt prepare
-    arg #1     : /etc/tedge/sm-plugins/apt
-    arg #2     : prepare
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_prepare.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_prepare.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:09,074 DEBUG Waiting up to 600 secs for process sudo<outp_prepare> (pid 27601)
-2022-04-11 10:13:26,985 INFO  Executed sudo<outp_prepare>, exit status 0, duration 17 secs
-2022-04-11 10:13:26,988 INFO  Assert that (value==0) with value=0 ... passed
-2022-04-11 10:13:26,995 DEBUG Process parameters for sudo<outp_remove>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt remove rolldice
-    arg #1     : /etc/tedge/sm-plugins/apt
-    arg #2     : remove
-    arg #3     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_remove.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_remove.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:27,003 DEBUG Waiting up to 600 secs for process sudo<outp_remove> (pid 27715)
-2022-04-11 10:13:45,836 INFO  Executed sudo<outp_remove>, exit status 0, duration 18 secs
-2022-04-11 10:13:45,839 INFO  Assert that (value==0) with value=0 ... passed
-2022-04-11 10:13:45,843 DEBUG Process parameters for sudo<outp_finalize>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt finalize
-    arg #1     : /etc/tedge/sm-plugins/apt
-    arg #2     : finalize
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_finalize.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_finalize.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:45,850 DEBUG Waiting up to 600 secs for process sudo<outp_finalize> (pid 27746)
-2022-04-11 10:13:53,199 INFO  Executed sudo<outp_finalize>, exit status 0
-2022-04-11 10:13:53,201 INFO  Assert that (value==0) with value=0 ... passed
-2022-04-11 10:13:53,202 DEBUG --- test validate
-2022-04-11 10:13:53,204 DEBUG Process parameters for sudo<outp_check_1>
-  command line : /usr/bin/sudo /etc/tedge/sm-plugins/apt list
-    arg #1     : /etc/tedge/sm-plugins/apt
-    arg #2     : list
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:53,211 DEBUG Waiting up to 600 secs for process sudo<outp_check_1> (pid 27751)
-2022-04-11 10:13:55,781 INFO  Executed sudo<outp_check_1>, exit status 0
-2022-04-11 10:13:55,783 INFO  Assert that (value==0) with value=0 ... passed
-2022-04-11 10:13:55,784 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux/outp_check_1.out
-2022-04-11 10:13:55,790 INFO  Grep on file outp_check_1.out ... passed
-2022-04-11 10:13:55,805 DEBUG --- test cleanup
-2022-04-11 10:13:55,806 INFO  
-2022-04-11 10:13:55,807 INFO  cleanup:
-2022-04-11 10:13:55,808 DEBUG Running registered cleanup function: <bound method AptPluginInstallPrepareRemoveFinalize.cleanup_prepare of <AptPluginInstallPrepareRemoveFinalize object at 0x75de3ef0>>
-2022-04-11 10:13:55,809 DEBUG Process parameters for sudo
-  command line : /usr/bin/sudo /usr/bin/apt-get remove -y rolldice
-    arg #1     : /usr/bin/apt-get
-    arg #2     : remove
-    arg #3     : -y
-    arg #4     : rolldice
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apt/apt_sequence_remove/Output/linux
-  stdout       : None
-  stderr       : None
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 10:13:55,817 DEBUG Waiting up to 600 secs for process sudo (pid 27757)
-2022-04-11 10:14:00,410 INFO  Executed sudo, exit status 0
-2022-04-11 10:14:00,411 DEBUG ProcessUser cleanup function done.
-2022-04-11 10:14:00,414 INFO  
-2022-04-11 10:14:00,415 INFO  Test duration: 95.13 secs
-2022-04-11 10:14:00,416 INFO  Test final outcome:  PASSED
-2022-04-11 10:14:00,417 INFO  
+2022-04-12 09:07:36,792 INFO  ==============================================================
+2022-04-12 09:07:36,793 INFO  Id:    apt_sequence_remove
+2022-04-12 09:07:36,794 INFO  Dir:   plugin_apt/
+2022-04-12 09:07:36,795 INFO  Title: Validate apt plugin prepare install remove finalize use case
+2022-04-12 09:07:36,795 INFO  ==============================================================
+2022-04-12 09:08:15,222 INFO  Executed sudo, exit status 0, duration 38 secs
+2022-04-12 09:08:20,521 INFO  Executed sudo<outp_check_0>, exit status 0
+2022-04-12 09:08:20,523 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-12 09:08:20,528 INFO  Grep on file outp_check_0.out ... passed
+2022-04-12 09:08:38,558 INFO  Executed sudo<outp_prepare>, exit status 0, duration 18 secs
+2022-04-12 09:08:38,561 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-12 09:08:57,424 INFO  Executed sudo<outp_remove>, exit status 0, duration 18 secs
+2022-04-12 09:08:57,427 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-12 09:09:04,833 INFO  Executed sudo<outp_finalize>, exit status 0
+2022-04-12 09:09:04,835 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-12 09:09:07,404 INFO  Executed sudo<outp_check_1>, exit status 0
+2022-04-12 09:09:07,406 INFO  Assert that (value==0) with value=0 ... passed
+2022-04-12 09:09:07,412 INFO  Grep on file outp_check_1.out ... passed
+2022-04-12 09:09:07,418 INFO  
+2022-04-12 09:09:07,418 INFO  cleanup:
+2022-04-12 09:09:12,039 INFO  Executed sudo, exit status 0
+2022-04-12 09:09:12,043 INFO  
+2022-04-12 09:09:12,044 INFO  Test duration: 95.26 secs
+2022-04-12 09:09:12,045 INFO  Test final outcome:  PASSED
+2022-04-12 09:09:12,046 INFO  

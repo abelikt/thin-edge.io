@@ -1,138 +1,21 @@
-2022-04-11 09:56:12,770 INFO  ==============================================================
-2022-04-11 09:56:12,771 INFO  Id:    tedge_mapper_az_without_timestamp
-2022-04-11 09:56:12,773 INFO  Dir:   tedge_mapper_az/
-2022-04-11 09:56:12,773 INFO  Title: Validate the Azure Mapper that publishes a Thin Edge JSON message without timestamp on az/messages/events/ when it receives a valid JSON message on tedge/measurements and az.mapper.timestamp is configured false
-2022-04-11 09:56:12,774 DEBUG Execution order hint: 0.0
-2022-04-11 09:56:12,775 INFO  ==============================================================
-2022-04-11 09:56:12,783 DEBUG Process parameters for sudo<tedge_temp>
-  command line : /usr/bin/sudo tedge config set az.mapper.timestamp false
-    arg #1     : tedge
-    arg #2     : config
-    arg #3     : set
-    arg #4     : az.mapper.timestamp
-    arg #5     : false
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:12,791 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 15565)
-2022-04-11 09:56:13,300 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-04-11 09:56:13,302 DEBUG Process parameters for sudo<tedge_mapper_az>
-  command line : /usr/bin/sudo systemctl start tedge-mapper-az
-    arg #1     : systemctl
-    arg #2     : start
-    arg #3     : tedge-mapper-az
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_mapper_az.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_mapper_az.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:13,310 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 15567)
-2022-04-11 09:56:13,886 INFO  Executed sudo<tedge_mapper_az>, exit status 0
-2022-04-11 09:56:13,888 DEBUG --- test execute
-2022-04-11 09:56:13,890 DEBUG Process parameters for sudo<tedge_sub>
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt sub --no-topic az/messages/events/
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : sub
-    arg #4     : --no-topic
-    arg #5     : az/messages/events/
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_sub.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_sub.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:13,899 INFO  Started sudo<tedge_sub> with process id 15574
-2022-04-11 09:56:14,005 DEBUG Process parameters for sudo<tedge_temp>
-  command line : /usr/bin/sudo /usr/bin/tedge mqtt pub tedge/measurements '{"temperature": 12}'
-    arg #1     : /usr/bin/tedge
-    arg #2     : mqtt
-    arg #3     : pub
-    arg #4     : tedge/measurements
-    arg #5     : {"temperature": 12}
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:14,014 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 15575)
-2022-04-11 09:56:14,521 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-04-11 09:56:14,523 DEBUG Process parameters for sudo<kill_out>
-  command line : /usr/bin/sudo killall tedge
-    arg #1     : killall
-    arg #2     : tedge
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/kill_out.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/kill_out.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:14,531 DEBUG Waiting up to 600 secs for process sudo<kill_out> (pid 15578)
-2022-04-11 09:56:15,038 INFO  Executed sudo<kill_out>, exit status 0
-2022-04-11 09:56:15,039 DEBUG --- test validate
-2022-04-11 09:56:15,043 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
-2022-04-11 09:56:15,044 DEBUG Performing regex contains=False grep on file: /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_sub.out
-2022-04-11 09:56:15,049 INFO  Grep on file tedge_sub.out ... passed
-2022-04-11 09:56:15,054 DEBUG --- test cleanup
-2022-04-11 09:56:15,056 INFO  
-2022-04-11 09:56:15,056 INFO  cleanup:
-2022-04-11 09:56:15,057 DEBUG Running registered cleanup function: <bound method TedgeMapperAzWithoutTimestamp.mapper_cleanup of <TedgeMapperAzWithoutTimestamp object at 0x75a36050>>
-2022-04-11 09:56:15,058 INFO  mapper_cleanup
-2022-04-11 09:56:15,059 DEBUG Process parameters for sudo<tedge_mapper_az>
-  command line : /usr/bin/sudo systemctl stop tedge-mapper-az
-    arg #1     : systemctl
-    arg #2     : stop
-    arg #3     : tedge-mapper-az
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_mapper_az.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_mapper_az.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:15,067 DEBUG Waiting up to 600 secs for process sudo<tedge_mapper_az> (pid 15580)
-2022-04-11 09:56:15,677 INFO  Executed sudo<tedge_mapper_az>, exit status 0
-2022-04-11 09:56:15,679 DEBUG Process parameters for sudo<tedge_temp>
-  command line : /usr/bin/sudo tedge config unset az.mapper.timestamp
-    arg #1     : tedge
-    arg #2     : config
-    arg #3     : unset
-    arg #4     : az.mapper.timestamp
-  working dir  : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux
-  stdout       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.out
-  stderr       : /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_without_timestamp/Output/linux/tedge_temp.err
-  environment  : LD_LIBRARY_PATH=/usr/lib
-  environment  : PATH=/bin:/usr/bin:/usr/sbin:/usr/local/bin
-                   #1  /bin
-                   #2  /usr/bin
-                   #3  /usr/sbin
-                   #4  /usr/local/bin
-2022-04-11 09:56:15,687 DEBUG Waiting up to 600 secs for process sudo<tedge_temp> (pid 15582)
-2022-04-11 09:56:16,198 INFO  Executed sudo<tedge_temp>, exit status 0
-2022-04-11 09:56:16,200 DEBUG ProcessUser cleanup function done.
-2022-04-11 09:56:16,203 INFO  
-2022-04-11 09:56:16,204 INFO  Test duration: 3.44 secs
-2022-04-11 09:56:16,205 INFO  Test final outcome:  PASSED
-2022-04-11 09:56:16,206 INFO  
+2022-04-12 08:51:43,999 INFO  ==============================================================
+2022-04-12 08:51:44,000 INFO  Id:    tedge_mapper_az_without_timestamp
+2022-04-12 08:51:44,001 INFO  Dir:   tedge_mapper_az/
+2022-04-12 08:51:44,002 INFO  Title: Validate the Azure Mapper that publishes a Thin Edge JSON message without timestamp on az/messages/events/ when it receives a valid JSON message on tedge/measurements and az.mapper.timestamp is configured false
+2022-04-12 08:51:44,003 INFO  ==============================================================
+2022-04-12 08:51:44,575 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-04-12 08:51:45,138 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-04-12 08:51:45,150 INFO  Started sudo<tedge_sub> with process id 8720
+2022-04-12 08:51:45,769 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-04-12 08:51:46,291 INFO  Executed sudo<kill_out>, exit status 0
+2022-04-12 08:51:46,296 INFO  Assert that (actual == expected) with actual=12.0, expected=12 ... passed
+2022-04-12 08:51:46,301 INFO  Grep on file tedge_sub.out ... passed
+2022-04-12 08:51:46,307 INFO  
+2022-04-12 08:51:46,308 INFO  cleanup:
+2022-04-12 08:51:46,308 INFO  mapper_cleanup
+2022-04-12 08:51:46,921 INFO  Executed sudo<tedge_mapper_az>, exit status 0
+2022-04-12 08:51:47,485 INFO  Executed sudo<tedge_temp>, exit status 0
+2022-04-12 08:51:47,489 INFO  
+2022-04-12 08:51:47,490 INFO  Test duration: 3.49 secs
+2022-04-12 08:51:47,491 INFO  Test final outcome:  PASSED
+2022-04-12 08:51:47,492 INFO  
