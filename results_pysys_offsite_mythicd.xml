@@ -1,881 +1,492 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="97" failures="2" errors="0" skipped="48" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install">
-		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_install
-07:45:28 INFO  Dir:   plugin_apama/
-07:45:28 INFO  Title: Validate apama plugin install
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.05 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
-07:45:28 INFO  
+<testsuites tests="38" failures="4" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
+		<failure message="BLOCKED: AssertionError:" type="BLOCKED" />
+		<system-out>07:23:56 INFO  ==============================================================
+07:23:56 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+07:23:56 INFO  Dir:   software_management_end_to_end/
+07:23:56 INFO  Title: Install package to directory specified in tedge config set tmp.path
+07:23:56 INFO  ==============================================================
+07:23:56 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+07:23:56 INFO  EnvironmentC8y Setup
+07:23:57 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+07:24:11 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+07:24:13 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+07:24:14 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+07:24:15 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+07:24:17 ERROR No operations found, assuming it passed
+07:24:17 INFO  Assert that (False == value) with value=False ... passed
+07:24:18 INFO  Executed sudo, exit status 0
+07:24:18 INFO  Executed sudo, exit status 0
+07:24:19 INFO  Executed sudo, exit status 0
+07:24:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+07:24:23 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+07:24:23 INFO  Delaying execution by 7 seconds
+07:24:44 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 13 secs
+07:24:45 INFO  Response status: 201
+07:24:45 INFO  Response to action: {
+    "creationTime": "2022-04-14T07:24:44.961Z",
+    "deviceId": "17294230",
+    "deviceName": "mythicd",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294862",
+    "id": "17294862",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "::apt",
+            "url": "https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463"
+        }
+    ]
+}
+07:24:45 INFO  Started operation: {'creationTime': '2022-04-14T07:24:44.961Z', 'deviceId': '17294230', 'deviceName': 'mythicd', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294862', 'id': '17294862', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463'}]}
+07:24:45 WARN  , retrying in 0.5 seconds...
+07:24:45 WARN  , retrying in 0.5 seconds...
+07:24:46 WARN  , retrying in 0.5 seconds...
+07:24:46 WARN  , retrying in 0.5 seconds...
+07:24:47 WARN  , retrying in 0.5 seconds...
+07:24:47 WARN  , retrying in 0.5 seconds...
+07:24:48 WARN  , retrying in 0.5 seconds...
+07:24:48 WARN  , retrying in 0.5 seconds...
+07:24:49 WARN  , retrying in 0.5 seconds...
+07:24:49 WARN  AssertionError occurred while running test - 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 83, in execute
+    assert_install_in_download_path(install_directory=self.DOWNLOAD_DIR)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 74, in retry_decorator
+    logger)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 33, in __retry_internal
+    return f()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 28, in assert_install_in_download_path
+    assert "rolldice" in os.listdir(f"{install_directory}")
+AssertionError
+07:24:50 WARN  AssertionError: ... blocked 
+07:24:50 INFO  
+07:24:50 INFO  cleanup:
+07:24:50 INFO  Executed sudo, exit status 0
+07:24:51 INFO  Executed sudo, exit status 0
+07:24:55 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+07:24:55 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+07:24:55 INFO  Delaying execution by 7 seconds
+07:25:17 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+07:25:21 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+07:25:22 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+07:25:22 INFO  
+07:25:22 INFO  Test duration: 85.63 secs
+07:25:22 INFO  Test final outcome:  BLOCKED
+07:25:22 INFO  Test outcome reason: AssertionError:
+07:25:22 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support">
-		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_mon_support
-07:45:28 INFO  Dir:   plugin_apama/
-07:45:28 INFO  Title: Validate mon file support of apama plugin
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
-07:45:28 INFO  
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
+		<failure message="FAILED: Assert that (False == value) with value=True" type="FAILED" />
+		<system-out>07:32:20 INFO  ==============================================================
+07:32:20 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
+07:32:20 INFO  Dir:   software_management_end_to_end/
+07:32:20 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
+07:32:20 INFO  ==============================================================
+07:32:20 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+07:32:20 INFO  EnvironmentC8y Setup
+07:32:21 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+07:32:21 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+07:32:21 INFO  Delaying execution by 7 seconds
+07:32:42 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 13 secs
+07:32:43 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+07:32:43 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+07:32:44 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+07:32:46 INFO  State of current operation: SUCCESSFUL
+07:32:46 INFO  Assert that (False == value) with value=False ... passed
+07:32:46 INFO  Assert that (False == value) with value=False ... passed
+07:32:47 INFO  Assert that (False == value) with value=False ... passed
+07:32:47 INFO  Package robotfindskitten is installed
+07:32:47 WARN  Assert that (False == value) with value=True ... failed 
+07:32:47 INFO  Response status: 201
+07:32:47 INFO  Response to action: {
+    "creationTime": "2022-04-14T07:32:47.602Z",
+    "deviceId": "17294230",
+    "deviceName": "mythicd",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294889",
+    "id": "17294889",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+07:32:47 INFO  Started operation: {'creationTime': '2022-04-14T07:32:47.602Z', 'deviceId': '17294230', 'deviceName': 'mythicd', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294889', 'id': '17294889', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+07:32:49 INFO  State of operation 17294889 : PENDING
+07:32:52 INFO  State of operation 17294889 : EXECUTING
+07:32:54 INFO  State of operation 17294889 : EXECUTING
+07:32:56 INFO  State of operation 17294889 : EXECUTING
+07:32:58 INFO  State of operation 17294889 : EXECUTING
+07:33:01 INFO  State of operation 17294889 : EXECUTING
+07:33:03 INFO  State of operation 17294889 : EXECUTING
+07:33:06 INFO  State of operation 17294889 : EXECUTING
+07:33:14 INFO  State of operation 17294889 : EXECUTING
+07:33:16 INFO  State of operation 17294889 : EXECUTING
+07:33:18 INFO  State of operation 17294889 : EXECUTING
+07:33:20 INFO  State of operation 17294889 : EXECUTING
+07:33:23 INFO  State of operation 17294889 : EXECUTING
+07:33:25 INFO  State of operation 17294889 : EXECUTING
+07:33:27 INFO  State of operation 17294889 : EXECUTING
+07:33:29 INFO  State of operation 17294889 : EXECUTING
+07:33:32 INFO  State of operation 17294889 : EXECUTING
+07:33:34 INFO  State of operation 17294889 : EXECUTING
+07:33:37 INFO  State of operation 17294889 : EXECUTING
+07:33:39 INFO  State of operation 17294889 : EXECUTING
+07:33:42 INFO  State of operation 17294889 : EXECUTING
+07:33:44 INFO  State of operation 17294889 : EXECUTING
+07:33:46 INFO  State of operation 17294889 : EXECUTING
+07:33:48 INFO  State of operation 17294889 : EXECUTING
+07:33:51 INFO  State of operation 17294889 : EXECUTING
+07:33:53 INFO  State of operation 17294889 : EXECUTING
+07:33:56 INFO  State of operation 17294889 : EXECUTING
+07:33:58 INFO  State of operation 17294889 : EXECUTING
+07:34:01 INFO  State of operation 17294889 : EXECUTING
+07:34:03 INFO  State of operation 17294889 : EXECUTING
+07:34:05 INFO  State of operation 17294889 : EXECUTING
+07:34:07 INFO  State of operation 17294889 : EXECUTING
+07:34:10 INFO  State of operation 17294889 : SUCCESSFUL
+07:34:10 INFO  Assert that (False == value) with value=False ... passed
+07:34:10 INFO  Package asciijump is installed
+07:34:10 INFO  Assert that (True == value) with value=True ... passed
+07:34:10 INFO  Package squirrel3 is installed
+07:34:10 INFO  Assert that (True == value) with value=True ... passed
+07:34:10 INFO  Package robotfindskitten is installed
+07:34:10 INFO  Assert that (True == value) with value=True ... passed
+07:34:11 INFO  Response status: 201
+07:34:11 INFO  Response to action: {
+    "creationTime": "2022-04-14T07:34:11.134Z",
+    "deviceId": "17294230",
+    "deviceName": "mythicd",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294891",
+    "id": "17294891",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "delete",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "delete",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "delete",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+07:34:11 INFO  Started operation: {'creationTime': '2022-04-14T07:34:11.134Z', 'deviceId': '17294230', 'deviceName': 'mythicd', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294891', 'id': '17294891', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'delete', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'delete', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'delete', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+07:34:13 INFO  State of operation 17294891 : PENDING
+07:34:15 INFO  State of operation 17294891 : EXECUTING
+07:34:17 INFO  State of operation 17294891 : EXECUTING
+07:34:20 INFO  State of operation 17294891 : EXECUTING
+07:34:22 INFO  State of operation 17294891 : EXECUTING
+07:34:24 INFO  State of operation 17294891 : EXECUTING
+07:34:27 INFO  State of operation 17294891 : EXECUTING
+07:34:30 INFO  State of operation 17294891 : EXECUTING
+07:34:33 INFO  State of operation 17294891 : EXECUTING
+07:34:35 INFO  State of operation 17294891 : EXECUTING
+07:34:37 INFO  State of operation 17294891 : EXECUTING
+07:34:39 INFO  State of operation 17294891 : EXECUTING
+07:34:42 INFO  State of operation 17294891 : EXECUTING
+07:34:44 INFO  State of operation 17294891 : EXECUTING
+07:34:46 INFO  State of operation 17294891 : EXECUTING
+07:34:48 INFO  State of operation 17294891 : EXECUTING
+07:34:51 INFO  State of operation 17294891 : EXECUTING
+07:34:54 INFO  State of operation 17294891 : EXECUTING
+07:34:56 INFO  State of operation 17294891 : EXECUTING
+07:34:58 INFO  State of operation 17294891 : EXECUTING
+07:35:01 INFO  State of operation 17294891 : EXECUTING
+07:35:03 INFO  State of operation 17294891 : EXECUTING
+07:35:05 INFO  State of operation 17294891 : EXECUTING
+07:35:07 INFO  State of operation 17294891 : EXECUTING
+07:35:10 INFO  State of operation 17294891 : EXECUTING
+07:35:12 INFO  State of operation 17294891 : EXECUTING
+07:35:15 INFO  State of operation 17294891 : EXECUTING
+07:35:17 INFO  State of operation 17294891 : EXECUTING
+07:35:19 INFO  State of operation 17294891 : SUCCESSFUL
+07:35:20 INFO  Assert that (False == value) with value=False ... passed
+07:35:20 INFO  Assert that (False == value) with value=False ... passed
+07:35:20 INFO  Assert that (False == value) with value=False ... passed
+07:35:20 INFO  Assert that (False == value) with value=False ... passed
+07:35:20 INFO  
+07:35:20 INFO  cleanup:
+07:35:25 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+07:35:25 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+07:35:25 INFO  
+07:35:25 INFO  Test duration: 184.60 secs
+07:35:25 INFO  Test final outcome:  FAILED
+07:35:25 INFO  Test outcome reason: Assert that (False == value) with value=True
+07:35:25 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove">
-		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_remove
-07:45:28 INFO  Dir:   plugin_apama/
-07:45:28 INFO  Title: Validate apama plugin remove
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
-07:45:28 INFO  
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
+		<failure message="BLOCKED: SystemError: Timeout while waiting for status SUCCESSFUL or False" type="BLOCKED" />
+		<system-out>07:35:25 INFO  ==============================================================
+07:35:25 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
+07:35:25 INFO  Dir:   software_management_end_to_end/
+07:35:25 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
+07:35:25 INFO  ==============================================================
+07:35:25 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+07:35:25 INFO  EnvironmentC8y Setup
+07:35:26 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+07:35:26 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
+07:35:26 INFO  Delaying execution by 6 seconds
+07:35:46 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+07:35:47 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+07:35:47 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+07:35:48 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+07:35:50 INFO  State of current operation: SUCCESSFUL
+07:35:50 INFO  Assert that (False == value) with value=False ... passed
+07:35:51 INFO  Assert that (False == value) with value=False ... passed
+07:35:52 INFO  Assert that (False == value) with value=False ... passed
+07:35:52 INFO  Assert that (False == value) with value=False ... passed
+07:35:52 INFO  Assert that (False == value) with value=False ... passed
+07:35:53 INFO  Response status: 201
+07:35:53 INFO  Response to action: {
+    "creationTime": "2022-04-14T07:35:53.710Z",
+    "deviceId": "17294230",
+    "deviceName": "mythicd",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294893",
+    "id": "17294893",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": " ",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "3.1-7::apt",
+            "url": " "
+        },
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "1.16-1+b1",
+            "url": " "
+        },
+        {
+            "name": "moon-buggy",
+            "action": "install",
+            "id": "5439204",
+            "version": "1:1.0.51-12",
+            "url": " "
+        },
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+07:35:53 INFO  Started operation: {'creationTime': '2022-04-14T07:35:53.710Z', 'deviceId': '17294230', 'deviceName': 'mythicd', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17294893', 'id': '17294893', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': ' ', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '3.1-7::apt', 'url': ' '}, {'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '1.16-1+b1', 'url': ' '}, {'name': 'moon-buggy', 'action': 'install', 'id': '5439204', 'version': '1:1.0.51-12', 'url': ' '}, {'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}]}
+07:35:55 INFO  State of operation 17294893 : PENDING
+07:35:58 INFO  State of operation 17294893 : EXECUTING
+07:36:00 INFO  State of operation 17294893 : EXECUTING
+07:36:02 INFO  State of operation 17294893 : EXECUTING
+07:36:04 INFO  State of operation 17294893 : EXECUTING
+07:36:07 INFO  State of operation 17294893 : EXECUTING
+07:36:09 INFO  State of operation 17294893 : EXECUTING
+07:36:11 INFO  State of operation 17294893 : EXECUTING
+07:36:14 INFO  State of operation 17294893 : EXECUTING
+07:36:17 INFO  State of operation 17294893 : EXECUTING
+07:36:19 INFO  State of operation 17294893 : EXECUTING
+07:36:21 INFO  State of operation 17294893 : EXECUTING
+07:36:23 INFO  State of operation 17294893 : EXECUTING
+07:36:26 INFO  State of operation 17294893 : EXECUTING
+07:36:28 INFO  State of operation 17294893 : EXECUTING
+07:36:30 INFO  State of operation 17294893 : EXECUTING
+07:36:32 INFO  State of operation 17294893 : EXECUTING
+07:36:35 INFO  State of operation 17294893 : EXECUTING
+07:36:37 INFO  State of operation 17294893 : EXECUTING
+07:36:40 INFO  State of operation 17294893 : EXECUTING
+07:36:42 INFO  State of operation 17294893 : EXECUTING
+07:36:44 INFO  State of operation 17294893 : EXECUTING
+07:36:47 INFO  State of operation 17294893 : EXECUTING
+07:36:49 INFO  State of operation 17294893 : EXECUTING
+07:36:52 INFO  State of operation 17294893 : EXECUTING
+07:36:54 INFO  State of operation 17294893 : EXECUTING
+07:36:57 INFO  State of operation 17294893 : EXECUTING
+07:36:59 INFO  State of operation 17294893 : EXECUTING
+07:37:01 INFO  State of operation 17294893 : EXECUTING
+07:37:04 INFO  State of operation 17294893 : EXECUTING
+07:37:06 INFO  State of operation 17294893 : EXECUTING
+07:37:08 INFO  State of operation 17294893 : EXECUTING
+07:37:11 INFO  State of operation 17294893 : EXECUTING
+07:37:13 INFO  State of operation 17294893 : EXECUTING
+07:37:15 INFO  State of operation 17294893 : EXECUTING
+07:37:17 INFO  State of operation 17294893 : EXECUTING
+07:37:20 INFO  State of operation 17294893 : EXECUTING
+07:37:22 INFO  State of operation 17294893 : EXECUTING
+07:37:24 INFO  State of operation 17294893 : EXECUTING
+07:37:27 INFO  State of operation 17294893 : EXECUTING
+07:37:30 INFO  State of operation 17294893 : EXECUTING
+07:37:32 INFO  State of operation 17294893 : EXECUTING
+07:37:34 INFO  State of operation 17294893 : EXECUTING
+07:37:37 INFO  State of operation 17294893 : EXECUTING
+07:37:39 INFO  State of operation 17294893 : EXECUTING
+07:37:41 INFO  State of operation 17294893 : EXECUTING
+07:37:43 INFO  State of operation 17294893 : EXECUTING
+07:37:46 INFO  State of operation 17294893 : EXECUTING
+07:37:48 INFO  State of operation 17294893 : EXECUTING
+07:37:50 INFO  State of operation 17294893 : EXECUTING
+07:37:53 INFO  State of operation 17294893 : EXECUTING
+07:37:55 INFO  State of operation 17294893 : EXECUTING
+07:37:57 INFO  State of operation 17294893 : EXECUTING
+07:38:00 INFO  State of operation 17294893 : EXECUTING
+07:38:02 INFO  State of operation 17294893 : EXECUTING
+07:38:04 INFO  State of operation 17294893 : EXECUTING
+07:38:06 INFO  State of operation 17294893 : EXECUTING
+07:38:09 INFO  State of operation 17294893 : EXECUTING
+07:38:11 INFO  State of operation 17294893 : EXECUTING
+07:38:14 INFO  State of operation 17294893 : EXECUTING
+07:38:17 INFO  State of operation 17294893 : EXECUTING
+07:38:19 WARN  SystemError occurred while running test - Timeout while waiting for status SUCCESSFUL or False
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/run.py", line 89, in execute
+    self.wait_until_succcess()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 324, in wait_until_succcess
+    self.wait_until_status("SUCCESSFUL")
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 381, in wait_until_status
+    "Timeout while waiting for status %s or %s" % (status, status2)
+SystemError: Timeout while waiting for status SUCCESSFUL or False
+07:38:19 WARN  SystemError: Timeout while waiting for status SUCCESSFUL or False ... blocked 
+07:38:19 INFO  
+07:38:19 INFO  cleanup:
+07:38:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+07:38:24 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+07:38:24 INFO  
+07:38:24 INFO  Test duration: 178.68 secs
+07:38:24 INFO  Test final outcome:  BLOCKED
+07:38:24 INFO  Test outcome reason: SystemError: Timeout while waiting for status SUCCESSFUL or False
+07:38:24 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
-		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
-07:45:28 INFO  Dir:   plugin_apama/
-07:45:28 INFO  Title: Validate apama plugin updating one project with another
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Install package to directory specified in tedge config set tmp.path
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.06 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_fail
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Validate end to end behaviour for a failing installation
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.03 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_remove
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Validate end to end behaviour for the apt plugin for installation and removal of packages
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.02 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.02 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.03 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:09 INFO  ==============================================================
-07:55:09 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
-07:55:09 INFO  Dir:   software_management_end_to_end/
-07:55:09 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
-07:55:09 INFO  ==============================================================
-07:55:09 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:09 WARN  Aborted test due to SKIPPED outcome
-07:55:09 INFO  
-07:55:09 INFO  Test duration: 0.02 secs
-07:55:09 INFO  Test final outcome:  SKIPPED
-07:55:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_apt_install_remove_with_version
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate end to end behaviour for the apt plugin for packages with version
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:10 WARN  Aborted test due to SKIPPED outcome
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.02 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_docker_install_remove_multiple" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_docker_install_remove_multiple
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate end to end behaviour for the docker plugin for multiple docker images with mixed versions
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
-07:55:10 WARN  Aborted test due to SKIPPED outcome
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.02 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove">
-		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_fake_install_remove
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate end to end behaviour for the dummy plugin for installation and removal of packages
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
-07:55:10 WARN  Aborted test due to SKIPPED outcome
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.02 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove_multiple" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple">
-		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_fake_install_remove_multiple
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate end to end behaviour for the dummy-plugin for multiple packages
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
-07:55:10 WARN  Aborted test due to SKIPPED outcome
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.02 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
-		<skipped message="SKIPPED: instable https://github.com/thin-edge/thin-edge.io/issues/752" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  instable https://github.com/thin-edge/thin-edge.io/issues/752 ... skipped
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.02 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: instable https://github.com/thin-edge/thin-edge.io/issues/752
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_mixed_install_remove_multiple" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple">
-		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
-		<system-out>07:55:10 INFO  ==============================================================
-07:55:10 INFO  Id:    SoftwareManagement.sm_mixed_install_remove_multiple
-07:55:10 INFO  Dir:   software_management_end_to_end/
-07:55:10 INFO  Title: Validate end to end behaviour for the dummy-plugin for multiple packages with mixed versions
-07:55:10 INFO  ==============================================================
-07:55:10 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
-07:55:10 WARN  Aborted test due to SKIPPED outcome
-07:55:10 INFO  
-07:55:10 INFO  Test duration: 0.03 secs
-07:55:10 INFO  Test final outcome:  SKIPPED
-07:55:10 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
-07:55:10 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="agent_init_session" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="AgentInitSession" name="agent_init_session">
-		<failure message="FAILED: Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot;" type="FAILED" />
-		<system-out>07:56:03 INFO  ==============================================================
-07:56:03 INFO  Id:    agent_init_session
-07:56:03 INFO  Dir:   tedge_agent/
-07:56:03 INFO  Title: Validate tedge agent init session feature
-07:56:03 INFO  ==============================================================
-07:56:03 INFO  Executed sudo&lt;remove_lock&gt;, exit status 0
-07:56:04 INFO  Executed sudo&lt;agent_clear&gt;, exit status 0
-07:56:04 INFO  Executed sudo&lt;agent_init&gt;, exit status 0
-07:56:05 INFO  Executed sudo&lt;pub_req&gt;, exit status 0
-07:56:05 INFO  Started sudo&lt;sub_resp&gt; with process id 12364
-07:56:05 INFO  Executed sudo&lt;agent_start&gt;, exit status 0
-07:56:05 INFO  Waiting for 2.0 seconds
-07:56:08 INFO  Executed sudo&lt;agent_stop&gt;, exit status 0
-07:56:09 INFO  Executed sudo&lt;sub_stop&gt;, exit status 0
-07:56:09 WARN  Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w" ... failed [run.py:87]
-07:56:09 INFO  
-07:56:09 INFO  Test duration: 6.55 secs
-07:56:09 INFO  Test final outcome:  FAILED
-07:56:09 INFO  Test outcome reason: Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w"
-07:56:09 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_fail_noarg" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_fail_noarg
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin fetures(prepare, list, install, remove finalize) without arguments
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.04 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_finalize" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginFinalize" name="apt_finalize">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_finalize
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin finalize - dense version
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallDense" name="apt_install">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_install
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin prepare - dense version
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFail" name="apt_install_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_install_fail
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin prepare - failing
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install_local_file" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFile" name="apt_install_local_file">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_install_local_file
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin install from local file - SUCCESS case
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install_local_file_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileFail" name="apt_install_local_file_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_install_local_file_fail
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin install from local file - FAIL case
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install_local_file_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersion" name="apt_install_local_file_with_version">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    apt_install_local_file_with_version
-07:45:28 INFO  Dir:   plugin_apt/
-07:45:28 INFO  Title: Validate apt plugin install from local file AND with a version - SUCCESS case
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:28 WARN  Aborted test due to SKIPPED outcome
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_install_local_file_with_version_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersionFail" name="apt_install_local_file_with_version_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:29 INFO  ==============================================================
-07:45:29 INFO  Id:    apt_install_local_file_with_version_fail
-07:45:29 INFO  Dir:   plugin_apt/
-07:45:29 INFO  Title: Validate apt plugin install from local file AND with a version - FAIL case
-07:45:29 INFO  ==============================================================
-07:45:29 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:29 WARN  Aborted test due to SKIPPED outcome
-07:45:29 INFO  
-07:45:29 INFO  Test duration: 0.02 secs
-07:45:29 INFO  Test final outcome:  SKIPPED
-07:45:29 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:29 INFO  
-</system-out>
-	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
+</testsuite><testsuite name="apt_fail_noarg" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg" />
+</testsuite><testsuite name="apt_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFinalize" name="apt_finalize" />
+</testsuite><testsuite name="apt_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallDense" name="apt_install" />
+</testsuite><testsuite name="apt_install_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFail" name="apt_install_fail" />
+</testsuite><testsuite name="apt_install_local_file" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFile" name="apt_install_local_file" />
+</testsuite><testsuite name="apt_install_local_file_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileFail" name="apt_install_local_file_fail" />
+</testsuite><testsuite name="apt_install_local_file_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersion" name="apt_install_local_file_with_version" />
+</testsuite><testsuite name="apt_install_local_file_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersionFail" name="apt_install_local_file_with_version_fail" />
 </testsuite><testsuite name="apt_list_format" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginListFormat" name="apt_list_format" />
-</testsuite><testsuite name="apt_prepare" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepare" name="apt_prepare">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_prepare
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin install - dense version
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
+</testsuite><testsuite name="apt_prepare" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepare" name="apt_prepare" />
+</testsuite><testsuite name="apt_prepare_install_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepareInstallFinalize" name="apt_prepare_install_finalize" />
+</testsuite><testsuite name="apt_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveDense" name="apt_remove" />
+</testsuite><testsuite name="apt_remove_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveFails" name="apt_remove_fail" />
+</testsuite><testsuite name="apt_sequence_install_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepInstallWithVersionFinalize" name="apt_sequence_install_with_version" />
+</testsuite><testsuite name="apt_sequence_install_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallWithVersionFails" name="apt_sequence_install_with_version_fail" />
+</testsuite><testsuite name="apt_sequence_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallPrepareRemoveFinalize" name="apt_sequence_remove" />
+</testsuite><testsuite name="apt_sequence_remove_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveWithVersion" name="apt_sequence_remove_with_version" />
+</testsuite><testsuite name="apt_sequence_remove_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail" />
+</testsuite><testsuite name="apt_update_list" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginUpdateList" name="apt_update_list" />
+</testsuite><testsuite name="apt_wrong_option" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
+		<failure message="BLOCKED: sudo&lt;plugin_install&gt; returned non-zero exit code 2" type="BLOCKED" />
+		<system-out>07:42:21 INFO  ==============================================================
+07:42:21 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+07:42:21 INFO  Dir:   plugin_apama/
+07:42:21 INFO  Title: Validate apama plugin updating one project with another
+07:42:21 INFO  ==============================================================
+07:42:21 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+07:42:22 INFO  Executed sudo&lt;create_project_dir&gt;, exit status 0
+07:42:22 INFO  Executed sudo&lt;unzip_apama_project&gt;, exit status 0
+07:42:23 INFO  Executed sudo&lt;move_apama_project&gt;, exit status 0
+07:42:24 INFO  Executed sudo&lt;restart_apama_service&gt;, exit status 0
+07:42:25 INFO  Executed sudo&lt;apama_correlator_wait&gt;, exit status 0
+07:42:25 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
+07:42:26 INFO  Executed sudo&lt;apama_list_monitors&gt;, exit status 0
+07:42:26 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/apama_list_monitors.out ... passed
+07:42:26 WARN  Executed sudo&lt;plugin_install&gt;, exit status 2
+07:42:26 INFO  Contents of plugin_install.err: 
+  ERROR: Directory not empty (os error 39)
+  -----
+
+07:42:27 WARN  sudo&lt;plugin_install&gt; returned non-zero exit code 2 ... blocked [run.py:35]
+07:42:27 WARN  Aborted test due to BLOCKED outcome
+07:42:27 INFO  
+07:42:27 INFO  cleanup:
+07:42:27 INFO  Removing apama project
+07:42:42 INFO  Executed sudo&lt;stop_apama_service&gt;, exit status 0, duration 15 secs
+07:42:43 INFO  Executed sudo&lt;remove_apama_project&gt;, exit status 0
+07:42:43 INFO  Executed sudo&lt;remove_apama_tmp_dir&gt;, exit status 0
+07:42:43 INFO  
+07:42:43 INFO  Test duration: 21.93 secs
+07:42:43 INFO  Test final outcome:  BLOCKED
+07:42:43 INFO  Test outcome reason: sudo&lt;plugin_install&gt; returned non-zero exit code 2
+07:42:43 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="apt_prepare_install_finalize" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepareInstallFinalize" name="apt_prepare_install_finalize">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_prepare_install_finalize
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin install use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveDense" name="apt_remove">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_remove
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin prepare - dense version
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_remove_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveFails" name="apt_remove_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_remove_fail
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin prepare - failing
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_sequence_install_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepInstallWithVersionFinalize" name="apt_sequence_install_with_version">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_sequence_install_with_version
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin install with version use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_sequence_install_with_version_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallWithVersionFails" name="apt_sequence_install_with_version_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_sequence_install_with_version_fail
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin install with version fails use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_sequence_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallPrepareRemoveFinalize" name="apt_sequence_remove">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_sequence_remove
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin prepare install remove finalize use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_sequence_remove_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveWithVersion" name="apt_sequence_remove_with_version">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_sequence_remove_with_version
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin remove with version use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_sequence_remove_with_version_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_sequence_remove_with_version_fail
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin remove with version fails when the version not found
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_update_list" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginUpdateList" name="apt_update_list">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_update_list
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin update-list command use case
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_wrong_option" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option">
-		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    apt_wrong_option
-07:45:32 INFO  Dir:   plugin_apt/
-07:45:32 INFO  Title: Validate apt plugin install
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="c8y_jwt_token_retrieval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateJWTTokenRetrieval" name="c8y_jwt_token_retrieval" />
-</testsuite><testsuite name="c8y_restart_bridge" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RestartBridge" name="c8y_restart_bridge" />
-</testsuite><testsuite name="call_tedge_-V" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-V" />
-</testsuite><testsuite name="call_tedge_-h" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-h" />
-</testsuite><testsuite name="call_tedge_-h_-V" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-h_-V" />
-</testsuite><testsuite name="call_tedge_config_help" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_config_help" />
-</testsuite><testsuite name="call_tedge_config_list" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_config_list" />
-</testsuite><testsuite name="custom_init_system" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="CustomInitSystem" name="custom_init_system" />
-</testsuite><testsuite name="docker_plugin_finalize" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginFinalizeTest" name="docker_plugin_finalize">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    docker_plugin_finalize
-07:45:32 INFO  Dir:   plugin_docker/
-07:45:32 INFO  Title: Validate docker plugin finalize command
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.05 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="docker_plugin_install" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginInstallTest" name="docker_plugin_install">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:32 INFO  ==============================================================
-07:45:32 INFO  Id:    docker_plugin_install
-07:45:32 INFO  Dir:   plugin_docker/
-07:45:32 INFO  Title: Validate docker plugin install
-07:45:32 INFO  ==============================================================
-07:45:32 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:32 WARN  Aborted test due to SKIPPED outcome
-07:45:32 INFO  
-07:45:32 INFO  Test duration: 0.02 secs
-07:45:32 INFO  Test final outcome:  SKIPPED
-07:45:32 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:32 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="docker_plugin_install_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginInstallWithVersionTest" name="docker_plugin_install_with_version">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:33 INFO  ==============================================================
-07:45:33 INFO  Id:    docker_plugin_install_with_version
-07:45:33 INFO  Dir:   plugin_docker/
-07:45:33 INFO  Title: Validate docker plugin install
-07:45:33 INFO  ==============================================================
-07:45:33 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:33 WARN  Aborted test due to SKIPPED outcome
-07:45:33 INFO  
-07:45:33 INFO  Test duration: 0.02 secs
-07:45:33 INFO  Test final outcome:  SKIPPED
-07:45:33 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:33 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="docker_plugin_remove" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:33 INFO  ==============================================================
-07:45:33 INFO  Id:    docker_plugin_remove
-07:45:33 INFO  Dir:   plugin_docker/
-07:45:33 INFO  Title: Validate docker plugin remove
-07:45:33 INFO  ==============================================================
-07:45:33 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:33 WARN  Aborted test due to SKIPPED outcome
-07:45:33 INFO  
-07:45:33 INFO  Test duration: 0.02 secs
-07:45:33 INFO  Test final outcome:  SKIPPED
-07:45:33 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:33 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="docker_plugin_remove_with_version" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginRemoveWithVersionTest" name="docker_plugin_remove_with_version">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:33 INFO  ==============================================================
-07:45:33 INFO  Id:    docker_plugin_remove_with_version
-07:45:33 INFO  Dir:   plugin_docker/
-07:45:33 INFO  Title: Validate docker plugin remove with version
-07:45:33 INFO  ==============================================================
-07:45:33 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:33 WARN  Aborted test due to SKIPPED outcome
-07:45:33 INFO  
-07:45:33 INFO  Test duration: 0.02 secs
-07:45:33 INFO  Test final outcome:  SKIPPED
-07:45:33 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:33 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="docker_plugin_update" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginUpdateTest" name="docker_plugin_update">
-		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
-		<system-out>07:45:33 INFO  ==============================================================
-07:45:33 INFO  Id:    docker_plugin_update
-07:45:33 INFO  Dir:   plugin_docker/
-07:45:33 INFO  Title: Validate docker plugin install updates existing containers
-07:45:33 INFO  ==============================================================
-07:45:33 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
-07:45:33 WARN  Aborted test due to SKIPPED outcome
-07:45:33 INFO  
-07:45:33 INFO  Test duration: 0.02 secs
-07:45:33 INFO  Test final outcome:  SKIPPED
-07:45:33 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
-07:45:33 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="invalid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="InvalidDeviceId" name="invalid_device_id" />
-</testsuite><testsuite name="local_mqtt_pub_fail_noqos" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_noqos" />
-</testsuite><testsuite name="local_mqtt_pub_fail_qos0" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos0" />
-</testsuite><testsuite name="local_mqtt_pub_fail_qos1" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos1" />
-</testsuite><testsuite name="local_mqtt_pub_fail_qos2" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos2" />
-</testsuite><testsuite name="local_mqtt_pub_sub" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_sub" />
-</testsuite><testsuite name="local_mqtt_pub_sub_retain" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPublishWithRetain" name="local_mqtt_pub_sub_retain" />
-</testsuite><testsuite name="local_mqtt_pub_sub_with_sudo" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_sub_with_sudo" />
-</testsuite><testsuite name="local_mqtt_sub_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_sub_fail" />
-</testsuite><testsuite name="log_request_error_messages" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifySearchTextError" name="log_request_error_messages" />
-</testsuite><testsuite name="log_request_num_lines" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifyNumberOfLines" name="log_request_num_lines" />
-</testsuite><testsuite name="mapper_awaits_before_reconnect" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect" />
-</testsuite><testsuite name="monitoring_smaller_interval" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringSmallInterval" name="monitoring_smaller_interval">
-		<skipped message="SKIPPED: Fails due to retained message" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    monitoring_smaller_interval
-07:45:28 INFO  Dir:   monitoring/
-07:45:28 INFO  Title: Validate the tedge dm agent messages that are produced with smaller sampling interval than the batching window. Here the simulated collectd messages are used
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Fails due to retained message ... skipped
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Fails due to retained message
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="monitoring_with_collectd" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringWithCollectd" name="monitoring_with_collectd">
-		<skipped message="SKIPPED: Test execution disabled due to #792 (instable)" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    monitoring_with_collectd
-07:45:28 INFO  Dir:   monitoring/
-07:45:28 INFO  Title: Validate tedge dm agent messages that are produced by batching the collectd messages
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Test execution disabled due to #792 (instable) ... skipped
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Test execution disabled due to #792 (instable)
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="monitoring_with_simulated_messages" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringWithSimulatedMessages" name="monitoring_with_simulated_messages">
-		<skipped message="SKIPPED: Fails due to retained message" />
-		<system-out>07:45:28 INFO  ==============================================================
-07:45:28 INFO  Id:    monitoring_with_simulated_messages
-07:45:28 INFO  Dir:   monitoring/
-07:45:28 INFO  Title: Validate the tedge dm agent messages that are produced from the simulated collectd messages
-07:45:28 INFO  ==============================================================
-07:45:28 INFO  Fails due to retained message ... skipped
-07:45:28 INFO  
-07:45:28 INFO  Test duration: 0.02 secs
-07:45:28 INFO  Test final outcome:  SKIPPED
-07:45:28 INFO  Test outcome reason: Fails due to retained message
-07:45:28 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="mqtt_port_change_connection_fails" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortChangeConnectionFails" name="mqtt_port_change_connection_fails" />
-</testsuite><testsuite name="mqtt_port_change_connection_works" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MqttPortChangeConnectionWorks" name="mqtt_port_change_connection_works">
-		<skipped message="SKIPPED: failing intermitently" />
-		<system-out>07:44:13 INFO  ==============================================================
-07:44:13 INFO  Id:    mqtt_port_change_connection_works
-07:44:13 INFO  Dir:   misc_features/
-07:44:13 INFO  Title: mqtt port change connection works for all the thin-edge services that use the mosquitto broker
-07:44:13 INFO  ==============================================================
-07:44:13 INFO  failing intermitently ... skipped
-07:44:13 INFO  
-07:44:13 INFO  Test duration: 0.02 secs
-07:44:13 INFO  Test final outcome:  SKIPPED
-07:44:13 INFO  Test outcome reason: failing intermitently
-07:44:13 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="mqtt_port_set" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortSet" name="mqtt_port_set" />
-</testsuite><testsuite name="mqtt_port_unset" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortUnSet" name="mqtt_port_unset" />
-</testsuite><testsuite name="publish_flux" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishFlux" name="publish_flux" />
-</testsuite><testsuite name="publish_sawmill" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishSawmill" name="publish_sawmill" />
-</testsuite><testsuite name="pysys_block" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="Fail" name="pysys_block">
-		<skipped message="SKIPPED: Enable this to observe a blocking test" />
-		<system-out>07:44:35 INFO  ==============================================================
-07:44:35 INFO  Id:    pysys_block
-07:44:35 INFO  Dir:   misc_features/
-07:44:35 INFO  Title: fail
-07:44:35 INFO  ==============================================================
-07:44:35 INFO  Enable this to observe a blocking test ... skipped
-07:44:35 INFO  
-07:44:35 INFO  Test duration: 0.02 secs
-07:44:35 INFO  Test final outcome:  SKIPPED
-07:44:35 INFO  Test outcome reason: Enable this to observe a blocking test
-07:44:35 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="pysys_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="Fail" name="pysys_fail">
-		<skipped message="SKIPPED: Enable this to observe a failing test" />
-		<system-out>07:44:35 INFO  ==============================================================
-07:44:35 INFO  Id:    pysys_fail
-07:44:35 INFO  Dir:   misc_features/
-07:44:35 INFO  Title: fail
-07:44:35 INFO  ==============================================================
-07:44:35 INFO  Enable this to observe a failing test ... skipped
-07:44:35 INFO  
-07:44:35 INFO  Test duration: 0.01 secs
-07:44:35 INFO  Test final outcome:  SKIPPED
-07:44:35 INFO  Test outcome reason: Enable this to observe a failing test
-07:44:35 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="runtime_start_two_mappers" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RuntimeMultiMappers" name="runtime_start_two_mappers" />
-</testsuite><testsuite name="sm_tedge_mapper_init_session" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeSMMapperInitSession" name="sm_tedge_mapper_init_session" />
-</testsuite><testsuite name="smoketest_json" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmokeTestJson" name="smoketest_json" />
-</testsuite><testsuite name="smoketest_json_400_samples_10ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples10ms" name="smoketest_json_400_samples_10ms" />
-</testsuite><testsuite name="smoketest_json_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples20ms" name="smoketest_json_400_samples_20ms" />
-</testsuite><testsuite name="smoketest_smartrest" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest" name="smoketest_smartrest" />
-</testsuite><testsuite name="smoketest_smartrest_400_samples_1Xms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples1Xms" name="smoketest_smartrest_400_samples_1Xms" />
-</testsuite><testsuite name="smoketest_smartrest_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples20ms" name="smoketest_smartrest_400_samples_20ms" />
-</testsuite><testsuite name="tedge_agent_user_sudo_access" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="TedgeAgentUserSudoAccess" name="tedge_agent_user_sudo_access">
-		<skipped message="SKIPPED: #955 Observation: Exit code of the apt plugin when called with no arguments" />
-		<system-out>07:55:36 INFO  ==============================================================
-07:55:36 INFO  Id:    tedge_agent_user_sudo_access
-07:55:36 INFO  Dir:   tedge/
-07:55:36 INFO  Title: Validate tedge-agent user has a limited sudo right
-07:55:36 INFO  ==============================================================
-07:55:36 INFO  #955 Observation: Exit code of the apt plugin when called with no arguments ... skipped
-07:55:36 INFO  
-07:55:36 INFO  Test duration: 0.02 secs
-07:55:36 INFO  Test final outcome:  SKIPPED
-07:55:36 INFO  Test outcome reason: #955 Observation: Exit code of the apt plugin when called with no arguments
-07:55:36 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="tedge_connect_test_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestNegative" name="tedge_connect_test_negative" />
-</testsuite><testsuite name="tedge_connect_test_positive" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestPositive" name="tedge_connect_test_positive" />
-</testsuite><testsuite name="tedge_connect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestSMServices" name="tedge_connect_test_sm_services" />
-</testsuite><testsuite name="tedge_disconnect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeDisConnectTestSMServices" name="tedge_disconnect_test_sm_services" />
-</testsuite><testsuite name="tedge_mapper_az_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzError" name="tedge_mapper_az_negative" />
-</testsuite><testsuite name="tedge_mapper_az_with_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithTimestamp" name="tedge_mapper_az_with_timestamp" />
-</testsuite><testsuite name="tedge_mapper_az_without_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithoutTimestamp" name="tedge_mapper_az_without_timestamp" />
-</testsuite><testsuite name="tedge_mapper_c8y_alarms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms" />
-</testsuite><testsuite name="tedge_mapper_c8y_child_device_measurement" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeMapperC8yChildDevice" name="tedge_mapper_c8y_child_device_measurement">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not subscriptable (+1 other failures)" type="BLOCKED" />
-		<system-out>07:59:56 INFO  ==============================================================
-07:59:56 INFO  Id:    tedge_mapper_c8y_child_device_measurement
-07:59:56 INFO  Dir:   tedge_mapper_c8y/
-07:59:56 INFO  Title: Validate that measurements sent to tedge/measurements/child topic gets mapped as the child device's measurement in Cumulocity
-07:59:56 INFO  ==============================================================
-07:59:56 INFO  EnvironmentC8y Setup
-07:59:57 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-07:59:57 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
-07:59:57 INFO  Delaying execution by 7 seconds
-08:00:18 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-08:00:19 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-08:00:19 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-08:00:20 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-08:00:21 INFO  Assert that (actual == expected) with actual=None, expected=None ... passed
-08:00:21 INFO  Executed tedge_pub, exit status 0
-08:00:21 INFO  Executed tedge_pub, exit status 0
-08:00:22 INFO  Executed tedge_pub, exit status 0
-08:00:22 INFO  Executed tedge_pub, exit status 0
-08:00:23 INFO  Executed tedge_pub, exit status 0
-08:00:25 WARN  TypeError occurred while running test - 'NoneType' object is not subscriptable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1296, in __call__
-    self.testObj.validate()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 115, in validate
-    self.child_device_json["id"], 3
-TypeError: 'NoneType' object is not subscriptable
-08:00:25 WARN  TypeError: 'NoneType' object is not subscriptable ... blocked 
-08:00:25 INFO  
-08:00:25 INFO  cleanup:
-08:00:25 ERROR Error while running cleanup function: 
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
-    fn()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 165, in test_cleanup
-    self.child_device_json["id"]
-TypeError: 'NoneType' object is not subscriptable
-08:00:29 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-08:00:30 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-08:00:30 WARN  Cleanup failed with 1 errors: Cleanup function failed: 'NoneType' object is not subscriptable (TypeError) ... blocked 
-08:00:30 INFO  
-08:00:30 INFO  Test duration: 33.43 secs
-08:00:30 INFO  Test final outcome:  BLOCKED
-08:00:30 INFO  Test outcome reason: TypeError: 'NoneType' object is not subscriptable (+1 other failures)
-08:00:30 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="tedge_mapper_c8y_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_negative" />
-</testsuite><testsuite name="tedge_mapper_c8y_packet_threshold_size" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yThresholdPacketSize" name="tedge_mapper_c8y_packet_threshold_size" />
-</testsuite><testsuite name="tedge_mapper_c8y_positive" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8y" name="tedge_mapper_c8y_positive" />
-</testsuite><testsuite name="tedge_software_update" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="tedge_software_update" />
-</testsuite><testsuite name="valid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateValidDeviceId" name="valid_device_id" />
+</testsuite><testsuite name="SoftwareManagement.sm_docker_install_remove_multiple" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
+</testsuite><testsuite name="docker_plugin_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginFinalizeTest" name="docker_plugin_finalize" />
+</testsuite><testsuite name="docker_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginInstallTest" name="docker_plugin_install" />
+</testsuite><testsuite name="docker_plugin_install_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginInstallWithVersionTest" name="docker_plugin_install_with_version" />
+</testsuite><testsuite name="docker_plugin_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove" />
+</testsuite><testsuite name="docker_plugin_remove_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginRemoveWithVersionTest" name="docker_plugin_remove_with_version" />
+</testsuite><testsuite name="docker_plugin_update" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginUpdateTest" name="docker_plugin_update" />
 </testsuite></testsuites>

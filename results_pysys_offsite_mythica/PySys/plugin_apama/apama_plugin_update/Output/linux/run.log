@@ -1,12 +1,32 @@
-2022-04-13 07:45:31,038 INFO  ==============================================================
-2022-04-13 07:45:31,039 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
-2022-04-13 07:45:31,040 INFO  Dir:   plugin_apama/
-2022-04-13 07:45:31,041 INFO  Title: Validate apama plugin updating one project with another
-2022-04-13 07:45:31,042 INFO  ==============================================================
-2022-04-13 07:45:31,046 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
-2022-04-13 07:45:31,048 WARN  Aborted test due to SKIPPED outcome
-2022-04-13 07:45:31,053 INFO  
-2022-04-13 07:45:31,054 INFO  Test duration: 0.02 secs
-2022-04-13 07:45:31,055 INFO  Test final outcome:  SKIPPED
-2022-04-13 07:45:31,056 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
-2022-04-13 07:45:31,057 INFO  
+2022-04-14 07:22:25,518 INFO  ==============================================================
+2022-04-14 07:22:25,519 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+2022-04-14 07:22:25,521 INFO  Dir:   plugin_apama/
+2022-04-14 07:22:25,521 INFO  Title: Validate apama plugin updating one project with another
+2022-04-14 07:22:25,522 INFO  ==============================================================
+2022-04-14 07:22:25,528 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-04-14 07:22:26,039 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-04-14 07:22:26,670 INFO  Executed sudo<unzip_apama_project>, exit status 0
+2022-04-14 07:22:27,182 INFO  Executed sudo<move_apama_project>, exit status 0
+2022-04-14 07:22:28,046 INFO  Executed sudo<restart_apama_service>, exit status 0
+2022-04-14 07:22:28,817 INFO  Executed sudo<apama_correlator_wait>, exit status 0
+2022-04-14 07:22:28,819 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
+2022-04-14 07:22:29,582 INFO  Executed sudo<apama_list_monitors>, exit status 0
+2022-04-14 07:22:29,587 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/apama_list_monitors.out ... passed
+2022-04-14 07:22:30,149 WARN  Executed sudo<plugin_install>, exit status 2
+2022-04-14 07:22:30,154 INFO  Contents of plugin_install.err: 
+2022-04-14 07:22:30,155 INFO    ERROR: Directory not empty (os error 39)
+2022-04-14 07:22:30,156 INFO    -----
+2022-04-14 07:22:30,156 INFO  
+2022-04-14 07:22:30,434 WARN  sudo<plugin_install> returned non-zero exit code 2 ... blocked [run.py:35]
+2022-04-14 07:22:30,436 WARN  Aborted test due to BLOCKED outcome
+2022-04-14 07:22:30,443 INFO  
+2022-04-14 07:22:30,444 INFO  cleanup:
+2022-04-14 07:22:30,445 INFO  Removing apama project
+2022-04-14 07:22:46,628 INFO  Executed sudo<stop_apama_service>, exit status 0, duration 16 secs
+2022-04-14 07:22:47,161 INFO  Executed sudo<remove_apama_project>, exit status 0
+2022-04-14 07:22:47,673 INFO  Executed sudo<remove_apama_tmp_dir>, exit status 0
+2022-04-14 07:22:47,676 INFO  
+2022-04-14 07:22:47,677 INFO  Test duration: 22.16 secs
+2022-04-14 07:22:47,678 INFO  Test final outcome:  BLOCKED
+2022-04-14 07:22:47,679 INFO  Test outcome reason: sudo<plugin_install> returned non-zero exit code 2
+2022-04-14 07:22:47,680 INFO  
