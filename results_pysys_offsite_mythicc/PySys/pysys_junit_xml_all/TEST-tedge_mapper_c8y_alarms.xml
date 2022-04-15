@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite failures="1" name="tedge_mapper_c8y_alarms" skipped="0" tests="1" time="31.2" timestamp="2022-04-15T09:12:15">
+	<testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms">
+		<failure message="BLOCKED: IndexError: list index out of range" type="BLOCKED"/>
+		<system-out>09:11:44 INFO  ==============================================================
+09:11:44 INFO  Id:    tedge_mapper_c8y_alarms
+09:11:44 INFO  Dir:   tedge_mapper_c8y/
+09:11:44 INFO  Title: Validate that alarms sent to tedge/alarms topic \ gets mapped as alarms in Cumulocity
+09:11:44 INFO  ==============================================================
+09:11:44 INFO  EnvironmentC8y Setup
+09:11:44 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:11:59 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:11:59 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:12:00 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:12:00 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:12:06 INFO  Executed tedge, exit status 0
+09:12:06 INFO  Executed tedge, exit status 0
+09:12:07 INFO  Executed tedge, exit status 0
+09:12:07 INFO  Executed tedge, exit status 0
+09:12:07 INFO  Executed tedge, exit status 0
+09:12:09 WARN  IndexError occurred while running test - list index out of range
+Traceback (most recent call last):
+  File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1296, in __call__
+    self.testObj.validate()
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/run.py&quot;, line 100, in validate
+    alarms[0],
+IndexError: list index out of range
+09:12:09 WARN  IndexError: list index out of range ... blocked 
+09:12:09 INFO  
+09:12:09 INFO  cleanup:
+09:12:09 INFO  Executed tedge, exit status 0
+09:12:10 INFO  Executed tedge, exit status 0
+09:12:10 INFO  Executed tedge, exit status 0
+09:12:15 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:12:15 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+09:12:15 INFO  
+09:12:15 INFO  Test duration: 31.20 secs
+09:12:15 INFO  Test final outcome:  BLOCKED
+09:12:15 INFO  Test outcome reason: IndexError: list index out of range
+09:12:15 INFO  
+</system-out>
+	</testcase>
+</testsuite>

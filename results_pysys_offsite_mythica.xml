@@ -1,379 +1,2067 @@
 <?xml version='1.0' encoding='utf-8'?>
-<testsuites tests="38" failures="8" errors="0" skipped="0" time="0.0"><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:22:08 INFO  ==============================================================
-10:22:08 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
-10:22:08 INFO  Dir:   software_management_end_to_end/
-10:22:08 INFO  Title: Install package to directory specified in tedge config set tmp.path
-10:22:08 INFO  ==============================================================
-10:22:08 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:22:08 INFO  EnvironmentC8y Setup
-10:22:09 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:22:24 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:22:26 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:22:28 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:22:28 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:22:31 ERROR No operations found, assuming it passed
-10:22:31 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 49, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:22:31 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:22:31 INFO  
-10:22:31 INFO  cleanup:
-10:22:32 INFO  Executed sudo, exit status 0
-10:22:33 INFO  Executed sudo, exit status 0
-10:22:37 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:22:37 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
-10:22:37 INFO  Delaying execution by 8 seconds
-10:22:59 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:23:03 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:23:04 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:23:04 INFO  
-10:23:04 INFO  Test duration: 56.39 secs
-10:23:04 INFO  Test final outcome:  BLOCKED
-10:23:04 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:23:04 INFO  
+<testsuites tests="149" failures="11" errors="0" skipped="49" time="0.0"><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install">
+		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_install
+08:57:05 INFO  Dir:   plugin_apama/
+08:57:05 INFO  Title: Validate apama plugin install
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.04 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
+08:57:05 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:23:04 INFO  ==============================================================
-10:23:04 INFO  Id:    SoftwareManagement.sm_apt_install_fail
-10:23:04 INFO  Dir:   software_management_end_to_end/
-10:23:04 INFO  Title: Validate end to end behaviour for a failing installation
-10:23:04 INFO  ==============================================================
-10:23:04 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:23:04 INFO  EnvironmentC8y Setup
-10:23:05 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:23:05 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:23:05 INFO  Delaying execution by 6 seconds
-10:23:26 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:23:26 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:23:27 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:23:27 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:23:29 ERROR No operations found, assuming it passed
-10:23:30 INFO  Response status: 201
-10:23:30 INFO  Response to action: {
-    "creationTime": "2022-04-14T10:23:30.173Z",
-    "deviceName": "mythica",
-    "deviceId": "17326138",
-    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17330316",
-    "id": "17330316",
-    "status": "PENDING",
-    "description": "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]",
-    "c8y_SoftwareUpdate": [
-        {
-            "name": "does_not_exist",
-            "action": "install",
-            "id": "5446165",
-            "version": "::apt",
-            "url": ""
-        }
-    ]
-}
-10:23:30 INFO  Started operation: {'creationTime': '2022-04-14T10:23:30.173Z', 'deviceName': 'mythica', 'deviceId': '17326138', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17330316', 'id': '17330316', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'does_not_exist', 'id': '5446165', 'version': '::apt', 'url': '', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'does_not_exist', 'action': 'install', 'id': '5446165', 'version': '::apt', 'url': ''}]}
-10:23:32 INFO  State of operation 17330316 : PENDING
-10:23:34 INFO  State of operation 17330316 : EXECUTING
-10:23:36 INFO  State of operation 17330316 : EXECUTING
-10:23:39 INFO  State of operation 17330316 : EXECUTING
-10:23:41 INFO  State of operation 17330316 : EXECUTING
-10:23:43 INFO  State of operation 17330316 : EXECUTING
-10:23:46 INFO  State of operation 17330316 : EXECUTING
-10:23:48 INFO  State of operation 17330316 : EXECUTING
-10:23:51 INFO  State of operation 17330316 : EXECUTING
-10:23:53 INFO  State of operation 17330316 : EXECUTING
-10:23:55 INFO  State of operation 17330316 : EXECUTING
-10:23:58 INFO  State of operation 17330316 : EXECUTING
-10:24:00 INFO  State of operation 17330316 : EXECUTING
-10:24:02 INFO  State of operation 17330316 : EXECUTING
-10:24:04 INFO  State of operation 17330316 : EXECUTING
-10:24:07 INFO  State of operation 17330316 : EXECUTING
-10:24:09 INFO  State of operation 17330316 : EXECUTING
-10:24:12 INFO  State of operation 17330316 : EXECUTING
-10:24:14 INFO  State of operation 17330316 : EXECUTING
-10:24:16 INFO  State of operation 17330316 : EXECUTING
-10:24:19 INFO  State of operation 17330316 : FAILED
-10:24:19 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1296, in __call__
-    self.testObj.validate()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_fail/run.py", line 31, in validate
-    "False == value", value=self.check_is_installed("does_not_exist")
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:24:19 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:24:19 INFO  
-10:24:19 INFO  cleanup:
-10:24:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:24:23 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:24:23 INFO  
-10:24:23 INFO  Test duration: 79.44 secs
-10:24:23 INFO  Test final outcome:  BLOCKED
-10:24:23 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:24:23 INFO  
+<testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+<testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support">
+		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_mon_support
+08:57:05 INFO  Dir:   plugin_apama/
+08:57:05 INFO  Title: Validate mon file support of apama plugin
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
+08:57:05 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:24:24 INFO  ==============================================================
-10:24:24 INFO  Id:    SoftwareManagement.sm_apt_install_remove
-10:24:24 INFO  Dir:   software_management_end_to_end/
-10:24:24 INFO  Title: Validate end to end behaviour for the apt plugin for installation and removal of packages
-10:24:24 INFO  ==============================================================
-10:24:24 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:24:24 INFO  EnvironmentC8y Setup
-10:24:24 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:24:24 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:24:24 INFO  Delaying execution by 6 seconds
-10:24:45 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:24:45 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:24:46 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:24:46 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:24:49 INFO  State of current operation: FAILED
-10:24:49 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove/run.py", line 28, in setup
-    if self.check_is_installed("rolldice"):
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:24:49 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:24:49 INFO  
-10:24:49 INFO  cleanup:
-10:24:53 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:24:54 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:24:54 INFO  
-10:24:54 INFO  Test duration: 30.13 secs
-10:24:54 INFO  Test final outcome:  BLOCKED
-10:24:54 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:24:54 INFO  
+<testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
+<testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_remove" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove">
+		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_remove
+08:57:05 INFO  Dir:   plugin_apama/
+08:57:05 INFO  Title: Validate apama plugin remove
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
+08:57:05 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:24:54 INFO  ==============================================================
-10:24:54 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
-10:24:54 INFO  Dir:   software_management_end_to_end/
-10:24:54 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
-10:24:54 INFO  ==============================================================
-10:24:54 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:24:54 INFO  EnvironmentC8y Setup
-10:24:54 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:24:55 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:24:55 INFO  Delaying execution by 6 seconds
-10:25:15 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:25:15 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:25:16 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:25:16 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:25:18 INFO  State of current operation: FAILED
-10:25:19 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_default/run.py", line 27, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:25:19 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:25:19 INFO  
-10:25:19 INFO  cleanup:
-10:25:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:25:23 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:25:23 INFO  
-10:25:23 INFO  Test duration: 29.70 secs
-10:25:23 INFO  Test final outcome:  BLOCKED
-10:25:23 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:25:23 INFO  
+<testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
+<testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
+</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="3" errors="0" failures="2" skipped="1" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
+		<skipped message="SKIPPED: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+08:57:05 INFO  Dir:   plugin_apama/
+08:57:05 INFO  Title: Validate apama plugin updating one project with another
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Apama plugin tests are disabled by default. Execute `pysys run` with `-XmyPlatform=container` to run these tests
+08:57:05 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:25:23 INFO  ==============================================================
-10:25:23 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
-10:25:23 INFO  Dir:   software_management_end_to_end/
-10:25:23 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
-10:25:23 INFO  ==============================================================
-10:25:23 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:25:23 INFO  EnvironmentC8y Setup
-10:25:24 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:25:24 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:25:24 INFO  Delaying execution by 6 seconds
-10:25:44 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 13 secs
-10:25:45 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:25:45 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:25:46 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:25:48 INFO  State of current operation: FAILED
-10:25:48 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple/run.py", line 54, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:25:48 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:25:48 INFO  
-10:25:48 INFO  cleanup:
-10:25:52 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:25:53 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:25:53 INFO  
-10:25:53 INFO  Test duration: 29.36 secs
-10:25:53 INFO  Test final outcome:  BLOCKED
-10:25:53 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:25:53 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:25:53 INFO  ==============================================================
-10:25:53 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
-10:25:53 INFO  Dir:   software_management_end_to_end/
-10:25:53 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
-10:25:53 INFO  ==============================================================
-10:25:53 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:25:53 INFO  EnvironmentC8y Setup
-10:25:53 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:25:54 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:25:54 INFO  Delaying execution by 6 seconds
-10:26:14 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
-10:26:14 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:26:15 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:26:15 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:26:18 INFO  State of current operation: FAILED
-10:26:18 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/run.py", line 75, in setup
-    self.assertThat("False == value", value=self.check_is_installed("asciijump"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:26:18 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:26:18 INFO  
-10:26:18 INFO  cleanup:
-10:26:22 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:26:23 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:26:23 INFO  
-10:26:23 INFO  Test duration: 29.69 secs
-10:26:23 INFO  Test final outcome:  BLOCKED
-10:26:23 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:26:23 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version">
-		<failure message="BLOCKED: TypeError: 'NoneType' object is not iterable" type="BLOCKED" />
-		<system-out>10:26:23 INFO  ==============================================================
-10:26:23 INFO  Id:    SoftwareManagement.sm_apt_install_remove_with_version
-10:26:23 INFO  Dir:   software_management_end_to_end/
-10:26:23 INFO  Title: Validate end to end behaviour for the apt plugin for packages with version
-10:26:23 INFO  ==============================================================
-10:26:23 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
-10:26:23 INFO  EnvironmentC8y Setup
-10:26:23 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
-10:26:23 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
-10:26:23 INFO  Delaying execution by 6 seconds
-10:26:43 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 13 secs
-10:26:44 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
-10:26:44 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
-10:26:45 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
-10:26:47 INFO  State of current operation: FAILED
-10:26:47 WARN  TypeError occurred while running test - 'NoneType' object is not iterable
-Traceback (most recent call last):
-  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1292, in __call__
-    self.testObj.setup()
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_with_version/run.py", line 29, in setup
-    self.assertThat("False == value", value=self.check_is_installed("rolldice"))
-  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 398, in check_is_installed
-    for package in package_list:
-TypeError: 'NoneType' object is not iterable
-10:26:47 WARN  TypeError: 'NoneType' object is not iterable ... blocked 
-10:26:47 INFO  
-10:26:47 INFO  cleanup:
-10:26:51 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
-10:26:52 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
-10:26:52 INFO  
-10:26:52 INFO  Test duration: 29.23 secs
-10:26:52 INFO  Test final outcome:  BLOCKED
-10:26:52 INFO  Test outcome reason: TypeError: 'NoneType' object is not iterable
-10:26:52 INFO  
-</system-out>
-	</testcase>
-</testsuite><testsuite name="apt_fail_noarg" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg" />
-</testsuite><testsuite name="apt_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginFinalize" name="apt_finalize" />
-</testsuite><testsuite name="apt_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallDense" name="apt_install" />
-</testsuite><testsuite name="apt_install_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFail" name="apt_install_fail" />
-</testsuite><testsuite name="apt_install_local_file" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFile" name="apt_install_local_file" />
-</testsuite><testsuite name="apt_install_local_file_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileFail" name="apt_install_local_file_fail" />
-</testsuite><testsuite name="apt_install_local_file_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersion" name="apt_install_local_file_with_version" />
-</testsuite><testsuite name="apt_install_local_file_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersionFail" name="apt_install_local_file_with_version_fail" />
-</testsuite><testsuite name="apt_list_format" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginListFormat" name="apt_list_format" />
-</testsuite><testsuite name="apt_prepare" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepare" name="apt_prepare" />
-</testsuite><testsuite name="apt_prepare_install_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepareInstallFinalize" name="apt_prepare_install_finalize" />
-</testsuite><testsuite name="apt_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveDense" name="apt_remove" />
-</testsuite><testsuite name="apt_remove_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveFails" name="apt_remove_fail" />
-</testsuite><testsuite name="apt_sequence_install_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginPrepInstallWithVersionFinalize" name="apt_sequence_install_with_version" />
-</testsuite><testsuite name="apt_sequence_install_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallWithVersionFails" name="apt_sequence_install_with_version_fail" />
-</testsuite><testsuite name="apt_sequence_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginInstallPrepareRemoveFinalize" name="apt_sequence_remove" />
-</testsuite><testsuite name="apt_sequence_remove_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveWithVersion" name="apt_sequence_remove_with_version" />
-</testsuite><testsuite name="apt_sequence_remove_with_version_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail" />
-</testsuite><testsuite name="apt_update_list" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginUpdateList" name="apt_update_list" />
-</testsuite><testsuite name="apt_wrong_option" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option" />
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install" />
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_mon_support" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginMonSupportTest" name="SoftwareManagement.Plugin.apama_plugin_mon_support" />
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ApamaPluginRemoveTest" name="SoftwareManagement.Plugin.apama_plugin_remove" />
-</testsuite><testsuite name="SoftwareManagement.Plugin.apama_plugin_update" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
+<testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
 		<failure message="BLOCKED: sudo&lt;plugin_install&gt; returned non-zero exit code 2" type="BLOCKED" />
-		<system-out>10:28:11 INFO  ==============================================================
-10:28:11 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
-10:28:11 INFO  Dir:   plugin_apama/
-10:28:11 INFO  Title: Validate apama plugin updating one project with another
-10:28:11 INFO  ==============================================================
-10:28:11 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
-10:28:11 INFO  Executed sudo&lt;create_project_dir&gt;, exit status 0
-10:28:12 INFO  Executed sudo&lt;unzip_apama_project&gt;, exit status 0
-10:28:13 INFO  Executed sudo&lt;move_apama_project&gt;, exit status 0
-10:28:13 INFO  Executed sudo&lt;restart_apama_service&gt;, exit status 0
-10:28:14 INFO  Executed sudo&lt;apama_correlator_wait&gt;, exit status 0
-10:28:14 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
-10:28:15 INFO  Executed sudo&lt;apama_list_monitors&gt;, exit status 0
-10:28:15 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/apama_list_monitors.out ... passed
-10:28:16 WARN  Executed sudo&lt;plugin_install&gt;, exit status 2
-10:28:16 INFO  Contents of plugin_install.err: 
+		<system-out>09:49:35 INFO  ==============================================================
+09:49:35 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+09:49:35 INFO  Dir:   plugin_apama/
+09:49:35 INFO  Title: Validate apama plugin updating one project with another
+09:49:35 INFO  ==============================================================
+09:49:35 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+09:49:36 INFO  Executed sudo&lt;create_project_dir&gt;, exit status 0
+09:49:36 INFO  Executed sudo&lt;unzip_apama_project&gt;, exit status 0
+09:49:37 INFO  Executed sudo&lt;move_apama_project&gt;, exit status 0
+09:49:38 INFO  Executed sudo&lt;restart_apama_service&gt;, exit status 0
+09:49:39 INFO  Executed sudo&lt;apama_correlator_wait&gt;, exit status 0
+09:49:39 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
+09:49:39 INFO  Executed sudo&lt;apama_list_monitors&gt;, exit status 0
+09:49:39 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/apama_list_monitors.out ... passed
+09:49:40 WARN  Executed sudo&lt;plugin_install&gt;, exit status 2
+09:49:40 INFO  Contents of plugin_install.err: 
   ERROR: Directory not empty (os error 39)
   -----
 
-10:28:16 WARN  sudo&lt;plugin_install&gt; returned non-zero exit code 2 ... blocked [run.py:35]
-10:28:16 WARN  Aborted test due to BLOCKED outcome
-10:28:16 INFO  
-10:28:16 INFO  cleanup:
-10:28:16 INFO  Removing apama project
-10:28:32 INFO  Executed sudo&lt;stop_apama_service&gt;, exit status 0, duration 15 secs
-10:28:32 INFO  Executed sudo&lt;remove_apama_project&gt;, exit status 0
-10:28:33 INFO  Executed sudo&lt;remove_apama_tmp_dir&gt;, exit status 0
-10:28:33 INFO  
-10:28:33 INFO  Test duration: 22.03 secs
-10:28:33 INFO  Test final outcome:  BLOCKED
-10:28:33 INFO  Test outcome reason: sudo&lt;plugin_install&gt; returned non-zero exit code 2
-10:28:33 INFO  
+09:49:40 WARN  sudo&lt;plugin_install&gt; returned non-zero exit code 2 ... blocked [run.py:35]
+09:49:40 WARN  Aborted test due to BLOCKED outcome
+09:49:40 INFO  
+09:49:40 INFO  cleanup:
+09:49:40 INFO  Removing apama project
+09:49:58 INFO  Executed sudo&lt;stop_apama_service&gt;, exit status 0, duration 18 secs
+09:49:59 INFO  Executed sudo&lt;remove_apama_project&gt;, exit status 0
+09:49:59 INFO  Executed sudo&lt;remove_apama_tmp_dir&gt;, exit status 0
+09:49:59 INFO  
+09:49:59 INFO  Test duration: 24.12 secs
+09:49:59 INFO  Test final outcome:  BLOCKED
+09:49:59 INFO  Test outcome reason: sudo&lt;plugin_install&gt; returned non-zero exit code 2
+09:49:59 INFO  
 </system-out>
 	</testcase>
-</testsuite><testsuite name="SoftwareManagement.sm_docker_install_remove_multiple" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
-</testsuite><testsuite name="docker_plugin_finalize" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginFinalizeTest" name="docker_plugin_finalize" />
-</testsuite><testsuite name="docker_plugin_install" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginInstallTest" name="docker_plugin_install" />
-</testsuite><testsuite name="docker_plugin_install_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginInstallWithVersionTest" name="docker_plugin_install_with_version" />
-</testsuite><testsuite name="docker_plugin_remove" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove" />
-</testsuite><testsuite name="docker_plugin_remove_with_version" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginRemoveWithVersionTest" name="docker_plugin_remove_with_version" />
-</testsuite><testsuite name="docker_plugin_update" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="DockerPluginUpdateTest" name="docker_plugin_update" />
+<testcase classname="ApamaPluginUpdateTest" name="SoftwareManagement.Plugin.apama_plugin_update">
+		<failure message="BLOCKED: sudo&lt;plugin_install&gt; returned non-zero exit code 2" type="BLOCKED" />
+		<system-out>09:58:35 INFO  ==============================================================
+09:58:35 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+09:58:35 INFO  Dir:   plugin_apama/
+09:58:35 INFO  Title: Validate apama plugin updating one project with another
+09:58:35 INFO  ==============================================================
+09:58:35 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+09:58:36 INFO  Executed sudo&lt;create_project_dir&gt;, exit status 0
+09:58:36 INFO  Executed sudo&lt;unzip_apama_project&gt;, exit status 0
+09:58:37 INFO  Executed sudo&lt;move_apama_project&gt;, exit status 0
+09:58:38 INFO  Executed sudo&lt;restart_apama_service&gt;, exit status 0
+09:58:38 INFO  Executed sudo&lt;apama_correlator_wait&gt;, exit status 0
+09:58:38 INFO  Assertion that path exists=True for "/etc/tedge/apama/project" ... passed
+09:58:39 INFO  Executed sudo&lt;apama_list_monitors&gt;, exit status 0
+09:58:39 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_apama/apama_plugin_update/Output/linux/apama_list_monitors.out ... passed
+09:58:40 WARN  Executed sudo&lt;plugin_install&gt;, exit status 2
+09:58:40 INFO  Contents of plugin_install.err: 
+  ERROR: Directory not empty (os error 39)
+  -----
+
+09:58:40 WARN  sudo&lt;plugin_install&gt; returned non-zero exit code 2 ... blocked [run.py:35]
+09:58:40 WARN  Aborted test due to BLOCKED outcome
+09:58:40 INFO  
+09:58:40 INFO  cleanup:
+09:58:40 INFO  Removing apama project
+09:58:56 INFO  Executed sudo&lt;stop_apama_service&gt;, exit status 0, duration 16 secs
+09:58:57 INFO  Executed sudo&lt;remove_apama_project&gt;, exit status 0
+09:58:57 INFO  Executed sudo&lt;remove_apama_tmp_dir&gt;, exit status 0
+09:58:57 INFO  
+09:58:57 INFO  Test duration: 22.32 secs
+09:58:57 INFO  Test final outcome:  BLOCKED
+09:58:57 INFO  Test outcome reason: sudo&lt;plugin_install&gt; returned non-zero exit code 2
+09:58:57 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_download_path" tests="3" errors="0" failures="2" skipped="1" time="0"><testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:54 INFO  ==============================================================
+09:06:54 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+09:06:54 INFO  Dir:   software_management_end_to_end/
+09:06:54 INFO  Title: Install package to directory specified in tedge config set tmp.path
+09:06:54 INFO  ==============================================================
+09:06:54 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:54 WARN  Aborted test due to SKIPPED outcome
+09:06:54 INFO  
+09:06:54 INFO  Test duration: 0.07 secs
+09:06:54 INFO  Test final outcome:  SKIPPED
+09:06:54 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:54 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
+		<failure message="BLOCKED: AssertionError:" type="BLOCKED" />
+		<system-out>09:31:05 INFO  ==============================================================
+09:31:05 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+09:31:05 INFO  Dir:   software_management_end_to_end/
+09:31:05 INFO  Title: Install package to directory specified in tedge config set tmp.path
+09:31:05 INFO  ==============================================================
+09:31:05 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+09:31:05 INFO  EnvironmentC8y Setup
+09:31:06 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:31:21 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:31:23 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:31:24 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:31:25 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:31:27 INFO  State of current operation: SUCCESSFUL
+09:31:27 INFO  Assert that (False == value) with value=False ... passed
+09:31:28 INFO  Executed sudo, exit status 0
+09:31:28 INFO  Executed sudo, exit status 0
+09:31:29 INFO  Executed sudo, exit status 0
+09:31:33 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:31:33 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+09:31:33 INFO  Delaying execution by 7 seconds
+09:31:55 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:31:55 INFO  Response status: 201
+09:31:55 INFO  Response to action: {
+    "delivery": {
+        "time": "2022-04-15T09:31:55.596Z",
+        "log": [],
+        "status": "PENDING"
+    },
+    "creationTime": "2022-04-15T09:31:55.582Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367018",
+    "id": "17367018",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "::apt",
+            "url": "https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463"
+        }
+    ]
+}
+09:31:55 INFO  Started operation: {'delivery': {'time': '2022-04-15T09:31:55.596Z', 'log': [], 'status': 'PENDING'}, 'creationTime': '2022-04-15T09:31:55.582Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367018', 'id': '17367018', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463'}]}
+09:31:55 WARN  , retrying in 0.5 seconds...
+09:31:56 WARN  , retrying in 0.5 seconds...
+09:31:56 WARN  , retrying in 0.5 seconds...
+09:31:57 WARN  , retrying in 0.5 seconds...
+09:31:57 WARN  , retrying in 0.5 seconds...
+09:31:58 WARN  , retrying in 0.5 seconds...
+09:31:58 WARN  , retrying in 0.5 seconds...
+09:31:59 WARN  , retrying in 0.5 seconds...
+09:31:59 WARN  , retrying in 0.5 seconds...
+09:32:00 WARN  AssertionError occurred while running test - 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 83, in execute
+    assert_install_in_download_path(install_directory=self.DOWNLOAD_DIR)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 74, in retry_decorator
+    logger)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 33, in __retry_internal
+    return f()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 28, in assert_install_in_download_path
+    assert "rolldice" in os.listdir(f"{install_directory}")
+AssertionError
+09:32:00 WARN  AssertionError: ... blocked 
+09:32:00 INFO  
+09:32:00 INFO  cleanup:
+09:32:01 INFO  Executed sudo, exit status 0
+09:32:01 INFO  Executed sudo, exit status 0
+09:32:06 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:32:06 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 3 seconds
+09:32:06 INFO  Delaying execution by 8 seconds
+09:32:28 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:32:33 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:32:33 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+09:32:33 INFO  
+09:32:33 INFO  Test duration: 88.24 secs
+09:32:33 INFO  Test final outcome:  BLOCKED
+09:32:33 INFO  Test outcome reason: AssertionError:
+09:32:33 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptInstallWithDownloadPath" name="SoftwareManagement.sm_apt_install_download_path">
+		<failure message="BLOCKED: AssertionError:" type="BLOCKED" />
+		<system-out>09:58:57 INFO  ==============================================================
+09:58:57 INFO  Id:    SoftwareManagement.sm_apt_install_download_path
+09:58:57 INFO  Dir:   software_management_end_to_end/
+09:58:57 INFO  Title: Install package to directory specified in tedge config set tmp.path
+09:58:57 INFO  ==============================================================
+09:58:59 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+09:58:59 INFO  EnvironmentC8y Setup
+09:58:59 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:59:14 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:59:14 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:59:15 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:59:15 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:59:18 INFO  State of current operation: SUCCESSFUL
+09:59:18 INFO  Assert that (False == value) with value=False ... passed
+09:59:19 INFO  Executed sudo, exit status 0
+09:59:19 INFO  Executed sudo, exit status 0
+09:59:20 INFO  Executed sudo, exit status 0
+09:59:24 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:59:24 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+09:59:24 INFO  Delaying execution by 7 seconds
+09:59:46 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:59:46 INFO  Response status: 201
+09:59:46 INFO  Response to action: {
+    "delivery": {
+        "time": "2022-04-15T09:59:46.466Z",
+        "log": [],
+        "status": "PENDING"
+    },
+    "creationTime": "2022-04-15T09:59:46.454Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372116",
+    "id": "17372116",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "::apt",
+            "url": "https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463"
+        }
+    ]
+}
+09:59:46 INFO  Started operation: {'delivery': {'time': '2022-04-15T09:59:46.466Z', 'log': [], 'status': 'PENDING'}, 'creationTime': '2022-04-15T09:59:46.454Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372116', 'id': '17372116', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'name': 'rolldice', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463', 'action': 'install'}]", 'c8y_SoftwareUpdate': [{'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '::apt', 'url': 'https://thin-edge-io.eu-latest.cumulocity.com/inventory/binaries/12435463'}]}
+09:59:46 WARN  , retrying in 0.5 seconds...
+09:59:47 WARN  , retrying in 0.5 seconds...
+09:59:47 WARN  , retrying in 0.5 seconds...
+09:59:48 WARN  , retrying in 0.5 seconds...
+09:59:48 WARN  , retrying in 0.5 seconds...
+09:59:49 WARN  , retrying in 0.5 seconds...
+09:59:49 WARN  , retrying in 0.5 seconds...
+09:59:50 WARN  , retrying in 0.5 seconds...
+09:59:50 WARN  , retrying in 0.5 seconds...
+09:59:51 WARN  AssertionError occurred while running test - 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 83, in execute
+    assert_install_in_download_path(install_directory=self.DOWNLOAD_DIR)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/decorator.py", line 232, in fun
+    return caller(func, *(extras + args), **kw)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 74, in retry_decorator
+    logger)
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/retry/api.py", line 33, in __retry_internal
+    return f()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_download_path/run.py", line 28, in assert_install_in_download_path
+    assert "rolldice" in os.listdir(f"{install_directory}")
+AssertionError
+09:59:51 WARN  AssertionError: ... blocked 
+09:59:51 INFO  
+09:59:51 INFO  cleanup:
+09:59:51 INFO  Executed sudo, exit status 0
+09:59:52 INFO  Executed sudo, exit status 0
+09:59:56 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:59:56 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+09:59:56 INFO  Delaying execution by 7 seconds
+10:00:18 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+10:00:23 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+10:00:23 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+10:00:23 INFO  
+10:00:23 INFO  Test duration: 86.06 secs
+10:00:23 INFO  Test final outcome:  BLOCKED
+10:00:23 INFO  Test outcome reason: AssertionError:
+10:00:23 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_fail" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_fail
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for a failing installation
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_fail" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the apt plugin for installation and removal of packages
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_default" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove_default
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the default plugin for installation and removal of packages
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_default" />
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple" tests="3" errors="0" failures="2" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.03 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
+		<failure message="FAILED: Assert that (False == value) with value=True" type="FAILED" />
+		<system-out>09:39:30 INFO  ==============================================================
+09:39:30 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
+09:39:30 INFO  Dir:   software_management_end_to_end/
+09:39:30 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
+09:39:30 INFO  ==============================================================
+09:39:30 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+09:39:30 INFO  EnvironmentC8y Setup
+09:39:31 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:39:31 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
+09:39:31 INFO  Delaying execution by 6 seconds
+09:39:51 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:39:52 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:39:52 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:39:53 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:39:55 INFO  State of current operation: SUCCESSFUL
+09:39:55 INFO  Assert that (False == value) with value=False ... passed
+09:39:56 INFO  Assert that (False == value) with value=False ... passed
+09:39:56 INFO  Assert that (False == value) with value=False ... passed
+09:39:56 INFO  Package robotfindskitten is installed
+09:39:56 WARN  Assert that (False == value) with value=True ... failed 
+09:39:56 INFO  Response status: 201
+09:39:56 INFO  Response to action: {
+    "delivery": {
+        "time": "2022-04-15T09:39:56.866Z",
+        "log": [],
+        "status": "PENDING"
+    },
+    "creationTime": "2022-04-15T09:39:56.853Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367057",
+    "id": "17367057",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+09:39:56 INFO  Started operation: {'delivery': {'time': '2022-04-15T09:39:56.866Z', 'log': [], 'status': 'PENDING'}, 'creationTime': '2022-04-15T09:39:56.853Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367057', 'id': '17367057', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+09:39:59 INFO  State of operation 17367057 : PENDING
+09:40:01 INFO  State of operation 17367057 : EXECUTING
+09:40:03 INFO  State of operation 17367057 : EXECUTING
+09:40:05 INFO  State of operation 17367057 : EXECUTING
+09:40:08 INFO  State of operation 17367057 : EXECUTING
+09:40:10 INFO  State of operation 17367057 : EXECUTING
+09:40:13 INFO  State of operation 17367057 : EXECUTING
+09:40:15 INFO  State of operation 17367057 : EXECUTING
+09:40:18 INFO  State of operation 17367057 : EXECUTING
+09:40:20 INFO  State of operation 17367057 : EXECUTING
+09:40:22 INFO  State of operation 17367057 : EXECUTING
+09:40:25 INFO  State of operation 17367057 : EXECUTING
+09:40:27 INFO  State of operation 17367057 : EXECUTING
+09:40:29 INFO  State of operation 17367057 : EXECUTING
+09:40:31 INFO  State of operation 17367057 : EXECUTING
+09:40:34 INFO  State of operation 17367057 : EXECUTING
+09:40:36 INFO  State of operation 17367057 : EXECUTING
+09:40:38 INFO  State of operation 17367057 : EXECUTING
+09:40:41 INFO  State of operation 17367057 : EXECUTING
+09:40:43 INFO  State of operation 17367057 : EXECUTING
+09:40:45 INFO  State of operation 17367057 : EXECUTING
+09:40:48 INFO  State of operation 17367057 : EXECUTING
+09:40:50 INFO  State of operation 17367057 : EXECUTING
+09:40:53 INFO  State of operation 17367057 : EXECUTING
+09:40:56 INFO  State of operation 17367057 : EXECUTING
+09:40:58 INFO  State of operation 17367057 : EXECUTING
+09:41:01 INFO  State of operation 17367057 : EXECUTING
+09:41:03 INFO  State of operation 17367057 : EXECUTING
+09:41:05 INFO  State of operation 17367057 : EXECUTING
+09:41:08 INFO  State of operation 17367057 : EXECUTING
+09:41:10 INFO  State of operation 17367057 : EXECUTING
+09:41:12 INFO  State of operation 17367057 : EXECUTING
+09:41:14 INFO  State of operation 17367057 : EXECUTING
+09:41:17 INFO  State of operation 17367057 : EXECUTING
+09:41:19 INFO  State of operation 17367057 : SUCCESSFUL
+09:41:19 INFO  Assert that (False == value) with value=False ... passed
+09:41:19 INFO  Package asciijump is installed
+09:41:19 INFO  Assert that (True == value) with value=True ... passed
+09:41:20 INFO  Package squirrel3 is installed
+09:41:20 INFO  Assert that (True == value) with value=True ... passed
+09:41:20 INFO  Package robotfindskitten is installed
+09:41:20 INFO  Assert that (True == value) with value=True ... passed
+09:41:20 INFO  Response status: 201
+09:41:20 INFO  Response to action: {
+    "delivery": {
+        "time": "2022-04-15T09:41:20.517Z",
+        "log": [],
+        "status": "PENDING"
+    },
+    "creationTime": "2022-04-15T09:41:20.506Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367065",
+    "id": "17367065",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "delete",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "delete",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "delete",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+09:41:20 INFO  Started operation: {'delivery': {'time': '2022-04-15T09:41:20.517Z', 'log': [], 'status': 'PENDING'}, 'creationTime': '2022-04-15T09:41:20.506Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367065', 'id': '17367065', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'delete', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'delete', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'delete', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+09:41:22 INFO  State of operation 17367065 : PENDING
+09:41:25 INFO  State of operation 17367065 : EXECUTING
+09:41:27 INFO  State of operation 17367065 : EXECUTING
+09:41:29 INFO  State of operation 17367065 : EXECUTING
+09:41:31 INFO  State of operation 17367065 : EXECUTING
+09:41:33 INFO  State of operation 17367065 : EXECUTING
+09:41:36 INFO  State of operation 17367065 : EXECUTING
+09:41:39 INFO  State of operation 17367065 : EXECUTING
+09:41:42 INFO  State of operation 17367065 : EXECUTING
+09:41:44 INFO  State of operation 17367065 : EXECUTING
+09:41:46 INFO  State of operation 17367065 : EXECUTING
+09:41:49 INFO  State of operation 17367065 : EXECUTING
+09:41:51 INFO  State of operation 17367065 : EXECUTING
+09:41:53 INFO  State of operation 17367065 : EXECUTING
+09:41:55 INFO  State of operation 17367065 : EXECUTING
+09:41:58 INFO  State of operation 17367065 : EXECUTING
+09:42:00 INFO  State of operation 17367065 : EXECUTING
+09:42:03 INFO  State of operation 17367065 : EXECUTING
+09:42:05 INFO  State of operation 17367065 : EXECUTING
+09:42:07 INFO  State of operation 17367065 : EXECUTING
+09:42:10 INFO  State of operation 17367065 : EXECUTING
+09:42:12 INFO  State of operation 17367065 : EXECUTING
+09:42:14 INFO  State of operation 17367065 : EXECUTING
+09:42:16 INFO  State of operation 17367065 : EXECUTING
+09:42:19 INFO  State of operation 17367065 : EXECUTING
+09:42:21 INFO  State of operation 17367065 : EXECUTING
+09:42:24 INFO  State of operation 17367065 : EXECUTING
+09:42:26 INFO  State of operation 17367065 : EXECUTING
+09:42:28 INFO  State of operation 17367065 : SUCCESSFUL
+09:42:28 INFO  Assert that (False == value) with value=False ... passed
+09:42:29 INFO  Assert that (False == value) with value=False ... passed
+09:42:29 INFO  Assert that (False == value) with value=False ... passed
+09:42:29 INFO  Assert that (False == value) with value=False ... passed
+09:42:29 INFO  
+09:42:29 INFO  cleanup:
+09:42:34 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:42:35 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+09:42:35 INFO  
+09:42:35 INFO  Test duration: 184.48 secs
+09:42:35 INFO  Test final outcome:  FAILED
+09:42:35 INFO  Test outcome reason: Assert that (False == value) with value=True
+09:42:35 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple">
+		<failure message="FAILED: Assert that (False == value) with value=True (+2 other failures)" type="FAILED" />
+		<system-out>10:06:59 INFO  ==============================================================
+10:06:59 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple
+10:06:59 INFO  Dir:   software_management_end_to_end/
+10:06:59 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages
+10:06:59 INFO  ==============================================================
+10:06:59 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+10:06:59 INFO  EnvironmentC8y Setup
+10:07:00 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+10:07:00 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 4 seconds
+10:07:00 INFO  Delaying execution by 7 seconds
+10:07:21 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 13 secs
+10:07:22 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+10:07:22 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+10:07:23 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+10:07:25 INFO  State of current operation: SUCCESSFUL
+10:07:25 INFO  Assert that (False == value) with value=False ... passed
+10:07:25 INFO  Package asciijump is installed
+10:07:26 WARN  Assert that (False == value) with value=True ... failed 
+10:07:26 INFO  Package squirrel3 is installed
+10:07:26 WARN  Assert that (False == value) with value=True ... failed 
+10:07:26 INFO  Package robotfindskitten is installed
+10:07:26 WARN  Assert that (False == value) with value=True ... failed 
+10:07:26 INFO  Response status: 201
+10:07:26 INFO  Response to action: {
+    "creationTime": "2022-04-15T10:07:26.854Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372159",
+    "id": "17372159",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+10:07:26 INFO  Started operation: {'creationTime': '2022-04-15T10:07:26.854Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372159', 'id': '17372159', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+10:07:29 INFO  State of operation 17372159 : PENDING
+10:07:31 INFO  State of operation 17372159 : EXECUTING
+10:07:33 INFO  State of operation 17372159 : EXECUTING
+10:07:35 INFO  State of operation 17372159 : EXECUTING
+10:07:38 INFO  State of operation 17372159 : EXECUTING
+10:07:40 INFO  State of operation 17372159 : EXECUTING
+10:07:43 INFO  State of operation 17372159 : EXECUTING
+10:07:45 INFO  State of operation 17372159 : EXECUTING
+10:07:48 INFO  State of operation 17372159 : EXECUTING
+10:07:50 INFO  State of operation 17372159 : EXECUTING
+10:07:53 INFO  State of operation 17372159 : EXECUTING
+10:07:55 INFO  State of operation 17372159 : EXECUTING
+10:07:57 INFO  State of operation 17372159 : EXECUTING
+10:07:59 INFO  State of operation 17372159 : EXECUTING
+10:08:01 INFO  State of operation 17372159 : EXECUTING
+10:08:04 INFO  State of operation 17372159 : SUCCESSFUL
+10:08:04 INFO  Assert that (False == value) with value=False ... passed
+10:08:04 INFO  Package asciijump is installed
+10:08:04 INFO  Assert that (True == value) with value=True ... passed
+10:08:04 INFO  Package squirrel3 is installed
+10:08:04 INFO  Assert that (True == value) with value=True ... passed
+10:08:05 INFO  Package robotfindskitten is installed
+10:08:05 INFO  Assert that (True == value) with value=True ... passed
+10:08:05 INFO  Response status: 201
+10:08:05 INFO  Response to action: {
+    "creationTime": "2022-04-15T10:08:05.272Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372161",
+    "id": "17372161",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "delete",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "delete",
+            "id": "5474869",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "delete",
+            "id": "5475279",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+10:08:05 INFO  Started operation: {'creationTime': '2022-04-15T10:08:05.272Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372161', 'id': '17372161', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'delete', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'delete', 'id': '5474869', 'version': '::apt', 'url': ' '}, {'name': 'squirrel3', 'action': 'delete', 'id': '5475279', 'version': '::apt', 'url': ' '}]}
+10:08:07 INFO  State of operation 17372161 : PENDING
+10:08:09 INFO  State of operation 17372161 : EXECUTING
+10:08:11 INFO  State of operation 17372161 : EXECUTING
+10:08:14 INFO  State of operation 17372161 : EXECUTING
+10:08:16 INFO  State of operation 17372161 : EXECUTING
+10:08:18 INFO  State of operation 17372161 : EXECUTING
+10:08:21 INFO  State of operation 17372161 : EXECUTING
+10:08:24 INFO  State of operation 17372161 : EXECUTING
+10:08:26 INFO  State of operation 17372161 : EXECUTING
+10:08:29 INFO  State of operation 17372161 : EXECUTING
+10:08:31 INFO  State of operation 17372161 : EXECUTING
+10:08:33 INFO  State of operation 17372161 : EXECUTING
+10:08:35 INFO  State of operation 17372161 : EXECUTING
+10:08:37 INFO  State of operation 17372161 : EXECUTING
+10:08:40 INFO  State of operation 17372161 : EXECUTING
+10:08:42 INFO  State of operation 17372161 : EXECUTING
+10:08:44 INFO  State of operation 17372161 : EXECUTING
+10:08:47 INFO  State of operation 17372161 : EXECUTING
+10:08:49 INFO  State of operation 17372161 : EXECUTING
+10:08:52 INFO  State of operation 17372161 : EXECUTING
+10:08:54 INFO  State of operation 17372161 : EXECUTING
+10:08:56 INFO  State of operation 17372161 : EXECUTING
+10:08:59 INFO  State of operation 17372161 : EXECUTING
+10:09:01 INFO  State of operation 17372161 : EXECUTING
+10:09:03 INFO  State of operation 17372161 : EXECUTING
+10:09:06 INFO  State of operation 17372161 : EXECUTING
+10:09:08 INFO  State of operation 17372161 : EXECUTING
+10:09:10 INFO  State of operation 17372161 : EXECUTING
+10:09:13 INFO  State of operation 17372161 : EXECUTING
+10:09:15 INFO  State of operation 17372161 : SUCCESSFUL
+10:09:15 INFO  Assert that (False == value) with value=False ... passed
+10:09:15 INFO  Assert that (False == value) with value=False ... passed
+10:09:16 INFO  Assert that (False == value) with value=False ... passed
+10:09:16 INFO  Assert that (False == value) with value=False ... passed
+10:09:16 INFO  
+10:09:16 INFO  cleanup:
+10:09:20 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+10:09:21 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+10:09:21 INFO  
+10:09:21 INFO  Test duration: 141.37 secs
+10:09:21 INFO  Test final outcome:  FAILED
+10:09:21 INFO  Test outcome reason: Assert that (False == value) with value=True (+2 other failures)
+10:09:21 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_multiple_mixed" tests="3" errors="0" failures="2" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
+		<failure message="BLOCKED: SystemError: Timeout while waiting for status SUCCESSFUL or False" type="BLOCKED" />
+		<system-out>09:42:35 INFO  ==============================================================
+09:42:35 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
+09:42:35 INFO  Dir:   software_management_end_to_end/
+09:42:35 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
+09:42:35 INFO  ==============================================================
+09:42:35 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+09:42:35 INFO  EnvironmentC8y Setup
+09:42:35 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:42:36 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 6 seconds
+09:42:36 INFO  Delaying execution by 5 seconds
+09:42:55 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:42:56 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:42:56 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:42:57 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:42:59 INFO  State of current operation: SUCCESSFUL
+09:42:59 INFO  Assert that (False == value) with value=False ... passed
+09:42:59 INFO  Assert that (False == value) with value=False ... passed
+09:43:00 INFO  Assert that (False == value) with value=False ... passed
+09:43:00 INFO  Assert that (False == value) with value=False ... passed
+09:43:00 INFO  Assert that (False == value) with value=False ... passed
+09:43:01 INFO  Response status: 201
+09:43:01 INFO  Response to action: {
+    "creationTime": "2022-04-15T09:43:01.719Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367073",
+    "id": "17367073",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": " ",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "3.1-7::apt",
+            "url": " "
+        },
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "1.16-1+b1",
+            "url": " "
+        },
+        {
+            "name": "moon-buggy",
+            "action": "install",
+            "id": "5439204",
+            "version": "1:1.0.51-12",
+            "url": " "
+        },
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+09:43:01 INFO  Started operation: {'creationTime': '2022-04-15T09:43:01.719Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17367073', 'id': '17367073', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': ' ', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '3.1-7::apt', 'url': ' '}, {'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '1.16-1+b1', 'url': ' '}, {'name': 'moon-buggy', 'action': 'install', 'id': '5439204', 'version': '1:1.0.51-12', 'url': ' '}, {'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}]}
+09:43:04 INFO  State of operation 17367073 : PENDING
+09:43:06 INFO  State of operation 17367073 : EXECUTING
+09:43:08 INFO  State of operation 17367073 : EXECUTING
+09:43:10 INFO  State of operation 17367073 : EXECUTING
+09:43:13 INFO  State of operation 17367073 : EXECUTING
+09:43:15 INFO  State of operation 17367073 : EXECUTING
+09:43:17 INFO  State of operation 17367073 : EXECUTING
+09:43:20 INFO  State of operation 17367073 : EXECUTING
+09:43:22 INFO  State of operation 17367073 : EXECUTING
+09:43:25 INFO  State of operation 17367073 : EXECUTING
+09:43:27 INFO  State of operation 17367073 : EXECUTING
+09:43:29 INFO  State of operation 17367073 : EXECUTING
+09:43:31 INFO  State of operation 17367073 : EXECUTING
+09:43:34 INFO  State of operation 17367073 : EXECUTING
+09:43:36 INFO  State of operation 17367073 : EXECUTING
+09:43:38 INFO  State of operation 17367073 : EXECUTING
+09:43:41 INFO  State of operation 17367073 : EXECUTING
+09:43:43 INFO  State of operation 17367073 : EXECUTING
+09:43:46 INFO  State of operation 17367073 : EXECUTING
+09:43:48 INFO  State of operation 17367073 : EXECUTING
+09:43:50 INFO  State of operation 17367073 : EXECUTING
+09:43:53 INFO  State of operation 17367073 : EXECUTING
+09:43:55 INFO  State of operation 17367073 : EXECUTING
+09:43:57 INFO  State of operation 17367073 : EXECUTING
+09:44:00 INFO  State of operation 17367073 : EXECUTING
+09:44:02 INFO  State of operation 17367073 : EXECUTING
+09:44:05 INFO  State of operation 17367073 : EXECUTING
+09:44:07 INFO  State of operation 17367073 : EXECUTING
+09:44:10 INFO  State of operation 17367073 : EXECUTING
+09:44:12 INFO  State of operation 17367073 : EXECUTING
+09:44:14 INFO  State of operation 17367073 : EXECUTING
+09:44:17 INFO  State of operation 17367073 : EXECUTING
+09:44:19 INFO  State of operation 17367073 : EXECUTING
+09:44:21 INFO  State of operation 17367073 : EXECUTING
+09:44:23 INFO  State of operation 17367073 : EXECUTING
+09:44:26 INFO  State of operation 17367073 : EXECUTING
+09:44:28 INFO  State of operation 17367073 : EXECUTING
+09:44:30 INFO  State of operation 17367073 : EXECUTING
+09:44:32 INFO  State of operation 17367073 : EXECUTING
+09:44:35 INFO  State of operation 17367073 : EXECUTING
+09:44:38 INFO  State of operation 17367073 : EXECUTING
+09:44:40 INFO  State of operation 17367073 : EXECUTING
+09:44:42 INFO  State of operation 17367073 : EXECUTING
+09:44:45 INFO  State of operation 17367073 : EXECUTING
+09:44:47 INFO  State of operation 17367073 : EXECUTING
+09:44:49 INFO  State of operation 17367073 : EXECUTING
+09:44:51 INFO  State of operation 17367073 : EXECUTING
+09:44:54 INFO  State of operation 17367073 : EXECUTING
+09:44:56 INFO  State of operation 17367073 : EXECUTING
+09:44:58 INFO  State of operation 17367073 : EXECUTING
+09:45:00 INFO  State of operation 17367073 : EXECUTING
+09:45:03 INFO  State of operation 17367073 : EXECUTING
+09:45:05 INFO  State of operation 17367073 : EXECUTING
+09:45:08 INFO  State of operation 17367073 : EXECUTING
+09:45:10 INFO  State of operation 17367073 : EXECUTING
+09:45:12 INFO  State of operation 17367073 : EXECUTING
+09:45:14 INFO  State of operation 17367073 : EXECUTING
+09:45:17 INFO  State of operation 17367073 : EXECUTING
+09:45:19 INFO  State of operation 17367073 : EXECUTING
+09:45:22 INFO  State of operation 17367073 : EXECUTING
+09:45:24 INFO  State of operation 17367073 : EXECUTING
+09:45:26 WARN  SystemError occurred while running test - Timeout while waiting for status SUCCESSFUL or False
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/run.py", line 89, in execute
+    self.wait_until_succcess()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 324, in wait_until_succcess
+    self.wait_until_status("SUCCESSFUL")
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 381, in wait_until_status
+    "Timeout while waiting for status %s or %s" % (status, status2)
+SystemError: Timeout while waiting for status SUCCESSFUL or False
+09:45:26 WARN  SystemError: Timeout while waiting for status SUCCESSFUL or False ... blocked 
+09:45:26 INFO  
+09:45:26 INFO  cleanup:
+09:45:32 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:45:32 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+09:45:32 INFO  
+09:45:32 INFO  Test duration: 177.57 secs
+09:45:32 INFO  Test final outcome:  BLOCKED
+09:45:32 INFO  Test outcome reason: SystemError: Timeout while waiting for status SUCCESSFUL or False
+09:45:32 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_multiple_mixed">
+		<failure message="BLOCKED: SystemError: Timeout while waiting for status SUCCESSFUL or False (+1 other failures)" type="BLOCKED" />
+		<system-out>10:09:21 INFO  ==============================================================
+10:09:21 INFO  Id:    SoftwareManagement.sm_apt_install_remove_multiple_mixed
+10:09:21 INFO  Dir:   software_management_end_to_end/
+10:09:21 INFO  Title: Validate end to end behaviour for the apt plugin for multiple packages with mixed versions
+10:09:21 INFO  ==============================================================
+10:09:21 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+10:09:21 INFO  EnvironmentC8y Setup
+10:09:21 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+10:09:22 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
+10:09:22 INFO  Delaying execution by 6 seconds
+10:09:42 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+10:09:42 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+10:09:43 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+10:09:43 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+10:09:46 INFO  State of current operation: SUCCESSFUL
+10:09:46 INFO  Assert that (False == value) with value=False ... passed
+10:09:46 INFO  Assert that (False == value) with value=False ... passed
+10:09:46 INFO  Assert that (False == value) with value=False ... passed
+10:09:47 INFO  Assert that (False == value) with value=False ... passed
+10:09:47 INFO  Package moon-buggy is installed
+10:09:47 WARN  Assert that (False == value) with value=True ... failed 
+10:09:48 INFO  Response status: 201
+10:09:48 INFO  Response to action: {
+    "creationTime": "2022-04-15T10:09:48.623Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372167",
+    "id": "17372167",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "robotfindskitten",
+            "action": "install",
+            "id": "5474869",
+            "version": " ",
+            "url": " "
+        },
+        {
+            "name": "squirrel3",
+            "action": "install",
+            "id": "5475279",
+            "version": "3.1-7::apt",
+            "url": " "
+        },
+        {
+            "name": "rolldice",
+            "action": "install",
+            "id": "5152439",
+            "version": "1.16-1+b1",
+            "url": " "
+        },
+        {
+            "name": "moon-buggy",
+            "action": "install",
+            "id": "5439204",
+            "version": "1:1.0.51-12",
+            "url": " "
+        },
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        }
+    ]
+}
+10:09:48 INFO  Started operation: {'creationTime': '2022-04-15T10:09:48.623Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372167', 'id': '17372167', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5474869', 'name': 'robotfindskitten', 'url': ' ', 'version': ' '}, {'action': 'install', 'id': '5475279', 'name': 'squirrel3', 'url': ' ', 'version': '3.1-7::apt'}, {'action': 'install', 'id': '5152439', 'name': 'rolldice', 'url': ' ', 'version': '1.16-1+b1'}, {'action': 'install', 'id': '5439204', 'name': 'moon-buggy', 'url': ' ', 'version': '1:1.0.51-12'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}]", 'c8y_SoftwareUpdate': [{'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'robotfindskitten', 'action': 'install', 'id': '5474869', 'version': ' ', 'url': ' '}, {'name': 'squirrel3', 'action': 'install', 'id': '5475279', 'version': '3.1-7::apt', 'url': ' '}, {'name': 'rolldice', 'action': 'install', 'id': '5152439', 'version': '1.16-1+b1', 'url': ' '}, {'name': 'moon-buggy', 'action': 'install', 'id': '5439204', 'version': '1:1.0.51-12', 'url': ' '}, {'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}]}
+10:09:50 INFO  State of operation 17372167 : PENDING
+10:09:53 INFO  State of operation 17372167 : EXECUTING
+10:09:55 INFO  State of operation 17372167 : EXECUTING
+10:09:57 INFO  State of operation 17372167 : EXECUTING
+10:09:59 INFO  State of operation 17372167 : EXECUTING
+10:10:02 INFO  State of operation 17372167 : EXECUTING
+10:10:04 INFO  State of operation 17372167 : EXECUTING
+10:10:07 INFO  State of operation 17372167 : EXECUTING
+10:10:09 INFO  State of operation 17372167 : EXECUTING
+10:10:12 INFO  State of operation 17372167 : EXECUTING
+10:10:14 INFO  State of operation 17372167 : EXECUTING
+10:10:16 INFO  State of operation 17372167 : EXECUTING
+10:10:19 INFO  State of operation 17372167 : EXECUTING
+10:10:21 INFO  State of operation 17372167 : EXECUTING
+10:10:23 INFO  State of operation 17372167 : EXECUTING
+10:10:25 INFO  State of operation 17372167 : EXECUTING
+10:10:28 INFO  State of operation 17372167 : EXECUTING
+10:10:30 INFO  State of operation 17372167 : EXECUTING
+10:10:33 INFO  State of operation 17372167 : EXECUTING
+10:10:35 INFO  State of operation 17372167 : EXECUTING
+10:10:38 INFO  State of operation 17372167 : EXECUTING
+10:10:40 INFO  State of operation 17372167 : EXECUTING
+10:10:42 INFO  State of operation 17372167 : EXECUTING
+10:10:45 INFO  State of operation 17372167 : EXECUTING
+10:10:48 INFO  State of operation 17372167 : EXECUTING
+10:10:50 INFO  State of operation 17372167 : EXECUTING
+10:10:53 INFO  State of operation 17372167 : EXECUTING
+10:10:56 INFO  State of operation 17372167 : EXECUTING
+10:10:58 INFO  State of operation 17372167 : EXECUTING
+10:11:00 INFO  State of operation 17372167 : EXECUTING
+10:11:03 INFO  State of operation 17372167 : EXECUTING
+10:11:05 INFO  State of operation 17372167 : EXECUTING
+10:11:07 INFO  State of operation 17372167 : EXECUTING
+10:11:09 INFO  State of operation 17372167 : EXECUTING
+10:11:12 INFO  State of operation 17372167 : EXECUTING
+10:11:14 INFO  State of operation 17372167 : EXECUTING
+10:11:16 INFO  State of operation 17372167 : EXECUTING
+10:11:18 INFO  State of operation 17372167 : EXECUTING
+10:11:21 INFO  State of operation 17372167 : EXECUTING
+10:11:23 INFO  State of operation 17372167 : EXECUTING
+10:11:26 INFO  State of operation 17372167 : EXECUTING
+10:11:28 INFO  State of operation 17372167 : EXECUTING
+10:11:30 INFO  State of operation 17372167 : EXECUTING
+10:11:33 INFO  State of operation 17372167 : EXECUTING
+10:11:35 INFO  State of operation 17372167 : EXECUTING
+10:11:37 INFO  State of operation 17372167 : EXECUTING
+10:11:39 INFO  State of operation 17372167 : EXECUTING
+10:11:42 INFO  State of operation 17372167 : EXECUTING
+10:11:44 INFO  State of operation 17372167 : EXECUTING
+10:11:47 INFO  State of operation 17372167 : EXECUTING
+10:11:49 INFO  State of operation 17372167 : EXECUTING
+10:11:51 INFO  State of operation 17372167 : EXECUTING
+10:11:53 INFO  State of operation 17372167 : EXECUTING
+10:11:56 INFO  State of operation 17372167 : EXECUTING
+10:11:58 INFO  State of operation 17372167 : EXECUTING
+10:12:01 INFO  State of operation 17372167 : EXECUTING
+10:12:03 INFO  State of operation 17372167 : EXECUTING
+10:12:05 INFO  State of operation 17372167 : EXECUTING
+10:12:08 INFO  State of operation 17372167 : EXECUTING
+10:12:10 INFO  State of operation 17372167 : EXECUTING
+10:12:13 INFO  State of operation 17372167 : EXECUTING
+10:12:15 WARN  SystemError occurred while running test - Timeout while waiting for status SUCCESSFUL or False
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1294, in __call__
+    self.testObj.execute()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/sm_apt_install_remove_multiple_mixed/run.py", line 89, in execute
+    self.wait_until_succcess()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 324, in wait_until_succcess
+    self.wait_until_status("SUCCESSFUL")
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/software_management_end_to_end/environment_sm_management.py", line 381, in wait_until_status
+    "Timeout while waiting for status %s or %s" % (status, status2)
+SystemError: Timeout while waiting for status SUCCESSFUL or False
+10:12:15 WARN  SystemError: Timeout while waiting for status SUCCESSFUL or False ... blocked 
+10:12:15 INFO  
+10:12:15 INFO  cleanup:
+10:12:21 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+10:12:22 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+10:12:22 INFO  
+10:12:22 INFO  Test duration: 181.04 secs
+10:12:22 INFO  Test final outcome:  BLOCKED
+10:12:22 INFO  Test outcome reason: SystemError: Timeout while waiting for status SUCCESSFUL or False (+1 other failures)
+10:12:22 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_apt_install_remove_with_version" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_apt_install_remove_with_version
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the apt plugin for packages with version
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
+<testcase classname="PySysTest" name="SoftwareManagement.sm_apt_install_remove_with_version" />
+</testsuite><testsuite name="SoftwareManagement.sm_docker_install_remove_multiple" tests="3" errors="0" failures="0" skipped="1" time="0"><testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_docker_install_remove_multiple
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the docker plugin for multiple docker images with mixed versions
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.Use parameter -XmyPlatform='container' to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
+<testcase classname="SMDockerInstallRemove" name="SoftwareManagement.sm_docker_install_remove_multiple" />
+</testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove">
+		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_fake_install_remove
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the dummy plugin for installation and removal of packages
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove" />
+</testsuite><testsuite name="SoftwareManagement.sm_fake_install_remove_multiple" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple">
+		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_fake_install_remove_multiple
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the dummy-plugin for multiple packages
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_fake_install_remove_multiple" />
+</testsuite><testsuite name="SoftwareManagement.sm_mapper_fail_and_reconnect" tests="2" errors="0" failures="0" skipped="2" time="0"><testcase classname="MapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
+		<skipped message="SKIPPED: instable https://github.com/thin-edge/thin-edge.io/issues/752" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  instable https://github.com/thin-edge/thin-edge.io/issues/752 ... skipped
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: instable https://github.com/thin-edge/thin-edge.io/issues/752
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="MapperC8yReceiveLastMessageOnRestart" name="SoftwareManagement.sm_mapper_fail_and_reconnect">
+		<skipped message="SKIPPED: instable https://github.com/thin-edge/thin-edge.io/issues/752" />
+		<system-out>10:19:22 INFO  ==============================================================
+10:19:22 INFO  Id:    SoftwareManagement.sm_mapper_fail_and_reconnect
+10:19:22 INFO  Dir:   software_management_end_to_end/
+10:19:22 INFO  Title: Validate the tedge-mapper-sm-c8y for receiving the last message on restart
+10:19:22 INFO  ==============================================================
+10:19:22 INFO  instable https://github.com/thin-edge/thin-edge.io/issues/752 ... skipped
+10:19:22 INFO  
+10:19:22 INFO  Test duration: 0.04 secs
+10:19:22 INFO  Test final outcome:  SKIPPED
+10:19:22 INFO  Test outcome reason: instable https://github.com/thin-edge/thin-edge.io/issues/752
+10:19:22 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="SoftwareManagement.sm_mixed_install_remove_multiple" tests="2" errors="0" failures="1" skipped="1" time="0"><testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple">
+		<skipped message="SKIPPED: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it" />
+		<system-out>09:06:55 INFO  ==============================================================
+09:06:55 INFO  Id:    SoftwareManagement.sm_mixed_install_remove_multiple
+09:06:55 INFO  Dir:   software_management_end_to_end/
+09:06:55 INFO  Title: Validate end to end behaviour for the dummy-plugin for multiple packages with mixed versions
+09:06:55 INFO  ==============================================================
+09:06:55 INFO  Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it ... skipped
+09:06:55 WARN  Aborted test due to SKIPPED outcome
+09:06:55 INFO  
+09:06:55 INFO  Test duration: 0.02 secs
+09:06:55 INFO  Test final outcome:  SKIPPED
+09:06:55 INFO  Test outcome reason: Testing the fake plugin is not enabled.Use parameter -Xfakeplugin=fakeplugin to enable it
+09:06:55 INFO  
+</system-out>
+	</testcase>
+<testcase classname="PySysTest" name="SoftwareManagement.sm_mixed_install_remove_multiple">
+		<failure message="FAILED: Assert that (False == value) with value=True" type="FAILED" />
+		<system-out>10:19:22 INFO  ==============================================================
+10:19:22 INFO  Id:    SoftwareManagement.sm_mixed_install_remove_multiple
+10:19:22 INFO  Dir:   software_management_end_to_end/
+10:19:22 INFO  Title: Validate end to end behaviour for the dummy-plugin for multiple packages with mixed versions
+10:19:22 INFO  ==============================================================
+10:19:22 INFO  Using sw id database: {'asciijump': '5475369', 'robotfindskitten': '5474869', 'squirrel3': '5475279', 'rolldice': '5152439', 'moon-buggy': '5439204', 'apple': '5495053', 'banana': '5494888', 'cherry': '5495382', 'watermelon': '5494510', 'registry': '8018911', 'hello-world': '8021526', 'docker/getting-started': '8021973', 'alpine': '7991792'}
+10:19:22 INFO  EnvironmentC8y Setup
+10:19:22 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+10:19:23 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
+10:19:23 INFO  Delaying execution by 6 seconds
+10:19:43 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+10:19:44 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+10:19:44 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+10:19:45 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+10:19:47 INFO  State of current operation: SUCCESSFUL
+10:19:47 INFO  Package apple is installed
+10:19:47 INFO  Assert that (True == value) with value=True ... passed
+10:19:47 INFO  Package banana is installed
+10:19:47 INFO  Assert that (True == value) with value=True ... passed
+10:19:48 INFO  Package cherry is installed
+10:19:48 INFO  Assert that (True == value) with value=True ... passed
+10:19:48 INFO  Package asciijump is installed
+10:19:48 WARN  Assert that (False == value) with value=True ... failed 
+10:19:48 INFO  Assert that (False == value) with value=False ... passed
+10:19:48 INFO  Response status: 201
+10:19:48 INFO  Response to action: {
+    "creationTime": "2022-04-15T10:19:48.768Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372239",
+    "id": "17372239",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5495053', 'name': 'apple', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '5494888', 'name': 'banana', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5495382', 'name': 'cherry', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '8018911', 'name': 'registry', 'url': ' ', 'version': '::docker'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "apple",
+            "action": "install",
+            "id": "5495053",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "banana",
+            "action": "install",
+            "id": "5494888",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "asciijump",
+            "action": "install",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "cherry",
+            "action": "install",
+            "id": "5495382",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "registry",
+            "action": "install",
+            "id": "8018911",
+            "version": "::docker",
+            "url": " "
+        }
+    ]
+}
+10:19:48 INFO  Started operation: {'creationTime': '2022-04-15T10:19:48.768Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372239', 'id': '17372239', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'install', 'id': '5495053', 'name': 'apple', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '5494888', 'name': 'banana', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'install', 'id': '5495382', 'name': 'cherry', 'url': ' ', 'version': '::fruits'}, {'action': 'install', 'id': '8018911', 'name': 'registry', 'url': ' ', 'version': '::docker'}]", 'c8y_SoftwareUpdate': [{'name': 'apple', 'action': 'install', 'id': '5495053', 'version': '::fruits', 'url': ' '}, {'name': 'banana', 'action': 'install', 'id': '5494888', 'version': '::fruits', 'url': ' '}, {'name': 'asciijump', 'action': 'install', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'cherry', 'action': 'install', 'id': '5495382', 'version': '::fruits', 'url': ' '}, {'name': 'registry', 'action': 'install', 'id': '8018911', 'version': '::docker', 'url': ' '}]}
+10:19:51 INFO  State of operation 17372239 : PENDING
+10:19:53 INFO  State of operation 17372239 : EXECUTING
+10:19:55 INFO  State of operation 17372239 : EXECUTING
+10:19:57 INFO  State of operation 17372239 : EXECUTING
+10:19:59 INFO  State of operation 17372239 : EXECUTING
+10:20:02 INFO  State of operation 17372239 : EXECUTING
+10:20:04 INFO  State of operation 17372239 : EXECUTING
+10:20:07 INFO  State of operation 17372239 : EXECUTING
+10:20:10 INFO  State of operation 17372239 : EXECUTING
+10:20:12 INFO  State of operation 17372239 : EXECUTING
+10:20:14 INFO  State of operation 17372239 : EXECUTING
+10:20:16 INFO  State of operation 17372239 : EXECUTING
+10:20:19 INFO  State of operation 17372239 : EXECUTING
+10:20:21 INFO  State of operation 17372239 : EXECUTING
+10:20:23 INFO  State of operation 17372239 : EXECUTING
+10:20:26 INFO  State of operation 17372239 : EXECUTING
+10:20:28 INFO  State of operation 17372239 : EXECUTING
+10:20:30 INFO  State of operation 17372239 : EXECUTING
+10:20:33 INFO  State of operation 17372239 : EXECUTING
+10:20:35 INFO  State of operation 17372239 : EXECUTING
+10:20:37 INFO  State of operation 17372239 : EXECUTING
+10:20:40 INFO  State of operation 17372239 : EXECUTING
+10:20:42 INFO  State of operation 17372239 : EXECUTING
+10:20:44 INFO  State of operation 17372239 : EXECUTING
+10:20:46 INFO  State of operation 17372239 : EXECUTING
+10:20:49 INFO  State of operation 17372239 : EXECUTING
+10:20:51 INFO  State of operation 17372239 : SUCCESSFUL
+10:20:51 INFO  Package apple is installed
+10:20:51 INFO  Assert that (True == value) with value=True ... passed
+10:20:51 INFO  Package banana is installed
+10:20:51 INFO  Assert that (True == value) with value=True ... passed
+10:20:51 INFO  Package cherry is installed
+10:20:51 INFO  Assert that (True == value) with value=True ... passed
+10:20:52 INFO  Package asciijump is installed
+10:20:52 INFO  Assert that (True == value) with value=True ... passed
+10:20:52 INFO  Package registry is installed
+10:20:52 INFO  Assert that (True == value) with value=True ... passed
+10:20:52 INFO  Response status: 201
+10:20:52 INFO  Response to action: {
+    "creationTime": "2022-04-15T10:20:52.631Z",
+    "deviceName": "mythica",
+    "deviceId": "17361611",
+    "self": "https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372247",
+    "id": "17372247",
+    "status": "PENDING",
+    "description": "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5495053', 'name': 'apple', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '5494888', 'name': 'banana', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5495382', 'name': 'cherry', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '8018911', 'name': 'registry', 'url': ' ', 'version': '::docker'}]",
+    "c8y_SoftwareUpdate": [
+        {
+            "name": "apple",
+            "action": "delete",
+            "id": "5495053",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "banana",
+            "action": "delete",
+            "id": "5494888",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "asciijump",
+            "action": "delete",
+            "id": "5475369",
+            "version": "::apt",
+            "url": " "
+        },
+        {
+            "name": "cherry",
+            "action": "delete",
+            "id": "5495382",
+            "version": "::fruits",
+            "url": " "
+        },
+        {
+            "name": "registry",
+            "action": "delete",
+            "id": "8018911",
+            "version": "::docker",
+            "url": " "
+        }
+    ]
+}
+10:20:52 INFO  Started operation: {'creationTime': '2022-04-15T10:20:52.631Z', 'deviceName': 'mythica', 'deviceId': '17361611', 'self': 'https://t493319102.eu-latest.cumulocity.com/devicecontrol/operations/17372247', 'id': '17372247', 'status': 'PENDING', 'description': "Apply software changes, triggered from PySys: [{'action': 'delete', 'id': '5495053', 'name': 'apple', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '5494888', 'name': 'banana', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '5475369', 'name': 'asciijump', 'url': ' ', 'version': '::apt'}, {'action': 'delete', 'id': '5495382', 'name': 'cherry', 'url': ' ', 'version': '::fruits'}, {'action': 'delete', 'id': '8018911', 'name': 'registry', 'url': ' ', 'version': '::docker'}]", 'c8y_SoftwareUpdate': [{'name': 'apple', 'action': 'delete', 'id': '5495053', 'version': '::fruits', 'url': ' '}, {'name': 'banana', 'action': 'delete', 'id': '5494888', 'version': '::fruits', 'url': ' '}, {'name': 'asciijump', 'action': 'delete', 'id': '5475369', 'version': '::apt', 'url': ' '}, {'name': 'cherry', 'action': 'delete', 'id': '5495382', 'version': '::fruits', 'url': ' '}, {'name': 'registry', 'action': 'delete', 'id': '8018911', 'version': '::docker', 'url': ' '}]}
+10:20:54 INFO  State of operation 17372247 : PENDING
+10:20:57 INFO  State of operation 17372247 : EXECUTING
+10:20:59 INFO  State of operation 17372247 : EXECUTING
+10:21:01 INFO  State of operation 17372247 : EXECUTING
+10:21:03 INFO  State of operation 17372247 : EXECUTING
+10:21:06 INFO  State of operation 17372247 : EXECUTING
+10:21:08 INFO  State of operation 17372247 : EXECUTING
+10:21:11 INFO  State of operation 17372247 : EXECUTING
+10:21:14 INFO  State of operation 17372247 : EXECUTING
+10:21:16 INFO  State of operation 17372247 : EXECUTING
+10:21:19 INFO  State of operation 17372247 : EXECUTING
+10:21:21 INFO  State of operation 17372247 : EXECUTING
+10:21:23 INFO  State of operation 17372247 : EXECUTING
+10:21:25 INFO  State of operation 17372247 : EXECUTING
+10:21:28 INFO  State of operation 17372247 : EXECUTING
+10:21:30 INFO  State of operation 17372247 : EXECUTING
+10:21:34 INFO  State of operation 17372247 : EXECUTING
+10:21:37 INFO  State of operation 17372247 : EXECUTING
+10:21:39 INFO  State of operation 17372247 : EXECUTING
+10:21:41 INFO  State of operation 17372247 : EXECUTING
+10:21:43 INFO  State of operation 17372247 : EXECUTING
+10:21:46 INFO  State of operation 17372247 : EXECUTING
+10:21:49 INFO  State of operation 17372247 : EXECUTING
+10:21:51 INFO  State of operation 17372247 : EXECUTING
+10:21:53 INFO  State of operation 17372247 : EXECUTING
+10:21:55 INFO  State of operation 17372247 : EXECUTING
+10:21:58 INFO  State of operation 17372247 : EXECUTING
+10:22:00 INFO  State of operation 17372247 : EXECUTING
+10:22:02 INFO  State of operation 17372247 : EXECUTING
+10:22:04 INFO  State of operation 17372247 : SUCCESSFUL
+10:22:05 INFO  Package apple is installed
+10:22:05 INFO  Assert that (True == value) with value=True ... passed
+10:22:05 INFO  Package banana is installed
+10:22:05 INFO  Assert that (True == value) with value=True ... passed
+10:22:05 INFO  Package cherry is installed
+10:22:05 INFO  Assert that (True == value) with value=True ... passed
+10:22:05 INFO  Assert that (False == value) with value=False ... passed
+10:22:06 INFO  Assert that (False == value) with value=False ... passed
+10:22:06 INFO  
+10:22:06 INFO  cleanup:
+10:22:10 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+10:22:11 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+10:22:11 INFO  
+10:22:11 INFO  Test duration: 168.70 secs
+10:22:11 INFO  Test final outcome:  FAILED
+10:22:11 INFO  Test outcome reason: Assert that (False == value) with value=True
+10:22:11 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="agent_init_session" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="AgentInitSession" name="agent_init_session">
+		<failure message="FAILED: Grep on sub_resp.out contains &quot;Ld3KgqpcLDlrYH6sfpG7w&quot;" type="FAILED" />
+		<system-out>09:07:49 INFO  ==============================================================
+09:07:49 INFO  Id:    agent_init_session
+09:07:49 INFO  Dir:   tedge_agent/
+09:07:49 INFO  Title: Validate tedge agent init session feature
+09:07:49 INFO  ==============================================================
+09:07:50 INFO  Executed sudo&lt;remove_lock&gt;, exit status 0
+09:07:50 INFO  Executed sudo&lt;agent_clear&gt;, exit status 0
+09:07:51 INFO  Executed sudo&lt;agent_init&gt;, exit status 0
+09:07:51 INFO  Executed sudo&lt;pub_req&gt;, exit status 0
+09:07:51 INFO  Started sudo&lt;sub_resp&gt; with process id 23918
+09:07:52 INFO  Executed sudo&lt;agent_start&gt;, exit status 0
+09:07:52 INFO  Waiting for 2.0 seconds
+09:07:55 INFO  Executed sudo&lt;agent_stop&gt;, exit status 0
+09:07:55 INFO  Executed sudo&lt;sub_stop&gt;, exit status 0
+09:07:56 WARN  Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w" ... failed [run.py:87]
+09:07:56 INFO  
+09:07:56 INFO  Test duration: 6.65 secs
+09:07:56 INFO  Test final outcome:  FAILED
+09:07:56 INFO  Test outcome reason: Grep on sub_resp.out contains "Ld3KgqpcLDlrYH6sfpG7w"
+09:07:56 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="apt_fail_noarg" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginFailNoArg" name="apt_fail_noarg">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    apt_fail_noarg
+08:57:05 INFO  Dir:   plugin_apt/
+08:57:05 INFO  Title: Validate apt plugin fetures(prepare, list, install, remove finalize) without arguments
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.04 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:05 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginFailNoArg" name="apt_fail_noarg" />
+</testsuite><testsuite name="apt_finalize" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginFinalize" name="apt_finalize">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    apt_finalize
+08:57:05 INFO  Dir:   plugin_apt/
+08:57:05 INFO  Title: Validate apt plugin finalize - dense version
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:05 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginFinalize" name="apt_finalize" />
+</testsuite><testsuite name="apt_install" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallDense" name="apt_install">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    apt_install
+08:57:05 INFO  Dir:   plugin_apt/
+08:57:05 INFO  Title: Validate apt plugin prepare - dense version
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:05 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallDense" name="apt_install" />
+</testsuite><testsuite name="apt_install_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFail" name="apt_install_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    apt_install_fail
+08:57:05 INFO  Dir:   plugin_apt/
+08:57:05 INFO  Title: Validate apt plugin prepare - failing
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:05 WARN  Aborted test due to SKIPPED outcome
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.02 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:05 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallFail" name="apt_install_fail" />
+</testsuite><testsuite name="apt_install_local_file" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFile" name="apt_install_local_file">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:06 INFO  ==============================================================
+08:57:06 INFO  Id:    apt_install_local_file
+08:57:06 INFO  Dir:   plugin_apt/
+08:57:06 INFO  Title: Validate apt plugin install from local file - SUCCESS case
+08:57:06 INFO  ==============================================================
+08:57:06 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:06 WARN  Aborted test due to SKIPPED outcome
+08:57:06 INFO  
+08:57:06 INFO  Test duration: 0.02 secs
+08:57:06 INFO  Test final outcome:  SKIPPED
+08:57:06 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:06 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallFromLocalFile" name="apt_install_local_file" />
+</testsuite><testsuite name="apt_install_local_file_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileFail" name="apt_install_local_file_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:06 INFO  ==============================================================
+08:57:06 INFO  Id:    apt_install_local_file_fail
+08:57:06 INFO  Dir:   plugin_apt/
+08:57:06 INFO  Title: Validate apt plugin install from local file - FAIL case
+08:57:06 INFO  ==============================================================
+08:57:06 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:06 WARN  Aborted test due to SKIPPED outcome
+08:57:06 INFO  
+08:57:06 INFO  Test duration: 0.19 secs
+08:57:06 INFO  Test final outcome:  SKIPPED
+08:57:06 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:06 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallFromLocalFileFail" name="apt_install_local_file_fail" />
+</testsuite><testsuite name="apt_install_local_file_with_version" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersion" name="apt_install_local_file_with_version">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:06 INFO  ==============================================================
+08:57:06 INFO  Id:    apt_install_local_file_with_version
+08:57:06 INFO  Dir:   plugin_apt/
+08:57:06 INFO  Title: Validate apt plugin install from local file AND with a version - SUCCESS case
+08:57:06 INFO  ==============================================================
+08:57:06 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:06 WARN  Aborted test due to SKIPPED outcome
+08:57:06 INFO  
+08:57:06 INFO  Test duration: 0.02 secs
+08:57:06 INFO  Test final outcome:  SKIPPED
+08:57:06 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:06 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallFromLocalFileWithVersion" name="apt_install_local_file_with_version" />
+</testsuite><testsuite name="apt_install_local_file_with_version_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallFromLocalFileWithVersionFail" name="apt_install_local_file_with_version_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:06 INFO  ==============================================================
+08:57:06 INFO  Id:    apt_install_local_file_with_version_fail
+08:57:06 INFO  Dir:   plugin_apt/
+08:57:06 INFO  Title: Validate apt plugin install from local file AND with a version - FAIL case
+08:57:06 INFO  ==============================================================
+08:57:06 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:06 WARN  Aborted test due to SKIPPED outcome
+08:57:06 INFO  
+08:57:06 INFO  Test duration: 0.02 secs
+08:57:06 INFO  Test final outcome:  SKIPPED
+08:57:06 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:06 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallFromLocalFileWithVersionFail" name="apt_install_local_file_with_version_fail" />
+</testsuite><testsuite name="apt_list_format" tests="2" errors="0" failures="0" skipped="0" time="0"><testcase classname="AptPluginListFormat" name="apt_list_format" />
+<testcase classname="AptPluginListFormat" name="apt_list_format" />
+</testsuite><testsuite name="apt_prepare" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepare" name="apt_prepare">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_prepare
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin install - dense version
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginPrepare" name="apt_prepare" />
+</testsuite><testsuite name="apt_prepare_install_finalize" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepareInstallFinalize" name="apt_prepare_install_finalize">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_prepare_install_finalize
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin install use case
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginPrepareInstallFinalize" name="apt_prepare_install_finalize" />
+</testsuite><testsuite name="apt_remove" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveDense" name="apt_remove">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_remove
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin prepare - dense version
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginRemoveDense" name="apt_remove" />
+</testsuite><testsuite name="apt_remove_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveFails" name="apt_remove_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_remove_fail
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin prepare - failing
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginRemoveFails" name="apt_remove_fail" />
+</testsuite><testsuite name="apt_sequence_install_with_version" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginPrepInstallWithVersionFinalize" name="apt_sequence_install_with_version">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_sequence_install_with_version
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin install with version use case
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginPrepInstallWithVersionFinalize" name="apt_sequence_install_with_version" />
+</testsuite><testsuite name="apt_sequence_install_with_version_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallWithVersionFails" name="apt_sequence_install_with_version_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_sequence_install_with_version_fail
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin install with version fails use case
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:09 WARN  Aborted test due to SKIPPED outcome
+08:57:09 INFO  
+08:57:09 INFO  Test duration: 0.02 secs
+08:57:09 INFO  Test final outcome:  SKIPPED
+08:57:09 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:09 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallWithVersionFails" name="apt_sequence_install_with_version_fail" />
+</testsuite><testsuite name="apt_sequence_remove" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginInstallPrepareRemoveFinalize" name="apt_sequence_remove">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:09 INFO  ==============================================================
+08:57:09 INFO  Id:    apt_sequence_remove
+08:57:09 INFO  Dir:   plugin_apt/
+08:57:09 INFO  Title: Validate apt plugin prepare install remove finalize use case
+08:57:09 INFO  ==============================================================
+08:57:09 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginInstallPrepareRemoveFinalize" name="apt_sequence_remove" />
+</testsuite><testsuite name="apt_sequence_remove_with_version" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveWithVersion" name="apt_sequence_remove_with_version">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    apt_sequence_remove_with_version
+08:57:10 INFO  Dir:   plugin_apt/
+08:57:10 INFO  Title: Validate apt plugin remove with version use case
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginRemoveWithVersion" name="apt_sequence_remove_with_version" />
+</testsuite><testsuite name="apt_sequence_remove_with_version_fail" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    apt_sequence_remove_with_version_fail
+08:57:10 INFO  Dir:   plugin_apt/
+08:57:10 INFO  Title: Validate apt plugin remove with version fails when the version not found
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginRemoveWithVersionFails" name="apt_sequence_remove_with_version_fail" />
+</testsuite><testsuite name="apt_update_list" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginUpdateList" name="apt_update_list">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    apt_update_list
+08:57:10 INFO  Dir:   plugin_apt/
+08:57:10 INFO  Title: Validate apt plugin update-list command use case
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginUpdateList" name="apt_update_list" />
+</testsuite><testsuite name="apt_wrong_option" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="AptPluginWrongOption" name="apt_wrong_option">
+		<skipped message="SKIPPED: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    apt_wrong_option
+08:57:10 INFO  Dir:   plugin_apt/
+08:57:10 INFO  Title: Validate apt plugin install
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the apt plugin is not supported on this platform.To run the tests call PySys with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="AptPluginWrongOption" name="apt_wrong_option" />
+</testsuite><testsuite name="c8y_jwt_token_retrieval" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateJWTTokenRetrieval" name="c8y_jwt_token_retrieval" />
+</testsuite><testsuite name="c8y_restart_bridge" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RestartBridge" name="c8y_restart_bridge" />
+</testsuite><testsuite name="call_tedge_-V" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-V" />
+</testsuite><testsuite name="call_tedge_-h" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-h" />
+</testsuite><testsuite name="call_tedge_-h_-V" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_-h_-V" />
+</testsuite><testsuite name="call_tedge_config_help" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_config_help" />
+</testsuite><testsuite name="call_tedge_config_list" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="call_tedge_config_list" />
+</testsuite><testsuite name="custom_init_system" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="CustomInitSystem" name="custom_init_system" />
+</testsuite><testsuite name="docker_plugin_finalize" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginFinalizeTest" name="docker_plugin_finalize">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_finalize
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin finalize command
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.05 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginFinalizeTest" name="docker_plugin_finalize" />
+</testsuite><testsuite name="docker_plugin_install" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginInstallTest" name="docker_plugin_install">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_install
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin install
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginInstallTest" name="docker_plugin_install" />
+</testsuite><testsuite name="docker_plugin_install_with_version" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginInstallWithVersionTest" name="docker_plugin_install_with_version">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_install_with_version
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin install
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginInstallWithVersionTest" name="docker_plugin_install_with_version" />
+</testsuite><testsuite name="docker_plugin_remove" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_remove
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin remove
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginRemoveTest" name="docker_plugin_remove" />
+</testsuite><testsuite name="docker_plugin_remove_with_version" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginRemoveWithVersionTest" name="docker_plugin_remove_with_version">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_remove_with_version
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin remove with version
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginRemoveWithVersionTest" name="docker_plugin_remove_with_version" />
+</testsuite><testsuite name="docker_plugin_update" tests="2" errors="0" failures="0" skipped="1" time="0"><testcase classname="DockerPluginUpdateTest" name="docker_plugin_update">
+		<skipped message="SKIPPED: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'" />
+		<system-out>08:57:10 INFO  ==============================================================
+08:57:10 INFO  Id:    docker_plugin_update
+08:57:10 INFO  Dir:   plugin_docker/
+08:57:10 INFO  Title: Validate docker plugin install updates existing containers
+08:57:10 INFO  ==============================================================
+08:57:10 INFO  Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container' ... skipped
+08:57:10 WARN  Aborted test due to SKIPPED outcome
+08:57:10 INFO  
+08:57:10 INFO  Test duration: 0.02 secs
+08:57:10 INFO  Test final outcome:  SKIPPED
+08:57:10 INFO  Test outcome reason: Testing the docker plugin is not supported on this platform.To run it, all the test with -XmyPlatform='container'
+08:57:10 INFO  
+</system-out>
+	</testcase>
+<testcase classname="DockerPluginUpdateTest" name="docker_plugin_update" />
+</testsuite><testsuite name="invalid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="InvalidDeviceId" name="invalid_device_id" />
+</testsuite><testsuite name="local_mqtt_pub_fail_noqos" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_noqos" />
+</testsuite><testsuite name="local_mqtt_pub_fail_qos0" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos0" />
+</testsuite><testsuite name="local_mqtt_pub_fail_qos1" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos1" />
+</testsuite><testsuite name="local_mqtt_pub_fail_qos2" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_fail_qos2" />
+</testsuite><testsuite name="local_mqtt_pub_sub" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_sub" />
+</testsuite><testsuite name="local_mqtt_pub_sub_retain" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPublishWithRetain" name="local_mqtt_pub_sub_retain" />
+</testsuite><testsuite name="local_mqtt_pub_sub_with_sudo" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_pub_sub_with_sudo" />
+</testsuite><testsuite name="local_mqtt_sub_fail" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="local_mqtt_sub_fail" />
+</testsuite><testsuite name="log_request_error_messages" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifySearchTextError" name="log_request_error_messages" />
+</testsuite><testsuite name="log_request_num_lines" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="LogRequestVerifyNumberOfLines" name="log_request_num_lines" />
+</testsuite><testsuite name="mapper_awaits_before_reconnect" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MapperReconnectAwait" name="mapper_awaits_before_reconnect" />
+</testsuite><testsuite name="monitoring_smaller_interval" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringSmallInterval" name="monitoring_smaller_interval">
+		<skipped message="SKIPPED: Fails due to retained message" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    monitoring_smaller_interval
+08:57:05 INFO  Dir:   monitoring/
+08:57:05 INFO  Title: Validate the tedge dm agent messages that are produced with smaller sampling interval than the batching window. Here the simulated collectd messages are used
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Fails due to retained message ... skipped
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.03 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Fails due to retained message
+08:57:05 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="monitoring_with_collectd" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringWithCollectd" name="monitoring_with_collectd">
+		<skipped message="SKIPPED: Test execution disabled due to #792 (instable)" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    monitoring_with_collectd
+08:57:05 INFO  Dir:   monitoring/
+08:57:05 INFO  Title: Validate tedge dm agent messages that are produced by batching the collectd messages
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Test execution disabled due to #792 (instable) ... skipped
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.03 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Test execution disabled due to #792 (instable)
+08:57:05 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="monitoring_with_simulated_messages" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MonitoringWithSimulatedMessages" name="monitoring_with_simulated_messages">
+		<skipped message="SKIPPED: Fails due to retained message" />
+		<system-out>08:57:05 INFO  ==============================================================
+08:57:05 INFO  Id:    monitoring_with_simulated_messages
+08:57:05 INFO  Dir:   monitoring/
+08:57:05 INFO  Title: Validate the tedge dm agent messages that are produced from the simulated collectd messages
+08:57:05 INFO  ==============================================================
+08:57:05 INFO  Fails due to retained message ... skipped
+08:57:05 INFO  
+08:57:05 INFO  Test duration: 0.04 secs
+08:57:05 INFO  Test final outcome:  SKIPPED
+08:57:05 INFO  Test outcome reason: Fails due to retained message
+08:57:05 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="mqtt_port_change_connection_fails" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortChangeConnectionFails" name="mqtt_port_change_connection_fails" />
+</testsuite><testsuite name="mqtt_port_change_connection_works" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="MqttPortChangeConnectionWorks" name="mqtt_port_change_connection_works">
+		<skipped message="SKIPPED: failing intermitently" />
+		<system-out>08:56:09 INFO  ==============================================================
+08:56:09 INFO  Id:    mqtt_port_change_connection_works
+08:56:09 INFO  Dir:   misc_features/
+08:56:09 INFO  Title: mqtt port change connection works for all the thin-edge services that use the mosquitto broker
+08:56:09 INFO  ==============================================================
+08:56:09 INFO  failing intermitently ... skipped
+08:56:09 INFO  
+08:56:09 INFO  Test duration: 0.02 secs
+08:56:09 INFO  Test final outcome:  SKIPPED
+08:56:09 INFO  Test outcome reason: failing intermitently
+08:56:09 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="mqtt_port_set" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortSet" name="mqtt_port_set" />
+</testsuite><testsuite name="mqtt_port_unset" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="MqttPortUnSet" name="mqtt_port_unset" />
+</testsuite><testsuite name="publish_flux" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishFlux" name="publish_flux" />
+</testsuite><testsuite name="publish_sawmill" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PublishSawmill" name="publish_sawmill" />
+</testsuite><testsuite name="pysys_block" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="Fail" name="pysys_block">
+		<skipped message="SKIPPED: Enable this to observe a blocking test" />
+		<system-out>08:56:32 INFO  ==============================================================
+08:56:32 INFO  Id:    pysys_block
+08:56:32 INFO  Dir:   misc_features/
+08:56:32 INFO  Title: fail
+08:56:32 INFO  ==============================================================
+08:56:32 INFO  Enable this to observe a blocking test ... skipped
+08:56:32 INFO  
+08:56:32 INFO  Test duration: 0.02 secs
+08:56:32 INFO  Test final outcome:  SKIPPED
+08:56:32 INFO  Test outcome reason: Enable this to observe a blocking test
+08:56:32 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="pysys_fail" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="Fail" name="pysys_fail">
+		<skipped message="SKIPPED: Enable this to observe a failing test" />
+		<system-out>08:56:32 INFO  ==============================================================
+08:56:32 INFO  Id:    pysys_fail
+08:56:32 INFO  Dir:   misc_features/
+08:56:32 INFO  Title: fail
+08:56:32 INFO  ==============================================================
+08:56:32 INFO  Enable this to observe a failing test ... skipped
+08:56:32 INFO  
+08:56:32 INFO  Test duration: 0.02 secs
+08:56:32 INFO  Test final outcome:  SKIPPED
+08:56:32 INFO  Test outcome reason: Enable this to observe a failing test
+08:56:32 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="runtime_start_two_mappers" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="RuntimeMultiMappers" name="runtime_start_two_mappers" />
+</testsuite><testsuite name="sm_tedge_mapper_init_session" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeSMMapperInitSession" name="sm_tedge_mapper_init_session" />
+</testsuite><testsuite name="smoketest_json" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmokeTestJson" name="smoketest_json" />
+</testsuite><testsuite name="smoketest_json_400_samples_10ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples10ms" name="smoketest_json_400_samples_10ms" />
+</testsuite><testsuite name="smoketest_json_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestJson400Samples20ms" name="smoketest_json_400_samples_20ms" />
+</testsuite><testsuite name="smoketest_smartrest" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest" name="smoketest_smartrest" />
+</testsuite><testsuite name="smoketest_smartrest_400_samples_1Xms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples1Xms" name="smoketest_smartrest_400_samples_1Xms" />
+</testsuite><testsuite name="smoketest_smartrest_400_samples_20ms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="SmoketestSmartRest400Samples20ms" name="smoketest_smartrest_400_samples_20ms" />
+</testsuite><testsuite name="tedge_agent_user_sudo_access" tests="1" errors="0" failures="0" skipped="1" time="0"><testcase classname="TedgeAgentUserSudoAccess" name="tedge_agent_user_sudo_access">
+		<skipped message="SKIPPED: #955 Observation: Exit code of the apt plugin when called with no arguments" />
+		<system-out>09:07:22 INFO  ==============================================================
+09:07:22 INFO  Id:    tedge_agent_user_sudo_access
+09:07:22 INFO  Dir:   tedge/
+09:07:22 INFO  Title: Validate tedge-agent user has a limited sudo right
+09:07:22 INFO  ==============================================================
+09:07:22 INFO  #955 Observation: Exit code of the apt plugin when called with no arguments ... skipped
+09:07:22 INFO  
+09:07:22 INFO  Test duration: 0.02 secs
+09:07:22 INFO  Test final outcome:  SKIPPED
+09:07:22 INFO  Test outcome reason: #955 Observation: Exit code of the apt plugin when called with no arguments
+09:07:22 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="tedge_connect_test_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestNegative" name="tedge_connect_test_negative" />
+</testsuite><testsuite name="tedge_connect_test_positive" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestPositive" name="tedge_connect_test_positive" />
+</testsuite><testsuite name="tedge_connect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeConnectTestSMServices" name="tedge_connect_test_sm_services" />
+</testsuite><testsuite name="tedge_disconnect_test_sm_services" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeDisConnectTestSMServices" name="tedge_disconnect_test_sm_services" />
+</testsuite><testsuite name="tedge_mapper_az_negative" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzError" name="tedge_mapper_az_negative" />
+</testsuite><testsuite name="tedge_mapper_az_with_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithTimestamp" name="tedge_mapper_az_with_timestamp" />
+</testsuite><testsuite name="tedge_mapper_az_without_timestamp" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperAzWithoutTimestamp" name="tedge_mapper_az_without_timestamp" />
+</testsuite><testsuite name="tedge_mapper_c8y_alarms" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms" />
+</testsuite><testsuite name="tedge_mapper_c8y_child_device_measurement" tests="1" errors="0" failures="1" skipped="0" time="0"><testcase classname="TedgeMapperC8yChildDevice" name="tedge_mapper_c8y_child_device_measurement">
+		<failure message="BLOCKED: TypeError: 'NoneType' object is not subscriptable (+1 other failures)" type="BLOCKED" />
+		<system-out>09:11:49 INFO  ==============================================================
+09:11:49 INFO  Id:    tedge_mapper_c8y_child_device_measurement
+09:11:49 INFO  Dir:   tedge_mapper_c8y/
+09:11:49 INFO  Title: Validate that measurements sent to tedge/measurements/child topic gets mapped as the child device's measurement in Cumulocity
+09:11:49 INFO  ==============================================================
+09:11:49 INFO  EnvironmentC8y Setup
+09:11:49 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+09:11:50 INFO  Restarting mosquitto too frequently in the last 10 seconds. It was only up for 5 seconds
+09:11:50 INFO  Delaying execution by 6 seconds
+09:12:10 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 14 secs
+09:12:10 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+09:12:11 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+09:12:11 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+09:12:12 INFO  Assert that (actual == expected) with actual=None, expected=None ... passed
+09:12:13 INFO  Executed tedge_pub, exit status 0
+09:12:13 INFO  Executed tedge_pub, exit status 0
+09:12:14 INFO  Executed tedge_pub, exit status 0
+09:12:14 INFO  Executed tedge_pub, exit status 0
+09:12:14 INFO  Executed tedge_pub, exit status 0
+09:12:17 WARN  TypeError occurred while running test - 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1296, in __call__
+    self.testObj.validate()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 115, in validate
+    self.child_device_json["id"], 3
+TypeError: 'NoneType' object is not subscriptable
+09:12:17 WARN  TypeError: 'NoneType' object is not subscriptable ... blocked 
+09:12:17 INFO  
+09:12:17 INFO  cleanup:
+09:12:17 ERROR Error while running cleanup function: 
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/process/user.py", line 1305, in cleanup
+    fn()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_child_device_measurement/run.py", line 165, in test_cleanup
+    self.child_device_json["id"]
+TypeError: 'NoneType' object is not subscriptable
+09:12:21 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+09:12:21 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+09:12:21 WARN  Cleanup failed with 1 errors: Cleanup function failed: 'NoneType' object is not subscriptable (TypeError) ... blocked 
+09:12:21 INFO  
+09:12:21 INFO  Test duration: 32.62 secs
+09:12:21 INFO  Test final outcome:  BLOCKED
+09:12:21 INFO  Test outcome reason: TypeError: 'NoneType' object is not subscriptable (+1 other failures)
+09:12:21 INFO  
+</system-out>
+	</testcase>
+</testsuite><testsuite name="tedge_mapper_c8y_packet_threshold_size" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="TedgeMapperC8yThresholdPacketSize" name="tedge_mapper_c8y_packet_threshold_size" />
+</testsuite><testsuite name="tedge_software_update" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="PySysTest" name="tedge_software_update" />
+</testsuite><testsuite name="valid_device_id" tests="1" errors="0" failures="0" skipped="0" time="0"><testcase classname="ValidateValidDeviceId" name="valid_device_id" />
 </testsuite></testsuites>
