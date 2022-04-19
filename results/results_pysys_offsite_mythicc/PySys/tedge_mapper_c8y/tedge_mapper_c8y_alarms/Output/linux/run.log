@@ -1,0 +1,69 @@
+2022-04-19 13:43:29,617 INFO  ==============================================================
+2022-04-19 13:43:29,618 INFO  Id:    tedge_mapper_c8y_alarms
+2022-04-19 13:43:29,619 INFO  Dir:   tedge_mapper_c8y/
+2022-04-19 13:43:29,620 INFO  Title: Validate that alarms sent to tedge/alarms topic \ gets mapped as alarms in Cumulocity
+2022-04-19 13:43:29,620 INFO  ==============================================================
+2022-04-19 13:43:29,655 INFO  EnvironmentC8y Setup
+2022-04-19 13:43:30,217 INFO  Executed systemctl<serv_mapper1>, exit status 3
+2022-04-19 13:43:44,497 INFO  Executed sudo<tedge_connect_c8y>, exit status 0, duration 14 secs
+2022-04-19 13:43:45,124 INFO  Executed sudo<tedge_connect_c8y_test>, exit status 0
+2022-04-19 13:43:45,588 INFO  Executed systemctl<serv_mosq2>, exit status 0
+2022-04-19 13:43:46,052 INFO  Executed systemctl<serv_mapper3>, exit status 0
+2022-04-19 13:43:51,469 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:51,882 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:52,293 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:52,705 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:53,117 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:54,345 INFO  {
+    "severity": "WARNING",
+    "creationTime": "2022-04-19T13:43:54.106Z",
+    "count": 1,
+    "history": {
+        "auditRecords": [],
+        "self": "https://t493319102.eu-latest.cumulocity.com/audit/auditRecords"
+    },
+    "source": {
+        "name": "mythicc",
+        "self": "https://t493319102.eu-latest.cumulocity.com/inventory/managedObjects/17392960",
+        "id": "17392960"
+    },
+    "type": "temperature_high",
+    "lastUpdated": "2022-04-19T13:43:54.106Z",
+    "self": "https://t493319102.eu-latest.cumulocity.com/alarm/alarms/17474450",
+    "time": "2021-12-15T15:22:06.464+05:30",
+    "id": "17474450",
+    "text": "temperature is high",
+    "status": "ACTIVE"
+}
+2022-04-19 13:43:54,386 WARN  Assert that (actual == expected) with actual="temperature_high", expected="temperature_dangerous" ... failed [run.py:128,run.py:103]
+2022-04-19 13:43:54,388 INFO       actual: "temperature_high"
+2022-04-19 13:43:54,389 INFO     expected: "temperature_dangerous"
+2022-04-19 13:43:54,390 INFO                            ^
+2022-04-19 13:43:54,418 WARN  Assert that (actual == expected) with actual="WARNING", expected="CRITICAL" ... failed [run.py:133,run.py:103]
+2022-04-19 13:43:54,420 INFO       actual: "WARNING"
+2022-04-19 13:43:54,421 INFO     expected: "CRITICAL"
+2022-04-19 13:43:54,422 INFO                ^
+2022-04-19 13:43:54,452 WARN  Assert that (actual == expected) with actual="temperature is high", expected="temperature is dangerously high" ... failed [run.py:138,run.py:103]
+2022-04-19 13:43:54,455 INFO       actual: "temperature is high"
+2022-04-19 13:43:54,456 INFO     expected: "temperature is dangerously high"
+2022-04-19 13:43:54,456 INFO                               ^
+2022-04-19 13:43:54,457 WARN  IndexError occurred while running test - list index out of range
+Traceback (most recent call last):
+  File "/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py", line 1296, in __call__
+    self.testObj.validate()
+  File "/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_c8y/tedge_mapper_c8y_alarms/run.py", line 106, in validate
+    alarms[1], "temperature_very_high", "MAJOR", "temperature is very high"
+IndexError: list index out of range
+2022-04-19 13:43:54,469 WARN  IndexError: list index out of range ... blocked 
+2022-04-19 13:43:54,470 INFO  
+2022-04-19 13:43:54,471 INFO  cleanup:
+2022-04-19 13:43:54,882 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:55,294 INFO  Executed tedge, exit status 0
+2022-04-19 13:43:55,706 INFO  Executed tedge, exit status 0
+2022-04-19 13:44:00,188 INFO  Executed sudo<tedge_disconnect_c8y>, exit status 0
+2022-04-19 13:44:00,754 INFO  Executed systemctl<serv_mapper5>, exit status 3
+2022-04-19 13:44:00,758 INFO  
+2022-04-19 13:44:00,759 INFO  Test duration: 31.15 secs
+2022-04-19 13:44:00,760 INFO  Test final outcome:  BLOCKED
+2022-04-19 13:44:00,761 INFO  Test outcome reason: IndexError: list index out of range (+3 other failures)
+2022-04-19 13:44:00,762 INFO  
