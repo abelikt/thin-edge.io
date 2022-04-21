@@ -1,15 +1,23 @@
-2022-04-21 09:16:24,928 INFO  ==============================================================
-2022-04-21 09:16:24,929 INFO  Id:    docker_plugin_install_with_version
-2022-04-21 09:16:24,930 INFO  Dir:   plugin_docker/
-2022-04-21 09:16:24,931 INFO  Title: Validate docker plugin install
-2022-04-21 09:16:24,932 INFO  ==============================================================
-2022-04-21 09:16:25,756 INFO  Executed sudo<docker_images>, exit status 0
-2022-04-21 09:16:25,809 WARN  Grep on /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_install_with_version/Output/linux/docker_images.out does not contain "registry" failed with 2 matches, first is: "registry            2.7.1               e8a56425636e        5 months ago        22.2MB" ... failed 
-2022-04-21 09:16:25,810 WARN  Aborted test due to FAILED outcome
-2022-04-21 09:16:25,815 INFO  
-2022-04-21 09:16:25,816 INFO  cleanup:
-2022-04-21 09:16:25,819 INFO  
-2022-04-21 09:16:25,820 INFO  Test duration: 0.90 secs
-2022-04-21 09:16:25,820 INFO  Test final outcome:  FAILED
-2022-04-21 09:16:25,821 INFO  Test outcome reason: Grep on /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_install_with_version/Output/linux/docker_images.out does not contain "registry" failed with 2 matches, first is: "registry            2.7.1               e8a56425636e        5 months ago        22.2MB"
-2022-04-21 09:16:25,822 INFO  
+2022-04-21 14:34:06,297 INFO  ==============================================================
+2022-04-21 14:34:06,298 INFO  Id:    docker_plugin_install_with_version
+2022-04-21 14:34:06,299 INFO  Dir:   plugin_docker/
+2022-04-21 14:34:06,300 INFO  Title: Validate docker plugin install
+2022-04-21 14:34:06,301 INFO  ==============================================================
+2022-04-21 14:34:07,120 INFO  Executed sudo<docker_images>, exit status 0
+2022-04-21 14:34:07,125 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_install_with_version/Output/linux/docker_images.out ... passed
+2022-04-21 14:34:09,646 WARN  Executed sudo<plugin_install>, exit status 2
+2022-04-21 14:34:09,666 WARN  sudo<plugin_install> returned non-zero exit code 2 ... blocked [environment_docker_plugin.py:136,environment_docker_plugin.py:144,run.py:24]
+2022-04-21 14:34:10,452 INFO  Executed sudo<docker_ps_latest>, exit status 0
+2022-04-21 14:34:11,369 INFO  Executed sudo<docker_ps>, exit status 0
+2022-04-21 14:34:11,391 WARN  Grep on /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_install_with_version/Output/linux/docker_ps.out contains "registry:2.7.1" ... failed [environment_docker_plugin.py:49,run.py:28]
+2022-04-21 14:34:11,396 INFO  
+2022-04-21 14:34:11,397 INFO  cleanup:
+2022-04-21 14:34:11,398 INFO  Removing containers scheduled to be cleaned up: ['', '']
+2022-04-21 14:34:12,271 WARN  Executed sudo<containers_for_cleanup>, exit status 1
+2022-04-21 14:34:12,272 INFO  Removing images scheduled to be cleaned up: ['registry', 'registry', 'registry:2.7.1']
+2022-04-21 14:34:13,085 INFO  Executed sudo<containers_for_cleanup>, exit status 0
+2022-04-21 14:34:13,089 INFO  
+2022-04-21 14:34:13,090 INFO  Test duration: 6.80 secs
+2022-04-21 14:34:13,091 INFO  Test final outcome:  BLOCKED
+2022-04-21 14:34:13,092 INFO  Test outcome reason: sudo<plugin_install> returned non-zero exit code 2 (+1 other failures)
+2022-04-21 14:34:13,092 INFO  

@@ -1,15 +1,27 @@
-2022-04-21 09:16:25,849 INFO  ==============================================================
-2022-04-21 09:16:25,850 INFO  Id:    docker_plugin_remove
-2022-04-21 09:16:25,851 INFO  Dir:   plugin_docker/
-2022-04-21 09:16:25,852 INFO  Title: Validate docker plugin remove
-2022-04-21 09:16:25,853 INFO  ==============================================================
-2022-04-21 09:16:26,672 INFO  Executed sudo<docker_images>, exit status 0
-2022-04-21 09:16:26,724 WARN  Grep on /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out does not contain "registry" failed with 2 matches, first is: "registry            2.7.1               e8a56425636e        5 months ago        22.2MB" ... failed 
-2022-04-21 09:16:26,725 WARN  Aborted test due to FAILED outcome
-2022-04-21 09:16:26,730 INFO  
-2022-04-21 09:16:26,731 INFO  cleanup:
-2022-04-21 09:16:26,733 INFO  
-2022-04-21 09:16:26,734 INFO  Test duration: 0.89 secs
-2022-04-21 09:16:26,735 INFO  Test final outcome:  FAILED
-2022-04-21 09:16:26,736 INFO  Test outcome reason: Grep on /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out does not contain "registry" failed with 2 matches, first is: "registry            2.7.1               e8a56425636e        5 months ago        22.2MB"
-2022-04-21 09:16:26,737 INFO  
+2022-04-21 14:34:13,127 INFO  ==============================================================
+2022-04-21 14:34:13,128 INFO  Id:    docker_plugin_remove
+2022-04-21 14:34:13,129 INFO  Dir:   plugin_docker/
+2022-04-21 14:34:13,130 INFO  Title: Validate docker plugin remove
+2022-04-21 14:34:13,131 INFO  ==============================================================
+2022-04-21 14:34:14,152 INFO  Executed sudo<docker_images>, exit status 0
+2022-04-21 14:34:14,158 INFO  Grep on file /home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/plugin_docker/docker_plugin_remove/Output/linux/docker_images.out ... passed
+2022-04-21 14:34:16,388 WARN  Executed sudo<docker_run>, exit status 125
+2022-04-21 14:34:16,393 INFO  Contents of docker_run.err: 
+2022-04-21 14:34:16,394 INFO    Unable to find image 'registry:latest' locally
+2022-04-21 14:34:16,395 INFO    docker: Error response from daemon: toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https://www.docker.com/increase-rate-limit.
+2022-04-21 14:34:16,395 INFO    See 'docker run --help'.
+2022-04-21 14:34:16,396 INFO    -----
+2022-04-21 14:34:16,397 INFO  
+2022-04-21 14:34:16,448 WARN  sudo<docker_run> returned non-zero exit code 125 ... blocked 
+2022-04-21 14:34:16,449 WARN  Aborted test due to BLOCKED outcome
+2022-04-21 14:34:16,454 INFO  
+2022-04-21 14:34:16,456 INFO  cleanup:
+2022-04-21 14:34:16,458 INFO  Removing containers scheduled to be cleaned up: ['', '']
+2022-04-21 14:34:17,271 WARN  Executed sudo<containers_for_cleanup>, exit status 1
+2022-04-21 14:34:17,272 INFO  Removing images scheduled to be cleaned up: ['registry', 'registry', 'registry:2.7.1']
+2022-04-21 14:34:18,086 INFO  Executed sudo<containers_for_cleanup>, exit status 0
+2022-04-21 14:34:18,089 INFO  
+2022-04-21 14:34:18,090 INFO  Test duration: 4.97 secs
+2022-04-21 14:34:18,091 INFO  Test final outcome:  BLOCKED
+2022-04-21 14:34:18,092 INFO  Test outcome reason: sudo<docker_run> returned non-zero exit code 125
+2022-04-21 14:34:18,093 INFO  
