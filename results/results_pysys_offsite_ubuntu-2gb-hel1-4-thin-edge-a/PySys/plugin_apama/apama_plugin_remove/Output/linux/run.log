@@ -1,0 +1,28 @@
+2022-05-02 15:24:03,639 INFO  ==============================================================
+2022-05-02 15:24:03,639 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_remove
+2022-05-02 15:24:03,639 INFO  Dir:   plugin_apama/
+2022-05-02 15:24:03,639 INFO  Title: Validate apama plugin remove
+2022-05-02 15:24:03,639 INFO  ==============================================================
+2022-05-02 15:24:03,640 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-05-02 15:24:03,691 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-05-02 15:24:03,794 INFO  Executed sudo<unzip_apama_project>, exit status 0
+2022-05-02 15:24:03,846 INFO  Executed sudo<move_apama_project>, exit status 0
+2022-05-02 15:24:03,947 WARN  Executed sudo<restart_apama_service>, exit status 1
+2022-05-02 15:24:03,948 INFO  Contents of restart_apama_service.err: 
+2022-05-02 15:24:03,948 INFO    Job for apama.service failed because the control process exited with error code.
+2022-05-02 15:24:03,948 INFO    See "systemctl status apama.service" and "journalctl -xe" for details.
+2022-05-02 15:24:03,948 INFO    -----
+2022-05-02 15:24:03,948 INFO  
+2022-05-02 15:24:03,951 WARN  sudo<restart_apama_service> returned non-zero exit code 1 ... blocked 
+2022-05-02 15:24:03,952 WARN  Aborted test due to BLOCKED outcome
+2022-05-02 15:24:03,952 INFO  
+2022-05-02 15:24:03,952 INFO  cleanup:
+2022-05-02 15:24:03,952 INFO  Removing apama project
+2022-05-02 15:24:04,655 INFO  Executed sudo<stop_apama_service>, exit status 0
+2022-05-02 15:24:04,707 INFO  Executed sudo<remove_apama_project>, exit status 0
+2022-05-02 15:24:04,758 INFO  Executed sudo<remove_apama_tmp_dir>, exit status 0
+2022-05-02 15:24:04,759 INFO  
+2022-05-02 15:24:04,759 INFO  Test duration: 1.12 secs
+2022-05-02 15:24:04,759 INFO  Test final outcome:  BLOCKED
+2022-05-02 15:24:04,759 INFO  Test outcome reason: sudo<restart_apama_service> returned non-zero exit code 1
+2022-05-02 15:24:04,759 INFO  

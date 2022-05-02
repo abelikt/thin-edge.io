@@ -1,0 +1,28 @@
+2022-05-02 15:24:04,761 INFO  ==============================================================
+2022-05-02 15:24:04,761 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_update
+2022-05-02 15:24:04,761 INFO  Dir:   plugin_apama/
+2022-05-02 15:24:04,761 INFO  Title: Validate apama plugin updating one project with another
+2022-05-02 15:24:04,761 INFO  ==============================================================
+2022-05-02 15:24:04,762 INFO  Assertion that path exists=False for "/etc/tedge/apama/project" ... passed
+2022-05-02 15:24:04,813 INFO  Executed sudo<create_project_dir>, exit status 0
+2022-05-02 15:24:04,915 INFO  Executed sudo<unzip_apama_project>, exit status 0
+2022-05-02 15:24:05,017 INFO  Executed sudo<move_apama_project>, exit status 0
+2022-05-02 15:24:05,119 WARN  Executed sudo<restart_apama_service>, exit status 1
+2022-05-02 15:24:05,119 INFO  Contents of restart_apama_service.err: 
+2022-05-02 15:24:05,119 INFO    Job for apama.service failed because the control process exited with error code.
+2022-05-02 15:24:05,119 INFO    See "systemctl status apama.service" and "journalctl -xe" for details.
+2022-05-02 15:24:05,119 INFO    -----
+2022-05-02 15:24:05,119 INFO  
+2022-05-02 15:24:05,122 WARN  sudo<restart_apama_service> returned non-zero exit code 1 ... blocked 
+2022-05-02 15:24:05,123 WARN  Aborted test due to BLOCKED outcome
+2022-05-02 15:24:05,123 INFO  
+2022-05-02 15:24:05,123 INFO  cleanup:
+2022-05-02 15:24:05,123 INFO  Removing apama project
+2022-05-02 15:24:05,826 INFO  Executed sudo<stop_apama_service>, exit status 0
+2022-05-02 15:24:05,878 INFO  Executed sudo<remove_apama_project>, exit status 0
+2022-05-02 15:24:05,929 INFO  Executed sudo<remove_apama_tmp_dir>, exit status 0
+2022-05-02 15:24:05,930 INFO  
+2022-05-02 15:24:05,930 INFO  Test duration: 1.16 secs
+2022-05-02 15:24:05,930 INFO  Test final outcome:  BLOCKED
+2022-05-02 15:24:05,930 INFO  Test outcome reason: sudo<restart_apama_service> returned non-zero exit code 1
+2022-05-02 15:24:05,930 INFO  
