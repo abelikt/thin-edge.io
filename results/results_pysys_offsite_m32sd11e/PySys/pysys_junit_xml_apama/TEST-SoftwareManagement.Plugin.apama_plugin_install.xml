@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" failures="0" skipped="0" time="22.48" timestamp="2022-05-03T08:51:40">
-	<testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install"/>
+<testsuite name="SoftwareManagement.Plugin.apama_plugin_install" tests="1" failures="1" skipped="0" time="20.99" timestamp="2022-05-04T08:57:50">
+	<testcase classname="ApamaPluginInstallTest" name="SoftwareManagement.Plugin.apama_plugin_install">
+		<failure message="BLOCKED: sudo&lt;plugin_install&gt; returned non-zero exit code 2" type="BLOCKED"/>
+		<system-out>08:57:29 INFO  ==============================================================
+08:57:29 INFO  Id:    SoftwareManagement.Plugin.apama_plugin_install
+08:57:29 INFO  Dir:   plugin_apama/
+08:57:29 INFO  Title: Validate apama plugin install
+08:57:29 INFO  ==============================================================
+08:57:29 INFO  Assertion that path exists=False for &quot;/etc/tedge/apama/project&quot; ... passed
+08:57:31 WARN  Executed sudo&lt;plugin_install&gt;, exit status 2
+08:57:31 INFO  Contents of plugin_install.err: 
+  /opt/softwareag/Apama/bin/apama_env: line 142: /opt/softwareag/Apama/bin/engine_management: cannot execute binary file: Exec format error
+  ERROR: Execution of `/opt/softwareag/Apama/bin/apama_env` failed with exit status exit status: 126
+  -----
+
+08:57:31 WARN  sudo&lt;plugin_install&gt; returned non-zero exit code 2 ... blocked [run.py:20]
+08:57:31 WARN  Aborted test due to BLOCKED outcome
+08:57:31 INFO  
+08:57:31 INFO  cleanup:
+08:57:31 INFO  Removing apama project
+08:57:49 INFO  Executed sudo&lt;stop_apama_service&gt;, exit status 0, duration 18 secs
+08:57:50 INFO  Executed sudo&lt;remove_apama_project&gt;, exit status 0
+08:57:50 INFO  Executed sudo&lt;remove_apama_tmp_dir&gt;, exit status 0
+08:57:50 INFO  
+08:57:50 INFO  Test duration: 20.99 secs
+08:57:50 INFO  Test final outcome:  BLOCKED
+08:57:50 INFO  Test outcome reason: sudo&lt;plugin_install&gt; returned non-zero exit code 2
+08:57:50 INFO  
+</system-out>
+	</testcase>
 </testsuite>
