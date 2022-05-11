@@ -1,4 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite name="tedge_mapper_c8y_alarms" tests="1" failures="0" skipped="0" time="35.48" timestamp="2022-05-10T19:44:45">
-	<testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms"/>
+<testsuite name="tedge_mapper_c8y_alarms" tests="1" failures="1" skipped="0" time="36.51" timestamp="2022-05-11T11:48:59">
+	<testcase classname="TedgeMapperC8yAlarm" name="tedge_mapper_c8y_alarms">
+		<failure message="FAILED: Assert that (actual == expected) with actual=&quot;temperature_low&quot;, expected=&quot;temperature_dangerous&quot; (+9 other failures)" type="FAILED"/>
+		<system-out>11:48:22 INFO  ==============================================================
+11:48:22 INFO  Id:    tedge_mapper_c8y_alarms
+11:48:22 INFO  Dir:   tedge_mapper_c8y/
+11:48:22 INFO  Title: Validate that alarms sent to tedge/alarms topic \ gets mapped as alarms in Cumulocity
+11:48:22 INFO  ==============================================================
+11:48:22 INFO  EnvironmentC8y Setup
+11:48:23 INFO  Executed systemctl&lt;serv_mapper1&gt;, exit status 3
+11:48:41 INFO  Executed sudo&lt;tedge_connect_c8y&gt;, exit status 0, duration 17 secs
+11:48:41 INFO  Executed sudo&lt;tedge_connect_c8y_test&gt;, exit status 0
+11:48:42 INFO  Executed systemctl&lt;serv_mosq2&gt;, exit status 0
+11:48:42 INFO  Executed systemctl&lt;serv_mapper3&gt;, exit status 0
+11:48:48 INFO  Executed tedge, exit status 0
+11:48:48 INFO  Executed tedge, exit status 0
+11:48:49 INFO  Executed tedge, exit status 0
+11:48:49 INFO  Executed tedge, exit status 0
+11:48:49 INFO  Executed tedge, exit status 0
+11:48:51 INFO  {
+    &quot;severity&quot;: &quot;MINOR&quot;,
+    &quot;creationTime&quot;: &quot;2022-05-11T11:48:49.693Z&quot;,
+    &quot;count&quot;: 1,
+    &quot;history&quot;: {
+        &quot;auditRecords&quot;: [],
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/audit/auditRecords&quot;
+    },
+    &quot;source&quot;: {
+        &quot;name&quot;: &quot;m32sd11e&quot;,
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/inventory/managedObjects/18811625&quot;,
+        &quot;id&quot;: &quot;18811625&quot;
+    },
+    &quot;type&quot;: &quot;temperature_low&quot;,
+    &quot;lastUpdated&quot;: &quot;2022-05-11T11:48:49.693Z&quot;,
+    &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/alarm/alarms/18838773&quot;,
+    &quot;time&quot;: &quot;2022-05-11T11:48:49.394Z&quot;,
+    &quot;id&quot;: &quot;18838773&quot;,
+    &quot;text&quot;: &quot;temperature low&quot;,
+    &quot;status&quot;: &quot;ACTIVE&quot;
+}
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature_low&quot;, expected=&quot;temperature_dangerous&quot; ... failed [run.py:125,run.py:99]
+11:48:51 INFO       actual: &quot;temperature_low&quot;
+11:48:51 INFO     expected: &quot;temperature_dangerous&quot;
+11:48:51 INFO                            ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;MINOR&quot;, expected=&quot;CRITICAL&quot; ... failed [run.py:130,run.py:99]
+11:48:51 INFO       actual: &quot;MINOR&quot;
+11:48:51 INFO     expected: &quot;CRITICAL&quot;
+11:48:51 INFO                ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature low&quot;, expected=&quot;temperature is dangerously high&quot; ... failed [run.py:135,run.py:99]
+11:48:51 INFO       actual: &quot;temperature low&quot;
+11:48:51 INFO     expected: &quot;temperature is dangerously high&quot;
+11:48:51 INFO                            ^
+11:48:51 INFO  {
+    &quot;severity&quot;: &quot;CRITICAL&quot;,
+    &quot;creationTime&quot;: &quot;2022-05-11T11:48:48.997Z&quot;,
+    &quot;count&quot;: 1,
+    &quot;history&quot;: {
+        &quot;auditRecords&quot;: [],
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/audit/auditRecords&quot;
+    },
+    &quot;source&quot;: {
+        &quot;name&quot;: &quot;m32sd11e&quot;,
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/inventory/managedObjects/18811625&quot;,
+        &quot;id&quot;: &quot;18811625&quot;
+    },
+    &quot;type&quot;: &quot;temperature_dangerous&quot;,
+    &quot;lastUpdated&quot;: &quot;2022-05-11T11:48:48.997Z&quot;,
+    &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/alarm/alarms/18838771&quot;,
+    &quot;time&quot;: &quot;2022-05-11T11:48:48.984Z&quot;,
+    &quot;id&quot;: &quot;18838771&quot;,
+    &quot;text&quot;: &quot;temperature is dangerously high&quot;,
+    &quot;status&quot;: &quot;ACTIVE&quot;
+}
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature_dangerous&quot;, expected=&quot;temperature_very_high&quot; ... failed [run.py:125,run.py:105]
+11:48:51 INFO       actual: &quot;temperature_dangerous&quot;
+11:48:51 INFO     expected: &quot;temperature_very_high&quot;
+11:48:51 INFO                            ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;CRITICAL&quot;, expected=&quot;MAJOR&quot; ... failed [run.py:130,run.py:105]
+11:48:51 INFO       actual: &quot;CRITICAL&quot;
+11:48:51 INFO     expected: &quot;MAJOR&quot;
+11:48:51 INFO                ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature is dangerously high&quot;, expected=&quot;temperature is very high&quot; ... failed [run.py:135,run.py:105]
+11:48:51 INFO       actual: &quot;temperature is dangerously high&quot;
+11:48:51 INFO     expected: &quot;temperature is very high&quot;
+11:48:51 INFO                               ^
+11:48:51 INFO  {
+    &quot;severity&quot;: &quot;MAJOR&quot;,
+    &quot;creationTime&quot;: &quot;2022-05-11T11:48:48.658Z&quot;,
+    &quot;count&quot;: 1,
+    &quot;history&quot;: {
+        &quot;auditRecords&quot;: [],
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/audit/auditRecords&quot;
+    },
+    &quot;source&quot;: {
+        &quot;name&quot;: &quot;m32sd11e&quot;,
+        &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/inventory/managedObjects/18811625&quot;,
+        &quot;id&quot;: &quot;18811625&quot;
+    },
+    &quot;type&quot;: &quot;temperature_very_high&quot;,
+    &quot;lastUpdated&quot;: &quot;2022-05-11T11:48:48.658Z&quot;,
+    &quot;self&quot;: &quot;https://t493319102.eu-latest.cumulocity.com/alarm/alarms/18838769&quot;,
+    &quot;time&quot;: &quot;2022-05-11T11:48:48.574Z&quot;,
+    &quot;id&quot;: &quot;18838769&quot;,
+    &quot;text&quot;: &quot;temperature is very high&quot;,
+    &quot;status&quot;: &quot;ACTIVE&quot;
+}
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature_very_high&quot;, expected=&quot;temperature_high&quot; ... failed [run.py:125,run.py:108]
+11:48:51 INFO       actual: &quot;temperature_very_high&quot;
+11:48:51 INFO     expected: &quot;temperature_high&quot;
+11:48:51 INFO                            ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;MAJOR&quot;, expected=&quot;WARNING&quot; ... failed [run.py:130,run.py:108]
+11:48:51 INFO       actual: &quot;MAJOR&quot;
+11:48:51 INFO     expected: &quot;WARNING&quot;
+11:48:51 INFO                ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature is very high&quot;, expected=&quot;temperature is high&quot; ... failed [run.py:135,run.py:108]
+11:48:51 INFO       actual: &quot;temperature is very high&quot;
+11:48:51 INFO     expected: &quot;temperature is high&quot;
+11:48:51 INFO                               ^
+11:48:51 WARN  Assert that (actual == expected) with actual=&quot;temperature_very_high&quot;, expected=&quot;temperature_high&quot; ... failed [run.py:141,run.py:108]
+11:48:51 INFO       actual: &quot;temperature_very_high&quot;
+11:48:51 INFO     expected: &quot;temperature_high&quot;
+11:48:51 INFO                            ^
+11:48:51 INFO  
+11:48:51 INFO  cleanup:
+11:48:51 INFO  Executed tedge, exit status 0
+11:48:52 INFO  Executed tedge, exit status 0
+11:48:52 INFO  Executed tedge, exit status 0
+11:48:58 INFO  Executed sudo&lt;tedge_disconnect_c8y&gt;, exit status 0
+11:48:59 INFO  Executed systemctl&lt;serv_mapper5&gt;, exit status 3
+11:48:59 INFO  
+11:48:59 INFO  Test duration: 36.51 secs
+11:48:59 INFO  Test final outcome:  FAILED
+11:48:59 INFO  Test outcome reason: Assert that (actual == expected) with actual=&quot;temperature_low&quot;, expected=&quot;temperature_dangerous&quot; (+9 other failures)
+11:48:59 INFO  
+</system-out>
+	</testcase>
 </testsuite>
