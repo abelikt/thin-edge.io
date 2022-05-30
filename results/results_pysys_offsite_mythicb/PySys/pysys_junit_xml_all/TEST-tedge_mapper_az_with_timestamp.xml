@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<testsuite failures="0" name="tedge_mapper_az_with_timestamp" skipped="0" tests="1" time="2.42" timestamp="2022-05-23T09:27:20">
-	<testcase classname="TedgeMapperAzWithTimestamp" name="tedge_mapper_az_with_timestamp"/>
+<testsuite failures="1" name="tedge_mapper_az_with_timestamp" skipped="0" tests="1" time="2.47" timestamp="2022-05-30T09:21:50">
+	<testcase classname="TedgeMapperAzWithTimestamp" name="tedge_mapper_az_with_timestamp">
+		<failure message="BLOCKED: JSONDecodeError: Expecting value: line 1 column 1 (char 0)" type="BLOCKED"/>
+		<system-out>09:21:48 INFO  ==============================================================
+09:21:48 INFO  Id:    tedge_mapper_az_with_timestamp
+09:21:48 INFO  Dir:   tedge_mapper_az/
+09:21:48 INFO  Title: Validate the Azure Mapper that publishes a Thin Edge JSON message with timestamp on az/messages/events/ when it receives a valid JSON message on tedge/measurements
+09:21:48 INFO  ==============================================================
+09:21:49 INFO  Executed sudo&lt;tedge_mapper_az&gt;, exit status 0
+09:21:49 INFO  Started sudo&lt;tedge_sub&gt; with process id 26287
+09:21:49 INFO  Executed sudo&lt;tedge_temp&gt;, exit status 0
+09:21:50 INFO  Executed sudo&lt;kill_out&gt;, exit status 0
+09:21:50 WARN  JSONDecodeError occurred while running test - Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File &quot;/home/pi/env-pysys/lib/python3.7/site-packages/pysys/baserunner.py&quot;, line 1296, in __call__
+    self.testObj.validate()
+  File &quot;/home/pi/actions-runner/_work/thin-edge.io/thin-edge.io/tests/PySys/tedge_mapper_az/tedge_mapper_az_with_timestamp/run.py&quot;, line 70, in validate
+    thin_edge_json = json.load(f)
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File &quot;/usr/lib/python3.7/json/__init__.py&quot;, line 348, in loads
+    return _default_decoder.decode(s)
+  File &quot;/usr/lib/python3.7/json/decoder.py&quot;, line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File &quot;/usr/lib/python3.7/json/decoder.py&quot;, line 355, in raw_decode
+    raise JSONDecodeError(&quot;Expecting value&quot;, s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+09:21:50 WARN  JSONDecodeError: Expecting value: line 1 column 1 (char 0) ... blocked 
+09:21:50 INFO  
+09:21:50 INFO  cleanup:
+09:21:50 INFO  mapper_cleanup
+09:21:50 INFO  Executed sudo&lt;tedge_mapper_az&gt;, exit status 0
+09:21:50 INFO  
+09:21:50 INFO  Test duration: 2.47 secs
+09:21:50 INFO  Test final outcome:  BLOCKED
+09:21:50 INFO  Test outcome reason: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+09:21:50 INFO  
+</system-out>
+	</testcase>
 </testsuite>
