@@ -215,6 +215,22 @@ build() {
     nice cargo build --jobs $JOBS
 }
 
+
+buildcross() {
+    # TODO : Not complete, needs extensions
+    cd ~/thin-edge.io
+    export CARGO_TARGET_ARMV7_UNKNOWN_LINUX_GNUEABIHF_LINKER=/usr/bin/arm-linux-gnueabihf-gcc-10
+    #rustup target add arm-unknown-linux-gnueabihf
+    cargo deb -p tedge --target armv7-unknown-linux-gnueabihf
+    cargo deb -p tedge_mapper --target armv7-unknown-linux-gnueabihf
+
+    # We use our own stripper as the cargo one seems to be non-function the cargo one seems to be non-functionall
+    arm-linux-gnueabihf-strip target/armv7-unknown-linux-gnueabihf/release/tedge
+    arm-linux-gnueabihf-strip target/armv7-unknown-linux-gnueabihf/release/tedge_mapper
+}
+
+
+
 upgrade() {
 
     sudo apt update
