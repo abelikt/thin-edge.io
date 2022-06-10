@@ -144,6 +144,7 @@ cleanup_files() {
     rm -rf sawtooth_publisher_*.zip
     rm -rf tedge_dummy_plugin_*.zip
     rm -rf c8y_configuration_plugin_*.deb
+    rm -rf tedge_watchdog_*_amd64.deb
     set -f
 }
 
@@ -196,7 +197,7 @@ build() {
     echo "Running function ${FUNCNAME[0]}"
 
     cd ~/thin-edge.io
-    JOBS=11
+    JOBS=10 # Good heuristic for 6 core CPU with HT
 
     nice cargo build --release --jobs $JOBS
 
@@ -205,8 +206,9 @@ build() {
     nice cargo deb -p tedge_mapper
     nice cargo deb -p tedge_apt_plugin
     nice cargo deb -p tedge_apama_plugin
-    nice cargo deb -p tedge_logfile_request_plugin
+    #nice cargo deb -p tedge_logfile_request_plugin
     nice cargo deb -p c8y_configuration_plugin
+    nice cargo deb -p tedge_watchdog
 
     cd ~/thin-edge.io/crates/tests/sawtooth_publisher
 
@@ -258,6 +260,7 @@ install() {
     #sudo dpkg -i $DIR"/tedge_apama_plugin_"*"_"$ARCH".deb"
     #sudo dpkg -i $DIR"/tedge_logfile_request_plugin_"*"_"$ARCH".deb"
     sudo dpkg -i $DIR"/c8y_configuration_plugin_"*"_"$ARCH".deb"
+    sudo dpkg -i $DIR"/tedge_watchdog_"*"_"$ARCH".deb"
     set -f
 
 }
