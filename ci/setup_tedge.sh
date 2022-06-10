@@ -310,6 +310,14 @@ tedge_help(){
     tedge --help
 }
 
+cargotest(){
+    #Note: The name can't be test as it is a bash builtin
+    echo "Running function ${FUNCNAME[0]}"
+    JOBS=10 # Good heuristic for 6 core CPU with HT
+    cd ~/thin-edge.io
+    cargo test --jobs $JOBS
+}
+
 smoketest() {
     echo "Running function ${FUNCNAME[0]}"
 
@@ -401,7 +409,7 @@ systest() {
 
     #pysys.py run apama_plugin_install -XmyPlatform=container
     #pysys.py run sm_apt_install_fail  -XmyPlatform='container'
-    #pysys.py run -XmyPlatform='container' sm_apt_install_download_path
+    y#pysys.py run -XmyPlatform='container' sm_apt_install_download_path
 
     pysys.py run -XmyPlatform='container' $1
 
