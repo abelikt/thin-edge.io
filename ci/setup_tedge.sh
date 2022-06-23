@@ -425,7 +425,7 @@ systest() {
 
     #pysys.py run apama_plugin_install -XmyPlatform=container
     #pysys.py run sm_apt_install_fail  -XmyPlatform='container'
-    y#pysys.py run -XmyPlatform='container' sm_apt_install_download_path
+    #pysys.py run -XmyPlatform='container' sm_apt_install_download_path
 
     pysys.py run -XmyPlatform='container' $1
 
