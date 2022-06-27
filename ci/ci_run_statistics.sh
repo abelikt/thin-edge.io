@@ -33,7 +33,7 @@ dpkg -s mosquitto-clients
 #sudo apt install librrd-dev python3-rrdtool rrdtool collectd
 
 sudo cp ./configuration/contrib/collectd/collectd_analytics.conf /etc/collectd/collectd.conf
-sudo cp ./configuration/contrib/collectd/collect_tedge.sh ~/
+sudo cp ./configuration/contrib/collectd/collect_tedge.sh ~/collect_tedge.sh
 sudo chmod +x ~/collect_tedge.sh
 sudo systemctl restart collectd
 
